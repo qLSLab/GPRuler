@@ -1,5 +1,13 @@
 # GPRuler
 
+## Execution of the pipeline
+GPRuler can be executed starting from two alternative inputs: 
+* an SBML model
+* an existing metabolic model or a list of biochemical reactions
+
+Both kind of inputs are firstly processed to obtain the list of metabolic genes associated with each metabolic reaction in the target organism/model. This intermediate output is then used as input for the core pipeline, which returns as ultimate output the GPR rule of each metabolic reactions.
+The sequential execution steps of the proposed pipeline are detailed in the following. 
+
 ## Input data
 All input data are saved or required to be saved in a folder name `inputData`.  
 
