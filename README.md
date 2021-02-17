@@ -13,9 +13,39 @@ When an existing metabolic model is chosen:
  * Inputs:
    * modelXml: the SBML model, which needs to be saved into the rawData directory
    * dfmetsInfo: a string to name the output file name
- * Outputs:
-   * dfmetsInfo + \'\_\' + timeStamp + \'.csv\': a file storing information about reactions in the model. In particular, for each reaction: Rxn column includes the reaction identifier, KeggId column includes the KEGG identifiers, EC number column includes EC number associated to the reaction,	GPR and columns include the GPR rule associated to the reaction,	Name column includes	the name associated to the reaction, IsTransport column includes a boolean value to indicate if the reaction is a transport reaction,	trasportedMets column includes	the list of transported metabolites when the reaction is a transport, IsExchange column includes a boolean value to indicate if the reaction is an exchange reaction.
+ * Outputs saved in the outputs directory:
+   * dfmetsInfo + \'\_\' + timeStamp + \'.csv\': a file including all the information stored in the model for each metabolite. In particular: Id column includes the identifier associated to each metabolite, Name column includes the name associated to each metabolite, KeggId column includes the KEGG identifier associated to each metabolite, ChebiId  column includes the ChEBI identifier associated to each metabolite, PubchemId column includes the PubChem identifier associated to each metabolite, boundaryCondition column includes a boolean value indicating if the metabolite is in the boundary compartment, chemicalFormula column includes the chemical formula associated to each metabolite, Inchi column includes the InChi associated to each metabolite.
+   * dfmetsInfo + \'\_wInferredIds\_\' + timeStamp + \'.csv\': a file storing in each row the name of the metabolite (Name column) and a list of the inferred identifiers(Identifiers column).
 
+**Step 2. *metabolitesIdentification_FuzzyWuzzy.py***: identification of the metabolites involved in the model reactions through the FuzzyWuzzy package. 
+* Inputs:
+   * modelXml: the SBML model, which needs to be saved into the rawData directory
+   * outputFileName: a string to name the output files name
+ * Outputs saved in the outputs directory:
+   * outputFileName + \'\_mappingMetaCyc\_allResults\_\' + timeStamp + \'.tsv\': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
+   * outputFileName + \'\_mappingKeggC\_allResults\_\' + timeStamp + \'.tsv\': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
+   * outputFileName + \'\_mappingKeggG\_allResults\_\' + timeStamp + \'.tsv\': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
+   * outputFileName + \'\_mappingChebi\_allResults\_\' + timeStamp + \'.tsv\': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.  
+
+**Step 3. *metabolitesIdentification_FuzzyWuzzy_part2***: refinement of the outcomes of Step 2.
+* Inputs:
+   * the 4 output files from the metabolitesIdentification_FuzzyWuzzy.py script
+   * outputFileName: a string to name the output file name
+ * Outputs saved in the outputs directory:
+   * outputFileName + '_mappingMetaCyc_100_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with 100 score.
+   * outputFileName + '_mappingMetaCyc_91_99_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
+   * outputFileName + '_mappingMetaCyc_empty_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
+   * outputFileName + '_mappingKeggC_100_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite name the list of retrieved matches with 100 score.
+   * outputFileName + '_mappingKeggC_91_99_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
+   * outputFileName + '_mappingKeggC_empty_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
+   * outputFileName + '_mappingKeggG_100_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite name the list of retrieved matches with 100 score.
+   * outputFileName + '_mappingKeggG_91_99_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
+   * outputFileName + '_mappingKeggG_empty_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
+   * outputFileName + '_mappingChebi_100_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with 100 score.
+   * outputFileName + '_mappingChebi_91_99_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
+   * outputFileName + '_mappingChebi_empty_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
+  
+**Step 4. *metabolitesIdentification_joiningData***
 
 ## Input data
 All input data are saved or required to be saved in a folder name `inputData`.  
