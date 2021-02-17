@@ -1,12 +1,21 @@
 # GPRuler
 
 ## Execution of the pipeline
-GPRuler can be executed starting from two alternative inputs: 
-* an SBML model
-* an existing metabolic model or a list of biochemical reactions
+When GPRuler is executed, the user is given the option to choose between two alternative inputs:
+* the name of the target organism
+* an existing metabolic model
 
 Both kind of inputs are firstly processed to obtain the list of metabolic genes associated with each metabolic reaction in the target organism/model. This intermediate output is then used as input for the core pipeline, which returns as ultimate output the GPR rule of each metabolic reactions.
 The sequential execution steps of the proposed pipeline are detailed in the following. 
+
+When an existing metabolic model is chosen:
+Step 1. *metaboliteIdentification.py*: identification of the metabolites involved in the model reactions.
+ * Inputs:
+  * modelXml: the SBML model, which needs to be saved into the rawData directory
+  * dfmetsInfo: a string to name the output file name
+ * Outputs:
+  * dfmetsInfo + \'\_\' + timeStamp + \'.csv\': a file storing information about reactions in the model. In particular, for each reaction: Rxn column includes the reaction identifier, KeggId column includes the KEGG identifiers, EC number column includes EC number associated to the reaction,	GPR and columns include the GPR rule associated to the reaction,	Name column includes	the name associated to the reaction, IsTransport column includes a boolean value to indicate if the reaction is a transport reaction,	trasportedMets column includes	the list of transported metabolites when the reaction is a transport, IsExchange column includes a boolean value to indicate if the reaction is an exchange reaction.
+
 
 ## Input data
 All input data are saved or required to be saved in a folder name `inputData`.  
