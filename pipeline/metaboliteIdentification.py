@@ -5,13 +5,8 @@ import genericLib as gL
 import os
 import pandas as pd
 import gprLib as gprL
-import xmlLib2 as xL
-from ast import literal_eval
-from nltk.tokenize import RegexpTokenizer
-# from libchebipy._chebi_entity import ChebiEntity
-import chebiLib as cL
+import xmlLib as xL
 import time
-# import libchebipy
 import re
 
 def get_jaccard_sim(str1, str2):
@@ -36,34 +31,28 @@ DFDIR = workingDirs[5]
 start = time.time()
 
 testModel = sys.argv[1]
-if testModel == '1':
+if testModel == 'recon':
     ## Recon 3
     modelXml = 'Recon3D_301_20200923'
     dfmetsInfo = 'recon3D_metabolites'
-    # dfmetsInfo = 'Recon3D_301_enriched'
-elif testModel == '2':
+elif testModel == 'y7':
     ## Yeast 7
     modelXml = 'yeast_7.6_cobra'
-    # dfmetsInfo = 'y7_mets_20200814'
     dfmetsInfo = 'y7_metabolites'
-elif testModel == '3':
+elif testModel == 'y8':
     ## Yeast 8
     modelXml = 'yeast8'
     dfmetsInfo = 'y8_metabolites'
-elif testModel == '4':
+elif testModel == 'hmr':
     ## HMRcore
     modelXml = 'HMRcore_20200328_wReconNames'
     dfmetsInfo = 'hmrCore_metabolites'
-# elif testModel == '5':
-#     ## Ecoli
-#     modelXml = 'iML1515-ROS'
-#     # dfmetsInfo = 'eColi_metabolites_enriched'
-#     dfmetsInfo = 'eColi_metabolites'
-
-
+elif testModel == 'ownData':
+    ## specify your input data
+    modelXml = ''
+    dfmetsInfo = ''
 
 ## Step1. estrazione info mets da modello + inferimento dei kegg id
-start = time.time()
 cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = xL.getMetsInfoGEM(os.path.join(RAWDIR, modelXml + ".xml"))
 df = pd.DataFrame({'Id': cId, 'Name': cName, 'KeggId': cKegg, 'ChebiId': cChebi, 'PubchemId': cPubchem, 'boundaryCondition': cBoundaryCondition, 'chemicalFormula': cChemicalFormula, 'Inchi': cInchi})
 df.to_csv(os.path.join(OUTDIR, dfmetsInfo + '_' + timeStamp + '.csv'), sep = '\t', index = False)
@@ -80,7 +69,7 @@ dfChebiInchi = pd.read_csv(os.path.join(RAWDIR, 'chebiId_inchi_20201216.tsv'), s
 dfChebiInchi['InChI_splitted'] = dfChebiInchi.InChI.str.split('/')
 dfChebiInchi['InChI_formula'] = dfChebiInchi.InChI.str.split('/').str[1]
 
-if testModel == '2' or testModel == '3':
+if testModel == 'y7' or testModel == 'y8':
     lMets2Search_complete = list(df['Name'])
     lMets2Search = []
     for el in lMets2Search_complete:
@@ -88,7 +77,7 @@ if testModel == '2' or testModel == '3':
         pos = lPositions[-1]
         met = el[:pos].strip()
         lMets2Search.append(met)
-elif testModel == '1' or testModel == '4':
+elif testModel == 'recon' or testModel == 'hmr':
     lMets2Search = list(df['Name'])
 lMets2Search = gL.unique(lMets2Search)
 print('len lMets2Search\t', len(lMets2Search))
@@ -100,27 +89,14 @@ dfChebiUniprot['NAME'] = dfChebiUniprot['NAME'].str.lower()
 dizMet2Ids = {}
 for met in lMets2Search:
     keggId = ''
-    #############################
-    ## pulitura nome
-    # met = "Decanoate (N-C10:0)"
-    ###############################
-
-    if testModel == '2' or testModel == '3':
+    if testModel == 'y7' or testModel == 'y8':
         dfMet = df[df['Name'].str.startswith(met + ' ' + '[')]
     else:
         dfMet = df[df['Name'] == met]
-    print('met:\t', met)
     dfMet = dfMet.reset_index(drop = True)
-    print('Original keggId\t', dfMet.iloc[0]['KeggId'])
     inchiOriginal = dfMet.iloc[0]['Inchi']
-    print('inchiOriginal\n', inchiOriginal, '\n')
     keggId = kL.extractKeggIdComp(met.lower(), dfChebiNames, dfChebiDb, dfChebiRelations, dfChebiUniprot, dfChebiCompounds, dfChebiInchi, inchiOriginal)
-    ## ricerca
-    print('----------Kegg ID inferito:\t', keggId, '\n')
     dizMet2Ids[met] = keggId
-    print('\n\n')
 
 dfMet2Ids = pd.DataFrame(dizMet2Ids.items(), columns=['Name', 'Identifiers'])
 dfMet2Ids.to_csv(os.path.join(OUTDIR, dfmetsInfo + '_wInferredIds_' + timeStamp + '.csv'), sep = '\t', index = False)
-end = time.time()
-print('elapsed time\t', end-start, '\tseconds')
