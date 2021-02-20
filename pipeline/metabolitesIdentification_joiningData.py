@@ -12,13 +12,10 @@ timeStamp = gL.getTimeStamp()
 workingDirs = gL.setWorkingDirs()
 RAWDIR = workingDirs[0]
 OUTDIR = workingDirs[2]
-MODELDIR = workingDirs[3]
-FIGUREDIR = workingDirs[4]
-DFDIR = workingDirs[5]
 
 # setting input data
 testModel = sys.argv[1]
-if testModel == '1':
+if testModel == 'recon':
     ## Recon 3
     outputFileName = 'recon3'
     dfMetsInfer_classicMethod = 'recon3D_metabolites_wInferredIds'
@@ -38,7 +35,7 @@ if testModel == '1':
     dfMetsInfer_fw_C2 = 'recon3_mappingChebi_100'
     dfMetsInfer_fw_C3 = 'recon3_mappingChebi_91_99'
 
-elif testModel == '2':
+elif testModel == 'y7':
     ## Yeast 7
     outputFileName = 'yeast7'
     dfMetsInfer_classicMethod = 'y7_metabolites_wInferredIds'
@@ -58,7 +55,7 @@ elif testModel == '2':
     dfMetsInfer_fw_C1 = 'yeast7_mappingChebi_empty'
     dfMetsInfer_fw_C2 = 'yeast7_mappingChebi_100'
     dfMetsInfer_fw_C3 = 'yeast7_mappingChebi_91_99'
-elif testModel == '3':
+elif testModel == 'y8':
     ## Yeast 8
     outputFileName = 'yeast8'
     dfMetsInfer_classicMethod = 'y8_metabolites_wInferredIds'
@@ -78,7 +75,7 @@ elif testModel == '3':
     dfMetsInfer_fw_C2 = 'yeast8_mappingChebi_100'
     dfMetsInfer_fw_C3 = 'yeast8_mappingChebi_91_99'
 
-elif testModel == '4':
+elif testModel == 'hmr':
     ## HMRcore
     outputFileName = 'hmrCore'
     dfMetsInfer_classicMethod = 'hmrCore_metabolites_wInferredIds'
@@ -124,7 +121,7 @@ elif testModel == 'ownData':
 dMetMapping = {}
 
 # joining outputs from MetaCyc
-dfMetaCyc = pd.read_csv(os.path.join(OUTDIR,'metacyc_compounds_20201216152513.csv'), sep='\t', dtype = str)
+dfMetaCyc = pd.read_csv(os.path.join(RAWDIR,'metacyc_compounds_20201216152513.csv'), sep='\t', dtype = str)
 
 df1 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_metacyc1 + '.tsv'), sep='\t', index_col=0)
 df1['Matches'] = df1['Matches'].apply(ast.literal_eval)
@@ -147,8 +144,8 @@ for row in dfAll.itertuples():
         dMetMapping[row.Name] += lCorrespondences
 
 # joining outputs from KEGG
-dfKeggC = pd.read_csv(os.path.join(OUTDIR,'kegg_compounds_20201216150802.csv'), sep='\t', dtype = str)
-dfKeggG = pd.read_csv(os.path.join(OUTDIR,'kegg_glycans_20201216150802.csv'), sep='\t', dtype = str)
+dfKeggC = pd.read_csv(os.path.join(RAWDIR,'kegg_compounds_20201216150802.csv'), sep='\t', dtype = str)
+dfKeggG = pd.read_csv(os.path.join(RAWDIR,'kegg_glycans_20201216150802.csv'), sep='\t', dtype = str)
 dfKeggC['Name'] = dfKeggC['Name'].apply(ast.literal_eval)
 dfKeggC['ChebiId'] = dfKeggC['ChebiId'].apply(ast.literal_eval)
 dfKeggG['Name'] = dfKeggG['Name'].apply(ast.literal_eval)
@@ -205,9 +202,9 @@ for row in dfAll.itertuples():
 
 
 # joining outputs from ChEBI
-dfChebiNames = pd.read_csv(os.path.join(RAWDIR, 'chebi_names_20201216.tsv'), sep = '\t', dtype=str)
-dfChebiUniprot = pd.read_csv(os.path.join(RAWDIR, 'chebi_uniprot_20201216.tsv'), sep = '\t', header=None, dtype=str, names=['ID','NAME_wSymbols', 'NAME'])
-dfChebiCompounds =  pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216.tsv'), sep = '\t', dtype=str)
+dfChebiNames = pd.read_csv(os.path.join(RAWDIR, 'chebi_names_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype=str)
+dfChebiUniprot = pd.read_csv(os.path.join(RAWDIR, 'chebi_uniprot_20201216.tsv.bz2'), sep = '\t', header=None, dtype=str, compression='bz2', names=['ID','NAME_wSymbols', 'NAME'])
+dfChebiCompounds =  pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype=str)
 
 df1 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_C1 + '.tsv'), sep='\t', index_col=0)
 df1['Matches'] = df1['Matches'].apply(ast.literal_eval)
