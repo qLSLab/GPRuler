@@ -21,48 +21,38 @@ When an existing metabolic model is chosen:
 * Inputs:
    * modelXml: the SBML model, which needs to be saved into the rawData directory
    * outputFileName: a string to name the output files name
+   * dfmetsInfo: the first output of Step 1
  * Outputs saved in the outputs directory:
-   * outputFileName + \'\_mappingMetaCyc\_allResults\_\' + timeStamp + \'.tsv\': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
-   * outputFileName + \'\_mappingKeggC\_allResults\_\' + timeStamp + \'.tsv\': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
-   * outputFileName + \'\_mappingKeggG\_allResults\_\' + timeStamp + \'.tsv\': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
-   * outputFileName + \'\_mappingChebi\_allResults\_\' + timeStamp + \'.tsv\': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.  
+   * outputFileName + \'\_mappingMetaCyc\_allResults.tsv\': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
+   * outputFileName + \'\_mappingKeggC\_allResults.tsv\': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
+   * outputFileName + \'\_mappingKeggG\_allResults.tsv\': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
+   * outputFileName + \'\_mappingChebi\_allResults.tsv\': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.  
 
 **Step 3. *metabolitesIdentification_FuzzyWuzzy_part2***: refinement of the outcomes of Step 2.
   * Inputs:
-    * the 4 output files from the metabolitesIdentification_FuzzyWuzzy.py script
+    * the 4 output files from the Step 2
     * outputFileName: a string to name the output file name
   * Outputs saved in the outputs directory:
-    * outputFileName + '_mappingMetaCyc_100_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with 100 score.
-    * outputFileName + '_mappingMetaCyc_91_99_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
-    * outputFileName + '_mappingMetaCyc_empty_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
-    * outputFileName + '_mappingKeggC_100_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite name the list of retrieved matches with 100 score.
-    * outputFileName + '_mappingKeggC_91_99_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
-    * outputFileName + '_mappingKeggC_empty_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
-    * outputFileName + '_mappingKeggG_100_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite name the list of retrieved matches with 100 score.
-    * outputFileName + '_mappingKeggG_91_99_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
-    * outputFileName + '_mappingKeggG_empty_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
-    * outputFileName + '_mappingChebi_100_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with 100 score.
-    * outputFileName + '_mappingChebi_91_99_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
-    * outputFileName + '_mappingChebi_empty_' + timeStamp + '.tsv': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
+    * outputFileName + \'\_mappingMetaCyc\_100.tsv\': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with 100 score.
+    * outputFileName + \'\_mappingMetaCyc_91_99.tsv\': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
+    * outputFileName + \'\_mappingMetaCyc_empty.tsv\': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
+    * outputFileName + \'\_mappingKeggC\_100.tsv\': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite name the list of retrieved matches with 100 score.
+    * outputFileName + \'\_mappingKeggC\_91\_99.tsv\': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
+    * outputFileName + \'\_mappingKeggC\_empty.tsv\': the output of the FuzzyWuzzy package execution on KEGG COMPOUND database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
+    * outputFileName + \'\_mappingKeggG\_100.tsv\': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite name the list of retrieved matches with 100 score.
+    * outputFileName + \'\_mappingKeggG\_91\_99.tsv\': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
+    * outputFileName + \'\_mappingKeggG\_empty.tsv\': the output of the FuzzyWuzzy package execution on KEGG GLYCAN database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
+    * outputFileName + \'\_mappingChebi\_100.tsv\': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with 100 score.
+    * outputFileName + \'\_mappingChebi\_91\_99.tsv\': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
+    * outputFileName + \'\_mappingChebi\_empty.tsv\': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
   
 **Step 4. *metabolitesIdentification_joiningData***: join the results obtained from both the Steps 1 and 2.
   * Input:
-    * dfmetsInfo + \'\_wInferredIds\_\' + timeStamp + \'.csv\': output of metabolitesIdentification
-    * outputFileName + '_mappingMetaCyc_100_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingMetaCyc_91_99_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingMetaCyc_empty_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingKeggC_100_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingKeggC_91_99_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingKeggC_empty_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingKeggG_100_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingKeggG_91_99_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingKeggG_empty_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingChebi_100_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingChebi_91_99_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
-    * outputFileName + '_mappingChebi_empty_' + timeStamp + '.tsv': output of metabolitesIdentification_FuzzyWuzzy_part2
+    * dfmetsInfo + \'\_wInferredIds\_\' + timeStamp + \'.csv\': the second output of Step 1
+    * the outputs of Step 3
     * outputFileName: a string to name the output files name
   * Output:
-    * outputFileName + '_mappingFuzzyAndClassic_' + timeStamp + '.tsv': a file storing in each row the name of the metabolite (Name column), a list of the inferred identifiers from the Step 1 (Identifiers_classic), a list of the inferred identifiers from the Step 2 (Identifiers_fuzzy), the joining of the two columns Identifiers_classic and Identifiers_fuzzy (Identifiers column).
+    * outputFileName + \'\_mappingFuzzyAndClassic\_.tsv\': a file storing in each row the name of the metabolite (Name column), a list of the inferred identifiers from the Step 1 (Identifiers_classic), a list of the inferred identifiers from the Step 2 (Identifiers_fuzzy), the joining of the two columns Identifiers_classic and Identifiers_fuzzy (Identifiers column).
 
 **Step 5. *reactionsIdentification***: join the results obtained from both the Steps 1 and 2.
   * Input:
