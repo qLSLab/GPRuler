@@ -12,15 +12,8 @@ import re
 workingDirs = gL.setWorkingDirs()
 RAWDIR = workingDirs[0]
 OUTDIR = workingDirs[2]
-MODELDIR = workingDirs[3]
-FIGUREDIR = workingDirs[4]
-DFDIR = workingDirs[5]
 
-## INPUTS:
-# - metabolites list
-
-start = time.time()
-
+# setting input data
 testModel = sys.argv[1]
 if testModel == 'recon':
     ## Recon 3
@@ -43,12 +36,12 @@ elif testModel == 'ownData':
     modelXml = ''
     dfmetsInfo = ''
 
-## Step1. estrazione info mets da modello + inferimento dei kegg id
+# extracting metabolites info from the input model
 cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = xL.getMetsInfoGEM(os.path.join(RAWDIR, modelXml + ".xml"))
 df = pd.DataFrame({'Id': cId, 'Name': cName, 'KeggId': cKegg, 'ChebiId': cChebi, 'PubchemId': cPubchem, 'boundaryCondition': cBoundaryCondition, 'chemicalFormula': cChemicalFormula, 'Inchi': cInchi})
 df.to_csv(os.path.join(OUTDIR, dfmetsInfo + '.csv'), sep = '\t', index = False)
 
-
+# infer metabolites identifiers
 dfChebiNames = pd.read_csv(os.path.join(RAWDIR, 'chebi_names_20201216.tsv'), sep = '\t', dtype=str)
 dfChebiUniprot = pd.read_csv(os.path.join(RAWDIR, 'chebi_uniprot_20201216.tsv'), sep = '\t', header=None, dtype=str, names=['ID','NAME_wSymbols', 'NAME'])
 dfChebiCompounds =  pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216.tsv'), sep = '\t', dtype=str)
