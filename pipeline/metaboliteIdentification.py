@@ -9,14 +9,6 @@ import xmlLib as xL
 import time
 import re
 
-def get_jaccard_sim(str1, str2):
-    a = set(str1.split())
-    b = set(str2.split())
-    c = a.intersection(b)
-    return float(len(c)) / (len(a) + len(b) - len(c))
-
-timeStamp = gL.getTimeStamp()
-
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
 RAWDIR = workingDirs[0]
@@ -55,7 +47,7 @@ elif testModel == 'ownData':
 ## Step1. estrazione info mets da modello + inferimento dei kegg id
 cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = xL.getMetsInfoGEM(os.path.join(RAWDIR, modelXml + ".xml"))
 df = pd.DataFrame({'Id': cId, 'Name': cName, 'KeggId': cKegg, 'ChebiId': cChebi, 'PubchemId': cPubchem, 'boundaryCondition': cBoundaryCondition, 'chemicalFormula': cChemicalFormula, 'Inchi': cInchi})
-df.to_csv(os.path.join(OUTDIR, dfmetsInfo + '_' + timeStamp + '.csv'), sep = '\t', index = False)
+df.to_csv(os.path.join(OUTDIR, dfmetsInfo + '.csv'), sep = '\t', index = False)
 
 
 dfChebiNames = pd.read_csv(os.path.join(RAWDIR, 'chebi_names_20201216.tsv'), sep = '\t', dtype=str)
@@ -99,4 +91,4 @@ for met in lMets2Search:
     dizMet2Ids[met] = keggId
 
 dfMet2Ids = pd.DataFrame(dizMet2Ids.items(), columns=['Name', 'Identifiers'])
-dfMet2Ids.to_csv(os.path.join(OUTDIR, dfmetsInfo + '_wInferredIds_' + timeStamp + '.csv'), sep = '\t', index = False)
+dfMet2Ids.to_csv(os.path.join(OUTDIR, dfmetsInfo + '_wInferredIds.csv'), sep = '\t', index = False)
