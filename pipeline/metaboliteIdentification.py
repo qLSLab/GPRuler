@@ -1,4 +1,3 @@
-from Bio.KEGG.REST import *
 import keggLib as kL
 import sys
 import genericLib as gL
