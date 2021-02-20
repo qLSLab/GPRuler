@@ -42,14 +42,14 @@ df = pd.DataFrame({'Id': cId, 'Name': cName, 'KeggId': cKegg, 'ChebiId': cChebi,
 df.to_csv(os.path.join(OUTDIR, dfmetsInfo + '.csv'), sep = '\t', index = False)
 
 # infer metabolites identifiers
-dfChebiNames = pd.read_csv(os.path.join(RAWDIR, 'chebi_names_20201216.tsv'), sep = '\t', dtype=str)
-dfChebiUniprot = pd.read_csv(os.path.join(RAWDIR, 'chebi_uniprot_20201216.tsv'), sep = '\t', header=None, dtype=str, names=['ID','NAME_wSymbols', 'NAME'])
-dfChebiCompounds =  pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216.tsv'), sep = '\t', dtype=str)
+dfChebiNames = pd.read_csv(os.path.join(RAWDIR, 'chebi_names_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype=str)
+dfChebiUniprot = pd.read_csv(os.path.join(RAWDIR, 'chebi_uniprot_20201216.tsv.bz2'), sep = '\t', header=None, dtype=str, compression='bz2', names=['ID','NAME_wSymbols', 'NAME'])
+dfChebiCompounds =  pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype=str)
 
-dfChebiDb = pd.read_csv(os.path.join(RAWDIR, 'chebi_database_accession_20201216.tsv'), sep = '\t', dtype = {'ID': str, 'COMPOUND_ID': str, 'ACCESSION_NUMBER': str})
-dfChebiRelations = pd.read_csv(os.path.join(RAWDIR, 'chebi_relation_20201216.tsv'), sep = '\t', dtype = {'ID': str, 'TYPE': str, 'INIT_ID': str, 'FINAL_ID': str})
+dfChebiDb = pd.read_csv(os.path.join(RAWDIR, 'chebi_database_accession_20201216.tsv.bz2'), sep = '\t',compression='bz2', dtype = {'ID': str, 'COMPOUND_ID': str, 'ACCESSION_NUMBER': str})
+dfChebiRelations = pd.read_csv(os.path.join(RAWDIR, 'chebi_relation_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype = {'ID': str, 'TYPE': str, 'INIT_ID': str, 'FINAL_ID': str})
 
-dfChebiInchi = pd.read_csv(os.path.join(RAWDIR, 'chebiId_inchi_20201216.tsv'), sep = '\t', dtype=str)
+dfChebiInchi = pd.read_csv(os.path.join(RAWDIR, 'chebiId_inchi_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype=str)
 dfChebiInchi['InChI_splitted'] = dfChebiInchi.InChI.str.split('/')
 dfChebiInchi['InChI_formula'] = dfChebiInchi.InChI.str.split('/').str[1]
 
