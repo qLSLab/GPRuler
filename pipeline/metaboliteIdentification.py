@@ -36,12 +36,12 @@ elif testModel == 'ownData':
     modelXml = ''
     dfmetsInfo = ''
 
-# extracting metabolites info from the input model
+# Extract metabolites info from the input model
 cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = xL.getMetsInfoGEM(os.path.join(RAWDIR, modelXml + ".xml"))
 df = pd.DataFrame({'Id': cId, 'Name': cName, 'KeggId': cKegg, 'ChebiId': cChebi, 'PubchemId': cPubchem, 'boundaryCondition': cBoundaryCondition, 'chemicalFormula': cChemicalFormula, 'Inchi': cInchi})
 df.to_csv(os.path.join(OUTDIR, dfmetsInfo + '.csv'), sep = '\t', index = False)
 
-# infer metabolites identifiers
+# Infer metabolites identifiers
 dfChebiNames = pd.read_csv(os.path.join(RAWDIR, 'chebi_names_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype=str)
 dfChebiUniprot = pd.read_csv(os.path.join(RAWDIR, 'chebi_uniprot_20201216.tsv.bz2'), sep = '\t', header=None, dtype=str, compression='bz2', names=['ID','NAME_wSymbols', 'NAME'])
 dfChebiCompounds =  pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype=str)
@@ -64,7 +64,6 @@ if testModel == 'y7' or testModel == 'y8':
 elif testModel == 'recon' or testModel == 'hmr':
     lMets2Search = list(df['Name'])
 lMets2Search = gL.unique(lMets2Search)
-print('len lMets2Search\t', len(lMets2Search))
 
 dfChebiNames['NAME'] = dfChebiNames['NAME'].str.lower()
 dfChebiCompounds['NAME'] = dfChebiCompounds['NAME'].str.lower()
