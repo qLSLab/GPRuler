@@ -12,15 +12,15 @@ When an existing metabolic model is chosen:
 **Step 1. *metaboliteIdentification.py***: identification of the metabolites involved in the model reactions.
  * Inputs:
    * modelXml: the SBML model, which needs to be saved into the rawData directory
-   * dfmetsInfo: a string to name the output file name
+   * dfmetsInfo: a string to name the output files
  * Outputs saved in the outputs directory:
    * dfmetsInfo + \'.csv\': a file including all the information stored in the model for each metabolite. In particular: Id column includes the identifier associated to each metabolite, Name column includes the name associated to each metabolite, KeggId column includes the KEGG identifier associated to each metabolite, ChebiId  column includes the ChEBI identifier associated to each metabolite, PubchemId column includes the PubChem identifier associated to each metabolite, boundaryCondition column includes a boolean value indicating if the metabolite is in the boundary compartment, chemicalFormula column includes the chemical formula associated to each metabolite, Inchi column includes the InChi associated to each metabolite.
    * dfmetsInfo + \'\_wInferredIds\_.csv\': a file storing in each row the name of the metabolite (Name column) and a list of the inferred identifiers(Identifiers column).
 
-**Step 2. *metabolitesIdentification_FuzzyWuzzy.py***: identification of the metabolites involved in the model reactions through the FuzzyWuzzy package. 
+**Step 2. *metabolitesIdentification_FuzzyWuzzy.py***: identification of the metabolites involved in the model reactions through the FuzzyWuzzy package.
 * Inputs:
    * modelXml: the SBML model, which needs to be saved into the rawData directory
-   * outputFileName: a string to name the output files name
+   * outputFileName: a string to name the output files
    * dfmetsInfo: the first output of Step 1
  * Outputs saved in the outputs directory:
    * outputFileName + \'\_mappingMetaCyc\_allResults.tsv\': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite the first ten tuple returned from the exploited package where the first element is the proposed found match and the second one is the associated score.
@@ -31,7 +31,7 @@ When an existing metabolic model is chosen:
 **Step 3. *metabolitesIdentification_FuzzyWuzzy_part2***: refinement of the outcomes of Step 2.
   * Inputs:
     * the 4 output files from the Step 2
-    * outputFileName: a string to name the output file name
+    * outputFileName: a string to name the output files
   * Outputs saved in the outputs directory:
     * outputFileName + \'\_mappingMetaCyc\_100.tsv\': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with 100 score.
     * outputFileName + \'\_mappingMetaCyc_91_99.tsv\': the output of the FuzzyWuzzy package execution on MetaCyc database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
@@ -45,33 +45,56 @@ When an existing metabolic model is chosen:
     * outputFileName + \'\_mappingChebi\_100.tsv\': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with 100 score.
     * outputFileName + \'\_mappingChebi\_91\_99.tsv\': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with score between 91 and 99 needing of a manual curation.
     * outputFileName + \'\_mappingChebi\_empty.tsv\': the output of the FuzzyWuzzy package execution on ChEBI database reporting for each metabolite name the list of retrieved matches with score below 91, thus associated to an empty list.
-  
+
 **Step 4. *metabolitesIdentification_joiningData***: join the results obtained from both the Steps 1 and 2.
   * Input:
     * dfmetsInfo + \'\_wInferredIds\_\' + timeStamp + \'.csv\': the second output of Step 1
     * the outputs of Step 3
-    * outputFileName: a string to name the output files name
-  * Output:
+    * outputFileName: a string to name the output files
+  * Output saved in the outputs directory:
     * outputFileName + \'\_mappingFuzzyAndClassic\_.tsv\': a file storing in each row the name of the metabolite (Name column), a list of the inferred identifiers from the Step 1 (Identifiers_classic), a list of the inferred identifiers from the Step 2 (Identifiers_fuzzy), the joining of the two columns Identifiers_classic and Identifiers_fuzzy (Identifiers column).
 
-**Step 5. *reactionsIdentification***: join the results obtained from both the Steps 1 and 2.
+**Step 5. *reactionsIdentification***: identification of the reactions metabolites involved in the model.
   * Input:
-    * modelXml = 'Recon3D_301_20200923'
-    * dfmetsInfo = 'recon3D_metabolites_20201218172131'
-    * dfmetsIds = 'recon3_mappingFuzzyAndClassic_20210119085007'
-    * dfrxnsInfo = 'recon3D_reactions'
+    * modelXml: the SBML model, which needs to be saved into the rawData directory
+    * dfmetsInfo: the first output of Step 1
+    * dfmetsIds: the output of Step 4
+    * dfrxnsInfo: a string to name the output files
+  * Output saved in the outputs directory:
+    * dfmetsInfo + \'\_enriched.csv: the first output of Step 1 enriched with the metabolites identifiers retrieved from GPRuler
+    * dfrxnsInfo + \'.csv\': a file including all the information stored in the model for each reaction
+    * dfrxnsInfo + \'\_wIds.csv\': a file storing in each row the name of the reaction (RxnId column) and a list of the inferred identifiers (PutativeIdentifiers column)
+    * dfrxnsInfo + \'\_enriched.csv\': the second output file enriched with the inferred reactions identifiers
 
-**Step 6. *reactionsIdentification_TCDB***: 
-**Step 7. *reactionsIdentification_TCDB***: 
-**Step 8. *reactionsIdentification_joiningData***: 
-**Step 9. *fromReactions2Genes***: 
-**Step 10. *genesLocationFilter***: 
-**Step 11. *fromReactions2Genes_wFilteredData***: 
-**Step 12. *prepareGPRulerInput***: 
-**Step 13. *GPRULER***: 
+**Step 6. *reactionsIdentification_TCDB***: identification of the reactions metabolites involved in the model by querying the TCDB database.
+* Input:
+  * modelXml: the SBML model, which needs to be saved into the rawData directory
+  * dfmetsInfo: the first output of Step 1
+  * dfmetsIds: the output of Step 4
+  * dfrxnsInfo: a string to name the output files
+* Output saved in the outputs directory:
+  * dfrxnsInfo + \'\_enriched\_tcdb.csv\': the second output of Step 5 is enriched with a dictionary for each reaction (Identifiers_fromTCDB column) including the associated TC numbers and the corresponding Uniprot identifiers
+
+**Step 7. *fromReactions2Genes***: identification of the genes list associated to each model reaction.
+* Input:
+  * modelXml: the SBML model, which needs to be saved into the rawData directory
+  * rxns: the last output of Step 5
+  * transportRxns: the output of Step 6
+  * outputName : a string to name the output file
+  * metModelFile: the first output of Step 5
+  * orgCode: the KEGG organism code of the target organism
+  * taxId: a list of the NCBI Taxonomy ID of the target organism
+* Output saved in the outputs directory:
+  * outputName + \'.csv\': the second output of Step 5 is enriched with the retrieved identifiers from Step 5 (PutativeIdentifiers column) and 6 (Identifiers_fromTCDB column), and with the identified list of catalysing genes (lGenes). Each element of this last column is a list of lists where the genes identified in the internal lists are joined by the AND operator.
 
 
+**Step 8. *genesLocationFilter***:
+**Step 9. *fromReactions2Genes_wFilteredData***:
+**Step 10. *prepareGPRulerInput***:
+**Step 11. *GPRULER***:
 
+
+<!--
 ## Input data
 All input data are saved or required to be saved in a folder name `inputData`.  
 
@@ -91,4 +114,4 @@ When GPRuler is executed, the user is given the option to choose between the use
 When all the pipeline is executed, three output files are generated:
 * a tab-separated file named as follow: `model + '_GenesData_' + timeStamp`, where model is the model name inserted as input data and timeStamp reports the date and time of the pipeline execution. This file includes 27 columns where for each gene all the retrieved relative information are returned.
 * a tab-separated file named as follow: `model + '_GenesRelationships_' + timeStamp`, where model is the model name inserted as input data and timeStamp reports the date and time of the pipeline execution. This file includes 4 columns where for each gene all the genes having an AND or an OR relationship are reported.
-* a tab-separated file named as follow: `model + '_gprRules_' + timeStamp`, where model is the model name inserted as input data and timeStamp reports the date and time of the pipeline execution. This file, which includes 3 columns, is an enrichment of the input file reporting for each input reaction the list of catalysing gene due to the inclusion in the `GPR rule` column of the corresponding reconstructed GPR rule.
+* a tab-separated file named as follow: `model + '_gprRules_' + timeStamp`, where model is the model name inserted as input data and timeStamp reports the date and time of the pipeline execution. This file, which includes 3 columns, is an enrichment of the input file reporting for each input reaction the list of catalysing gene due to the inclusion in the `GPR rule` column of the corresponding reconstructed GPR rule. -->
