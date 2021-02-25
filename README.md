@@ -88,7 +88,16 @@ When an existing metabolic model is chosen:
   * outputName + \'.csv\': the second output of Step 5 is enriched with the retrieved identifiers from Step 5 (PutativeIdentifiers column) and 6 (Identifiers_fromTCDB column), and with the identified list of catalysing genes (lGenes). Each element of this last column is a list of lists where the genes identified in the internal lists are joined by the AND operator.
 
 
-**Step 8. *genesLocationFilter***:
+**Step 8. *genesLocationFilter***: apply a filter on the identified list of genes of each reaction to be in line with the compartment associated to the reaction.
+* Input:
+  * dfrxnsInfo: a string to name the output file
+  * dfrxns2Genes: the output of Step 7
+  * orgCode: the KEGG organism code of the target organism
+    lCompartmentsOrganization: according to the compartmentalization of the model, this dictionary includes as keys the cell compartment of the model and as values a list of compartments all pointing to the corresponding key. For example: mitochondrion is associated to the following list: ['mitochondrion', 'mitochondrial matrix', 'mitochondrial membrane','mitochondrion inner membrane', 'mitochondrion inner membrane', 'mitochondrial inner membrane', 'mitochondrial intermembrane space', 'mitochondrial outer membrane']. The list includes both alternative names with which the compartment is annotated in Uniprot and Gene Ontology database. Moreover, depending on the compartments included in the model if internal compartment to the target one are not included in the model as separate compartments, it is necessary to include them within the list to avoid that the gene is excluded from the filter, despite included in this cellular localization.
+* Output saved in the outputs directory:
+  * dfrxnsInfo + \'.csv\': a file storing for each gene (Gene column) the list of corresponding annotated compartments (lCompartments column)
+
+
 **Step 9. *fromReactions2Genes_wFilteredData***:
 **Step 10. *prepareGPRulerInput***:
 **Step 11. *GPRULER***:
