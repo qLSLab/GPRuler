@@ -168,7 +168,7 @@ if testModel == 'recon3':
     modelXml = 'Recon3D_301_20200923'
     rxns = 'recon3D_reactions_enriched'
     transportRxns = 'recon3D_reactions_enriched_tcdb'
-    outputName = 'recon3D_reactions_wGenes_'
+    outputName = 'recon3D_reactions_wGenes'
     metModelFile = 'recon3D_metabolites_enriched'
     orgCode = 'hsa'
     taxId = ['|TAX-9606|']
@@ -177,7 +177,7 @@ elif testModel == 'y7':
     modelXml = 'yeast_7.6_cobra'
     rxns = 'y7_reactions_enriched'
     transportRxns = 'y7_reactions_enriched_tcdb'
-    outputName = 'y7_reactions_wGenes_'
+    outputName = 'y7_reactions_wGenes'
     metModelFile = 'y7_metabolites_enriched'
     orgCode = 'sce'
     taxId = ['|TAX-4932|', '|TAX-559292|', '|TAX-580239|', '|TAX-658763|', '|TAX-1294310|']
@@ -186,7 +186,7 @@ elif testModel == 'y8':
     modelXml = 'yeast8'
     rxns = 'y8_reactions_enriched'
     transportRxns = 'y8_reactions_enriched_tcdb'
-    outputName = 'y8_reactions_wGenes_'
+    outputName = 'y8_reactions_wGenes'
     metModelFile = 'y8_metabolites_enriched'
     orgCode = 'sce'
     taxId = ['|TAX-4932|', '|TAX-559292|', '|TAX-580239|', '|TAX-658763|', '|TAX-1294310|']
@@ -195,7 +195,7 @@ elif testModel == 'hmr':
     modelXml = 'HMRcore_20200328_wReconNames'
     rxns = 'hmrCore_reactions_enriched'
     transportRxns = 'hmrCore_reactions_enriched_tcdb'
-    outputName = 'hmrCore_reactions_wGenes_'
+    outputName = 'hmrCore_reactions_wGenes'
     metModelFile = 'hmrCore_metabolites_enriched'
     orgCode = 'hsa'
     taxId = ['|TAX-9606|']
