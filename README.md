@@ -93,13 +93,24 @@ When an existing metabolic model is chosen:
   * dfrxnsInfo: a string to name the output file
   * dfrxns2Genes: the output of Step 7
   * orgCode: the KEGG organism code of the target organism
-    lCompartmentsOrganization: according to the compartmentalization of the model, this dictionary includes as keys the cell compartment of the model and as values a list of compartments all pointing to the corresponding key. For example: mitochondrion is associated to the following list: ['mitochondrion', 'mitochondrial matrix', 'mitochondrial membrane','mitochondrion inner membrane', 'mitochondrion inner membrane', 'mitochondrial inner membrane', 'mitochondrial intermembrane space', 'mitochondrial outer membrane']. The list includes both alternative names with which the compartment is annotated in Uniprot and Gene Ontology database. Moreover, depending on the compartments included in the model if internal compartment to the target one are not included in the model as separate compartments, it is necessary to include them within the list to avoid that the gene is excluded from the filter, despite included in this cellular localization.
+  * lCompartmentsOrganization: according to the compartmentalization of the model, this dictionary includes as keys the cell compartment of the model and as values a list of compartments all pointing to the corresponding key. For example: mitochondrion is associated to the following list: ['mitochondrion', 'mitochondrial matrix', 'mitochondrial membrane','mitochondrion inner membrane', 'mitochondrion inner membrane', 'mitochondrial inner membrane', 'mitochondrial intermembrane space', 'mitochondrial outer membrane']. The list includes both alternative names with which the compartment is annotated in Uniprot and Gene Ontology database. Moreover, depending on the compartments included in the model if internal compartment to the target one are not included in the model as separate compartments, it is necessary to include them within the list to avoid that the gene is excluded from the filter, despite included in this cellular localization.
 * Output saved in the outputs directory:
   * dfrxnsInfo + \'.csv\': a file storing for each gene (Gene column) the list of corresponding annotated compartments (lCompartments column)
 
 
 **Step 9. *fromReactions2Genes_wFilteredData***:
+* Input:
+  * modelXml: the SBML model, which needs to be saved into the rawData directory
+  * dfGenes2Comp: the output of Step 8
+  * dfrxns2Genes: the output of Step 7
+  * outputFileName: a string to name the output file
+  * lCompartmentsOrganization: according to the compartmentalization of the model, this dictionary includes as keys the cell compartment of the model and as values a list of compartments all pointing to the corresponding key. For example: mitochondrion is associated to the following list: ['mitochondrion', 'mitochondrial matrix', 'mitochondrial membrane','mitochondrion inner membrane', 'mitochondrion inner membrane', 'mitochondrial inner membrane', 'mitochondrial intermembrane space', 'mitochondrial outer membrane']. The list includes both alternative names with which the compartment is annotated in Uniprot and Gene Ontology database. Moreover, depending on the compartments included in the model if internal compartment to the target one are not included in the model as separate compartments, it is necessary to include them within the list to avoid that the gene is excluded from the filter, despite included in this cellular localization.
+* Output saved in the outputs directory:
+  * outputFileName + \'.csv\':  a file storing for each reaction (Rxn column) the corresponding list of catalysing genes filtered according to the compartment associated to the reaction (lGenes_filtered column).
+
 **Step 10. *prepareGPRulerInput***:
+
+
 **Step 11. *GPRULER***:
 
 
