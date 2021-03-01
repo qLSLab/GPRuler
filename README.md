@@ -98,7 +98,7 @@ When an existing metabolic model is chosen:
   * dfrxnsInfo + \'.csv\': a file storing for each gene (Gene column) the list of corresponding annotated compartments (lCompartments column)
 
 
-**Step 9. *fromReactions2Genes_wFilteredData***:
+**Step 9. *fromReactions2Genes_wFilteredData***: filter the list of genes retrieved for each reaction in accordance with its compartment into the model.
 * Input:
   * modelXml: the SBML model, which needs to be saved into the rawData directory
   * dfGenes2Comp: the output of Step 8
@@ -108,7 +108,14 @@ When an existing metabolic model is chosen:
 * Output saved in the outputs directory:
   * outputFileName + \'.csv\':  a file storing for each reaction (Rxn column) the corresponding list of catalysing genes filtered according to the compartment associated to the reaction (lGenes_filtered column).
 
-**Step 10. *prepareGPRulerInput***:
+**Step 10. *prepareGPRulerInput***: prepare the two input file of Step 11
+* Input:
+  * rxnswGenesFileName: the output of Step 9
+  * outputFileName: a string to name the output file
+  * organismCode: the KEGG organism code of the target organism
+* Output saved in the outputs directory:
+  * outputFileName + \'\_Rxns2Genes.csv\': a file storing for each reaction (Rxn column) the corresponding list of catalysing genes retrieved in Step 9 (Genes column).
+  * outputFileName + \'\_Kegg2UniprotGenes.csv\': a file storing for each KEGG gene identifier of the investigated organism (keggId column) the corresponding Uniprot identifier (uniprotId column).
 
 
 **Step 11. *GPRULER***:
