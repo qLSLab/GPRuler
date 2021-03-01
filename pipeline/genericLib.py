@@ -38,13 +38,7 @@ def setWorkingDirs(dataDir='rawData', outDir=None):
     else:
         outDir = os.path.abspath(outDir) + os.sep
     reportDir = pathJoinCheck('outputs', outDir)
-    modelDir = pathJoinCheck('models', outDir)
-    logDir = pathJoinCheck('logs', outDir)
-    figureDir = pathJoinCheck('figures', outDir)
-    scriptsDir = pathJoinCheck('pipeline', outDir)
-    mapDir = pathJoinCheck('maps', outDir)
-    outputGprulerDir = pathJoinCheck('outputData', outDir)
-    return dataDir, outDir, reportDir, modelDir, logDir, figureDir, scriptsDir, mapDir, outputGprulerDir
+    return dataDir, outDir, reportDir
 
 def unique(a):
 	""" return the list with duplicate elements removed """

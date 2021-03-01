@@ -19,22 +19,27 @@ if testModel == 'recon':
     ## Recon 3
     modelXml = 'Recon3D_301_20200923'
     dfmetsInfo = 'recon3D_metabolites'
+    includeCompartment = False
 elif testModel == 'y7':
     ## Yeast 7
     modelXml = 'yeast_7.6_cobra'
     dfmetsInfo = 'y7_metabolites'
+    includeCompartment = True
 elif testModel == 'y8':
     ## Yeast 8
     modelXml = 'yeast8'
     dfmetsInfo = 'y8_metabolites'
+    includeCompartment = True
 elif testModel == 'hmr':
     ## HMRcore
     modelXml = 'HMRcore_20200328_wReconNames'
     dfmetsInfo = 'hmrCore_metabolites'
+    includeCompartment = False
 elif testModel == 'ownData':
     ## specify your input data
     modelXml = ''
     dfmetsInfo = ''
+    includeCompartment = True
 
 # Extract metabolites info from the input model
 cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = xL.getMetsInfoGEM(os.path.join(RAWDIR, modelXml + ".xml"))
@@ -53,17 +58,15 @@ dfChebiInchi = pd.read_csv(os.path.join(RAWDIR, 'chebiId_inchi_20201216.tsv.bz2'
 dfChebiInchi['InChI_splitted'] = dfChebiInchi.InChI.str.split('/')
 dfChebiInchi['InChI_formula'] = dfChebiInchi.InChI.str.split('/').str[1]
 
-if testModel == 'y7' or testModel == 'y8':
-    lMets2Search_complete = list(df['Name'])
-    lMets2Search = []
-    for el in lMets2Search_complete:
-        lPositions = [p.start() for p in re.finditer('\[', el)]
-        pos = lPositions[-1]
-        met = el[:pos].strip()
-        lMets2Search.append(met)
-elif testModel == 'recon' or testModel == 'hmr':
+if includeCompartment is True:
+    df['toMatch'] = df.Name.str.replace("\[(\w*\s*)+\]$", "")
+    df['toMatch'] = df.toMatch.str.strip()
+    lMets2Search = list(df['toMatch'])
+    print('lMets2Search\t', lMets2Search[:10])
+else:
     lMets2Search = list(df['Name'])
 lMets2Search = gL.unique(lMets2Search)
+print('len lMets2Search\t', len(lMets2Search))
 
 dfChebiNames['NAME'] = dfChebiNames['NAME'].str.lower()
 dfChebiCompounds['NAME'] = dfChebiCompounds['NAME'].str.lower()
@@ -72,7 +75,7 @@ dfChebiUniprot['NAME'] = dfChebiUniprot['NAME'].str.lower()
 dizMet2Ids = {}
 for met in lMets2Search:
     keggId = ''
-    if testModel == 'y7' or testModel == 'y8':
+    if includeCompartment is True:
         dfMet = df[df['Name'].str.startswith(met + ' ' + '[')]
     else:
         dfMet = df[df['Name'] == met]
