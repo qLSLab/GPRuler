@@ -1,12 +1,8 @@
-import pandas as pd
-import sys
-import genericLib as gL
 import os
 import ast
-
-start = time.time()
-
-timeStamp = gL.getTimeStamp()
+import sys
+import pandas as pd
+import genericLib as gL
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()

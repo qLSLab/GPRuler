@@ -43,3 +43,11 @@ def setWorkingDirs(dataDir='rawData', outDir=None):
 def unique(a):
 	""" return the list with duplicate elements removed """
 	return list(set(a))
+
+def extractRegexFromItem(item, regex):
+    sItem = pd.Series(data=item)
+    if sItem.empty == False:
+        dfItem = sItem.str.extractall(regex)
+    else:
+        dfItem = []
+    return dfItem

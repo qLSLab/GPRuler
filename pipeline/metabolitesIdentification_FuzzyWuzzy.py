@@ -1,29 +1,9 @@
-import pandas as pd
-import fuzzywuzzy as fw
-from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
-import sys
-from ast import literal_eval
-import sys
-import genericLib as gL
 import os
-
-def applyFW2Db(lMets2Search, lPutativeTargets):
-    '''
-    Apply Fuzzy Wuzzy to a list of compounds.
-    Parameters:
-    - lMets2Search: list of metabolites from the input model.
-    - lPutativeTargets: list of compounds to look through.
-    '''
-    dMapping = {}
-    for toMatch in lMets2Search:
-        matches = process.extract(toMatch, lPutativeTargets, limit=10)
-        if toMatch in dMapping:
-            dMapping[toMatch] += matches
-        else:
-            dMapping[toMatch] = matches
-    dfMatches = pd.DataFrame(dMapping).T
-    return dfMatches
+import sys
+import pandas as pd
+import genericLib as gL
+from ast import literal_eval
+import metabolitesLib as metL
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -78,7 +58,7 @@ lMets2Search = gL.unique(lMets2Search)
 # query MetaCyc compounds
 dfMetaCyc = pd.read_csv(os.path.join(RAWDIR,'metacyc_compounds_20201216152513.csv'), sep='\t', usecols=['Id', 'Name'])
 choicesMetaCyc = dfMetaCyc.Name.to_list()
-dfMatches = applyFW2Db(lMets2Search, choicesMetaCyc)
+dfMatches = metL.applyFW2Db(lMets2Search, choicesMetaCyc)
 dfMatches.to_csv(os.path.join(OUTDIR, outputFileName + '_mappingMetaCyc_allResults.tsv'), sep='\t')
 
 # query KEGG compounds
@@ -89,11 +69,11 @@ dfKeggG['Name'] = dfKeggG['Name'].apply(literal_eval)
 dfKeggC = dfKeggC.explode('Name')
 dfKeggG = dfKeggG.explode('Name')
 choicesKeggC = dfKeggC.Name.to_list() + dfKeggC.Id.to_list()
-dfMatches = applyFW2Db(lMets2Search, choicesKeggC)
+dfMatches = metL.applyFW2Db(lMets2Search, choicesKeggC)
 dfMatches.to_csv(os.path.join(OUTDIR, outputFileName + '_mappingKeggC_allResults.tsv'), sep='\t')
 
 choicesKeggG = dfKeggG.Name.to_list() + dfKeggG.Id.to_list()
-dfMatches = applyFW2Db(lMets2Search, choicesKeggG)
+dfMatches = metL.applyFW2Db(lMets2Search, choicesKeggG)
 dfMatches.to_csv(os.path.join(OUTDIR, outputFileName + '_mappingKeggG_allResults.tsv'), sep='\t')
 
 # query ChEBI compounds
@@ -102,5 +82,5 @@ dfChebiUniprot = pd.read_csv(os.path.join(RAWDIR, 'chebi_uniprot_20201216.tsv.bz
 dfChebiCompounds =  pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype=str)
 
 choicesChebi = dfChebiNames.NAME.to_list() + dfChebiUniprot.NAME.to_list() + dfChebiCompounds.NAME.to_list()
-dfMatches = applyFW2Db(lMets2Search, choicesChebi)
+dfMatches = metL.applyFW2Db(lMets2Search, choicesChebi)
 dfMatches.to_csv(os.path.join(OUTDIR, outputFileName + '_mappingChebi_allResults_' + timeStamp + '.tsv'), sep='\t')

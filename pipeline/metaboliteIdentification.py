@@ -1,12 +1,8 @@
-import keggLib as kL
-import sys
-import genericLib as gL
 import os
+import sys
 import pandas as pd
-import gprLib as gprL
-import xmlLib as xL
-import time
-import re
+import genericLib as gL
+import metabolitesLib as metL
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -42,7 +38,7 @@ elif testModel == 'ownData':
     includeCompartment = True
 
 # Extract metabolites info from the input model
-cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = xL.getMetsInfoGEM(os.path.join(RAWDIR, modelXml + ".xml"))
+cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = metL.getMetsInfoGEM(os.path.join(RAWDIR, modelXml + ".xml"))
 df = pd.DataFrame({'Id': cId, 'Name': cName, 'KeggId': cKegg, 'ChebiId': cChebi, 'PubchemId': cPubchem, 'boundaryCondition': cBoundaryCondition, 'chemicalFormula': cChemicalFormula, 'Inchi': cInchi})
 df.to_csv(os.path.join(OUTDIR, dfmetsInfo + '.csv'), sep = '\t', index = False)
 
@@ -81,7 +77,7 @@ for met in lMets2Search:
         dfMet = df[df['Name'] == met]
     dfMet = dfMet.reset_index(drop = True)
     inchiOriginal = dfMet.iloc[0]['Inchi']
-    keggId = kL.extractKeggIdComp(met.lower(), dfChebiNames, dfChebiDb, dfChebiRelations, dfChebiUniprot, dfChebiCompounds, dfChebiInchi, inchiOriginal)
+    keggId = metL.extractKeggIdComp(met.lower(), dfChebiNames, dfChebiDb, dfChebiRelations, dfChebiUniprot, dfChebiCompounds, dfChebiInchi, inchiOriginal)
     dizMet2Ids[met] = keggId
 
 dfMet2Ids = pd.DataFrame(dizMet2Ids.items(), columns=['Name', 'Identifiers'])
