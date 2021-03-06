@@ -140,7 +140,7 @@ When the organism name is inserted:
   * model + \'\_RxnId2Equation.csv\': for each retrieved metabolic reaction (RxnId column) the corresponding equation is reported expressing the involved compounds through their KEGG identifier (Equation column) or their complete name (Definition column);
   * model + \'\_RxnId2ECs.csv\': for each retrieved reaction (RxnId column), the corresponding list of EC numbers is reported (EC number) column;
   * model + \'\_Rxns2Genes.csv\': for each retrieved reaction (RxnId column), the list of corresponding metabolic catalysing genes is reported (Genes column);
-  * model + \'\_Kegg2UniprotGenes.csv\': for each KEGG identifier (keggId column) of the retrieved list of metabolic genes the corresponding Uniprot (uniprotId column).
+
 
 **Step 2. *fromReactions2Genes_fromOrgName**:  identification of the genes list associated to each model reaction according to the macrodatabase annotation.
 * Input:
@@ -148,9 +148,10 @@ When the organism name is inserted:
   * dfRxnId2Equation: the second output from Step 1
   * orgCode: the KEGG organism code of the target organism
   * taxId: a list of the NCBI Taxonomy ID of the target organism
-  * outputName: a string to name the output file
+  * modelName: a string to name the output file
 * Output saved in the outputs directory:
-  * outputName + \'\_Rxns2Genes.csv\':  for each retrieved reaction (RxnId column), the list of corresponding metabolic catalysing genes is reported (Genes_fromKEGG column), and the list of catalysing genes annotated in the macrodatabase is reported (Genes_fromMacroDb column), and the sum of Genes_fromKEGG and Genes_fromMacroDb columns (Genes column).
+  * modelName + \'\_Rxns2Genes.csv\':  for each retrieved reaction (RxnId column), the list of corresponding metabolic catalysing genes is reported (Genes_fromKEGG column), and the list of catalysing genes annotated in the macrodatabase is reported (Genes_fromMacroDb column), and the sum of Genes_fromKEGG and Genes_fromMacroDb columns (Genes column).
+  * modelName + \'\_Kegg2UniprotGenes.csv\': for each KEGG identifier (keggId column) of the retrieved list of metabolic genes the corresponding Uniprot (uniprotId column).
 
 **Step 3. *GPRULER**: reconstruct the GPR rules
 * Input:
