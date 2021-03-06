@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
-import GPRULERLib as gprL
-import sys
-import genericLib as gL
 import os
+import sys
 import pandas as pd
+import genericLib as gL
+import GPRULERLib as gprL
+import reactionsLib as rxnL
+import bioservices.kegg as kegg
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -36,13 +38,13 @@ for gene in keggGenesSplt:
 dGene2RxnsList = {}
 cont = 1
 geneFile = open(os.path.join(OUTDIR, model + '_GeneId2Rxns.csv'), mode='w')
-gprL.writeLineByLineToFile(geneFile, ['GeneId', 'Rxns'])
+gL.writeLineByLineToFile(geneFile, ['GeneId', 'Rxns'], '\t')
 
 rxnFile = open(os.path.join(OUTDIR, model + '_RxnId2Equation.csv'), mode='w')
-gprL.writeLineByLineToFile(rxnFile, ['RxnId', 'Equation', 'Definition'])
+gL.writeLineByLineToFile(rxnFile, ['RxnId', 'Equation', 'Definition'], '\t')
 
 rxn2EcFile = open(os.path.join(OUTDIR, model + '_RxnId2ECs.csv'), mode='w')
-gprL.writeLineByLineToFile(rxn2EcFile, ['RxnId', 'EC number'])
+gL.writeLineByLineToFile(rxn2EcFile, ['RxnId', 'EC number'], '\t')
 
 # Extract for each gene the list of catalysed reactions
 dRxn2EcNumber = {}
@@ -50,7 +52,7 @@ dCompleteRxns_equation = {} # to save all the reactions candidate for the model 
 dCompleteRxns_definition = {} # to save all the reactions candidate for the model avoiding duplicated elements (definition field of KEGG database)
 for gene in lOrganismGenes:
     ## get for each gene its BRITE information in order to select only metabolic genes
-    dizInfo, info = gprL.getKeggInfo(organismCode + ':' + gene)
+    dizInfo, info = rxnL.getKeggInfo(organismCode + ':' + gene)
     lAssociatedRxns = []
     if 'BRITE' in dizInfo.keys() and 'Metabolism' in dizInfo['BRITE']:
         lOrths = list(dizInfo['ORTHOLOGY'].keys())
@@ -58,12 +60,12 @@ for gene in lOrganismGenes:
             posOpen = orth.find('[EC:')
             posClose = orth[posOpen:].find(']')
             ecNumber = orth[posOpen:posClose+posOpen+1][1:-1]
-            lEcNumbers = list(gprL.extractRegexFromItem(ecNumber, r"([0-9.-]+)")[0])
+            lEcNumbers = list(gL.extractRegexFromItem(ecNumber, r"([0-9.-]+)")[0])
             if len(lEcNumbers) == 0:
                 for orth in lOrths:
-                    dizInfoOrth, infoOrth = gprL.getKeggInfo('ko:' + orth)
+                    dizInfoOrth, infoOrth = rxnL.getKeggInfo('ko:' + orth)
                     if 'DBLINKS' in dizInfoOrth and 'RN' in dizInfoOrth['DBLINKS']:
-                        lSelectedRxns = list(gprL.extractRegexFromItem(dizInfoOrth['DBLINKS']['RN'], r"([A-Z0-9]+)")[0])
+                        lSelectedRxns = list(gL.extractRegexFromItem(dizInfoOrth['DBLINKS']['RN'], r"([A-Z0-9]+)")[0])
                         for rxnName in lSelectedRxns:
                             if rxnName not in dRxn2EcNumber:
                                 dRxn2EcNumber[rxnName] = [orth]
@@ -71,7 +73,7 @@ for gene in lOrganismGenes:
                                 dRxn2EcNumber[rxnName] += [orth]
 
                             if rxnName.startswith('R') is True and rxnName not in dCompleteRxns_equation:
-                                dizInfoRxn, infoRxn = gprL.getKeggInfo('rn:' + rxnName)
+                                dizInfoRxn, infoRxn = rxnL.getKeggInfo('rn:' + rxnName)
                                 if 'EQUATION' in dizInfoRxn.keys():
                                     rxnEquation = dizInfoRxn['EQUATION']
                                     rxnDefinition = dizInfoRxn['DEFINITION']
@@ -81,28 +83,28 @@ for gene in lOrganismGenes:
 
                                 dCompleteRxns_equation[rxnName] = rxnEquation
                                 dCompleteRxns_definition[rxnName] = rxnDefinition
-                                gprL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition])
+                                gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition], sep = '\t')
 
                             if rxnName not in lAssociatedRxns:
                                 lAssociatedRxns.append(rxnName)
             else:
                 for ec in lEcNumbers:
-                    dizInfoEc, infoEc = gprL.getKeggInfo('ec:' + ec)
+                    dizInfoEc, infoEc = rxnL.getKeggInfo('ec:' + ec)
                     try:
                         if 'ALL_REAC' not in dizInfoEc.keys() and 'REACTION' in dizInfoEc.keys():
                             equazione = ' '. join(dizInfoEc['REACTION'])
                             eqSplt = equazione.split('=')
                             eqSplt_subs = eqSplt[0]
                             eqSplt_prods = eqSplt[1]
-                            dSubs = gprL.dizReaProd(eqSplt_subs)
-                            dProds = gprL.dizReaProd(eqSplt_prods)
+                            dSubs = gL.dizReaProd(eqSplt_subs)
+                            dProds = gL.dizReaProd(eqSplt_prods)
 
                             lSubs = []
                             for s in dizInfoEc['SUBSTRATE']:
                                 if 'CPD:' in s:
                                     pos = s.find('CPD:')
                                     substringa = s[pos + len('CPD:'):]
-                                    lSubs += list(gprL.extractRegexFromItem(substringa, r"([A-Z0-9]+)")[0])
+                                    lSubs += list(gL.extractRegexFromItem(substringa, r"([A-Z0-9]+)")[0])
                                 else:
                                     lSubs += [s]
 
@@ -127,7 +129,7 @@ for gene in lOrganismGenes:
                                 if 'CPD:' in p:
                                     pos = p.find('CPD:')
                                     substringa = p[pos + len('CPD:'):]
-                                    lProds += list(gprL.extractRegexFromItem(substringa, r"([A-Z0-9]+)")[0])
+                                    lProds += list(gL.extractRegexFromItem(substringa, r"([A-Z0-9]+)")[0])
                                 else:
                                     lProds += [p]
 
@@ -158,7 +160,7 @@ for gene in lOrganismGenes:
 
                             if rxnEquation not in dCompleteRxns_equation.values():
                                 dCompleteRxns[rxnName] = rxnEquation_kegg
-                                gprL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation_kegg, rxnEquation])
+                                gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation_kegg, rxnEquation], sep = '\t')
                                 cont += 1
                                 lAssociatedRxns.append(rxnName)
                             else:
@@ -172,10 +174,10 @@ for gene in lOrganismGenes:
                                 else:
                                     dRxn2EcNumber[rxnName] += [ec]
 
-                                lSelectedRxns = list(gprL.extractRegexFromItem(rxn, r"([A-Z0-9]+)")[0])
+                                lSelectedRxns = list(gL.extractRegexFromItem(rxn, r"([A-Z0-9]+)")[0])
                                 for rxnName in lSelectedRxns:
                                     if rxnName.startswith('R') is True and rxnName not in dCompleteRxns:
-                                        dizInfoRxn, infoRxn = gprL.getKeggInfo('rn:' + rxnName)
+                                        dizInfoRxn, infoRxn = rxnL.getKeggInfo('rn:' + rxnName)
                                         if 'EQUATION' in dizInfoRxn.keys():
                                             rxnEquation = dizInfoRxn['EQUATION']
                                             rxnDefinition = dizInfoRxn['DEFINITION']
@@ -185,15 +187,15 @@ for gene in lOrganismGenes:
 
                                         dCompleteRxns_equation[rxnName] = rxnEquation
                                         dCompleteRxns_definition[rxnName] = rxnDefinition
-                                        gprL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition])
+                                        gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition], sep = '\t')
 
                                     if rxnName not in lAssociatedRxns:
                                         lAssociatedRxns.append(rxnName)
                     except:
                         for orth in lOrths:
-                            dizInfoOrth, infoOrth = gprL.getKeggInfo('ko:' + orth)
+                            dizInfoOrth, infoOrth = rxnL.getKeggInfo('ko:' + orth)
                             if 'DBLINKS' in dizInfoOrth and 'RN' in dizInfoOrth['DBLINKS']:
-                                lSelectedRxns = list(gprL.extractRegexFromItem(dizInfoOrth['DBLINKS']['RN'], r"([A-Z0-9]+)")[0])
+                                lSelectedRxns = list(gL.extractRegexFromItem(dizInfoOrth['DBLINKS']['RN'], r"([A-Z0-9]+)")[0])
                                 for rxnName in lSelectedRxns:
                                     if rxnName not in dRxn2EcNumber:
                                         dRxn2EcNumber[rxnName] = [orth]
@@ -201,7 +203,7 @@ for gene in lOrganismGenes:
                                         dRxn2EcNumber[rxnName] += [orth]
 
                                     if rxnName.startswith('R') is True and rxnName not in dCompleteRxns_equation:
-                                        dizInfoRxn, infoRxn = gprL.getKeggInfo('rn:' + rxnName)
+                                        dizInfoRxn, infoRxn = rxnL.getKeggInfo('rn:' + rxnName)
                                         if 'EQUATION' in dizInfoRxn.keys():
                                             rxnEquation = dizInfoRxn['EQUATION']
                                             rxnDefinition = dizInfoRxn['DEFINITION']
@@ -211,30 +213,30 @@ for gene in lOrganismGenes:
 
                                         dCompleteRxns_equation[rxnName] = rxnEquation
                                         dCompleteRxns_definition[rxnName] = rxnDefinition
-                                        gprL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition])
+                                        gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition], sep = '\t')
 
                                     if rxnName not in lAssociatedRxns:
                                         lAssociatedRxns.append(rxnName)
-    lAssociatedRxns = gprL.unique(lAssociatedRxns)
+    lAssociatedRxns = gL.unique(lAssociatedRxns)
     dGene2RxnsList[gene] = lAssociatedRxns
-    gprL.writeLineByLineToFile(geneFile, [gene, lAssociatedRxns])
+    gL.writeLineByLineToFile(geneFile, [gene, lAssociatedRxns], sep = '\t')
 rxnFile.close()
 geneFile.close()
 
 for k, v in dRxn2EcNumber.items():
-    gprL.writeLineByLineToFile(rxn2EcFile, [k, v])
+    gL.writeLineByLineToFile(rxn2EcFile, [k, v], sep = '\t')
 rxn2EcFile.close()
 
 # Generate the file including reaction to the corresponding catalysing genes list
 flatdGene2RxnsList_values = [rxn for associatedRxns in dGene2RxnsList.values() for rxn in associatedRxns]
-flatdGene2RxnsList_values = gprL.unique(flatdGene2RxnsList_values)
+flatdGene2RxnsList_values = gL.unique(flatdGene2RxnsList_values)
 outFile = open(os.path.join(OUTDIR, model + '_Rxns2Genes.csv'), mode='w')
-gprL.writeLineByLineToFile(outFile, ['Rxn', 'Genes'])
+gL.writeLineByLineToFile(outFile, ['Rxn', 'Genes'], sep = '\t')
 for r in flatdGene2RxnsList_values:
     lAssociatedGenes = []
     for k,v in dGene2RxnsList.items():
         if r in v and [k] not in lAssociatedGenes:
             lAssociatedGenes.append([k])
-    lAssociatedGenes = gprL.unique(lAssociatedGenes)
-    gprL.writeLineByLineToFile(outFile, [r, lAssociatedGenes])
+    lAssociatedGenes = gL.unique(lAssociatedGenes)
+    gL.writeLineByLineToFile(outFile, [r, lAssociatedGenes], sep = '\t')
 outFile.close()

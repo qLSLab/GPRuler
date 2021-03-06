@@ -79,3 +79,23 @@ def getCompartmentInfo(model):
             v = compartment.attrib['name']
         dCompartments[k] = v
     return dCompartments
+
+
+def kegg2UniprotGenesId(organismCode, model, dirPath):
+    ## Conversion of kegg identifiers to uniprot identifiers
+    kegg2uniprot = kegg_conv('uniprot', organismCode)
+    dOrgKegg2Uniprot = {}
+    for el in kegg2uniprot.readlines():
+        elSplt = el.strip().split('\t')
+        if elSplt[0].split(':')[1] not in dOrgKegg2Uniprot.keys():
+            dOrgKegg2Uniprot[elSplt[0].split(':')[1]] = [elSplt[1].split(':')[1]]
+        else:
+            dOrgKegg2Uniprot[elSplt[0].split(':')[1]] += [elSplt[1].split(':')[1]]
+
+    outFile = open(os.path.join(dirPath, model + '_Kegg2UniprotGenes.csv'), mode='w')
+    writeLineByLineToFile(outFile, ['keggId', 'uniprotId'])
+
+    for k, v in dOrgKegg2Uniprot.items():
+        for vv in v:
+            writeLineByLineToFile(outFile, [k, vv])
+    outFile.close()

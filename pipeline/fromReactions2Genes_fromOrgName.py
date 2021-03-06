@@ -1,161 +1,12 @@
 # -*- coding: utf-8 -*-
-import sys
-import genericLib as gL
-import GPRULERLib as gprL
 import os
+import sys
 import pandas as pd
+import genericLib as gL
+import reactionsLib as rL
+import genesLib as genesL
 from ast import literal_eval
 import RESTmoduleModified as RESTmod
-import bioservices.kegg as kegg
-
-def checkNadNadpDependencies_and(nadp, nad, id2Search, id2Search_complete, lAnd, dGenesFromKegg):
-    if nadp == True:
-        if id2Search in dGenesFromKegg:
-            dGeneK = dGenesFromKegg[id2Search]
-        else:
-            dGeneK = getKeggInfo(id2Search_complete)
-            dGenesFromKegg[id2Search] = dGeneK
-        if dGeneK != 400 and dGeneK != 404 and 'DEFINITION' in dGeneK:
-            if '(NAD(+))' not in dGeneK['DEFINITION'] and '(NAD+)' not in dGeneK['DEFINITION'] and '(NADP(+))' not in dGeneK['DEFINITION'] and '(NADP+)' not in dGeneK['DEFINITION']:
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            elif ('(NAD(+))' in dGeneK['DEFINITION'] or '(NAD+)' in dGeneK['DEFINITION']) and ('(NADP(+))' in dGeneK['DEFINITION'] or '(NADP+)' in dGeneK['DEFINITION']):
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            elif ('(NAD(+))' not in dGeneK['DEFINITION'] and '(NAD+)' not in dGeneK['DEFINITION']) and ('(NADP(+))' in dGeneK['DEFINITION'] or '(NADP+)' in dGeneK['DEFINITION']):
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            else:
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-        if dGeneK != 400 and dGeneK != 404 and 'ORTHOLOGY' in dGeneK:
-            if '(NAD(+))' not in dGeneK['ORTHOLOGY'] and '(NAD+)' not in dGeneK['ORTHOLOGY'] and '(NADP(+))' not in dGeneK['ORTHOLOGY'] and '(NADP+)' not in dGeneK['ORTHOLOGY']:
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            elif ('(NAD(+))' in dGeneK['ORTHOLOGY'] or '(NAD+)' in dGeneK['ORTHOLOGY']) and ('(NADP(+))' in dGeneK['ORTHOLOGY'] or '(NADP+)' in dGeneK['ORTHOLOGY']):
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            elif ('(NAD(+))' not in dGeneK['ORTHOLOGY'] and '(NAD+)' not in dGeneK['ORTHOLOGY']) and ('(NADP(+))' in dGeneK['ORTHOLOGY'] or '(NADP+)' in dGeneK['ORTHOLOGY']):
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            else:
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-    if nad == True:
-        if id2Search in dGenesFromKegg:
-            dGeneK = dGenesFromKegg[id2Search]
-        else:
-            dGeneK = getKeggInfo(id2Search_complete)
-            dGenesFromKegg[id2Search] = dGeneK
-        if dGeneK != 400 and dGeneK != 404 and 'DEFINITION' in dGeneK:
-            if '(NAD(+))' not in dGeneK['DEFINITION'] and '(NAD+)' not in dGeneK['DEFINITION'] and '(NADP(+))' not in dGeneK['DEFINITION'] and '(NADP+)' not in dGeneK['DEFINITION']:
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            elif ('(NAD(+))' in dGeneK['DEFINITION'] or '(NAD+)' in dGeneK['DEFINITION']) and ('(NADP(+))' in dGeneK['DEFINITION'] or '(NADP+)' in dGeneK['DEFINITION']):
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            elif ('(NAD(+))' in dGeneK['DEFINITION'] or '(NAD+)' in dGeneK['DEFINITION']) and ('(NADP(+))' not in dGeneK['DEFINITION'] and '(NADP+)' not in dGeneK['DEFINITION']):
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            else:
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-        if dGeneK != 400 and dGeneK != 404 and 'ORTHOLOGY' in dGeneK:
-            if '(NAD(+))' not in dGeneK['ORTHOLOGY'] and '(NAD+)' not in dGeneK['ORTHOLOGY'] and '(NADP(+))' not in dGeneK['ORTHOLOGY'] and '(NADP+)' not in dGeneK['ORTHOLOGY']:
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            elif ('(NAD(+))' in dGeneK['ORTHOLOGY'] or '(NAD+)' in dGeneK['ORTHOLOGY']) and ('(NADP(+))' in dGeneK['ORTHOLOGY'] or '(NADP+)' in dGeneK['ORTHOLOGY']):
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            elif ('(NAD(+))' in dGeneK['ORTHOLOGY'] or '(NAD+)' in dGeneK['ORTHOLOGY']) and ('(NADP(+))' not in dGeneK['ORTHOLOGY'] and '(NADP+)' not in dGeneK['ORTHOLOGY']):
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-            else:
-                if id2Search not in lAnd:
-                    lAnd.append(id2Search)
-    if nadp == False and nad == False:
-        if id2Search not in lAnd:
-            lAnd.append(id2Search)
-    return lAnd, dGenesFromKegg
-
-def checkNadNadpDependencies_or(nadp, nad, id2Search, id2Search_complete, lMetaEnzOR, dGenesFromKegg):
-    if nadp == True:
-        if id2Search in dGenesFromKegg:
-            dGeneK = dGenesFromKegg[id2Search]
-        else:
-            dGeneK = getKeggInfo(id2Search_complete)
-            dGenesFromKegg[id2Search] = dGeneK
-        if dGeneK != 400 and dGeneK != 404 and 'DEFINITION' in dGeneK:
-            if '(NAD(+))' not in dGeneK['DEFINITION'] and '(NAD+)' not in dGeneK['DEFINITION'] and '(NADP(+))' not in dGeneK['DEFINITION'] and '(NADP+)' not in dGeneK['DEFINITION']:
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            elif ('(NAD(+))' in dGeneK['DEFINITION'] or '(NAD+)' in dGeneK['DEFINITION']) and ('(NADP(+))' in dGeneK['DEFINITION'] or '(NADP+)' in dGeneK['DEFINITION']):
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            elif ('(NAD(+))' not in dGeneK['DEFINITION'] and '(NAD+)' not in dGeneK['DEFINITION']) and ('(NADP(+))' in dGeneK['DEFINITION'] or '(NADP+)' in dGeneK['DEFINITION']):
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            else:
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-        if dGeneK != 400 and dGeneK != 404 and 'ORTHOLOGY' in dGeneK:
-            if '(NAD(+))' not in dGeneK['ORTHOLOGY'] and '(NAD+)' not in dGeneK['ORTHOLOGY'] and '(NADP(+))' not in dGeneK['ORTHOLOGY'] and '(NADP+)' not in dGeneK['ORTHOLOGY']:
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            elif ('(NAD(+))' in dGeneK['ORTHOLOGY'] or '(NAD+)' in dGeneK['ORTHOLOGY']) and ('(NADP(+))' in dGeneK['ORTHOLOGY'] or '(NADP+)' in dGeneK['ORTHOLOGY']):
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            elif ('(NAD(+))' not in dGeneK['ORTHOLOGY'] and '(NAD+)' not in dGeneK['ORTHOLOGY']) and ('(NADP(+))' in dGeneK['ORTHOLOGY'] or '(NADP+)' in dGeneK['ORTHOLOGY']):
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            else:
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-    if nad == True:
-        if id2Search in dGenesFromKegg:
-            dGeneK = dGenesFromKegg[id2Search]
-        else:
-            dGeneK = getKeggInfo(id2Search_complete)
-            dGenesFromKegg[id2Search] = dGeneK
-        if dGeneK != 400 and dGeneK != 404 and 'DEFINITION' in dGeneK:
-            if '(NAD(+))' not in dGeneK['DEFINITION'] and '(NAD+)' not in dGeneK['DEFINITION'] and '(NADP(+))' not in dGeneK['DEFINITION'] and '(NADP+)' not in dGeneK['DEFINITION']:
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            elif ('(NAD(+))' in dGeneK['DEFINITION'] or '(NAD+)' in dGeneK['DEFINITION']) and ('(NADP(+))' in dGeneK['DEFINITION'] or '(NADP+)' in dGeneK['DEFINITION']):
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            elif ('(NAD(+))' in dGeneK['DEFINITION'] or '(NAD+)' in dGeneK['DEFINITION']) and ('(NADP(+))' not in dGeneK['DEFINITION'] and '(NADP+)' not in dGeneK['DEFINITION']):
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            else:
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-        if dGeneK != 400 and dGeneK != 404 and 'ORTHOLOGY' in dGeneK:
-            if '(NAD(+))' not in dGeneK['ORTHOLOGY'] and '(NAD+)' not in dGeneK['ORTHOLOGY'] and '(NADP(+))' not in dGeneK['ORTHOLOGY'] and '(NADP+)' not in dGeneK['ORTHOLOGY']:
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            elif ('(NAD(+))' in dGeneK['ORTHOLOGY'] or '(NAD+)' in dGeneK['ORTHOLOGY']) and ('(NADP(+))' in dGeneK['ORTHOLOGY'] or '(NADP+)' in dGeneK['ORTHOLOGY']):
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            elif ('(NAD(+))' in dGeneK['ORTHOLOGY'] or '(NAD+)' in dGeneK['ORTHOLOGY']) and ('(NADP(+))' not in dGeneK['ORTHOLOGY'] and '(NADP+)' not in dGeneK['ORTHOLOGY']):
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-            else:
-                if id2Search not in lMetaEnzOR:
-                    lMetaEnzOR.append([id2Search])
-    if nadp == False and nad == False:
-        if id2Search not in lMetaEnzOR:
-            lMetaEnzOR.append([id2Search])
-    return lMetaEnzOR, dGenesFromKegg
-
-def getKeggInfo(rxnString):
-    try:
-        k = kegg.KEGG()
-        info = k.get(rxnString)
-        dizInfo = k.parse(info)
-    except:
-        dizInfo = {}
-    return dizInfo
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -169,7 +20,7 @@ orgCode = ''
 taxId = []
 modelName = ''
 
-dfAllDBs = pd.read_csv(os.path.join(OUTDIR, 'dfJoin_metacyc_kegg_rhea_20201218164915.csv'), sep = '\t', dtype=str)
+dfAllDBs = pd.read_csv(os.path.join(RAWDIR, 'dfJoin_metacyc_kegg_rhea_20201218164915.csv'), sep = '\t', dtype=str)
 dfAllDBs['ec_number'] = dfAllDBs['ec_number'].apply(literal_eval)
 dfAllDBs['enzymes_of_reaction'] = dfAllDBs['enzymes_of_reaction'].apply(literal_eval)
 dfAllDBs['OtherRheaId_fromKegg'] = dfAllDBs['OtherRheaId_fromKegg'].apply(literal_eval)
@@ -189,14 +40,14 @@ dfAllDBs['UniprotId'] = dfAllDBs['UniprotId'].fillna({i: '[]' for i in dfAllDBs.
 dfAllDBs['UniprotId'] = dfAllDBs['UniprotId'].apply(literal_eval)
 
 
-dfMetacyc_proteins = pd.read_csv(os.path.join(OUTDIR, 'metacyc_proteins_20201216152513.csv'), sep = '\t', dtype=str)
+dfMetacyc_proteins = pd.read_csv(os.path.join(RAWDIR, 'metacyc_proteins_20201216152513.csv'), sep = '\t', dtype=str)
 dfMetacyc_proteins['lSpecies'] = dfMetacyc_proteins['lSpecies'].apply(literal_eval)
 dfMetacyc_proteins['lGenes'] = dfMetacyc_proteins['lGenes'].apply(literal_eval)
 dfMetacyc_proteins['Components'] = dfMetacyc_proteins['Components'].apply(literal_eval)
 dfMetacyc_proteins['Component_of'] = dfMetacyc_proteins['Component_of'].apply(literal_eval)
 dfMetacyc_proteins = dfMetacyc_proteins.explode('Component_of')
 
-dfMetacyc_genes = pd.read_csv(os.path.join(OUTDIR, 'metacyc_genes_20201216152513.csv'), sep = '\t', dtype=str)
+dfMetacyc_genes = pd.read_csv(os.path.join(RAWDIR, 'metacyc_genes_20201216152513.csv'), sep = '\t', dtype=str)
 dfMetacyc_genes['Accessions'] = dfMetacyc_genes['Accessions'].apply(literal_eval)
 dfMetacyc_genes['Names'] = dfMetacyc_genes['Names'].apply(literal_eval)
 dfMetacyc_genes['Product'] = dfMetacyc_genes['Product'].apply(literal_eval)
@@ -270,7 +121,7 @@ for rxn in dfRxns2Genes.itertuples():
                             for foundGene in list(dfCorrespondingGenes['keggGeneId']):
                                 if [foundGene.split(':')[1]] not in lMetaEnzOR:
                                     geneId2search = foundGene.split(':')[1]
-                                    lMetaEnzOR, dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
+                                    lMetaEnzOR, dGenesFromKegg = rxnL.checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
                         lgenes = rowdfProt.lGenes
                         lComponents = rowdfProt.Components
                         foundGenes = dfMetacyc_genes[dfMetacyc_genes['MetaCycId'].isin(lgenes)]
@@ -281,7 +132,7 @@ for rxn in dfRxns2Genes.itertuples():
                             if testModel  == '1':
                                 gId = orgCode + ':' + g
                                 if gId in list(dfncbi2Org['keggGeneId']) and g not in lAnd:
-                                    lAnd, dGenesFromKegg = checkNadNadpDependencies_and(nadp, nad, g, gId, lAnd, dGenesFromKegg)
+                                    lAnd, dGenesFromKegg = rxnL.checkNadNadpDependencies_and(nadp, nad, g, gId, lAnd, dGenesFromKegg)
                             else:
                                 gId = 'ncbi-geneid:' + g
                                 if gId in list(dfncbi2Org['ncbi']):
@@ -289,20 +140,20 @@ for rxn in dfRxns2Genes.itertuples():
                                     for s in list(searchNcbi['keggGeneId']):
                                         if s.split(':')[1] not in lAnd:
                                             geneId2search = s.split(':')[1]
-                                            lAnd, dGenesFromKegg = checkNadNadpDependencies_and(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lAnd, dGenesFromKegg)
+                                            lAnd, dGenesFromKegg = rxnL.checkNadNadpDependencies_and(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lAnd, dGenesFromKegg)
 
                         for lAcc in list(found['Accessions'].dropna()):
                             for a in lAcc:
                                 gId = orgCode + ':' + a
                                 if gId in list(dfncbi2Org['keggGeneId']) and a not in lAnd:
-                                    lAnd, dGenesFromKegg = checkNadNadpDependencies_and(nadp, nad, a, gId, lAnd, dGenesFromKegg)
+                                    lAnd, dGenesFromKegg = rxnL.checkNadNadpDependencies_and(nadp, nad, a, gId, lAnd, dGenesFromKegg)
 
                         for uniprotFound in list(found['Uniprot'].dropna()):
                             dfCorrespondingGenes = dfuniprot2Org[dfuniprot2Org['uniprot'] == 'up:' + uniprotFound]
                             for foundGene in list(dfCorrespondingGenes['keggGeneId']):
                                 if [foundGene.split(':')[1]] not in lMetaEnzOR:
                                     geneId2search = foundGene.split(':')[1]
-                                    lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR,dGenesFromKegg)
+                                    lMetaEnzOR,dGenesFromKegg = rxnL.checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR,dGenesFromKegg)
             if len(lAnd) != 0:
                 lAnd.sort()
                 if lAnd not in lMetaEnzOR:
@@ -315,7 +166,7 @@ for rxn in dfRxns2Genes.itertuples():
             if oId in dOrthFromKegg:
                 dOrth = dOrthFromKegg[oId]
             else:
-                dOrth = getKeggInfo('ko:' + oId)
+                dOrth = rxnL.getKeggInfo('ko:' + oId)
                 dOrthFromKegg[oId] = dOrth
             if dOrth != 400 and dOrth != 404 and 'GENES' in dOrth and orgCode.upper() in dOrth['GENES']:
                 for item in dOrth['GENES'][orgCode.upper()].split():
@@ -323,10 +174,10 @@ for rxn in dfRxns2Genes.itertuples():
                     if par != -1:
                         if [item[:par]] not in lMetaEnzOR:
                             geneId2search = item[:par]
-                            lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR,dGenesFromKegg)
+                            lMetaEnzOR,dGenesFromKegg = rxnL.checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR,dGenesFromKegg)
                     else:
                         if [item] not in lMetaEnzOR:
-                            lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, item, orgCode + ':' + item, lMetaEnzOR, dGenesFromKegg)
+                            lMetaEnzOR,dGenesFromKegg = rxnL.checkNadNadpDependencies_or(nadp, nad, item, orgCode + ':' + item, lMetaEnzOR, dGenesFromKegg)
 
     for el in list(dfSearch['EC_fromKegg'].dropna()):
         lEc += el.split()
@@ -342,14 +193,14 @@ for rxn in dfRxns2Genes.itertuples():
                 for foundGene in list(dfCorrespondingGenes['keggGeneId']):
                     if [foundGene.split(':')[1]] not in lMetaEnzOR:
                         geneId2search = foundGene.split(':')[1]
-                        lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
+                        lMetaEnzOR,dGenesFromKegg = rxnL.checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
 
     lEc = gL.unique(lEc)
     for ec in lEc:
         if ec in dEcFromKegg:
             dEcs = dEcFromKegg[ec]
         else:
-            dEcs = getKeggInfo('ec:' + ec)
+            dEcs = rxnL.getKeggInfo('ec:' + ec)
             dEcFromKegg[ec] = dEcs
         if dEcs != 400 and dEcs != 404 and 'GENES' in dEcs and orgCode.upper() in dEcs['GENES']:
             for item in dEcs['GENES'][orgCode.upper()].split():
@@ -357,10 +208,10 @@ for rxn in dfRxns2Genes.itertuples():
                 if par != -1:
                     if [item[:par]] not in lMetaEnzOR:
                         geneId2search = item[:par]
-                        lMetaEnzOR, dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
+                        lMetaEnzOR, dGenesFromKegg = rxnL.checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
                 else:
                     if [item] not in lMetaEnzOR:
-                        lMetaEnzOR, dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, item, orgCode + ':' + item, lMetaEnzOR, dGenesFromKegg)
+                        lMetaEnzOR, dGenesFromKegg = rxnL.checkNadNadpDependencies_or(nadp, nad, item, orgCode + ':' + item, lMetaEnzOR, dGenesFromKegg)
 
     lMetaEnzOR_all.append(lMetaEnzOR)
     lEc_all.append(lEc)
@@ -373,4 +224,4 @@ dfRxns2Genes['Genes'] = dfRxns2Genes['Genes_fromKEGG'] + dfRxns2Genes['Genes_fro
 dfRxns2Genes.to_csv(os.path.join(OUTDIR, modelName + '_Rxns2Genes.csv'), sep = '\t', index = False)
 
 # Convert the list of all KEGG genes identifiers of the target organism to their corresponding Uniprot identifiers
-gprL.kegg2UniprotGenesId(orgCode, modelName, OUTDIR)
+genesL.kegg2UniprotGenesId(orgCode, modelName, OUTDIR)

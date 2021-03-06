@@ -1,19 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-import GPRULERLib as gprL
-import genericLib as gL
-import pandas as pd
-import bioservices.kegg as kegg
-import itertools as it
-from sympy import *
-from ast import literal_eval
 import os
 import sys
-
-# setting working dirs
-workingDirs = gL.setWorkingDirs()
-OUTDIR = workingDirs[2]
+from sympy import *
+import pandas as pd
+import itertools as it
+import GPRULERLib as gprL
+import genesLib as gL
+import genericLib as gL
+from ast import literal_eval
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -44,7 +39,6 @@ elif testModel == 'y8':
 elif testModel == 'ownData':
     ## specify your input data
     model = ''
-
     regex = input('Do you want to manually insert your regex (1) or infer it from your data (2)? ')
     if regex == '1':
         regexOrgSpecific = input('Insert your regex: ')
@@ -54,10 +48,10 @@ elif testModel == 'ownData':
     organismChoice = input('Do you have the organism name (1) or the KEGG code (2) of the organism under investigation? ')
     if organismChoice == '1':
         organism = input('Insert the organism name: ')
-        dfPutativeOrgs = gprL.putativeOrganisms(organism)
+        dfPutativeOrgs = genesL.putativeOrganisms(organism)
         while len(dfPutativeOrgs) == 0:
             organism = input('Organism not found! Insert the organism name: ')
-            dfPutativeOrgs = gprL.putativeOrganisms(organism)
+            dfPutativeOrgs = genesL.putativeOrganisms(organism)
         print('\nPutative organisms are:\n')
         for key, value in dfPutativeOrgs.items():
             print(key, '\t', value)
@@ -65,7 +59,6 @@ elif testModel == 'ownData':
         organismCode = input('Type the correct KEGG code among the returned ones: ')
     elif organismChoice == '2':
         organismCode = input('Insert the KEGG organism code: ')
-
 
 dfRxnToGenes = pd.read_csv(os.path.join(OUTDIR, model + '_Rxns2Genes.csv'), sep='\t')
 dfRxnToGenes['Genes'] = dfRxnToGenes['Genes'].apply(literal_eval)
@@ -75,12 +68,11 @@ lOrganismGenesSet = []
 for gene in dfRxnToGenes['Genes']:
     lRxnGenes = [el for g in gene for el in g]
     lOrganismGenesSet += lRxnGenes
-lOrganismGenesSet = gprL.unique(lOrganismGenesSet)
+lOrganismGenesSet = gL.unique(lOrganismGenesSet)
 
 ## Select from the dfKegg2UniprotId dataframe only the metabolic genes included in 'lOrganismGenesSet' list
 dfKegg2UniprotId = dfKegg2UniprotId[dfKegg2UniprotId.keggId.isin(lOrganismGenesSet)]
 dfKegg2UniprotId = dfKegg2UniprotId.reset_index(drop=True)
-
 
 #############################################################
 # Execute getUniprotAndComplexPortalData function
@@ -188,9 +180,9 @@ for row in dfRxnToGenes.itertuples():
                 lCatalystGenes_original.append(internalList)
                 for el in internalList:
                     lCatalystGenes_listing.append(el)
-        lCatalystGenes_listing = gprL.unique(lCatalystGenes_listing)
+        lCatalystGenes_listing = gL.unique(lCatalystGenes_listing)
         lCatalystGenes = lCatalystGenes_listing.copy()
-        lCatalystGenes = gprL.unique(lCatalystGenes)
+        lCatalystGenes = gL.unique(lCatalystGenes)
         if len(lCatalystGenes) == 1:
             ruleLastVersion = str(lCatalystGenes[0])
         else:
@@ -235,17 +227,17 @@ for row in dfRxnToGenes.itertuples():
                         lIsoformsIndications0.append(row0['isoformIndication'])
                         lRedundancy0 += row0['redundancy']
 
-                    comparison0 = [len(gprL.intersect(rule,luniprot0_append)) != 0 for rule in dfGenesRelationships['uniprotId']]
+                    comparison0 = [len(gL.intersect(rule,luniprot0_append)) != 0 for rule in dfGenesRelationships['uniprotId']]
                     res = dfGenesRelationships.loc[comparison0]
                     for i0, r0 in res.iterrows():
                         lnames0 += r0['gene']
                         lcomplex0 += r0['AND']
-                luniprot0 = gprL.unique(luniprot0 + luniprot0_append)
-                lcomplex0 = gprL.unique(lcomplex0)
-                lnames0 = gprL.unique(lnames0)
-                lisoformsFromUniprot0 = gprL.unique(lisoformsFromUniprot0)
-                lIsoformsIndications0 = gprL.unique(lIsoformsIndications0)
-                lIsoformsFromKegg0 = gprL.unique(lIsoformsFromKegg0)
+                luniprot0 = gL.unique(luniprot0 + luniprot0_append)
+                lcomplex0 = gL.unique(lcomplex0)
+                lnames0 = gL.unique(lnames0)
+                lisoformsFromUniprot0 = gL.unique(lisoformsFromUniprot0)
+                lIsoformsIndications0 = gL.unique(lIsoformsIndications0)
+                lIsoformsFromKegg0 = gL.unique(lIsoformsFromKegg0)
 
                 for u1 in luniprot1:
                     resAllInfo = dfCompleteGenesInfo[dfCompleteGenesInfo['uniprotId'] == u1]
@@ -258,32 +250,32 @@ for row in dfRxnToGenes.itertuples():
                         lIsoformsIndications1.append(row1['isoformIndication'])
                         lRedundancy1 += row1['redundancy']
 
-                    comparison1 = [len(gprL.intersect(rule,luniprot1_append)) != 0 for rule in dfGenesRelationships['uniprotId']]
+                    comparison1 = [len(gL.intersect(rule,luniprot1_append)) != 0 for rule in dfGenesRelationships['uniprotId']]
                     res = dfGenesRelationships.loc[comparison1]
                     for i1, r1 in res.iterrows():
                         lnames1 += r1['gene']
                         lcomplex1 += r1['AND']
 
-                luniprot1 = gprL.unique(luniprot1 + luniprot1_append)
-                lcomplex1 = gprL.unique(lcomplex1)
-                lnames1 = gprL.unique(lnames1)
-                lisoformsFromUniprot1 = gprL.unique(lisoformsFromUniprot1)
-                lIsoformsIndications1 = gprL.unique(lIsoformsIndications1)
-                lIsoformsFromKegg1 = gprL.unique(lIsoformsFromKegg1)
+                luniprot1 = gL.unique(luniprot1 + luniprot1_append)
+                lcomplex1 = gL.unique(lcomplex1)
+                lnames1 = gL.unique(lnames1)
+                lisoformsFromUniprot1 = gL.unique(lisoformsFromUniprot1)
+                lIsoformsIndications1 = gL.unique(lIsoformsIndications1)
+                lIsoformsFromKegg1 = gL.unique(lIsoformsFromKegg1)
 
-                if len(gprL.intersect(lisoformsFromUniprot0,luniprot1)) != 0 or len(gprL.intersect(lisoformsFromUniprot0, lnames1)) != 0 or len(gprL.intersect(lisoformsFromUniprot1, luniprot0)) != 0 or len(gprL.intersect(lisoformsFromUniprot1, lnames0)) != 0:
+                if len(gL.intersect(lisoformsFromUniprot0,luniprot1)) != 0 or len(gL.intersect(lisoformsFromUniprot0, lnames1)) != 0 or len(gL.intersect(lisoformsFromUniprot1, luniprot0)) != 0 or len(gL.intersect(lisoformsFromUniprot1, lnames0)) != 0:
                     lCombin.append('(' + str(c[0]) + ' or ' + str(c[1]) + ')')
                     orFlag = True
-                elif len(gprL.intersect(lRedundancy0,luniprot1)) != 0 or len(gprL.intersect(lRedundancy0, lnames1)) != 0 or len(gprL.intersect(lRedundancy1, luniprot0)) != 0 or len(gprL.intersect(lRedundancy1, lnames0)) != 0:
+                elif len(gL.intersect(lRedundancy0,luniprot1)) != 0 or len(gL.intersect(lRedundancy0, lnames1)) != 0 or len(gL.intersect(lRedundancy1, luniprot0)) != 0 or len(gL.intersect(lRedundancy1, lnames0)) != 0:
                     lCombin.append('(' + str(c[0]) + ' or ' + str(c[1]) + ')')
                     orFlag = True
                 elif (any(el == True for el in lIsoformsIndications0) is True) and (any(el == True for el in lIsoformsIndications1) is True):
                     orFlag = True
                     lCombin.append('(' + str(c[0]) + ' or ' + str(c[1]) + ')')
-                elif len(gprL.intersect(lcomplex0,luniprot1)) != 0 or len(gprL.intersect(lcomplex0, lnames1)) != 0 or len(gprL.intersect(lcomplex1, luniprot0)) != 0 or len(gprL.intersect(lcomplex1, lnames0)) != 0:
+                elif len(gL.intersect(lcomplex0,luniprot1)) != 0 or len(gL.intersect(lcomplex0, lnames1)) != 0 or len(gL.intersect(lcomplex1, luniprot0)) != 0 or len(gL.intersect(lcomplex1, lnames0)) != 0:
                     lCombin.append('(' + str(c[0]) + ' and ' + str(c[1]) + ')')
                     andFlag = True
-                elif len(gprL.intersect(lIsoformsFromKegg0,luniprot1)) != 0 or len(gprL.intersect(lIsoformsFromKegg0, lnames1)) != 0 or len(gprL.intersect(lIsoformsFromKegg1, luniprot0)) != 0 or len(gprL.intersect(lIsoformsFromKegg1, lnames0)) != 0:
+                elif len(gL.intersect(lIsoformsFromKegg0,luniprot1)) != 0 or len(gL.intersect(lIsoformsFromKegg0, lnames1)) != 0 or len(gL.intersect(lIsoformsFromKegg1, luniprot0)) != 0 or len(gL.intersect(lIsoformsFromKegg1, lnames0)) != 0:
                     lCombin.append('(' + str(c[0]) + ' or ' + str(c[1]) + ')')
                     orFlag = True
                 else:
@@ -303,7 +295,7 @@ for row in dfRxnToGenes.itertuples():
                 lParentheses_or = []
                 allGenes = []
                 for l in lCombin:
-                    dfgenes = gprL.extractRegexFromItem(l, regexOrgSpecific)
+                    dfgenes = gL.extractRegexFromItem(l, regexOrgSpecific)
                     if ' and ' in l:
                         allGenes += list(dfgenes[0])
                         lParentheses_and.append(list(dfgenes[0]))
@@ -313,7 +305,7 @@ for row in dfRxnToGenes.itertuples():
 
                 lParentheses_and.sort() # list of lists where each internal list includes genes linked by the same operator in the same parenthesis
                 lParentheses_or.sort()
-                allGenes = gprL.unique(allGenes)
+                allGenes = gL.unique(allGenes)
                 ruleParts = [lParentheses_and[0]]
 
                 for i in range(1, len(lParentheses_and)):
@@ -322,10 +314,10 @@ for row in dfRxnToGenes.itertuples():
                     # Compute the intersection with each element of the list and, if found, check that consistency exists also with the other element of the list
                     for p in ruleParts:
                         tmpP = p.copy()
-                        intersezione = gprL.intersect(tmpP, tmpI)
+                        intersezione = gL.intersect(tmpP, tmpI)
                         if intersezione != []:
-                            diffPI = gprL.difference(tmpP, tmpI)
-                            diffIP = gprL.difference(tmpI, tmpP)
+                            diffPI = gL.difference(tmpP, tmpI)
+                            diffIP = gL.difference(tmpI, tmpP)
                             prodotto = list(it.product(diffIP, diffPI))
                             present = True
                             for prod in prodotto:
@@ -344,22 +336,22 @@ for row in dfRxnToGenes.itertuples():
                     intersected = list(set(ruleParts[0]).intersection(*ruleParts))
                     ruleParts_remainingGenes = []
                     for c in ruleParts:
-                        ruleParts_remainingGenes.append(gprL.difference(c, intersected))
+                        ruleParts_remainingGenes.append(gL.difference(c, intersected))
 
                     ruleParts_remainingGenes_combs = list(it.combinations(range(0, len(ruleParts_remainingGenes)), 2))
                     orCombinations = []
-                    ruleParts_remainingGenes_combs = gprL.unique(ruleParts_remainingGenes_combs)
+                    ruleParts_remainingGenes_combs = gL.unique(ruleParts_remainingGenes_combs)
                     for el in ruleParts_remainingGenes_combs:
                         if el[0] != el[1]:
                             orCombinations += list(it.product(ruleParts_remainingGenes[el[0]], ruleParts_remainingGenes[el[1]]))
                     toRemove = []
-                    orCombinations = gprL.unique(orCombinations)
+                    orCombinations = gL.unique(orCombinations)
                     for o in orCombinations:
                         if o[0] == o[1]:
                             toRemove.append(o)
                     orCombinations = [x for x in orCombinations if x not in toRemove]
                     present = True
-                    orCombinations = gprL.unique(orCombinations)
+                    orCombinations = gL.unique(orCombinations)
                     for prod in orCombinations:
                         prod_forward = [prod[0], prod[1]]
                         prod_backward = [prod[1], prod[0]]
@@ -383,8 +375,8 @@ for row in dfRxnToGenes.itertuples():
                         else:
                             ruleFinale = ' and '.join(intersected) + ' and (' + ' or '.join(lpartAnd) + ')'
                     andPairs = [item for elem in ruleParts for item in elem]
-                    andPairs = gprL.unique(andPairs)
-                    allMinusAnd = gprL.difference(allGenes, andPairs)
+                    andPairs = gL.unique(andPairs)
+                    allMinusAnd = gL.difference(allGenes, andPairs)
                     combinToEvaluate = list(it.product(andPairs, allMinusAnd))
                     isAllOr = True
                     lRemainingOr = []
@@ -407,8 +399,8 @@ for row in dfRxnToGenes.itertuples():
                     ruleLastVersion = ruleFinale[:]
                 elif len(ruleParts) == 1:
                     andPairs = [item for elem in ruleParts for item in elem]
-                    andPairs = gprL.unique(andPairs)
-                    allMinusAnd = gprL.difference(allGenes, andPairs)
+                    andPairs = gL.unique(andPairs)
+                    allMinusAnd = gL.difference(allGenes, andPairs)
                     combinToEvaluate = list(it.product(andPairs, allMinusAnd))
                     present2 = True
                     for prod in combinToEvaluate:

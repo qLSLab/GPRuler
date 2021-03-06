@@ -11,10 +11,6 @@ from ast import literal_eval
 workingDirs = gL.setWorkingDirs()
 RAWDIR = workingDirs[0]
 OUTDIR = workingDirs[2]
-MODELDIR = workingDirs[3]
-FIGUREDIR = workingDirs[4]
-DFDIR = workingDirs[5]
-LOGDIR = workingDirs[7]
 
 # setting input data
 testModel = sys.argv[1]

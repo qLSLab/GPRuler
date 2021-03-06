@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-import sys
-import genericLib as gL
 import os
+import sys
 import pandas as pd
+import genericLib as gL
 import RESTmoduleModified as RESTmod
 
 # setting working dirs

@@ -1,27 +1,19 @@
 # -*- coding: utf-8 -*-
-import time
-import pandas as pd
-import bioservices.kegg as kegg
-from Bio.KEGG.REST import *
 import os
 import sys
-from bioservices import UniProt
-
-
-from nltk.tokenize import word_tokenize
-import xmltodict
-import re as reModule
-import requests
-import itertools as it
-from sympy import *
 import json
+import requests
+import xmltodict
+from sympy import *
+import pandas as pd
+import re as reModule
+import genericLib as gL
+import bioservices.kegg as kegg
+from bioservices import UniProt
+from nltk.tokenize import word_tokenize
 from nltk.tokenize import RegexpTokenizer
-from ast import literal_eval
-import os
-import sys
 import nltk
 nltk.download('punkt')
-import time
 
 def getUniprotAndComplexPortalData(df, gene='uniprotId'):
     '''
@@ -44,7 +36,6 @@ def getUniprotAndComplexPortalData(df, gene='uniprotId'):
     lAllComplexPortal_protName = []
     lFunction = []
     for el in df[gene]:
-        print('el:\t', el)
         res = u.search("%s" % el, frmt="xml")
         proteinNames = []
         geneNames = []
@@ -146,11 +137,8 @@ def getUniprotAndComplexPortalData(df, gene='uniprotId'):
     df['complexPortal'] = lComplexPortal
     df['complexPortal_uniprotId'] = lAllComplexPortal_uniprotId
     df['complexPortal_protName'] = lAllComplexPortal_protName
-    print('lsubunits\n', lsubunits, '\n', len(lsubunits), '\n')
-    print('df txt_subunit \n', df['txt_subunit'])
     u1mer = []
     for i in range(0, len(df)):
-        print('word:\n', df['txt_subunit'][i])
         struttura = [word for word in word_tokenize(df['txt_subunit'][i], "english", False) if 'mer' in el]
         if struttura != []:
             u1mer.append(','.join(struttura))
@@ -206,7 +194,6 @@ def textMiningFromUniprot(df):
                 else:
                     lPossibleSubunitsFromName.append(n.split(p)[1].split()[0].strip(','))
                     lnameEnzyme.append(n.split(p)[0].lower().strip())
-        print('checkpoint1')
 
         sameEnzymeMembership = False # Returns True or False depending on whether indications of at least one of enzyme names within Function section of Uniprot is found
         pos = [s.start() for s in reModule.finditer('is one of', funzione.lower())]
@@ -214,15 +201,11 @@ def textMiningFromUniprot(df):
             funzione_sub = funzione[p:]
             if any(el in funzione_sub for el in lnameEnzyme) is True:
                 sameEnzymeMembership = True
-        print('checkpoint2')
-
         redundancy = []
         pos = [s.start() for s in reModule.finditer('redundant with', funzione.lower())]
         for p in pos:
             funzione_sub = funzione[p:].split('.')[0]
             redundancy += [word for word in word_tokenize(funzione_sub, 'english', False) if word.isupper() and len(word) > 2]
-
-        print('checkpoint3')
 
         pos = [s.start() for s in reModule.finditer('mer', testo.lower())]
         genefromstructure = []
@@ -242,7 +225,6 @@ def textMiningFromUniprot(df):
             except:
                 interactPart += [word for word in word_tokenize(testo_sub.split("Interact")[1].split(".")[0], 'english', False) if word.isupper() and len(word) > 2]
 
-        print('checkpoint4')
         bysimilarity = []
         if "by similarity" in testo.lower():
             try:
@@ -266,8 +248,6 @@ def textMiningFromUniprot(df):
                 lOtherSubunits.append(testo_sub.split()[-1])
                 lOtherSubunits.append(testo_sub.split()[-2])
 
-        print('checkpoint5')
-
         lOtherSubunitsWords = ['complex', 'component', 'composed of', 'bound to', 'mer of', 'mer with',
                                'mers of', 'mers with', 'interacts with','interact with','binds','bind',
                                'together with', 'comprises', 'comprise', 'comprising', 'containing',
@@ -284,15 +264,10 @@ def textMiningFromUniprot(df):
             ## Select from lOtherSubunitsWords list only the words that are present in the sentence under consideration
             wordsSelection = [el for el in lOtherSubunitsWords if el in frase.lower()]
             columns = ['proteinNames', 'geneNames']
-            print('frase\n', frase, '\n')
             for col in columns:
                 orPosition = frase.find(' or ')
-                print('orPosition\t', orPosition)
                 frase_before = frase[:orPosition]
                 frase_after = frase[orPosition-1+len(' or '):]
-                print('frase_before\t', frase_before)
-                print('frase_after\t', frase_after)
-                print('find\t', getattr(row, col), '\n')
                 while (orPosition != -1) and ((any(frase_before.endswith(el) for el in getattr(row, col)) is True) or (any(frase_after.startswith(el) for el in getattr(row, col)) is True)):
                     tmpIsoformList = []
                     foundWords = [el for el in getattr(row, col) if el in frase]
@@ -315,14 +290,14 @@ def textMiningFromUniprot(df):
                                 wordsToRemove.append(' or ' + selectedIsoform)
                             if el0.endswith(' or') is True and col == 'geneNames':
                                 out0 = el0.strip('or').strip().split()[-1]
-                                dfout0 = extractRegexFromItem(out0, r"([A-Za-z0-9-]+)")
+                                dfout0 = gL.extractRegexFromItem(out0, r"([A-Za-z0-9-]+)")
                                 lout0 = list(dfout0[0])
                                 tmpIsoformList += lout0
                                 lIsoforms += lout0
                                 wordsToRemove.append(lout0[0] + ' or ')
                             if el1.startswith('or ') is True and col == 'geneNames':
                                 out1 = el1.strip('or').strip().split()[0]
-                                dfout1 = extractRegexFromItem(out1, r"([A-Za-z0-9-]+)")
+                                dfout1 = gL.extractRegexFromItem(out1, r"([A-Za-z0-9-]+)")
                                 lout1 = list(dfout1[0])
                                 tmpIsoformList += lout1
                                 lIsoforms += lout1
@@ -330,7 +305,6 @@ def textMiningFromUniprot(df):
                     if len(wordsToRemove) != 0:
                         for w in wordsToRemove:
                             frase = reModule.sub(w, "", frase)
-                        print('frase\t', frase)
                         orPosition = frase.find(' or ')
                         if orPosition != -1:
                             frase_before = frase[:orPosition]
@@ -338,28 +312,19 @@ def textMiningFromUniprot(df):
                         else:
                             frase_before = frase[:]
                             frase_after = frase[:]
-                        print('orPosition\t', orPosition)
-                        print('frase_before\t', frase_before)
-                        print('frase_after\t', frase_after, '\n')
                     else:
                         orPosition = -1
 
             ## Once updated the sentence deprived of genes identified as isoforms, look for AND relationships
-            print('Frase\t', frase)
             for w in wordsSelection:
-                print('w\t', w)
                 pos = [s.start() for s in reModule.finditer(w, frase.lower())]
-                # print('pos\t', pos)
                 for p in pos:
                     frase_sub = frase[p:]
-                    print('frase_sub\t', frase_sub)
                     if 'isoforms of' not in frase_sub:
                         try:
                             frase_sub_splitted = reModule.split(w, frase_sub.lower())[1]
-                            print('frase_sub_splitted\t', frase_sub_splitted)
                         except:
                             frase_sub_splitted = reModule.split(w[0].upper() + w[1:], frase_sub)[1]
-                            print('frase_sub_splitted2\t', frase_sub_splitted)
                         frase_sub_splitted_tokenized = tokenizer.tokenize(frase_sub_splitted)
                         lOtherSubunits += frase_sub_splitted_tokenized
 
@@ -382,78 +347,6 @@ def textMiningFromUniprot(df):
     df['redundancy'] = lredundancies
     return(df)
 
-def getDipData(df, id_prot='id_uniprot'):
-    '''
-    This function retrieves from DIP database protein-protein interactions and protein macromolecular complexes
-    established by each queried metabolic gene.
-    Input:
-    - df: dataframe generated by textMiningFromUniprot function;
-    - id_prot: column name of uniprot identifiers of genes. By default it is set equal to 'id_uniprot'.
-    Output:
-    - df: enriched input dataframe with information retrieved from DIP database.
-    '''
-    u = UniProt(verbose=False)
-    lAllDip = []
-    lAllDipComplex = []
-    lAllDipBinary = []
-    dizUniprotDip = {}
-    diztmpDipId = {}
-    for uniprotIds in df[id_prot]:
-        currentDipId = []
-        currentDipComplex = []
-        currentDipBinary = []
-        for unip in uniprotIds:
-            tmpDipId = []
-            if unip not in dizUniprotDip:
-                res = u.search("%s" % unip, frmt="xml")
-                dizUniprotDip[unip] = res
-            else:
-                res = dizUniprotDip[unip]
-            if res != '':
-                dRes = xmltodict.parse(res)
-                try:
-                    for ref in dRes['uniprot']['entry']['dbReference']:
-                        if ref['@type'] == 'DIP':
-                            foundEl = "".join(reModule.findall("[0-9]",ref['@id']))
-                            currentDipId.append(foundEl)
-                            tmpDipId.append(foundEl)
-                except:
-                    dipId = ''
-
-            for singleDipId in tmpDipId:
-                if singleDipId not in diztmpDipId:
-                    url1 = 'https://dip.doe-mbi.ucla.edu/dip/Browse.cgi?PK=' + str(singleDipId) + '&MD=1'
-                    response = requests.get(url1, verify=False)
-                    test1 = response.content
-                    dfs1 = pd.read_html(test1)
-
-                    url0 = 'https://dip.doe-mbi.ucla.edu/dip/Browse.cgi?PK=' + str(singleDipId) + '&MD=0'
-                    response = requests.get(url0, verify=False)
-                    test0 = response.content
-                    dfs0 = pd.read_html(test0)
-
-                    diztmpDipId[singleDipId] = (dfs1, dfs0)
-                else:
-                    dfs1 = diztmpDipId[singleDipId][0]
-                    dfs0 = diztmpDipId[singleDipId][1]
-
-                for i in range(0, len(dfs1[8]['Cross Reference']['SWISSPROT'])):
-                    if str(dfs1[8]['Cross Reference']['SWISSPROT'][i]) != "nan":
-                        currentDipComplex.append(dfs1[8]['Cross Reference']['SWISSPROT'][i])
-
-
-                for i in range(0, len(dfs0[8]['Cross Reference']['SWISSPROT'])):
-                    if str(dfs0[8]['Cross Reference']['SWISSPROT'][i]) != "nan":
-                        currentDipBinary.append(dfs0[8]['Cross Reference']['SWISSPROT'][i])
-
-        lAllDip.append(currentDipId)
-        lAllDipComplex.append(currentDipComplex)
-        lAllDipBinary.append(currentDipBinary)
-    df['DIPids'] = lAllDip
-    df['complex_fromDIP'] = lAllDipComplex
-    df['binary_fromDIP'] = lAllDipBinary
-    return(df)
-
 def getStringData(df, gene='id_uniprot'):
     '''
     This function retrieves from STRING database known and predicted protein-protein interactions
@@ -470,16 +363,13 @@ def getStringData(df, gene='id_uniprot'):
     for row in df.itertuples():
         lStringInteractors = []
         for uniprotId in getattr(row, gene):
-            print('uniprotId\t', uniprotId)
             if uniprotId not in dizUniprotString:
                 originalUniprotNames = row.proteinNames + row.geneNames
                 url = "https://string-db.org/api/json/network?identifiers=" + uniprotId
                 response = requests.get(url, verify=False)
                 while response.status_code == 524:
                     response = requests.get(url, verify=False)
-                    print('response.status_code\t', response.status_code)
                 net = response.json()
-                print('type net\t', type(net))
                 lInteractors = []
                 original = ''
                 if type(net) == list:
@@ -496,22 +386,19 @@ def getStringData(df, gene='id_uniprot'):
             if original != '':
                 for interactor in lInteractors:
                     if interactor not in dizlInteractors:
-                        print('interactor\t', interactor)
                         url = 'https://string-db.org//api/json/enrichment?identifiers=' + original + '%0d' + interactor
                         response = requests.get(url, verify=False)
                         while response.status_code == 524:
                             response = requests.get(url, verify=False)
-                            print('response.status_code\t', response.status_code)
                         diz = response.json()
                         dizlInteractors[interactor] = diz
                     else:
                         diz = dizlInteractors[interactor]
                     for stringElement in diz:
-                        print('stringElement\t', stringElement)
                         if stringElement['category'] == 'Component' and ("complex" in str(stringElement['description']) or "chain" in str(stringElement['description'])) and original in stringElement['inputGenes']:
                             complesso = stringElement['description']
                             lStringInteractors.append(interactor)
-        lStringInteractors = unique(lStringInteractors)
+        lStringInteractors = gL.unique(lStringInteractors)
         stringSubunits.append(lStringInteractors)
 
     df['stringSubunits'] = stringSubunits
@@ -575,7 +462,7 @@ def mergeData(df, dip):
     lTotalGenes = [item for elem in list(df['geneName_fromKEGG']) for item in elem] + [item for elem in list(df['proteinNames']) for item in elem] \
                    + [item for elem in list(df['geneNames']) for item in elem] + [item for elem in list(df['id_uniprot']) for item in elem] \
                    + [item for elem in list(df['subunitsFromName']) for item in elem]
-    lTotalGenes = unique(lTotalGenes)
+    lTotalGenes = gL.unique(lTotalGenes)
 
     lTotalAndSubs = lTotalGenes + list(df['subunitsFromName'])
 
@@ -585,20 +472,19 @@ def mergeData(df, dip):
 
         if dip == 'yes':
             lDipComplex = [x for x in list(r.complex_fromDIP) if x not in list(r.id_uniprot)]
-            finallDipComplex = intersect(lDipComplex, lTotalGenes)
+            finallDipComplex = gL.intersect(lDipComplex, lTotalGenes)
             lDipBinary = [x for x in list(r.binary_fromDIP) if x not in list(r.id_uniprot)]
-            finallDipBinary = intersect(lDipBinary, lTotalGenes)
-            finallDipBinary = unique(finallDipBinary)
+            finallDipBinary = gL.intersect(lDipBinary, lTotalGenes)
+            finallDipBinary = gL.unique(finallDipBinary)
         else:
             finallDipComplex = []
             finallDipBinary = []
-
 
         dfinallDipBinary_names = {}
         for f in finallDipBinary:
             out = df.loc[df.uniprotId == f]
             for o in out.itertuples():
-                dfinallDipBinary_names[f] = unique([o.uniprotId] + o.proteinNames + o.geneNames + o.id_uniprot + o.geneName_fromKEGG)
+                dfinallDipBinary_names[f] = gL.unique([o.uniprotId] + o.proteinNames + o.geneNames + o.id_uniprot + o.geneName_fromKEGG)
 
         lComplexPortal_unipId = [x for x in list(r.complexPortal_uniprotId) if x not in list(r.id_uniprot)]
         finallComplexPortal_unipId = [x for x in lComplexPortal_unipId if x in lTotalAndSubs] # Select only the isoforms falling within input genes list
@@ -622,7 +508,7 @@ def mergeData(df, dip):
             ldfSimilarity = []
 
         lAllIsoforms = list(r.otherIsoforms) + list(r.isoform)
-        lAllIsoforms = unique(lAllIsoforms)
+        lAllIsoforms = gL.unique(lAllIsoforms)
 
         finalStringSubs = [x for x in list(r.stringSubunits) if x in lTotalAndSubs]
 
@@ -637,8 +523,8 @@ def mergeData(df, dip):
 
         subunit = []
         subunit += finallDipComplex + finallDipBinary_woIsoforms + finallComplexPortal_unipId + finallComplexPortal_protName
-        subunit += ldfInteract + ldfSimilarity + difference(finalStringSubs, lAllIsoforms) + finalOtherSubunits
-        subunit = unique(subunit)
+        subunit += ldfInteract + ldfSimilarity + gL.difference(finalStringSubs, lAllIsoforms) + finalOtherSubunits
+        subunit = gL.unique(subunit)
 
         # uso il dizionario di nomi che sono sbagliati e che è necessario correggere
         finalSubunitSet = []
@@ -661,60 +547,13 @@ def mergeData(df, dip):
     dfFinal['OR'] = list_or
     return(dfFinal)
 
-
-def pathJoinCheck(dir2add, rootPath='.'):
-    """Check the existence of a path and build it if necessary."""
-    path = os.path.join(rootPath, dir2add)
-    if not os.path.exists(path):
-        os.makedirs(path)
-    return path
-
-def setWorkingDirs(mainDir=None):
-    """Set the working directories inputData, outputData.
-
-    If arguments are omitted current working directory replace them.
-
-    Keyword arguments:
-     dataDir: The directory to look for the input files.
-     outDir:  The directory to write the output files.
-
-    Return:
-    (dataDir, outDir, mapDir, reportDir, modelDir, figureDir, dataframeDir, logDir, blastDir)
-    """
-    cwDir = os.getcwd()
-    if mainDir is None:
-        mainDir = cwDir
-    else:
-        mainDir = os.path.abspath(mainDir) + os.sep
-    inputDir = pathJoinCheck('inputData', mainDir)
-    outputDir = pathJoinCheck('outputData', mainDir)
-    return mainDir, inputDir, outputDir
-
-def getTimeStamp():
-    return time.strftime('%Y%m%d%H%M%S', time.localtime())
-
-def unique(a):
-	""" return the list with duplicate elements removed """
-	return list(set(a))
-
-def intersect(a, b):
-	""" return the intersection of two lists """
-	return list(set(a) & set(b))
-
-def difference(a, b):
-    """ return the difference of two lists """
-    return list(set(a) - set(b))
-
-def writeLineByLineToFile(stream, dataToWrite):
-    stream.write('\t'.join(str(s) for s in dataToWrite) + '\n')
-
-def extractRegexFromItem(item, regex):
-    sItem = pd.Series(data=item)
-    if sItem.empty == False:
-        dfItem = sItem.str.extractall(regex)
-    else:
-        dfItem = []
-    return dfItem
+def putativeOrganisms(organism):
+    df = getOrgs()
+    out = df[df['orgName'].str.contains(organism)]
+    dOut = {}
+    for i, row in out.iterrows():
+        dOut[row['orgName']] = row['orgCode']
+    return dOut
 
 def getOrgs():
     k = kegg.KEGG()
@@ -725,43 +564,6 @@ def getOrgs():
         sngItem = pd.DataFrame([spltOrg[el].split("\t")], columns=['Tnumber', 'orgCode', 'orgName', 'phylogeny'])
         dfAllOrgs = dfAllOrgs.append(sngItem, ignore_index=True)
     return dfAllOrgs
-
-def putativeOrganisms(organism):
-    df = getOrgs()
-    out = df[df['orgName'].str.contains(organism)]
-    dOut = {}
-    for i, row in out.iterrows():
-        dOut[row['orgName']] = row['orgCode']
-    return dOut
-
-def getKeggInfo(query):
-    dizInfo = {}
-    try:
-        k = kegg.KEGG()
-        info = k.get(query)
-        dizInfo = k.parse(info)
-    except dizInfo == 400 or dizInfo == 404:
-            dizInfo = {}
-    return dizInfo, info
-
-def kegg2UniprotGenesId(organismCode, model, dirPath):
-    ## Conversion of kegg identifiers to uniprot identifiers
-    kegg2uniprot = kegg_conv('uniprot', organismCode)
-    dOrgKegg2Uniprot = {}
-    for el in kegg2uniprot.readlines():
-        elSplt = el.strip().split('\t')
-        if elSplt[0].split(':')[1] not in dOrgKegg2Uniprot.keys():
-            dOrgKegg2Uniprot[elSplt[0].split(':')[1]] = [elSplt[1].split(':')[1]]
-        else:
-            dOrgKegg2Uniprot[elSplt[0].split(':')[1]] += [elSplt[1].split(':')[1]]
-
-    outFile = open(os.path.join(dirPath, model + '_Kegg2UniprotGenes.csv'), mode='w')
-    writeLineByLineToFile(outFile, ['keggId', 'uniprotId'])
-
-    for k, v in dOrgKegg2Uniprot.items():
-        for vv in v:
-            writeLineByLineToFile(outFile, [k, vv])
-    outFile.close()
 
 def generateOrganismSpecificRegex(keggGeneList):
     # Compose the regex according to characters present in KEGG gene identifiers.
@@ -794,40 +596,9 @@ def generateOrganismSpecificRegex(keggGeneList):
     for gene in keggGeneList:
         noAlphaNumeric += reModule.findall(r'\W+', gene)
 
-    noAlphaNumeric = unique(noAlphaNumeric)
+    noAlphaNumeric = gL.unique(noAlphaNumeric)
     p3 = ''.join(noAlphaNumeric)
 
     # Construct the regex
     regexOrgSpecific = '([' + p1 + p2 + p3 + ']+)'
     return regexOrgSpecific
-
-
-def isCoeff(s):
-    """Determine if a string splitted on the spaces the first element is the
-    stoichiometric coefficient or not.
-    Example: if string is "2 A" return True; if string is "A" it returns False"""
-    answer = reModule.match('((\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)$', s)
-    if answer is not None:
-        # print('\t match ', answer.group(0)
-        return True
-    else:
-        return False
-
-def dizReaProd(s):
-    termini = s.strip().split(' + ')
-    # print('termini', termini
-    diz = {}
-    for termine in termini:
-        coeffMetabo = termine.split()
-        # print('coeffMetabo', coeffMetabo
-        coeff = coeffMetabo[0]
-        if isCoeff(coeff) is True:
-            coeff = float(coeffMetabo[0])
-            metabolita = ' '.join(coeffMetabo[1:])
-        else:
-            metabolita = ' '.join(coeffMetabo)
-            coeff = 1.0
-        # print('coeff', coeff
-        # print('metabolita', metabolita
-        diz[metabolita] = coeff
-    return diz

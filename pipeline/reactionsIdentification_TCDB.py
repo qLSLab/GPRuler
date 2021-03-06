@@ -1,43 +1,15 @@
-# -*- coding: utf-8 -*-
-import sys
-import genericLib as gL
 import os
-import pandas as pd
-from ast import literal_eval
-import re
+import sys
 import cobra as cb
-
-def extractChebiIds(l):
-    lChebi = []
-    for el in l:
-        lChebi.append(el.split(';')[0][6:])
-    lChebi = gL.unique(lChebi)
-    return lChebi
-
-def findTC(lR, lP, r):
-    lFindR = [len(gL.intersect(l,r)) != 0 for l in lR]
-    lFindP = [len(gL.intersect(l,r)) != 0 for l in lP]
-
-    if any(lFindR) == True and any(lFindP) == True:
-        return True
-    else:
-        return False
-
-def findTC_transports(lR, r):
-    lFindR = [len(gL.intersect(l,r)) != 0 for l in lR]
-
-    if any(lFindR) == True:
-        return True
-    else:
-        return False
+import pandas as pd
+import genericLib as gL
+import reactionsLib as rxnL
+from ast import literal_eval
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
 RAWDIR = workingDirs[0]
 OUTDIR = workingDirs[2]
-MODELDIR = workingDirs[3]
-FIGUREDIR = workingDirs[4]
-DFDIR = workingDirs[5]
 
 # setting input data
 testModel = sys.argv[1]
@@ -81,7 +53,7 @@ dfTc2Subs_original = pd.read_csv(os.path.join(RAWDIR, 'tcdb_tc2substrates.csv'),
 dfTc2Uniprot = pd.read_csv(os.path.join(RAWDIR, 'tcdb_tc2Uniprot.csv'), sep = '\t', dtype=str, names= ['UniprotId', 'TCnumber'])
 
 dfTc2Subs_original['Substrates_splt'] = dfTc2Subs_original['Substrates'].str.split('|')
-dfTc2Subs_original['Substrates_converted'] = dfTc2Subs_original.apply(lambda row: extractChebiIds(row['Substrates_splt']), axis=1)
+dfTc2Subs_original['Substrates_converted'] = dfTc2Subs_original.apply(lambda row: rxnL.extractChebiIds(row['Substrates_splt']), axis=1)
 
 dfMetsFromModel = pd.read_csv(os.path.join(OUTDIR, dfmetsInfo + '_enriched.csv'), sep = '\t', dtype=str)
 dfMetsFromModel['lIdentifiers'] = dfMetsFromModel['lIdentifiers'].apply(literal_eval)
@@ -96,7 +68,7 @@ if testModel == 'recon3':
 
 ## Read from ChEBI all the parental identifiers of each metabolite
 dfChebiFormula = pd.read_csv(os.path.join(RAWDIR, 'chebi_chemical_data_20201216.tsv'), sep = '\t', dtype=str)
-dfChebiCompounds_exploded = pd.read_csv(os.path.join(OUTDIR, 'chebi_compounds_20201216153117_exploded.csv'), sep = '\t', dtype=str) ## 1
+dfChebiCompounds_exploded = pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216153117_exploded.csv.bz2'), compression='bz2', sep = '\t', dtype=str)
 dfChebiCompounds_exploded['ParentalChebiIds'] = dfChebiCompounds_exploded['ParentalChebiIds'].apply(literal_eval)
 dfChebiCompounds_exploded['AllChebiIds'] = dfChebiCompounds_exploded['AllChebiIds'].apply(literal_eval)
 dfChebiCompounds_exploded['ParentalKeggC'] = dfChebiCompounds_exploded['ParentalKeggC'].apply(literal_eval)
@@ -106,7 +78,7 @@ dfChebiCompounds_exploded['AllKeggC'] = dfChebiCompounds_exploded['AllKeggC'].ap
 dfChebiCompounds_exploded['AllKeggG'] = dfChebiCompounds_exploded['AllKeggG'].apply(literal_eval)
 dfChebiCompounds_exploded['AllMetacyc'] = dfChebiCompounds_exploded['AllMetacyc'].apply(literal_eval)
 
-dfChebiCompounds = pd.read_csv(os.path.join(OUTDIR, 'chebi_compounds_20201216153117.csv'), sep = '\t', dtype=str) ## 1
+dfChebiCompounds = pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216153117.csv.bz2'), compression='bz2',  sep = '\t', dtype=str)
 dfChebiCompounds['ParentalChebiIds'] = dfChebiCompounds['ParentalChebiIds'].apply(literal_eval)
 dfChebiCompounds['AllChebiIds'] = dfChebiCompounds['AllChebiIds'].apply(literal_eval)
 dfChebiCompounds['ParentalKeggC'] = dfChebiCompounds['ParentalKeggC'].apply(literal_eval)
@@ -120,7 +92,6 @@ dfChebiCompounds['AllMetacyc'] = dfChebiCompounds['AllMetacyc'].apply(literal_ev
 dfMetsFromModel['Name'] = dfMetsFromModel['Name'].str.strip()
 
 # Retrieve from TCDB database the transport reactions identifiers
-
 dUniprotId_grouped_all = []
 lIds_all = []
 for rowRxn in dfRxns.itertuples():
@@ -133,17 +104,12 @@ for rowRxn in dfRxns.itertuples():
         else:
             rxnId = rowRxn.Rxn
         rxn = model.reactions.get_by_id(rxnId)
-        print('ID\t', rxn.id)
-        print('isTransport\t', isTransport)
-        print('isExchange\t', isExchange)
         lIds_all.append(rxn.id)
-        lIdentifiersRxn = [] ## lista dove salvo tutti gli identificativi che trovo associati alla rxn corrente
-
+        lIdentifiersRxn = []
         lReactants = []
         if len(rowRxn.trasportedMets) != 0:
             lReactants = rowRxn.trasportedMets
             dfMetsFromModel_reactants = dfMetsFromModel[dfMetsFromModel['Name'].isin(lReactants)]
-
             dfMetsFromModel_reactants = dfMetsFromModel_reactants.drop_duplicates(subset = ['Name'])
             lReactants_ids_original = list(dfMetsFromModel_reactants['lIdentifiers'].dropna())
         else:
@@ -215,7 +181,7 @@ for rowRxn in dfRxns.itertuples():
 
             if len(lReactants_ids) != 0:
                 dfTc2Subs = dfTc2Subs_original.copy()
-                dfTc2Subs['Find_allItems'] = dfTc2Subs.apply(lambda row: findTC_transports(lReactants_ids, row['Substrates_converted']), axis=1)
+                dfTc2Subs['Find_allItems'] = dfTc2Subs.apply(lambda row: rxnL.findTC_transports(lReactants_ids, row['Substrates_converted']), axis=1)
                 putativeTransportRxn = dfTc2Subs[dfTc2Subs['Find_allItems'] == True]
                 if putativeTransportRxn.empty is False:
                     lPutativeTransports = list(putativeTransportRxn['TCnumber'])
@@ -265,7 +231,7 @@ for rowRxn in dfRxns.itertuples():
 
             if all(r != [] for r in lAll) == True:
                 dfTc2Subs = dfTc2Subs_original.copy()
-                dfTc2Subs['Find_allItems'] = dfTc2Subs.apply(lambda row: findTC_transports(lReactants_ids, row['Substrates_converted']), axis=1)
+                dfTc2Subs['Find_allItems'] = dfTc2Subs.apply(lambda row: rxnL.findTC_transports(lReactants_ids, row['Substrates_converted']), axis=1)
                 putativeTransportRxn = dfTc2Subs[dfTc2Subs['Find_allItems'] == True]
                 if putativeTransportRxn.empty is False:
                     lPutativeTransports = list(putativeTransportRxn['TCnumber'])

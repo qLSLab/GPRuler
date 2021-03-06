@@ -59,11 +59,9 @@ if includeCompartment is True:
     df['toMatch'] = df.Name.str.replace("\[(\w*\s*)+\]$", "")
     df['toMatch'] = df.toMatch.str.strip()
     lMets2Search = list(df['toMatch'])
-    print('lMets2Search\t', lMets2Search[:10])
 else:
     lMets2Search = list(df['Name'])
 lMets2Search = gL.unique(lMets2Search)
-print('len lMets2Search\t', len(lMets2Search))
 
 dfChebiNames['NAME'] = dfChebiNames['NAME'].str.lower()
 dfChebiCompounds['NAME'] = dfChebiCompounds['NAME'].str.lower()

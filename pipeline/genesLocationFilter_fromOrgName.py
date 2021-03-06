@@ -29,12 +29,6 @@ lCompartmentsOrganization = {'cytoplasm': ['cytoplasm','preribosome', 'cytosol',
                             'peroxisome': ['peroxisome', 'peroxisomal membrane'],
                              'vacuole': ['vacuole'], 'vacuolar membrane': ['vacuolar membrane']}
 
-####
-# dfrxns2Genes 1st output of Step 2
-# modelName + \'\_Rxns2Genes.csv\':  for each retrieved reaction (RxnId column), the list of corresponding metabolic catalysing genes is reported (Genes_fromKEGG column), and the list of catalysing genes annotated in
-# the macrodatabase is reported (Genes_fromMacroDb column), and the sum of Genes_fromKEGG and Genes_fromMacroDb columns (Genes column).
-####
-
 # Extract for the identified genes all the corresponding compartment information
 dfModelRxns2Genes = pd.read_csv(os.path.join(OUTDIR, dfrxns2Genes + '.csv'), sep = '\t', dtype = {'Rxn': str, 'KeggId': str, 'GPR': str, 'Name': str, 'IsTransport': bool, 'IsExchange': bool, 'GPRrule': str})
 dfModelRxns2Genes['Genes'] = dfModelRxns2Genes['Genes'].apply(literal_eval)

@@ -2,14 +2,9 @@
 import re
 import os
 import sys
-import time
 import pandas as pd
 import numpy as np
 import re
-
-
-def getTimeStamp():
-    return time.strftime('%Y%m%d%H%M%S', time.localtime())
 
 def setWorkingDirs(dataDir='rawData', outDir=None):
     """Set the working directories dataDir, outDir, mapsDir, reportDir.
@@ -57,3 +52,42 @@ def extractRegexFromItem(item, regex):
     else:
         dfItem = []
     return dfItem
+
+
+def writeLineByLineToFile(stream, dataToWrite, spaziatore):
+    stream.write(spaziatore.join(str(s) for s in dataToWrite) + '\n')
+
+
+def intersect(a, b):
+	""" return the intersection of two lists """
+	return list(set(a) & set(b))
+
+def isCoeff(s):
+    """Determine if a string splitted on the spaces the first element is the
+    stoichiometric coefficient or not.
+    Example: if string is "2 A" return True; if string is "A" it returns False"""
+    answer = reModule.match('((\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)$', s)
+    if answer is not None:
+        # print('\t match ', answer.group(0)
+        return True
+    else:
+        return False
+
+def dizReaProd(s):
+    termini = s.strip().split(' + ')
+    # print('termini', termini
+    diz = {}
+    for termine in termini:
+        coeffMetabo = termine.split()
+        # print('coeffMetabo', coeffMetabo
+        coeff = coeffMetabo[0]
+        if isCoeff(coeff) is True:
+            coeff = float(coeffMetabo[0])
+            metabolita = ' '.join(coeffMetabo[1:])
+        else:
+            metabolita = ' '.join(coeffMetabo)
+            coeff = 1.0
+        # print('coeff', coeff
+        # print('metabolita', metabolita
+        diz[metabolita] = coeff
+    return diz
