@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Bio.KEGG.REST import *
 import sys
 import genericLib as gL

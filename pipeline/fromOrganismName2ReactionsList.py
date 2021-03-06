@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import GPRULERLib as gprL
 import sys
 import genericLib as gL

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import re
 import os
 import sys
@@ -43,6 +44,11 @@ def setWorkingDirs(dataDir='rawData', outDir=None):
 def unique(a):
 	""" return the list with duplicate elements removed """
 	return list(set(a))
+
+def difference(a, b):
+    """ return the difference of two lists """
+    return list(set(a) - set(b))
+
 
 def extractRegexFromItem(item, regex):
     sItem = pd.Series(data=item)

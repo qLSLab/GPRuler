@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-import cobra as cb
 import os
 import sys
-import genericLib as gL
+import cobra as cb
 import pandas as pd
+import genericLib as gL
+import genesLib as genesL
 from ast import literal_eval
-import xmlLib as xL
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -89,7 +89,7 @@ elif testModel == 'ownData':
 model = cb.io.read_sbml_model(os.path.join(RAWDIR, modelXml + '.xml'))
 
 # Extract compartment information from the model
-dModelCompartments = xL.getCompartmentInfo(os.path.join(RAWDIR, modelXml + '.xml'))
+dModelCompartments = genesL.getCompartmentInfo(os.path.join(RAWDIR, modelXml + '.xml'))
 
 dRxn2Compartments = {}
 for r in model.reactions:

@@ -1,76 +1,13 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-import genericLib as gL
+import xmltodict
 import pandas as pd
+import genericLib as gL
+import genesLib as genesL
 from ast import literal_eval
 from bioservices import UniProt
-import xmltodict
-import requests
-import json
 import RESTmoduleModified as RESTmod
-
-def getDefinitionFromGO(evidenceCode):
-    requestURL = "https://www.ebi.ac.uk/QuickGO/services/ontology/eco/terms/ECO%3A" + evidenceCode.split(':')[1]
-    r = requests.get(requestURL, headers={ "Accept" : "application/json"})
-
-    if not r.ok:
-        r.raise_for_status()
-        sys.exit()
-    responseBody = json.loads(r.text)
-    if 'results' in responseBody and 'name' in responseBody['results'][0]:
-        defEco = responseBody['results'][0]['name']
-        if 'automatic' not in defEco:
-            return 'manual'
-        else:
-            return 'automatic'
-
-def getGOsearch(query):
-    requestURL = "https://www.ebi.ac.uk/QuickGO/services/ontology/go/search?query=" + query.replace(' ', '%20') + "&limit=25&page=1"
-    r = requests.get(requestURL, headers={ "Accept" : "application/json"})
-    if not r.ok:
-        r.raise_for_status()
-        sys.exit()
-    responseBody = json.loads(r.text)
-    id = ''
-    if 'results' in responseBody:
-        find = False
-        i = 0
-        while i < len(responseBody['results']) and find == False:
-            if 'name' in responseBody['results'][i] and responseBody['results'][i]['name'].lower() == query:
-                find = True
-                id = responseBody['results'][i]['id']
-            i += 1
-    return id
-
-def getGOAncestors(goTerm):
-    requestURL = "https://www.ebi.ac.uk/QuickGO/services/ontology/go/terms/GO%3A" + goTerm.split(':')[1] + "/ancestors?relations=is_a%2Cpart_of%2Coccurs_in%2Cregulates"
-    r = requests.get(requestURL, headers={ "Accept" : "application/json"})
-    if not r.ok:
-        r.raise_for_status()
-        sys.exit()
-
-    responseBody = json.loads(r.text)
-    if 'ancestors' in responseBody['results'][0]:
-        lAncestors = responseBody['results'][0]['ancestors']
-    else:
-        lAncestors = []
-
-    return lAncestors
-
-
-def getGOName(goTerm):
-    requestURL = "https://www.ebi.ac.uk/QuickGO/services/ontology/go/terms/GO%3A" + goTerm.split(':')[1]
-    r = requests.get(requestURL, headers={ "Accept" : "application/json"})
-    if not r.ok:
-        r.raise_for_status()
-        sys.exit()
-    nome = ''
-    responseBody = json.loads(r.text)
-    if 'name' in responseBody['results'][0]:
-        nome = responseBody['results'][0]['name']
-    return nome
-
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -258,7 +195,7 @@ for gene in lAllGenes:
                             lAllEco = dEvidenceCodes['manual'] + dEvidenceCodes['automatic']
                             evidence2Search = gL.difference(evidence, lAllEco)
                             for eco in evidence2Search:
-                                goDefinition = getDefinitionFromGO(eco)
+                                goDefinition = genesL.getDefinitionFromGO(eco)
                                 if goDefinition == 'manual':
                                     dEvidenceCodes['manual'] += [eco]
 
@@ -282,7 +219,7 @@ for gene in lAllGenes:
                                         lAllEco = dEvidenceCodes['manual'] + dEvidenceCodes['automatic']
                                         evidence2Search = gL.difference(lEcos, lAllEco)
                                         for eco in evidence2Search:
-                                            goDefinition = getDefinitionFromGO(eco)
+                                            goDefinition = genesL.getDefinitionFromGO(eco)
                                             if goDefinition == 'manual':
                                                 dEvidenceCodes['manual'] += [eco]
 
@@ -323,7 +260,7 @@ for gene in lAllGenes:
                                                 lAllEco = dEvidenceCodes['manual'] + dEvidenceCodes['automatic']
                                                 evidence2Search = gL.difference(lEco, lAllEco)
                                                 for eco in evidence2Search:
-                                                    goDefinition = getDefinitionFromGO(eco)
+                                                    goDefinition = genesL.getDefinitionFromGO(eco)
                                                     if goDefinition == 'manual':
                                                         dEvidenceCodes['manual'] += [eco]
 
@@ -337,7 +274,7 @@ for gene in lAllGenes:
                                         lAllEco = dEvidenceCodes['manual'] + dEvidenceCodes['automatic']
                                         evidence2Search = gL.difference(lEco, lAllEco)
                                         for eco in evidence2Search:
-                                            goDefinition = getDefinitionFromGO(eco)
+                                            goDefinition = genesL.getDefinitionFromGO(eco)
                                             if goDefinition == 'manual':
                                                 dEvidenceCodes['manual'] += [eco]
 
@@ -363,15 +300,15 @@ for gene in lAllGenes:
         if len(unknown) != 0:
             for unk in unknown:
                 if unk not in dname2GO:
-                    idGo = getGOsearch(unk)
+                    idGo = genesL.getGOsearch(unk)
                     if idGo != '':
-                        lAncestors = getGOAncestors(idGo)
+                        lAncestors = genesL.getGOAncestors(idGo)
                         lnewComps = []
                         for anc in lAncestors:
                             if anc in dAnc2Name and dAnc2Name[anc] in lPossibleCompartments:
                                 lnewComps.append(dAnc2Name[anc])
                             else:
-                                name = getGOName(anc)
+                                name = genesL.getGOName(anc)
                                 if name != '' and name in lPossibleCompartments:
                                     lnewComps.append(name)
                                     dAnc2Name[anc] = name
