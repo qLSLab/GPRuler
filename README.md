@@ -142,7 +142,17 @@ When the organism name is inserted:
   * model + \'\_Rxns2Genes.csv\': for each retrieved reaction (RxnId column), the list of corresponding metabolic catalysing genes is reported (Genes column);
   * model + \'\_Kegg2UniprotGenes.csv\': for each KEGG identifier (keggId column) of the retrieved list of metabolic genes the corresponding Uniprot (uniprotId column).
 
-**Step 2. *GPRULER**: reconstruct the GPR rules
+**Step 2. *fromReactions2Genes_fromOrgName**:  identification of the genes list associated to each model reaction according to the macrodatabase annotation.
+* Input:
+  * dfRxns2GenesFile: the fourth output from Step 1
+  * dfRxnId2Equation: the second output from Step 1
+  * orgCode: the KEGG organism code of the target organism
+  * taxId: a list of the NCBI Taxonomy ID of the target organism
+  * outputName: a string to name the output file
+* Output saved in the outputs directory:
+  * outputName + \'\_Rxns2Genes.csv\':  for each retrieved reaction (RxnId column), the list of corresponding metabolic catalysing genes is reported (Genes_fromKEGG column), and the list of catalysing genes annotated in the macrodatabase is reported (Genes_fromMacroDb column), and the sum of Genes_fromKEGG and Genes_fromMacroDb columns (Genes column).
+
+**Step 3. *GPRULER**: reconstruct the GPR rules
 * Input:
   * model: a string to get the input files and name the output files
   * organismCode: the KEGG organism code of the target organism. The user has two options: insert the organism name (option 1) or insert the KEGG organism code (option 2). Choosing option 1, the user is asked to enter the organism name. The most putative KEGG organism codes will be proposed among which the user will choose the most correct one. Choosing option 2, the user will directly enter the KEGG code fof the target organism.
