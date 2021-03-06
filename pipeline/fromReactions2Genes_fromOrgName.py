@@ -5,7 +5,6 @@ import pandas as pd
 from ast import literal_eval
 import RESTmoduleModified as RESTmod
 import bioservices.kegg as kegg
-import cobra as cb
 
 def checkNadNadpDependencies_and(nadp, nad, id2Search, id2Search_complete, lAnd, dGenesFromKegg):
     if nadp == True:
@@ -162,54 +161,11 @@ RAWDIR = workingDirs[0]
 OUTDIR = workingDirs[2]
 
 # setting input data
-testModel = sys.argv[1]
-if testModel == 'recon3':
-    ## Recon 3
-    modelXml = 'Recon3D_301_20200923'
-    rxns = 'recon3D_reactions_enriched'
-    transportRxns = 'recon3D_reactions_enriched_tcdb'
-    outputName = 'recon3D_reactions_wGenes'
-    metModelFile = 'recon3D_metabolites_enriched'
-    orgCode = 'hsa'
-    taxId = ['|TAX-9606|']
-elif testModel == 'y7':
-    ## Yeast 7
-    modelXml = 'yeast_7.6_cobra'
-    rxns = 'y7_reactions_enriched'
-    transportRxns = 'y7_reactions_enriched_tcdb'
-    outputName = 'y7_reactions_wGenes'
-    metModelFile = 'y7_metabolites_enriched'
-    orgCode = 'sce'
-    taxId = ['|TAX-4932|', '|TAX-559292|', '|TAX-580239|', '|TAX-658763|', '|TAX-1294310|']
-elif testModel == 'y8':
-    ## Yeast 8
-    modelXml = 'yeast8'
-    rxns = 'y8_reactions_enriched'
-    transportRxns = 'y8_reactions_enriched_tcdb'
-    outputName = 'y8_reactions_wGenes'
-    metModelFile = 'y8_metabolites_enriched'
-    orgCode = 'sce'
-    taxId = ['|TAX-4932|', '|TAX-559292|', '|TAX-580239|', '|TAX-658763|', '|TAX-1294310|']
-elif testModel == 'hmr':
-    ## HMRcore
-    modelXml = 'HMRcore_20200328_wReconNames'
-    rxns = 'hmrCore_reactions_enriched'
-    transportRxns = 'hmrCore_reactions_enriched_tcdb'
-    outputName = 'hmrCore_reactions_wGenes'
-    metModelFile = 'hmrCore_metabolites_enriched'
-    orgCode = 'hsa'
-    taxId = ['|TAX-9606|']
-elif testModel == 'ownData':
-    ## specify your input data
-    modelXml = ''
-    rxns = ''
-    transportRxns = ''
-    outputName = ''
-    metModelFile = ''
-    orgCode = ''
-    taxId = []
-    ####
-    dfRxns2GenesFile
+outputName = ''
+orgCode = ''
+taxId = []
+dfRxns2GenesFile = ''
+dfRxnId2Equation = ''
 
 dfAllDBs = pd.read_csv(os.path.join(OUTDIR, 'dfJoin_metacyc_kegg_rhea_20201218164915.csv'), sep = '\t', dtype=str)
 dfAllDBs['ec_number'] = dfAllDBs['ec_number'].apply(literal_eval)
@@ -245,19 +201,6 @@ dfMetacyc_genes['Product'] = dfMetacyc_genes['Product'].apply(literal_eval)
 dfMetacyc_genes = dfMetacyc_genes.explode('Product')
 dfMetacyc_genes = dfMetacyc_genes.reset_index(drop = True)
 
-# dfrxns = pd.read_csv(os.path.join(OUTDIR, rxns + '.csv'), sep = '\t', dtype = str)
-# dfrxns['PutativeIdentifiers'] = dfrxns['PutativeIdentifiers'].apply(literal_eval)
-# dfrxns['IsTransport'] = dfrxns['IsTransport'].apply(literal_eval)
-# dfrxns['IsExchange'] = dfrxns['IsExchange'].apply(literal_eval)
-# print('dfrxns\t', dfrxns.shape)
-# dftransportRxns = pd.read_csv(os.path.join(OUTDIR, transportRxns + '.csv'), sep = '\t')
-# print('dftransportRxns\t', dftransportRxns.shape)
-#
-# dfmerge = pd.merge(dfrxns, dftransportRxns, on='Rxn')
-
-
-
-
 # Conversion of KEGG gene identifiers to NCBI gene identifiers
 ncbi2Org = RESTmod.kegg_conv(orgCode, "ncbi-geneid").readlines()
 ncbi = []
@@ -280,26 +223,13 @@ for line in uniprot2Org:
 
 dfuniprot2Org = pd.DataFrame({'uniprot': unip, 'keggGeneId': gene})
 
-dfMetEnriched = pd.read_csv(os.path.join(OUTDIR, metModelFile + '.csv'), sep = '\t', dtype=str)
-dfMetEnriched['lIdentifiers'] = dfMetEnriched['lIdentifiers'].apply(literal_eval)
-
-model = cb.io.read_sbml_model(os.path.join(RAWDIR, modelXml + '.xml'))
-
 lMetaEnzOR_all = []
 lEc_all = []
-if testModel == 'recon3' or testModel == 'hmr':
-    dfmerge['Rxn_conv'] = dfmerge.Rxn.str[2:]
-else:
-    dfmerge['Rxn_conv'] = dfmerge.Rxn.values
-
 dGenesFromKegg = {}
 dEcFromKegg = {}
 dOrthFromKegg = {}
 
-
-
-##########
-## ciclo su ogni reazione per agg geni dal macrodb
+## Loop over each reaction to add genes from the macrodatabase
 dfRxns2Genes = pd.read_csv(os.path.join(OUTDIR, dfRxns2GenesFile + '.csv'), sep = '\t', dtype=str)
 dfRxns2Genes['Genes'] = dfRxns2Genes['Genes'].apply(literal_eval)
 
