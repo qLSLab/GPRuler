@@ -91,12 +91,12 @@ When an existing metabolic model is chosen:
 
 **Step 8. *genesLocationFilter***: apply a filter on the identified list of genes of each reaction to be in line with the compartment associated to the reaction.
 * Input:
-  * dfrxnsInfo: a string to name the output file
+  * dfGenesLoc: a string to name the output file
   * dfrxns2Genes: the output of Step 7
   * orgCode: the KEGG organism code of the target organism
   * lCompartmentsOrganization: according to the compartmentalization of the model, this dictionary includes as keys the cell compartment of the model and as values a list of compartments all pointing to the corresponding key. For example: mitochondrion is associated to the following list: ['mitochondrion', 'mitochondrial matrix', 'mitochondrial membrane','mitochondrion inner membrane', 'mitochondrion inner membrane', 'mitochondrial inner membrane', 'mitochondrial intermembrane space', 'mitochondrial outer membrane']. The list includes both alternative names with which the compartment is annotated in Uniprot and Gene Ontology database. Moreover, depending on the compartments included in the model if internal compartment to the target one are not included in the model as separate compartments, it is necessary to include them within the list to avoid that the gene is excluded from the filter, despite included in this cellular localization.
 * Output saved in the outputs directory:
-  * dfrxnsInfo + \'.csv\': a file storing for each gene (Gene column) the list of corresponding annotated compartments (lCompartments column)
+  * dfGenesLoc + \'.csv\': a file storing for each gene (Gene column) the list of corresponding annotated compartments (lCompartments column)
 
 
 **Step 9. *fromReactions2Genes_wFilteredData***: filter the list of genes retrieved for each reaction in accordance with its compartment into the model.
@@ -119,7 +119,7 @@ When an existing metabolic model is chosen:
   * outputFileName + \'\_Kegg2UniprotGenes.csv\': a file storing for each KEGG gene identifier of the investigated organism (keggId column) the corresponding Uniprot identifier (uniprotId column).
 
 
-**Step 11. *GPRULER**: reconstruct the GPR rules
+**Step 11. *GPRULER***: reconstruct the GPR rules
 * Input:
   * model: a string to get the input files and name the output files
   * organismCode: the KEGG organism code of the target organism. The user has two options: insert the organism name (option 1) or insert the KEGG organism code (option 2). Choosing option 1, the user is asked to enter the organism name. The most putative KEGG organism codes will be proposed among which the user will choose the most correct one. Choosing option 2, the user will directly enter the KEGG code fof the target organism.
@@ -131,7 +131,7 @@ When an existing metabolic model is chosen:
 
 ## Execution of the pipeline from the organism name
 When the organism name is inserted:
-**Step 1. *fromOrganismName2ReactionsList**: generate the list of metabolic reactions of the target organism
+**Step 1. *fromOrganismName2ReactionsList***: generate the list of metabolic reactions of the target organism
 * Input:
   * model = input('Which is the model name? ')
   * organismCode: the KEGG organism code of the target organism. The user has two options: insert the organism name (option 1) or insert the KEGG organism code (option 2). Choosing option 1, the user is asked to enter the organism name. The most putative KEGG organism codes will be proposed among which the user will choose the most correct one. Choosing option 2, the user will directly enter the KEGG code fof the target organism.
@@ -142,7 +142,7 @@ When the organism name is inserted:
   * model + \'\_Rxns2Genes.csv\': for each retrieved reaction (RxnId column), the list of corresponding metabolic catalysing genes is reported (Genes column);
 
 
-**Step 2. *fromReactions2Genes_fromOrgName**:  identification of the genes list associated to each model reaction according to the macrodatabase annotation.
+**Step 2. *fromReactions2Genes_fromOrgName***:  identification of the genes list associated to each model reaction according to the macrodatabase annotation.
 * Input:
   * dfRxns2GenesFile: the fourth output from Step 1
   * dfRxnId2Equation: the second output from Step 1
@@ -153,7 +153,16 @@ When the organism name is inserted:
   * modelName + \'\_Rxns2Genes.csv\':  for each retrieved reaction (RxnId column), the list of corresponding metabolic catalysing genes is reported (Genes_fromKEGG column), and the list of catalysing genes annotated in the macrodatabase is reported (Genes_fromMacroDb column), and the sum of Genes_fromKEGG and Genes_fromMacroDb columns (Genes column).
   * modelName + \'\_Kegg2UniprotGenes.csv\': for each KEGG identifier (keggId column) of the retrieved list of metabolic genes the corresponding Uniprot (uniprotId column).
 
-**Step 3. *GPRULER**: reconstruct the GPR rules
+**Step 3. *genesLocationFilter_fromOrgName***: retrieve all the information about the genes location from Uniprot and Gene Ontology databases.
+* Input:
+  * dfGenesLoc: a string to name the output file
+  * dfrxns2Genes: the first output of Step 2
+  * orgCode: the KEGG organism code of the target organism
+  * lCompartmentsOrganization: according to the compartmentalization of the target organism, this dictionary includes as keys the cell compartment of the organism and as values a list of compartments all pointing to the corresponding key. For example: mitochondrion is associated to the following list: ['mitochondrion', 'mitochondrial matrix', 'mitochondrial membrane','mitochondrion inner membrane', 'mitochondrion inner membrane', 'mitochondrial inner membrane', 'mitochondrial intermembrane space', 'mitochondrial outer membrane']. The list includes both alternative names with which the compartment is annotated in Uniprot and Gene Ontology database.
+* Output saved in the outputs directory:
+  * dfGenesLoc + \'.csv\': a file storing for each gene (Gene column) the list of corresponding annotated compartments (lCompartments column)
+
+**Step 3. *GPRULER***: reconstruct the GPR rules
 * Input:
   * model: a string to get the input files and name the output files
   * organismCode: the KEGG organism code of the target organism. The user has two options: insert the organism name (option 1) or insert the KEGG organism code (option 2). Choosing option 1, the user is asked to enter the organism name. The most putative KEGG organism codes will be proposed among which the user will choose the most correct one. Choosing option 2, the user will directly enter the KEGG code fof the target organism.
