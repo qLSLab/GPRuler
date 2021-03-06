@@ -161,11 +161,11 @@ RAWDIR = workingDirs[0]
 OUTDIR = workingDirs[2]
 
 # setting input data
-outputName = ''
-orgCode = ''
-taxId = []
 dfRxns2GenesFile = ''
 dfRxnId2Equation = ''
+orgCode = ''
+taxId = []
+outputName = ''
 
 dfAllDBs = pd.read_csv(os.path.join(OUTDIR, 'dfJoin_metacyc_kegg_rhea_20201218164915.csv'), sep = '\t', dtype=str)
 dfAllDBs['ec_number'] = dfAllDBs['ec_number'].apply(literal_eval)
@@ -364,6 +364,8 @@ for rxn in dfRxns2Genes.itertuples():
     lEc_all.append(lEc)
 
 
-dfmerge['lGenes'] = lMetaEnzOR_all
-dfmerge['lEC'] = lEc_all
-dfmerge.to_csv(os.path.join(OUTDIR, outputName + '.csv'), sep = '\t', index = False)
+dfRxns2Genes['Genes_fromMacroDb'] = lMetaEnzOR_all
+dfRxns2Genes['lEC'] = lEc_all
+dfRxns2Genes = dfRxns2Genes.rename(columns={'Genes': 'Genes_fromKEGG'})
+dfRxns2Genes['Genes'] = dfRxns2Genes['Genes_fromKEGG'] + dfRxns2Genes['Genes_fromMacroDb']
+dfRxns2Genes.to_csv(os.path.join(OUTDIR, outputName + '_Rxns2Genes.csv'), sep = '\t', index = False)
