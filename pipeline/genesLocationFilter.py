@@ -17,7 +17,7 @@ OUTDIR = workingDirs[2]
 testModel = sys.argv[1]
 if testModel == 'recon3':
     ## Recon 3
-    dfrxnsInfo = 'recon3D_genes2Compartments'
+    dfGenesLoc = 'recon3D_genes2Compartments'
     dfrxns2Genes = 'recon3D_reactions_wGenes'
     orgCode = 'hsa'
     lCompartmentsOrganization = {'cytoplasm': ['cytoplasm','preribosome', 'cytosol', 'endosome', 'cytoskeleton', 'mating projection'],
@@ -30,7 +30,7 @@ if testModel == 'recon3':
                                 'peroxisome': ['peroxisome', 'peroxisomal membrane']}
 elif testModel == 'y7':
     ## Yeast 7
-    dfrxnsInfo = 'y7_genes2Compartments'
+    dfGenesLoc = 'y7_genes2Compartments'
     dfrxns2Genes = 'y7_reactions_wGenes'
     orgCode = 'sce'
     lCompartmentsOrganization = {'extracellular': ['cell periphery', 'boundary', 'extracellular','plasma membrane', 'cell envelope'],
@@ -45,7 +45,7 @@ elif testModel == 'y7':
                                  'vacuole': ['vacuole'], 'vacuolar membrane': ['vacuolar membrane']}
 elif testModel == 'y8':
     ## Yeast 8
-    dfrxnsInfo = 'y8_genes2Compartments'
+    dfGenesLoc = 'y8_genes2Compartments'
     dfrxns2Genes = 'y8_reactions_wGenes'
     orgCode = 'sce'
     lCompartmentsOrganization = {'cytoplasm': ['cytoplasm','preribosome', 'cytosol', 'endosome', 'cytoskeleton', 'mating projection'],
@@ -61,7 +61,7 @@ elif testModel == 'y8':
                                  'vacuole': ['vacuole'], 'vacuolar membrane': ['vacuolar membrane']}
 elif testModel == 'hmr':
     ## HMRcore
-    dfrxnsInfo = 'hmrCore_genes2Compartments'
+    dfGenesLoc = 'hmrCore_genes2Compartments'
     dfrxns2Genes = 'hmrCore_reactions_wGenes'
     orgCode = 'hsa'
     lCompartmentsOrganization = {'cytoplasm': ['cytoplasm','preribosome', 'cytosol', 'endosome', 'cytoskeleton', 'mating projection'],
@@ -70,7 +70,7 @@ elif testModel == 'hmr':
 
 elif testModel == 'ownData':
     ## specify your input data
-    dfrxnsInfo = ''
+    dfGenesLoc = ''
     dfrxns2Genes = ''
     orgCode = ''
     lCompartmentsOrganization = {}
@@ -149,7 +149,7 @@ lPossibleCompartments = ['nucleus', 'nuclear lumen', 'nucleoplasm', 'nuclear env
 
 dname2GO = {}
 dAnc2Name = {}
-outFile = open(os.path.join(OUTDIR, dfrxnsInfo + '.csv'), mode='w')
+outFile = open(os.path.join(OUTDIR, dfGenesLoc + '.csv'), mode='w')
 gL.writeLineByLineToFile(outFile, ['Gene', 'lCompartments'], '\t')
 
 u = UniProt(verbose=False)
