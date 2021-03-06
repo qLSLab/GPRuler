@@ -255,16 +255,7 @@ dfMetacyc_genes = dfMetacyc_genes.reset_index(drop = True)
 #
 # dfmerge = pd.merge(dfrxns, dftransportRxns, on='Rxn')
 
-## ciclo su ogni reazione per agg geni dal macrodb
-dfRxns2Genes = pd.read_csv(os.path.join(OUTDIR, dfRxns2GenesFile + '.csv'), sep = '\t', dtype=str)
-dfRxns2Genes['Genes'] = dfRxns2Genes['Genes'].apply(literal_eval)
 
-for rxn in dfRxns2Genes.itertuples():
-    dfAllDBs[dfAllDBs['KeggId_x'] == rxn]
-    dfAllDBs[dfAllDBs['KeggId_fromKegg'] == rxn]
-    dfAllDBs[dfAllDBs['KeggId_y'] == rxn]
-
-##############
 
 
 # Conversion of KEGG gene identifiers to NCBI gene identifiers
@@ -305,143 +296,121 @@ dGenesFromKegg = {}
 dEcFromKegg = {}
 dOrthFromKegg = {}
 
-for row in dfmerge.itertuples():
+
+
+##########
+## ciclo su ogni reazione per agg geni dal macrodb
+dfRxns2Genes = pd.read_csv(os.path.join(OUTDIR, dfRxns2GenesFile + '.csv'), sep = '\t', dtype=str)
+dfRxns2Genes['Genes'] = dfRxns2Genes['Genes'].apply(literal_eval)
+
+for rxn in dfRxns2Genes.itertuples():
     nadp = False
     nad = False
-    rxnInModel = model.reactions.get_by_id(row.Rxn_conv)
+    rxnTarget = dfRxnId2Equation[dfRxnId2Equation['RxnId'] == rxn]
+    equation = rxnTarget.iloc[0]['Equation']
     # determine if the reaction is NADH or NADPH dependent to filter genes accordingly
-    for reactant in rxnInModel.reactants:
-        if testModel == 'recon3' or testModel == 'hmr':
-            metSearch = dfMetEnriched[dfMetEnriched['Id'] == 'M_' + reactant.id]
-        else:
-            metSearch = dfMetEnriched[dfMetEnriched['Id'] == reactant.id]
-        if metSearch.empty is False:
-            for metRow in metSearch.itertuples():
-                if 'C00005' in metRow.lIdentifiers or 'C00006' in metRow.lIdentifiers:
-                    nadp = True
-                elif 'C00004' in metRow.lIdentifiers or 'C00003' in metRow.lIdentifiers:
-                    nad = True
+    if 'C00005' in equation or 'C00006' in equation:
+        nadp = True
+    elif 'C00004' in equation or 'C00003' in equation:
+        nad = True
+
+    dfSearch = pd.concat(dfAllDBs[dfAllDBs['KeggId_x'] == rxn], dfAllDBs[dfAllDBs['KeggId_fromKegg'] == rxn], dfAllDBs[dfAllDBs['KeggId_y'] == rxn])
+
     lEc = []
     lMetaEnzOR = []
-    if (row.IsTransport_x == True or row.IsExchange_x == True) or (row.IsTransport_x == False and row.IsExchange_x == False):
-        if len(row.PutativeIdentifiers) != 0:
-            m_m = dfAllDBs[dfAllDBs['MetaCycId'].isin(row.PutativeIdentifiers)]
-            m_r = dfAllDBs[dfAllDBs['MetaCycId_fromRhea'].isin(row.PutativeIdentifiers)]
-            k_m = dfAllDBs[dfAllDBs['KeggId_x'].isin(row.PutativeIdentifiers)]
-            k_k = dfAllDBs[dfAllDBs['KeggId_fromKegg'].isin(row.PutativeIdentifiers)]
-            lDfs = [m_m, m_r, k_m, k_k]
-            lRhea = ['RheaId_master', 'RheaId_lr','RheaId_rl','RheaId_bi', 'OtherRheaId_fromKegg']
-            for r in lRhea:
-                tmp = dfAllDBs.explode(r)
-                tmp = tmp.reset_index(drop = True)
-                lDfs.append(tmp[tmp[r].isin(row.PutativeIdentifiers)])
-            r_m = dfAllDBs[dfAllDBs['RheaId'].isin(row.PutativeIdentifiers)]
-            lDfs.append(r_m)
-            dfSearch = pd.concat(lDfs)
-            dfSearch = dfSearch.reset_index(drop = True)
-            for lec in list(dfSearch['ec_number'].dropna()):
-                for ec in lec:
-                    lEc.append(ec[4:-1])
-            allmetacycEnzymes = list(dfSearch['enzymes_of_reaction'].dropna())
-            for l in allmetacycEnzymes:
-                for el in l:
-                    lAnd = []
-                    dfProt1 = dfMetacyc_proteins[dfMetacyc_proteins['MetaCycId'] == el]
-                    dfProt2 = dfMetacyc_proteins[dfMetacyc_proteins['Component_of'] == el]
-                    dfProt = pd.concat([dfProt1, dfProt2])
-                    if dfProt.empty is False:
-                        for rowdfProt in dfProt.itertuples():
-                            if len(gL.intersect(rowdfProt.lSpecies, taxId)) != 0:
-                                if pd.isna(rowdfProt.Uniprot) is False:
-                                    dfCorrespondingGenes = dfuniprot2Org[dfuniprot2Org['uniprot'] == 'up:' + rowdfProt.Uniprot]
-                                    for foundGene in list(dfCorrespondingGenes['keggGeneId']):
-                                        if [foundGene.split(':')[1]] not in lMetaEnzOR:
-                                            geneId2search = foundGene.split(':')[1]
-                                            lMetaEnzOR, dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
-                                lgenes = rowdfProt.lGenes
-                                lComponents = rowdfProt.Components
-                                foundGenes = dfMetacyc_genes[dfMetacyc_genes['MetaCycId'].isin(lgenes)]
-                                foundComponents = dfMetacyc_genes[dfMetacyc_genes['Product'].isin(lComponents)]
-                                found = pd.concat([foundGenes,foundComponents])
-                                found = found.drop_duplicates(subset = ['MetaCycId'])
-                                for g in list(found['NcbiId'].dropna()):
-                                    if testModel  == '1':
-                                        gId = orgCode + ':' + g
-                                        if gId in list(dfncbi2Org['keggGeneId']) and g not in lAnd:
-                                            lAnd, dGenesFromKegg = checkNadNadpDependencies_and(nadp, nad, g, gId, lAnd, dGenesFromKegg)
-                                    else:
-                                        gId = 'ncbi-geneid:' + g
-                                        if gId in list(dfncbi2Org['ncbi']):
-                                            searchNcbi = dfncbi2Org[dfncbi2Org['ncbi'] == gId]
-                                            for s in list(searchNcbi['keggGeneId']):
-                                                if s.split(':')[1] not in lAnd:
-                                                    geneId2search = s.split(':')[1]
-                                                    lAnd, dGenesFromKegg = checkNadNadpDependencies_and(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lAnd, dGenesFromKegg)
 
-                                for lAcc in list(found['Accessions'].dropna()):
-                                    for a in lAcc:
-                                        gId = orgCode + ':' + a
-                                        if gId in list(dfncbi2Org['keggGeneId']) and a not in lAnd:
-                                            lAnd, dGenesFromKegg = checkNadNadpDependencies_and(nadp, nad, a, gId, lAnd, dGenesFromKegg)
-
-                                for uniprotFound in list(found['Uniprot'].dropna()):
-                                    dfCorrespondingGenes = dfuniprot2Org[dfuniprot2Org['uniprot'] == 'up:' + uniprotFound]
-                                    for foundGene in list(dfCorrespondingGenes['keggGeneId']):
-                                        if [foundGene.split(':')[1]] not in lMetaEnzOR:
-                                            geneId2search = foundGene.split(':')[1]
-                                            lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR,dGenesFromKegg)
-                    if len(lAnd) != 0:
-                        lAnd.sort()
-                        if lAnd not in lMetaEnzOR:
-                            lMetaEnzOR.append(lAnd)
-
-            lOrths = list(dfSearch['Orthology_fromKegg'].dropna())
-            for orth in lOrths:
-                lOId = list(gL.extractRegexFromItem(orth, r"([K0-9]{6})")[0])
-                for oId in lOId:
-                    if oId in dOrthFromKegg:
-                        dOrth = dOrthFromKegg[oId]
-                    else:
-                        dOrth = getKeggInfo('ko:' + oId)
-                        dOrthFromKegg[oId] = dOrth
-                    if dOrth != 400 and dOrth != 404 and 'GENES' in dOrth and orgCode.upper() in dOrth['GENES']:
-                        for item in dOrth['GENES'][orgCode.upper()].split():
-                            par = item.find('(')
-                            if par != -1:
-                                if [item[:par]] not in lMetaEnzOR:
-                                    geneId2search = item[:par]
-                                    lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR,dGenesFromKegg)
+    dfSearch = dfSearch.reset_index(drop = True)
+    for lec in list(dfSearch['ec_number'].dropna()):
+        for ec in lec:
+            lEc.append(ec[4:-1])
+    allmetacycEnzymes = list(dfSearch['enzymes_of_reaction'].dropna())
+    for l in allmetacycEnzymes:
+        for el in l:
+            lAnd = []
+            dfProt1 = dfMetacyc_proteins[dfMetacyc_proteins['MetaCycId'] == el]
+            dfProt2 = dfMetacyc_proteins[dfMetacyc_proteins['Component_of'] == el]
+            dfProt = pd.concat([dfProt1, dfProt2])
+            if dfProt.empty is False:
+                for rowdfProt in dfProt.itertuples():
+                    if len(gL.intersect(rowdfProt.lSpecies, taxId)) != 0:
+                        if pd.isna(rowdfProt.Uniprot) is False:
+                            dfCorrespondingGenes = dfuniprot2Org[dfuniprot2Org['uniprot'] == 'up:' + rowdfProt.Uniprot]
+                            for foundGene in list(dfCorrespondingGenes['keggGeneId']):
+                                if [foundGene.split(':')[1]] not in lMetaEnzOR:
+                                    geneId2search = foundGene.split(':')[1]
+                                    lMetaEnzOR, dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
+                        lgenes = rowdfProt.lGenes
+                        lComponents = rowdfProt.Components
+                        foundGenes = dfMetacyc_genes[dfMetacyc_genes['MetaCycId'].isin(lgenes)]
+                        foundComponents = dfMetacyc_genes[dfMetacyc_genes['Product'].isin(lComponents)]
+                        found = pd.concat([foundGenes,foundComponents])
+                        found = found.drop_duplicates(subset = ['MetaCycId'])
+                        for g in list(found['NcbiId'].dropna()):
+                            if testModel  == '1':
+                                gId = orgCode + ':' + g
+                                if gId in list(dfncbi2Org['keggGeneId']) and g not in lAnd:
+                                    lAnd, dGenesFromKegg = checkNadNadpDependencies_and(nadp, nad, g, gId, lAnd, dGenesFromKegg)
                             else:
-                                if [item] not in lMetaEnzOR:
-                                    lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, item, orgCode + ':' + item, lMetaEnzOR, dGenesFromKegg)
+                                gId = 'ncbi-geneid:' + g
+                                if gId in list(dfncbi2Org['ncbi']):
+                                    searchNcbi = dfncbi2Org[dfncbi2Org['ncbi'] == gId]
+                                    for s in list(searchNcbi['keggGeneId']):
+                                        if s.split(':')[1] not in lAnd:
+                                            geneId2search = s.split(':')[1]
+                                            lAnd, dGenesFromKegg = checkNadNadpDependencies_and(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lAnd, dGenesFromKegg)
 
-            for el in list(dfSearch['EC_fromKegg'].dropna()):
-                lEc += el.split()
+                        for lAcc in list(found['Accessions'].dropna()):
+                            for a in lAcc:
+                                gId = orgCode + ':' + a
+                                if gId in list(dfncbi2Org['keggGeneId']) and a not in lAnd:
+                                    lAnd, dGenesFromKegg = checkNadNadpDependencies_and(nadp, nad, a, gId, lAnd, dGenesFromKegg)
 
-            for llecRhea in list(dfSearch['ECnumber'].dropna()):
-                for lecRhea in llecRhea:
-                    lEc += lecRhea
+                        for uniprotFound in list(found['Uniprot'].dropna()):
+                            dfCorrespondingGenes = dfuniprot2Org[dfuniprot2Org['uniprot'] == 'up:' + uniprotFound]
+                            for foundGene in list(dfCorrespondingGenes['keggGeneId']):
+                                if [foundGene.split(':')[1]] not in lMetaEnzOR:
+                                    geneId2search = foundGene.split(':')[1]
+                                    lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR,dGenesFromKegg)
+            if len(lAnd) != 0:
+                lAnd.sort()
+                if lAnd not in lMetaEnzOR:
+                    lMetaEnzOR.append(lAnd)
 
-            for llUnipRhea in list(dfSearch['UniprotId'].dropna()):
-                for lUnipRhea in llUnipRhea:
-                    if any('up:' + el in list(dfuniprot2Org['uniprot']) for el in lUnipRhea) is True:
-                        dfCorrespondingGenes = dfuniprot2Org[dfuniprot2Org['uniprot'].isin(['up:' + el for el in lUnipRhea])]
-                        for foundGene in list(dfCorrespondingGenes['keggGeneId']):
-                            if [foundGene.split(':')[1]] not in lMetaEnzOR:
-                                geneId2search = foundGene.split(':')[1]
-                                lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
+    lOrths = list(dfSearch['Orthology_fromKegg'].dropna())
+    for orth in lOrths:
+        lOId = list(gL.extractRegexFromItem(orth, r"([K0-9]{6})")[0])
+        for oId in lOId:
+            if oId in dOrthFromKegg:
+                dOrth = dOrthFromKegg[oId]
+            else:
+                dOrth = getKeggInfo('ko:' + oId)
+                dOrthFromKegg[oId] = dOrth
+            if dOrth != 400 and dOrth != 404 and 'GENES' in dOrth and orgCode.upper() in dOrth['GENES']:
+                for item in dOrth['GENES'][orgCode.upper()].split():
+                    par = item.find('(')
+                    if par != -1:
+                        if [item[:par]] not in lMetaEnzOR:
+                            geneId2search = item[:par]
+                            lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR,dGenesFromKegg)
+                    else:
+                        if [item] not in lMetaEnzOR:
+                            lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, item, orgCode + ':' + item, lMetaEnzOR, dGenesFromKegg)
 
-    if (row.IsTransport_x == True or row.IsExchange_x == True):
-        dTC2Unip = literal_eval(row.Identifiers_fromTCDB)
-        if len(dTC2Unip) != 0:
-            for tc in dTC2Unip:
-                lUnips = dTC2Unip[tc]
-                if any('up:' + el in list(dfuniprot2Org['uniprot']) for el in lUnips) is True:
-                    dfCorrespondingGenes = dfuniprot2Org[dfuniprot2Org['uniprot'].isin(['up:' + el for el in lUnips])]
-                    for foundGene in list(dfCorrespondingGenes['keggGeneId']):
-                        if [foundGene.split(':')[1]] not in lMetaEnzOR:
-                            geneId2search = foundGene.split(':')[1]
-                            lMetaEnzOR, dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
+    for el in list(dfSearch['EC_fromKegg'].dropna()):
+        lEc += el.split()
+
+    for llecRhea in list(dfSearch['ECnumber'].dropna()):
+        for lecRhea in llecRhea:
+            lEc += lecRhea
+
+    for llUnipRhea in list(dfSearch['UniprotId'].dropna()):
+        for lUnipRhea in llUnipRhea:
+            if any('up:' + el in list(dfuniprot2Org['uniprot']) for el in lUnipRhea) is True:
+                dfCorrespondingGenes = dfuniprot2Org[dfuniprot2Org['uniprot'].isin(['up:' + el for el in lUnipRhea])]
+                for foundGene in list(dfCorrespondingGenes['keggGeneId']):
+                    if [foundGene.split(':')[1]] not in lMetaEnzOR:
+                        geneId2search = foundGene.split(':')[1]
+                        lMetaEnzOR,dGenesFromKegg = checkNadNadpDependencies_or(nadp, nad, geneId2search, orgCode + ':' + geneId2search, lMetaEnzOR, dGenesFromKegg)
 
     lEc = gL.unique(lEc)
     for ec in lEc:
@@ -463,6 +432,7 @@ for row in dfmerge.itertuples():
 
     lMetaEnzOR_all.append(lMetaEnzOR)
     lEc_all.append(lEc)
+
 
 dfmerge['lGenes'] = lMetaEnzOR_all
 dfmerge['lEC'] = lEc_all
