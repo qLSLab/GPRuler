@@ -9,7 +9,7 @@ The sequential execution steps of the proposed pipeline are detailed in the foll
 
 ## Execution of the pipeline from an existing metabolic model
 When an existing metabolic model is chosen:  
-**Step 1. *metaboliteIdentification.py***: identification of the metabolites involved in the model reactions.
+**Step 1. *metaboliteIdentification***: identification of the metabolites involved in the model reactions.
  * Inputs:
    * modelXml: the SBML model, which needs to be saved into the rawData directory
    * dfmetsInfo: a string to name the output files
@@ -18,7 +18,7 @@ When an existing metabolic model is chosen:
    * dfmetsInfo + \'.csv\': a file including all the information stored in the model for each metabolite. In particular: Id column includes the identifier associated to each metabolite, Name column includes the name associated to each metabolite, KeggId column includes the KEGG identifier associated to each metabolite, ChebiId  column includes the ChEBI identifier associated to each metabolite, PubchemId column includes the PubChem identifier associated to each metabolite, boundaryCondition column includes a boolean value indicating if the metabolite is in the boundary compartment, chemicalFormula column includes the chemical formula associated to each metabolite, Inchi column includes the InChi associated to each metabolite.
    * dfmetsInfo + \'\_wInferredIds\_.csv\': a file storing in each row the name of the metabolite (Name column) and a list of the inferred identifiers(Identifiers column).
 
-**Step 2. *metabolitesIdentification_FuzzyWuzzy.py***: identification of the metabolites involved in the model reactions through the FuzzyWuzzy package.
+**Step 2. *metabolitesIdentification_FuzzyWuzzy***: identification of the metabolites involved in the model reactions through the FuzzyWuzzy package.
 * Inputs:
    * modelXml: the SBML model, which needs to be saved into the rawData directory
    * outputFileName: a string to name the output files
