@@ -162,7 +162,16 @@ When the organism name is inserted:
 * Output saved in the outputs directory:
   * dfGenesLoc + \'.csv\': a file storing for each gene (Gene column) the list of corresponding annotated compartments (lCompartments column)
 
-**Step 3. *GPRULER***: reconstruct the GPR rules
+**Step 4. *fromReactions2Genes_wFilteredData_fromOrgName***: filter the list of genes retrieved for each reaction in accordance with its compartment information.
+* Input:
+  * dfGenes2Comp: the output of Step 3
+  * dfrxns2Genes: the first output of Step 2
+  * modelName: a string to name the output file
+  * lCompartmentsOrganization: according to the compartmentalization of the model, this dictionary includes as keys the cell compartment of the model and as values a list of compartments all pointing to the corresponding key. For example: mitochondrion is associated to the following list: ['mitochondrion', 'mitochondrial matrix', 'mitochondrial membrane','mitochondrion inner membrane', 'mitochondrion inner membrane', 'mitochondrial inner membrane', 'mitochondrial intermembrane space', 'mitochondrial outer membrane']. The list includes both alternative names with which the compartment is annotated in Uniprot and Gene Ontology database. Moreover, depending on the compartments included in the model if internal compartment to the target one are not included in the model as separate compartments, it is necessary to include them within the list to avoid that the gene is excluded from the filter, despite included in this cellular localization.
+* Output saved in the outputs directory:
+  * modelName + \'\_Rxns2Genes.csv\': for each retrieved reaction (RxnId column), the list of corresponding metabolic catalysing genes filtered according to the annotated localization is reported (Genes column).
+
+**Step 5. *GPRULER***: reconstruct the GPR rules
 * Input:
   * model: a string to get the input files and name the output files
   * organismCode: the KEGG organism code of the target organism. The user has two options: insert the organism name (option 1) or insert the KEGG organism code (option 2). Choosing option 1, the user is asked to enter the organism name. The most putative KEGG organism codes will be proposed among which the user will choose the most correct one. Choosing option 2, the user will directly enter the KEGG code fof the target organism.
