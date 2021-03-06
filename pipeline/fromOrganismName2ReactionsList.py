@@ -237,6 +237,3 @@ for r in flatdGene2RxnsList_values:
     lAssociatedGenes = gprL.unique(lAssociatedGenes)
     gprL.writeLineByLineToFile(outFile, [r, lAssociatedGenes])
 outFile.close()
-
-# Convert the list of all KEGG genes identifiers of the target organism to their corresponding Uniprot identifiers
-gprL.kegg2UniprotGenesId(organismCode, model, OUTDIR)
