@@ -4,7 +4,6 @@ import os
 import sys
 import pandas as pd
 import numpy as np
-import re
 
 def setWorkingDirs(dataDir='rawData', outDir=None):
     """Set the working directories dataDir, outDir, mapsDir, reportDir.
