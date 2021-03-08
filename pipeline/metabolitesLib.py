@@ -3,6 +3,7 @@ import re
 import pandas as pd
 import genericLib as gL
 from Bio.KEGG.REST import *
+from lxml import etree as ET
 from fuzzywuzzy import process
 
 def queryKeggCompound(db, met, metOriginale, lSymbols):
