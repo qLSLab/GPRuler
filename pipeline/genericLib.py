@@ -35,6 +35,13 @@ def setWorkingDirs(dataDir='rawData', outDir=None):
     reportDir = pathJoinCheck('outputs', outDir)
     return dataDir, outDir, reportDir
 
+def pathJoinCheck(dir2add, rootPath='.'):
+    """Check the existence of a path and build it if necessary."""
+    path = os.path.join(rootPath, dir2add)
+    if not os.path.exists(path):
+        os.makedirs(path)
+    return path
+
 def unique(a):
 	""" return the list with duplicate elements removed """
 	return list(set(a))
