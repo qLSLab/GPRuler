@@ -1,6 +1,6 @@
-# GPRuler: metabolic Gene-Protein-Reaction rules automatic reconstruction
+# GPRuler 
 
-**GPRuler** is an open-source tool to automate the reconstruction process of gene-protein-reaction (GPR) rules for any living organism, which describe with a Boolean logic relationships between the gene products (e.g., enzyme isoforms or subunits) associated with the catalysis of a given reaction.
+**GPRuler** (metabolic **G**ene-**P**rotein-**R**eaction **rule**s automatic reconstruction) is an open-source tool to automate the reconstruction process of gene-protein-reaction (GPR) rules for any living organism, which describe with a Boolean logic relationships between the gene products (e.g., enzyme isoforms or subunits) associated with the catalysis of a given reaction.
 
 By mining text and data from multiple biological databases, GPRuler can reconstruct GPRs starting either from just the name of the target organism or from an existing metabolic model.
 
