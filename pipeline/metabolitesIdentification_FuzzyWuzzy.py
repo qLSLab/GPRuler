@@ -40,7 +40,7 @@ elif testModel == 'ownData':
     outputFileName = ''
 
 # extracting metabolites info from the input model
-df = pd.read_csv(os.path.join(OUTDIR, dfmetsInfo + '_' + timeStamp + '.csv'), sep = '\t', dtype = str)
+df = pd.read_csv(os.path.join(OUTDIR, dfmetsInfo + '.csv'), sep = '\t', dtype = str)
 
 dfChebiDb = pd.read_csv(os.path.join(RAWDIR, 'chebi_database_accession_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype = {'ID': str, 'COMPOUND_ID': str, 'ACCESSION_NUMBER': str})
 dfChebiRelations = pd.read_csv(os.path.join(RAWDIR, 'chebi_relation_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype = {'ID': str, 'TYPE': str, 'INIT_ID': str, 'FINAL_ID': str})
@@ -84,4 +84,4 @@ dfChebiCompounds =  pd.read_csv(os.path.join(RAWDIR, 'chebi_compounds_20201216.t
 
 choicesChebi = dfChebiNames.NAME.to_list() + dfChebiUniprot.NAME.to_list() + dfChebiCompounds.NAME.to_list()
 dfMatches = metL.applyFW2Db(lMets2Search, choicesChebi)
-dfMatches.to_csv(os.path.join(OUTDIR, outputFileName + '_mappingChebi_allResults_' + timeStamp + '.tsv'), sep='\t')
+dfMatches.to_csv(os.path.join(OUTDIR, outputFileName + '_mappingChebi_allResults.tsv'), sep='\t')
