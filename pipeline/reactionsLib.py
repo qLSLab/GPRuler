@@ -59,7 +59,7 @@ def findPutativeRxns(dfEqualMets, colL, colR, db):
     return lPutativeRxns
 
 
-def findRxnsAfterFilter(lDfs2Concat, colNameS, colNameP, db):
+def findRxnsAfterFilter(lDfs2Concat, colNameS, colNameP, db, dfR, dfP):
     lPutativeRxns = []
     dfAllDBs_copy_All = pd.concat(lDfs2Concat)
     dfAllDBs_copy_All[colNameS + '_t'] = dfAllDBs_copy_All[colNameS].apply(tuple)
