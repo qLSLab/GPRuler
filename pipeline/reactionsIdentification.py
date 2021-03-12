@@ -366,261 +366,260 @@ gL.writeLineByLineToFile(outFile, ['RxnId', 'PutativeIdentifiers'], '\t')
 lcofactors = gL.unique(lcofactors)
 for rowRxn in dfRxns.itertuples():
     isTransport = rowRxn.IsTransport
-    isExchange = rowRxn.IsExchange
+    isExchange = rowRxn.IsExchange    
+    if rowRxn.Rxn.startswith('R_'):
+        rxnId = rowRxn.Rxn[2:]
+    else:
+        rxnId = rowRxn.Rxn
+    rxn = model.reactions.get_by_id(rxnId)
+    lIdentifiersRxn = [] # list where all the retrieved identifiers of the current reactions are saved
+    lReactants = []
     if isTransport == True:
-        if rowRxn.Rxn.startswith('R_'):
-            rxnId = rowRxn.Rxn[2:]
+        lReactants = rowRxn.trasportedMets
+    else:
+        for r in rxn.reactants:
+            lReactants.append(r.id)
+    lProducts = []
+    if isTransport == True:
+        lProducts = rowRxn.trasportedMets
+    else:
+        for r in rxn.products:
+            lProducts.append(r.id)
+    if isTransport == True:
+        dfMetsFromModel_reactants = dfMetsFromModel[dfMetsFromModel['Name'].isin(lReactants)]
+    else:
+        if testModel == 'recon3' or testModel == 'hmr':
+            dfMetsFromModel_reactants = dfMetsFromModel[dfMetsFromModel['Id'].isin(['M_' + m for m in lReactants])]
         else:
-            rxnId = rowRxn.Rxn
-        rxn = model.reactions.get_by_id(rxnId)
-        lIdentifiersRxn = [] # list where all the retrieved identifiers of the current reactions are saved
-        lReactants = []
-        if isTransport == True:
-            lReactants = rowRxn.trasportedMets
+            dfMetsFromModel_reactants = dfMetsFromModel[dfMetsFromModel['Id'].isin(lReactants)]
+    lReactants_ids_original = list(dfMetsFromModel_reactants['lIdentifiers'].dropna())
+
+    if isTransport == False and isExchange == False:
+        lReactants_ids_original = [l for l in lReactants_ids_original if 'C00080' not in l]
+    lReactants_ids = []
+    for lIdReactant in lReactants_ids_original:
+        lCompsFound = []
+        lCompsFound += lIdReactant
+        chebiIdentifiers = gL.intersect(lIdReactant,list(dfChebiCompounds['Id']))
+        dfChebiExplodedFilter = dfChebiCompounds_exploded[dfChebiCompounds_exploded['ParentalChebiIds_exploded'].isin(chebiIdentifiers)]
+        dfChebiFilter = dfChebiCompounds[dfChebiCompounds['Id'].isin(chebiIdentifiers)]
+
+        lAllChebi2Search = []
+        if dfChebiExplodedFilter.empty is False:
+            for riga in list(dfChebiExplodedFilter['ParentalChebiIds']):
+                lAllChebi2Search += riga
+            for riga in list(dfChebiExplodedFilter['AllChebiIds']):
+                lAllChebi2Search += riga
+
+        if dfChebiFilter.empty is False:
+            for riga in list(dfChebiFilter['ParentalChebiIds']):
+                lAllChebi2Search += riga
+            for riga in list(dfChebiFilter['AllChebiIds']):
+                lAllChebi2Search += riga
+        lAllChebi2Search = gL.unique(lAllChebi2Search)
+        dfChebiFormula_filtered = dfChebiFormula[dfChebiFormula['COMPOUND_ID'].isin(lAllChebi2Search)]
+        if dfChebiFormula_filtered.empty is False:
+            dfChebiFormula_filtered = dfChebiFormula_filtered.reset_index(drop = True)
+            dfChebiFormula_filtered_toKeep = dfChebiFormula_filtered[dfChebiFormula_filtered['TYPE'] == 'FORMULA']
+            if dfChebiFormula_filtered_toKeep.empty is False:
+                lCompsFound += list(dfChebiFormula_filtered_toKeep['COMPOUND_ID'])
+
+                for riga in list(dfChebiFormula_filtered_toKeep['COMPOUND_ID']):
+                    dfChebiExplodedFilter2 = dfChebiCompounds_exploded[dfChebiCompounds_exploded['ParentalChebiIds_exploded'].isin(list(dfChebiFormula_filtered_toKeep['COMPOUND_ID']))]
+                    for riga2 in list(dfChebiExplodedFilter2['ParentalChebiIds']):
+                        lCompsFound += riga2
+
+        lCompsFound += [element for el in list(dfChebiFilter['ParentalKeggC']) for element in el] + [element for el in list(dfChebiFilter['ParentalKeggG']) for element in el] + [element for el in list(dfChebiFilter['ParentalMetacyc']) for element in el] + [element for el in list(dfChebiFilter['AllKeggC']) for element in el] + [element for el in list(dfChebiFilter['AllKeggG']) for element in el] + [element for el in list(dfChebiFilter['AllMetacyc']) for element in el]
+        lCompsFound = gL.unique(lCompsFound)
+        lReactants_ids.append(lCompsFound)
+    if isTransport == True:
+        dfMetsFromModel_products = dfMetsFromModel[dfMetsFromModel['Name'].isin(lProducts)]
+    else:
+        if testModel == 'recon3' or testModel == 'hmr':
+            dfMetsFromModel_products = dfMetsFromModel[dfMetsFromModel['Id'].isin(['M_' + m for m in lProducts])]
         else:
-            for r in rxn.reactants:
-                lReactants.append(r.id)
-        lProducts = []
-        if isTransport == True:
-            lProducts = rowRxn.trasportedMets
-        else:
-            for r in rxn.products:
-                lProducts.append(r.id)
-        if isTransport == True:
-            dfMetsFromModel_reactants = dfMetsFromModel[dfMetsFromModel['Name'].isin(lReactants)]
-        else:
-            if testModel == 'recon3' or testModel == 'hmr':
-                dfMetsFromModel_reactants = dfMetsFromModel[dfMetsFromModel['Id'].isin(['M_' + m for m in lReactants])]
+            dfMetsFromModel_products = dfMetsFromModel[dfMetsFromModel['Id'].isin(lProducts)]
+    lProducts_ids_original = list(dfMetsFromModel_products['lIdentifiers'].dropna())
+    if isTransport == False and isExchange == False:
+        lProducts_ids_original = [l for l in lProducts_ids_original if 'C00080' not in l]
+    lProducts_ids = []
+    for lIdProduct in lProducts_ids_original:
+        lCompsFound = []
+        lCompsFound += lIdProduct
+        chebiIdentifiers = gL.intersect(lIdProduct,list(dfChebiCompounds['Id']))
+        dfChebiFilter = dfChebiCompounds[dfChebiCompounds['Id'].isin(chebiIdentifiers)]
+        dfChebiExplodedFilter = dfChebiCompounds_exploded[dfChebiCompounds_exploded['ParentalChebiIds_exploded'].isin(chebiIdentifiers)]
+
+        lAllChebi2Search = []
+        if dfChebiExplodedFilter.empty is False:
+            for riga in list(dfChebiExplodedFilter['ParentalChebiIds']):
+                lAllChebi2Search += riga
+            for riga in list(dfChebiExplodedFilter['AllChebiIds']):
+                lAllChebi2Search += riga
+
+        if dfChebiFilter.empty is False:
+            for riga in list(dfChebiFilter['ParentalChebiIds']):
+                lAllChebi2Search += riga
+            for riga in list(dfChebiFilter['AllChebiIds']):
+                lAllChebi2Search += riga
+        lAllChebi2Search = gL.unique(lAllChebi2Search)
+        dfChebiFormula_filtered = dfChebiFormula[dfChebiFormula['COMPOUND_ID'].isin(lAllChebi2Search)]
+        if dfChebiFormula_filtered.empty is False:
+            dfChebiFormula_filtered = dfChebiFormula_filtered.reset_index(drop = True)
+            dfChebiFormula_filtered_toKeep = dfChebiFormula_filtered[dfChebiFormula_filtered['TYPE'] == 'FORMULA']
+            if dfChebiFormula_filtered_toKeep.empty is False:
+                lCompsFound += list(dfChebiFormula_filtered_toKeep['COMPOUND_ID'])
+                for riga in list(dfChebiFormula_filtered_toKeep['COMPOUND_ID']):
+                    dfChebiExplodedFilter2 = dfChebiCompounds_exploded[dfChebiCompounds_exploded['ParentalChebiIds_exploded'].isin(list(dfChebiFormula_filtered_toKeep['COMPOUND_ID']))]
+                    for riga2 in list(dfChebiExplodedFilter2['ParentalChebiIds']):
+                        lCompsFound += riga2
+
+        lCompsFound += [element for el in list(dfChebiFilter['ParentalKeggC']) for element in el] + [element for el in list(dfChebiFilter['ParentalKeggG']) for element in el] + [element for el in list(dfChebiFilter['ParentalMetacyc']) for element in el] + [element for el in list(dfChebiFilter['AllKeggC']) for element in el] + [element for el in list(dfChebiFilter['AllKeggG']) for element in el] + [element for el in list(dfChebiFilter['AllMetacyc']) for element in el]
+        lCompsFound = gL.unique(lCompsFound)
+        lProducts_ids.append(lCompsFound)
+
+    dfR = pd.DataFrame(lReactants_ids).transpose()
+    dfP = pd.DataFrame(lProducts_ids).transpose()
+
+    if all(r != [] for r in lReactants_ids) == True and all(p != [] for p in lProducts_ids) == True:
+        lReactants_ids_cofactors = []
+        lReactants_ids_internal = []
+        for lReagenti in lReactants_ids:
+            if len(gL.intersect(lcofactors, lReagenti)) != 0:
+                lReactants_ids_cofactors += lReagenti
             else:
-                dfMetsFromModel_reactants = dfMetsFromModel[dfMetsFromModel['Id'].isin(lReactants)]
-        lReactants_ids_original = list(dfMetsFromModel_reactants['lIdentifiers'].dropna())
+                lReactants_ids_internal += lReagenti
 
-        if isTransport == False and isExchange == False:
-            lReactants_ids_original = [l for l in lReactants_ids_original if 'C00080' not in l]
-        lReactants_ids = []
-        for lIdReactant in lReactants_ids_original:
-            lCompsFound = []
-            lCompsFound += lIdReactant
-            chebiIdentifiers = gL.intersect(lIdReactant,list(dfChebiCompounds['Id']))
-            dfChebiExplodedFilter = dfChebiCompounds_exploded[dfChebiCompounds_exploded['ParentalChebiIds_exploded'].isin(chebiIdentifiers)]
-            dfChebiFilter = dfChebiCompounds[dfChebiCompounds['Id'].isin(chebiIdentifiers)]
+        lReactants_ids_cofactors = gL.unique(lReactants_ids_cofactors)
+        lReactants_ids_internal = gL.unique(lReactants_ids_internal)
 
-            lAllChebi2Search = []
-            if dfChebiExplodedFilter.empty is False:
-                for riga in list(dfChebiExplodedFilter['ParentalChebiIds']):
-                    lAllChebi2Search += riga
-                for riga in list(dfChebiExplodedFilter['AllChebiIds']):
-                    lAllChebi2Search += riga
-
-            if dfChebiFilter.empty is False:
-                for riga in list(dfChebiFilter['ParentalChebiIds']):
-                    lAllChebi2Search += riga
-                for riga in list(dfChebiFilter['AllChebiIds']):
-                    lAllChebi2Search += riga
-            lAllChebi2Search = gL.unique(lAllChebi2Search)
-            dfChebiFormula_filtered = dfChebiFormula[dfChebiFormula['COMPOUND_ID'].isin(lAllChebi2Search)]
-            if dfChebiFormula_filtered.empty is False:
-                dfChebiFormula_filtered = dfChebiFormula_filtered.reset_index(drop = True)
-                dfChebiFormula_filtered_toKeep = dfChebiFormula_filtered[dfChebiFormula_filtered['TYPE'] == 'FORMULA']
-                if dfChebiFormula_filtered_toKeep.empty is False:
-                    lCompsFound += list(dfChebiFormula_filtered_toKeep['COMPOUND_ID'])
-
-                    for riga in list(dfChebiFormula_filtered_toKeep['COMPOUND_ID']):
-                        dfChebiExplodedFilter2 = dfChebiCompounds_exploded[dfChebiCompounds_exploded['ParentalChebiIds_exploded'].isin(list(dfChebiFormula_filtered_toKeep['COMPOUND_ID']))]
-                        for riga2 in list(dfChebiExplodedFilter2['ParentalChebiIds']):
-                            lCompsFound += riga2
-
-            lCompsFound += [element for el in list(dfChebiFilter['ParentalKeggC']) for element in el] + [element for el in list(dfChebiFilter['ParentalKeggG']) for element in el] + [element for el in list(dfChebiFilter['ParentalMetacyc']) for element in el] + [element for el in list(dfChebiFilter['AllKeggC']) for element in el] + [element for el in list(dfChebiFilter['AllKeggG']) for element in el] + [element for el in list(dfChebiFilter['AllMetacyc']) for element in el]
-            lCompsFound = gL.unique(lCompsFound)
-            lReactants_ids.append(lCompsFound)
+        lProducts_ids_cofactors = []
+        lProducts_ids_internal = []
+        for lProdotti in lProducts_ids:
+            if len(gL.intersect(lcofactors, lProdotti)) != 0:
+                lProducts_ids_cofactors += lProdotti
+            else:
+                lProducts_ids_internal += lProdotti
+        lProducts_ids_cofactors = gL.unique(lProducts_ids_cofactors)
+        lProducts_ids_internal = gL.unique(lProducts_ids_internal)
+        dfAllDBs_copy = dfAllDBs_explode.copy()
         if isTransport == True:
-            dfMetsFromModel_products = dfMetsFromModel[dfMetsFromModel['Name'].isin(lProducts)]
+            dfAllDBs_copy = dfAllDBs_copy[dfAllDBs_copy['reaction_type'] == '|TRANSPORT|']
         else:
-            if testModel == 'recon3' or testModel == 'hmr':
-                dfMetsFromModel_products = dfMetsFromModel[dfMetsFromModel['Id'].isin(['M_' + m for m in lProducts])]
-            else:
-                dfMetsFromModel_products = dfMetsFromModel[dfMetsFromModel['Id'].isin(lProducts)]
-        lProducts_ids_original = list(dfMetsFromModel_products['lIdentifiers'].dropna())
-        if isTransport == False and isExchange == False:
-            lProducts_ids_original = [l for l in lProducts_ids_original if 'C00080' not in l]
-        lProducts_ids = []
-        for lIdProduct in lProducts_ids_original:
-            lCompsFound = []
-            lCompsFound += lIdProduct
-            chebiIdentifiers = gL.intersect(lIdProduct,list(dfChebiCompounds['Id']))
-            dfChebiFilter = dfChebiCompounds[dfChebiCompounds['Id'].isin(chebiIdentifiers)]
-            dfChebiExplodedFilter = dfChebiCompounds_exploded[dfChebiCompounds_exploded['ParentalChebiIds_exploded'].isin(chebiIdentifiers)]
+            dfAllDBs_copy = dfAllDBs_copy[dfAllDBs_copy['reaction_type'] != '|TRANSPORT|']
 
-            lAllChebi2Search = []
-            if dfChebiExplodedFilter.empty is False:
-                for riga in list(dfChebiExplodedFilter['ParentalChebiIds']):
-                    lAllChebi2Search += riga
-                for riga in list(dfChebiExplodedFilter['AllChebiIds']):
-                    lAllChebi2Search += riga
+        lIdxs = []
+        if len(lReactants_ids) in dgb_left_metacyc and len(lProducts_ids) in dgb_right_metacyc:
+            lCommonIdxs = gL.intersect(dgb_left_metacyc[len(lReactants_ids)].tolist(), dgb_right_metacyc[len(lProducts_ids)].tolist())
+            lIdxs += lCommonIdxs
 
-            if dfChebiFilter.empty is False:
-                for riga in list(dfChebiFilter['ParentalChebiIds']):
-                    lAllChebi2Search += riga
-                for riga in list(dfChebiFilter['AllChebiIds']):
-                    lAllChebi2Search += riga
-            lAllChebi2Search = gL.unique(lAllChebi2Search)
-            dfChebiFormula_filtered = dfChebiFormula[dfChebiFormula['COMPOUND_ID'].isin(lAllChebi2Search)]
-            if dfChebiFormula_filtered.empty is False:
-                dfChebiFormula_filtered = dfChebiFormula_filtered.reset_index(drop = True)
-                dfChebiFormula_filtered_toKeep = dfChebiFormula_filtered[dfChebiFormula_filtered['TYPE'] == 'FORMULA']
-                if dfChebiFormula_filtered_toKeep.empty is False:
-                    lCompsFound += list(dfChebiFormula_filtered_toKeep['COMPOUND_ID'])
-                    for riga in list(dfChebiFormula_filtered_toKeep['COMPOUND_ID']):
-                        dfChebiExplodedFilter2 = dfChebiCompounds_exploded[dfChebiCompounds_exploded['ParentalChebiIds_exploded'].isin(list(dfChebiFormula_filtered_toKeep['COMPOUND_ID']))]
-                        for riga2 in list(dfChebiExplodedFilter2['ParentalChebiIds']):
-                            lCompsFound += riga2
+        if len(lReactants_ids) in dgb_right_metacyc and len(lProducts_ids) in dgb_left_metacyc:
+            lCommonIdxs = gL.intersect(dgb_right_metacyc[len(lReactants_ids)].tolist(), dgb_left_metacyc[len(lProducts_ids)].tolist())
+            lIdxs += lCommonIdxs
 
-            lCompsFound += [element for el in list(dfChebiFilter['ParentalKeggC']) for element in el] + [element for el in list(dfChebiFilter['ParentalKeggG']) for element in el] + [element for el in list(dfChebiFilter['ParentalMetacyc']) for element in el] + [element for el in list(dfChebiFilter['AllKeggC']) for element in el] + [element for el in list(dfChebiFilter['AllKeggG']) for element in el] + [element for el in list(dfChebiFilter['AllMetacyc']) for element in el]
-            lCompsFound = gL.unique(lCompsFound)
-            lProducts_ids.append(lCompsFound)
+        if len(lReactants_ids) in dgb_lSubs_fromKegg and len(lProducts_ids) in dgb_lProds_fromKegg:
+            lCommonIdxs = gL.intersect(dgb_lSubs_fromKegg[len(lReactants_ids)].tolist(), dgb_lProds_fromKegg[len(lProducts_ids)].tolist())
+            lIdxs += lCommonIdxs
 
-        dfR = pd.DataFrame(lReactants_ids).transpose()
-        dfP = pd.DataFrame(lProducts_ids).transpose()
+        if len(lReactants_ids) in dgb_lProds_fromKegg and len(lProducts_ids) in dgb_lSubs_fromKegg:
+            lCommonIdxs = gL.intersect(dgb_lProds_fromKegg[len(lReactants_ids)].tolist(), dgb_lSubs_fromKegg[len(lProducts_ids)].tolist())
+            lIdxs += lCommonIdxs
 
-        if all(r != [] for r in lReactants_ids) == True and all(p != [] for p in lProducts_ids) == True:
-            lReactants_ids_cofactors = []
-            lReactants_ids_internal = []
-            for lReagenti in lReactants_ids:
-                if len(gL.intersect(lcofactors, lReagenti)) != 0:
-                    lReactants_ids_cofactors += lReagenti
-                else:
-                    lReactants_ids_internal += lReagenti
+        if len(lReactants_ids) in dgb_lReactants_name_id_flat and len(lProducts_ids) in dgb_lProducts_name_id_flat:
+            lCommonIdxs = gL.intersect(dgb_lReactants_name_id_flat[len(lReactants_ids)].tolist(), dgb_lProducts_name_id_flat[len(lProducts_ids)].tolist())
+            lIdxs += lCommonIdxs
 
-            lReactants_ids_cofactors = gL.unique(lReactants_ids_cofactors)
-            lReactants_ids_internal = gL.unique(lReactants_ids_internal)
+        if len(lReactants_ids) in dgb_lProducts_name_id_flat and len(lProducts_ids) in dgb_lReactants_name_id_flat:
+            lCommonIdxs = gL.intersect(dgb_lProducts_name_id_flat[len(lReactants_ids)].tolist(), dgb_lReactants_name_id_flat[len(lProducts_ids)].tolist())
+            lIdxs += lCommonIdxs
 
-            lProducts_ids_cofactors = []
-            lProducts_ids_internal = []
-            for lProdotti in lProducts_ids:
-                if len(gL.intersect(lcofactors, lProdotti)) != 0:
-                    lProducts_ids_cofactors += lProdotti
-                else:
-                    lProducts_ids_internal += lProdotti
-            lProducts_ids_cofactors = gL.unique(lProducts_ids_cofactors)
-            lProducts_ids_internal = gL.unique(lProducts_ids_internal)
-            dfAllDBs_copy = dfAllDBs_explode.copy()
-            if isTransport == True:
-                dfAllDBs_copy = dfAllDBs_copy[dfAllDBs_copy['reaction_type'] == '|TRANSPORT|']
-            else:
-                dfAllDBs_copy = dfAllDBs_copy[dfAllDBs_copy['reaction_type'] != '|TRANSPORT|']
+        lIdxs = gL.unique(lIdxs)
+        lDfIdx = dfAllDBs_copy.index.tolist()
+        dfAllDBs_copy_filter = dfAllDBs_copy.loc[gL.intersect(lIdxs, lDfIdx)]
 
-            lIdxs = []
-            if len(lReactants_ids) in dgb_left_metacyc and len(lProducts_ids) in dgb_right_metacyc:
-                lCommonIdxs = gL.intersect(dgb_left_metacyc[len(lReactants_ids)].tolist(), dgb_right_metacyc[len(lProducts_ids)].tolist())
-                lIdxs += lCommonIdxs
-
-            if len(lReactants_ids) in dgb_right_metacyc and len(lProducts_ids) in dgb_left_metacyc:
-                lCommonIdxs = gL.intersect(dgb_right_metacyc[len(lReactants_ids)].tolist(), dgb_left_metacyc[len(lProducts_ids)].tolist())
-                lIdxs += lCommonIdxs
-
-            if len(lReactants_ids) in dgb_lSubs_fromKegg and len(lProducts_ids) in dgb_lProds_fromKegg:
-                lCommonIdxs = gL.intersect(dgb_lSubs_fromKegg[len(lReactants_ids)].tolist(), dgb_lProds_fromKegg[len(lProducts_ids)].tolist())
-                lIdxs += lCommonIdxs
-
-            if len(lReactants_ids) in dgb_lProds_fromKegg and len(lProducts_ids) in dgb_lSubs_fromKegg:
-                lCommonIdxs = gL.intersect(dgb_lProds_fromKegg[len(lReactants_ids)].tolist(), dgb_lSubs_fromKegg[len(lProducts_ids)].tolist())
-                lIdxs += lCommonIdxs
-
-            if len(lReactants_ids) in dgb_lReactants_name_id_flat and len(lProducts_ids) in dgb_lProducts_name_id_flat:
-                lCommonIdxs = gL.intersect(dgb_lReactants_name_id_flat[len(lReactants_ids)].tolist(), dgb_lProducts_name_id_flat[len(lProducts_ids)].tolist())
-                lIdxs += lCommonIdxs
-
-            if len(lReactants_ids) in dgb_lProducts_name_id_flat and len(lProducts_ids) in dgb_lReactants_name_id_flat:
-                lCommonIdxs = gL.intersect(dgb_lProducts_name_id_flat[len(lReactants_ids)].tolist(), dgb_lReactants_name_id_flat[len(lProducts_ids)].tolist())
-                lIdxs += lCommonIdxs
-
-            lIdxs = gL.unique(lIdxs)
-            lDfIdx = dfAllDBs_copy.index.tolist()
-            dfAllDBs_copy_filter = dfAllDBs_copy.loc[gL.intersect(lIdxs, lDfIdx)]
-
-            # Query MetaCyc
-            lDfs2Concat = rxnL.filterRows(dfAllDBs_copy_filter, 'left_metacyc', 'right_metacyc', lReactants_ids_cofactors, lReactants_ids_internal, lProducts_ids_cofactors, lProducts_ids_internal)
-            if len(lDfs2Concat) != 0:
-                lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'left_metacyc', 'right_metacyc', 'metacyc', dfR, dfP, lReactants_ids, lProducts_ids)
-                lIdentifiersRxn += lPutativeRxns
-
-            dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left_woEqualMet', 'right', 'metacyc')
-            lIdentifiersRxn += lPutativeRxns
-            dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left', 'right_woEqualMet', 'metacyc')
+        # Query MetaCyc
+        lDfs2Concat = rxnL.filterRows(dfAllDBs_copy_filter, 'left_metacyc', 'right_metacyc', lReactants_ids_cofactors, lReactants_ids_internal, lProducts_ids_cofactors, lProducts_ids_internal)
+        if len(lDfs2Concat) != 0:
+            lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'left_metacyc', 'right_metacyc', 'metacyc', dfR, dfP, lReactants_ids, lProducts_ids)
             lIdentifiersRxn += lPutativeRxns
 
-            dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'left_woEqualMet', 'lProds_fromKegg', 'metacyc')
-            lIdentifiersRxn += lPutativeRxns
-            dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'lSubs_fromKegg', 'right_woEqualMet', 'metacyc')
+        dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left_woEqualMet', 'right', 'metacyc')
+        lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left', 'right_woEqualMet', 'metacyc')
+        lIdentifiersRxn += lPutativeRxns
+
+        dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'left_woEqualMet', 'lProds_fromKegg', 'metacyc')
+        lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'lSubs_fromKegg', 'right_woEqualMet', 'metacyc')
+        lIdentifiersRxn += lPutativeRxns
+
+        dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'left_woEqualMet', 'lProducts_name_id_flat', 'metacyc')
+        lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'lReactants_name_id_flat', 'right_woEqualMet', 'metacyc')
+        lIdentifiersRxn += lPutativeRxns
+
+        # Query KEGG
+        lDfs2Concat = rxnL.filterRows(dfAllDBs_copy_filter, 'lSubs_fromKegg', 'lProds_fromKegg', lReactants_ids_cofactors, lReactants_ids_internal, lProducts_ids_cofactors, lProducts_ids_internal)
+        if len(lDfs2Concat) != 0:
+            lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'lSubs_fromKegg', 'lProds_fromKegg', 'kegg', dfR, dfP, lReactants_ids, lProducts_ids)
             lIdentifiersRxn += lPutativeRxns
 
-            dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'left_woEqualMet', 'lProducts_name_id_flat', 'metacyc')
-            lIdentifiersRxn += lPutativeRxns
-            dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'lReactants_name_id_flat', 'right_woEqualMet', 'metacyc')
+        dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left_woEqualMet', 'right', 'kegg')
+        lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left', 'right_woEqualMet', 'kegg')
+        lIdentifiersRxn += lPutativeRxns
+
+        dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'left_woEqualMet', 'lProds_fromKegg', 'kegg')
+        lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'lSubs_fromKegg', 'right_woEqualMet', 'kegg')
+        lIdentifiersRxn += lPutativeRxns
+
+        dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'left_woEqualMet', 'lProducts_name_id_flat', 'kegg')
+        lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'lReactants_name_id_flat', 'right_woEqualMet', 'kegg')
+        lIdentifiersRxn += lPutativeRxns
+
+        # Query Rhea
+        lDfs2Concat = rxnL.filterRows(dfAllDBs_copy_filter, 'lReactants_name_id_flat', 'lProducts_name_id_flat', lReactants_ids_cofactors, lReactants_ids_internal, lProducts_ids_cofactors, lProducts_ids_internal)
+        if len(lDfs2Concat) != 0:
+            lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'lReactants_name_id_flat', 'lProducts_name_id_flat', 'rhea', dfR, dfP, lReactants_ids, lProducts_ids)
             lIdentifiersRxn += lPutativeRxns
 
-            # Query KEGG
-            lDfs2Concat = rxnL.filterRows(dfAllDBs_copy_filter, 'lSubs_fromKegg', 'lProds_fromKegg', lReactants_ids_cofactors, lReactants_ids_internal, lProducts_ids_cofactors, lProducts_ids_internal)
-            if len(lDfs2Concat) != 0:
-                lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'lSubs_fromKegg', 'lProds_fromKegg', 'kegg', dfR, dfP, lReactants_ids, lProducts_ids)
-                lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left_woEqualMet', 'right', 'rhea')
+        lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left', 'right_woEqualMet', 'rhea')
+        lIdentifiersRxn += lPutativeRxns
 
-            dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left_woEqualMet', 'right', 'kegg')
-            lIdentifiersRxn += lPutativeRxns
-            dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left', 'right_woEqualMet', 'kegg')
-            lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'left_woEqualMet', 'lProds_fromKegg', 'rhea')
+        lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'lSubs_fromKegg', 'right_woEqualMet', 'rhea')
+        lIdentifiersRxn += lPutativeRxns
 
-            dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'left_woEqualMet', 'lProds_fromKegg', 'kegg')
-            lIdentifiersRxn += lPutativeRxns
-            dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'lSubs_fromKegg', 'right_woEqualMet', 'kegg')
-            lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'left_woEqualMet', 'lProducts_name_id_flat', 'rhea')
+        lIdentifiersRxn += lPutativeRxns
+        dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
+        lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'lReactants_name_id_flat', 'right_woEqualMet', 'rhea')
+        lIdentifiersRxn += lPutativeRxns
 
-            dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'left_woEqualMet', 'lProducts_name_id_flat', 'kegg')
-            lIdentifiersRxn += lPutativeRxns
-            dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'lReactants_name_id_flat', 'right_woEqualMet', 'kegg')
-            lIdentifiersRxn += lPutativeRxns
-
-            # Query Rhea
-            lDfs2Concat = rxnL.filterRows(dfAllDBs_copy_filter, 'lReactants_name_id_flat', 'lProducts_name_id_flat', lReactants_ids_cofactors, lReactants_ids_internal, lProducts_ids_cofactors, lProducts_ids_internal)
-            if len(lDfs2Concat) != 0:
-                lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'lReactants_name_id_flat', 'lProducts_name_id_flat', 'rhea', dfR, dfP, lReactants_ids, lProducts_ids)
-                lIdentifiersRxn += lPutativeRxns
-
-            dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left_woEqualMet', 'right', 'rhea')
-            lIdentifiersRxn += lPutativeRxns
-            dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_M_copy, 'left', 'right_woEqualMet', 'rhea')
-            lIdentifiersRxn += lPutativeRxns
-
-            dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'left_woEqualMet', 'lProds_fromKegg', 'rhea')
-            lIdentifiersRxn += lPutativeRxns
-            dfAllDBs_equalSP_filter_K_copy = dfAllDBs_equalSP_filter_K.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_K_copy, 'lSubs_fromKegg', 'right_woEqualMet', 'rhea')
-            lIdentifiersRxn += lPutativeRxns
-
-            dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'left_woEqualMet', 'lProducts_name_id_flat', 'rhea')
-            lIdentifiersRxn += lPutativeRxns
-            dfAllDBs_equalSP_filter_R_copy = dfAllDBs_equalSP_filter_R.copy()
-            lPutativeRxns = rxnL.findPutativeRxns(dfAllDBs_equalSP_filter_R_copy, 'lReactants_name_id_flat', 'right_woEqualMet', 'rhea')
-            lIdentifiersRxn += lPutativeRxns
-
-        lIdentifiersRxn = gL.unique(lIdentifiersRxn)
-        gL.writeLineByLineToFile(outFile, [rxn.id, lIdentifiersRxn], '\t')
+    lIdentifiersRxn = gL.unique(lIdentifiersRxn)
+    gL.writeLineByLineToFile(outFile, [rxn.id, lIdentifiersRxn], '\t')
 
 outFile.close()
 
