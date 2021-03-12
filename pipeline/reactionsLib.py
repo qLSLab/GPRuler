@@ -171,10 +171,23 @@ def removeProtons(lMets, rxnType):
 def removeProtonsKegg(dMets, rxnType):
     lMets = []
     for k in list(dMets.keys()):
-        lMets.append(testKLib.KEGGCompundMatch(k))
+        lMets.append(KEGGCompundMatch(k))
     if rxnType != '|TRANSPORT|' and 'C00080' in lMets:
         lMets.remove('C00080')
     return lMets
+
+def KEGGCompundMatch(strKEGG):
+    """
+    Split the KEGG string of the equation into a strKEGGcompound and the other
+    """
+    if 'C' in strKEGG:
+        tokens = re.search(r'(C\d{5})', strKEGG)
+        match = tokens.group(1)
+    else:
+        tokens = re.search(r'(G\d{5})', strKEGG)
+        match = tokens.group(1)
+    return match
+
 
 def removeProtonsRhea(ldizMets, rxnType):
     lMets = []
