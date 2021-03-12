@@ -361,12 +361,12 @@ if testModel == 'y7' or testModel == 'y8':
     dfMetsFromModel['Name'] = dfMetsFromModel['Name'].str.strip()
 
 outFile = open(os.path.join(OUTDIR, dfrxnsInfo + '_wIds.csv'), mode='w')
-gL.writeLineByLineToFile(outFile, ['RxnId', 'PutativeIdentifiers'], '\t')
+gL.writeLineByLineToFile(outFile, ['Rxn', 'PutativeIdentifiers'], '\t')
 
 lcofactors = gL.unique(lcofactors)
 for rowRxn in dfRxns.itertuples():
     isTransport = rowRxn.IsTransport
-    isExchange = rowRxn.IsExchange    
+    isExchange = rowRxn.IsExchange
     if rowRxn.Rxn.startswith('R_'):
         rxnId = rowRxn.Rxn[2:]
     else:
@@ -624,5 +624,6 @@ for rowRxn in dfRxns.itertuples():
 outFile.close()
 
 dfRxnWId = pd.read_csv(os.path.join(OUTDIR, dfrxnsInfo + '_wIds.csv'), sep = '\t', dtype=str)
-dfMerge = pd.merge(dfRxns, dfRxnWId, on = 'RxnId')
+dfRxnWId['Rxn'] = 'R_' + dfRxnWId['Rxn'].astype(str)
+dfMerge = pd.merge(dfRxns, dfRxnWId, on = 'Rxn')
 dfMerge.to_csv(os.path.join(OUTDIR, dfrxnsInfo + '_enriched.csv'), sep = '\t', index = False)
