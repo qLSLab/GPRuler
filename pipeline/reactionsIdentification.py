@@ -541,7 +541,7 @@ for rowRxn in dfRxns.itertuples():
             # Query MetaCyc
             lDfs2Concat = rxnL.filterRows(dfAllDBs_copy_filter, 'left_metacyc', 'right_metacyc', lReactants_ids_cofactors, lReactants_ids_internal, lProducts_ids_cofactors, lProducts_ids_internal)
             if len(lDfs2Concat) != 0:
-                lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'left_metacyc', 'right_metacyc', 'metacyc')
+                lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'left_metacyc', 'right_metacyc', 'metacyc', dfR, dfP)
                 lIdentifiersRxn += lPutativeRxns
 
             dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
@@ -568,7 +568,7 @@ for rowRxn in dfRxns.itertuples():
             # Query KEGG
             lDfs2Concat = rxnL.filterRows(dfAllDBs_copy_filter, 'lSubs_fromKegg', 'lProds_fromKegg', lReactants_ids_cofactors, lReactants_ids_internal, lProducts_ids_cofactors, lProducts_ids_internal)
             if len(lDfs2Concat) != 0:
-                lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'lSubs_fromKegg', 'lProds_fromKegg', 'kegg')
+                lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'lSubs_fromKegg', 'lProds_fromKegg', 'kegg', dfR, dfP)
                 lIdentifiersRxn += lPutativeRxns
 
             dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
@@ -595,7 +595,7 @@ for rowRxn in dfRxns.itertuples():
             # Query Rhea
             lDfs2Concat = rxnL.filterRows(dfAllDBs_copy_filter, 'lReactants_name_id_flat', 'lProducts_name_id_flat', lReactants_ids_cofactors, lReactants_ids_internal, lProducts_ids_cofactors, lProducts_ids_internal)
             if len(lDfs2Concat) != 0:
-                lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'lReactants_name_id_flat', 'lProducts_name_id_flat', 'rhea')
+                lPutativeRxns = rxnL.findRxnsAfterFilter(lDfs2Concat, 'lReactants_name_id_flat', 'lProducts_name_id_flat', 'rhea', dfR, dfP)
                 lIdentifiersRxn += lPutativeRxns
 
             dfAllDBs_equalSP_filter_M_copy = dfAllDBs_equalSP_filter_M.copy()
