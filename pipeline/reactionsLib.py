@@ -2,6 +2,7 @@
 import pandas as pd
 import genericLib as gL
 import re
+from lxml import etree as ET
 
 def explodeFilterAndDrop(df, oldCol, lMets):
     df[oldCol + '_exploded'] = df[oldCol].values
