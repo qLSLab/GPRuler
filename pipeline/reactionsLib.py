@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
 import genericLib as gL
+import re
 
 def explodeFilterAndDrop(df, oldCol, lMets):
     df[oldCol + '_exploded'] = df[oldCol].values
