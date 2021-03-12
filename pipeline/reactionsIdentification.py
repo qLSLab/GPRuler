@@ -373,7 +373,6 @@ for rowRxn in dfRxns.itertuples():
         else:
             rxnId = rowRxn.Rxn
         rxn = model.reactions.get_by_id(rxnId)
-        lIds_all.append(rxn.id)
         lIdentifiersRxn = [] # list where all the retrieved identifiers of the current reactions are saved
         lReactants = []
         if isTransport == True:
