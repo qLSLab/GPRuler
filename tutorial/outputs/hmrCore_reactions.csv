@@ -1,0 +1,316 @@
+Rxn	KeggId	EC number	GPR	Name	IsTransport	trasportedMets	IsExchange	GPRrule
+R_Ex_biomass		[]		DmBiomass	False	[]	True	
+R_Ex_glucose		[]		*	False	[]	True	
+R_Ex_lactateL		[]		*	False	[]	True	
+R_Ex_O2		[]		*	False	[]	True	
+R_Ex_glutamine		[]		*	False	[]	True	
+R_Ex_Palmitate		[]		*	False	[]	True	
+R_Ex_glutamate		[]		*	False	[]	True	
+R_Ex_arginines		[]		*	False	[]	True	
+R_Ex_folate		[]		ExFolate	False	[]	True	
+R_Ex_urea		[]		*	False	[]	True	
+R_Ex_NH3		[]		*	False	[]	True	
+R_Ex_citratec		[]		DmCit	False	[]	True	
+R_Ex_Carnitine		[]		*	False	[]	True	
+R_Ex_AKG		[]		Ex_AKG	False	[]	True	
+R_Ex_proline		[]		Ex_proline	False	[]	True	
+R_Ex_alanine		[]		Ex_alanine	False	[]	True	
+R_Ex_aspartate		[]		Ex_aspartate	False	[]	True	
+R_Ex_asparagine		[]		Ex_asparagine	False	[]	True	
+R_Ex_serine		[]		Ex_serine	False	[]	True	
+R_Ex_glycine		[]		Ex_glycine	False	[]	True	
+R_Ex_cystine		[]		Ex_cystine	False	[]	True	
+R_Ex_SC_mercaptopyruvatec		[]		*	False	[]	True	
+R_Ex_SC_H2O		[]		ExH2O	False	[]	True	HGNC__58__633 or HGNC__58__637 or HGNC__58__634 or HGNC__58__638 or HGNC__58__642
+R_Ex_SC_Pi		[]		*	False	[]	True	
+R_Ex_SC_H		[]		ExH	False	[]	True	
+R_DM_Glucose		[]		*	False	[]	True	HGNC__58__11005 or HGNC__58__11006 or HGNC__58__11007 or HGNC__58__11009 or HGNC__58__11010 or HGNC__58__11011 or HGNC__58__13445 or HGNC__58__13812 or HGNC__58__13446 or HGNC__58__13444 or HGNC__58__14239 or HGNC__58__18067 or HGNC__58__15956 or HGNC__58__18301 or HGNC__58__11036 or HGNC__58__11037 or HGNC__58__11038 or HGNC__58__11039 or HGNC__58__11040 or HGNC__58__11041 or HGNC__58__14025 or HGNC__58__19119 or HGNC__58__22146 or HGNC__58__23155 or HGNC__58__23091 or HGNC__58__28750
+R_DM_LactateL		[]		*	False	[]	True	HGNC__58__10924 or HGNC__58__10922 or HGNC__58__10928 or HGNC__58__16270 or HGNC__58__19119
+R_DM_Glutamine		[]		*	False	[]	True	HGNC__58__9225 or HGNC__58__18044 or HGNC__58__18070 or HGNC__58__11047 or HGNC__58__13447 or HGNC__58__13448 or HGNC__58__27960 or HGNC__58__14679 or ( HGNC__58__26441 and HGNC__58__29437 )
+R_DM_Palmitate		[]		*	False	[]	True	HGNC__58__29
+R_DM_Carnitine		[]		*	False	[]	True	HGNC__58__10969
+R_DM_Glutamate		[]		*	False	[]	True	
+R_DM_Arginines		[]		*	False	[]	True	HGNC__58__11057 or HGNC__58__11060 or HGNC__58__11061 or HGNC__58__14679 or HGNC__58__11047
+R_DM_Urea		[]		*	False	[]	True	HGNC__58__10918 or HGNC__58__10919 or HGNC__58__11036 or HGNC__58__11040
+R_DM_NH3		[]		*	False	[]	True	
+R_DM_Citrate		[]		DmCit	False	[]	True	HGNC__58__23089 or HGNC__58__10917
+R_DM_Folate		[]		ExFolate	False	[]	True	HGNC__58__3791 or HGNC__58__3793 or HGNC__58__3795
+R_DM_AKG		[]		Ex_AKG	False	[]	True	HGNC__58__14430 or HGNC__58__14409 or HGNC__58__14411
+R_DM_Proline		[]		Ex_proline	False	[]	True	HGNC__58__18761 or HGNC__58__18762
+R_DM_Alanine		[]		Ex_alanine	False	[]	True	HGNC__58__18761 or HGNC__58__18762 or HGNC__58__11047 or HGNC__58__11057 or HGNC__58__11060 or HGNC__58__11061 or HGNC__58__13447 or HGNC__58__13448 or ( HGNC__58__13557 and HGNC__58__27960 ) or HGNC__58__14679 or ( HGNC__58__27960 and HGNC__58__29437 ) or HGNC__58__18044 or HGNC__58__18070 or ( HGNC__58__26441 and HGNC__58__29437 ) or HGNC__58__19660
+R_DM_Aspartate		[]		Ex_aspartate	False	[]	True	HGNC__58__10939 or HGNC__58__10940 or HGNC__58__10941 or HGNC__58__10944 or HGNC__58__10945
+R_DM_Asparagine		[]		Ex_asparagine	False	[]	True	HGNC__58__11047 or HGNC__58__13447 or HGNC__58__13448 or ( HGNC__58__13557 and HGNC__58__27960 ) or HGNC__58__14679 or ( HGNC__58__27960 and HGNC__58__29437 ) or HGNC__58__18044 or HGNC__58__18070 or HGNC__58__9225 or ( HGNC__58__26441 and HGNC__58__29437 )
+R_DM_Serine		[]		Ex_serine	False	[]	True	HGNC__58__11047 or HGNC__58__13447 or HGNC__58__13448 or ( HGNC__58__13557 and HGNC__58__27960 ) or HGNC__58__14679 or ( HGNC__58__27960 and HGNC__58__29437 ) or HGNC__58__18070 or HGNC__58__18761 or HGNC__58__9225 or ( HGNC__58__26441 and HGNC__58__29437 )
+R_DM_Glycine		[]		Ex_glycine	False	[]	True	HGNC__58__18761 or HGNC__58__18762 or HGNC__58__11047 or HGNC__58__13447 or HGNC__58__13448 or ( HGNC__58__13557 and HGNC__58__27960 ) or HGNC__58__14679 or ( HGNC__58__27960 and HGNC__58__29437 ) or HGNC__58__11056 or HGNC__58__11051 or HGNC__58__18070 or ( HGNC__58__26441 and HGNC__58__29437 )
+R_DM_putrescine		[]		DmPutrescine	False	[]	True	
+R_DM_CO2c		[]		ExCO2	False	[]	True	
+R_DM_10formylTHFm		[]		*	False	[]	True	
+R_DM_10formylTHFc		[]		*	False	[]	True	
+R_DM_GSSG		[]		Ex_GSSG	False	[]	True	
+R_DM_guanidinoacetatec		[]		ExGA	False	[]	True	
+R_Glucose_DM_COOP		[]		*	True	['D-Glucose']	False	HGNC__58__11005 or HGNC__58__11006 or HGNC__58__11007 or HGNC__58__11009 or HGNC__58__11010 or HGNC__58__11011 or HGNC__58__13445 or HGNC__58__13812 or HGNC__58__13446 or HGNC__58__13444 or HGNC__58__14239 or HGNC__58__18067 or HGNC__58__15956 or HGNC__58__18301 or HGNC__58__11036 or HGNC__58__11037 or HGNC__58__11038 or HGNC__58__11039 or HGNC__58__11040 or HGNC__58__11041 or HGNC__58__14025 or HGNC__58__19119 or HGNC__58__22146 or HGNC__58__23155 or HGNC__58__23091 or HGNC__58__28750
+R_LactateL_DM_COOP		[]		*	True	['L-Lactic acid']	False	HGNC__58__10924 or HGNC__58__10922 or HGNC__58__10928 or HGNC__58__16270 or HGNC__58__19119
+R_Oxygen_DM_COOP		[]		demandO2	True	['Oxygen']	False	
+R_Glutamine_DM_COOP		[]		*	True	['L-Glutamine']	False	HGNC__58__9225 or HGNC__58__18044 or HGNC__58__18070 or HGNC__58__11047 or HGNC__58__13447 or HGNC__58__13448 or HGNC__58__27960 or HGNC__58__14679 or ( HGNC__58__26441 and HGNC__58__29437 )
+R_Palmitate_DM_COOP		[]		*	True	['Palmitic acid']	False	HGNC__58__29
+R_Palmitate_UP_COOP		[]		*	True	['Palmitic acid']	False	HGNC__58__1663 or HGNC__58__4433 or HGNC__58__10995 or HGNC__58__10998
+R_Glutamate_DM_COOP		[]		UpGLu	True	['L-Glutamic acid']	False	
+R_Arginine_DM_COOP		[]		ExArg	True	['L-Arginine']	False	HGNC__58__11057 or HGNC__58__11060 or HGNC__58__11061 or HGNC__58__14679 or HGNC__58__11047
+R_Folate_DM_COOP		[]		ExFolate	True	['Folic acid']	False	HGNC__58__3791 or HGNC__58__3793 or HGNC__58__3795
+R_Urea_DM_COOP		[]		DmUrea	True	['Urea']	False	HGNC__58__10918 or HGNC__58__10919 or HGNC__58__11036 or HGNC__58__11040
+R_NH3_DM_COOP		[]		ExNH3	True	['Ammonia']	False	
+R_Citrate_DM_COOP		[]		*	True	['Citric acid']	False	HGNC__58__23089 or HGNC__58__10917
+R_Carnitine_DM_COOP		[]		*	True	['L-Carnitine']	False	HGNC__58__10969
+R_AKG_DM_COOP		[]		Uptake_AKG	True	['Oxoglutaric acid']	False	HGNC__58__14430 or HGNC__58__14409 or HGNC__58__14411
+R_Proline_DM_COOP		[]		Uptake_proline	True	['L-Proline']	False	HGNC__58__18761 or HGNC__58__18762
+R_Alanine_DM_COOP		[]		Uptake_alanine	True	['L-Alanine']	False	HGNC__58__18761 or HGNC__58__18762 or HGNC__58__11047 or HGNC__58__11057 or HGNC__58__11060 or HGNC__58__11061 or HGNC__58__13447 or HGNC__58__13448 or ( HGNC__58__13557 and HGNC__58__27960 ) or HGNC__58__14679 or ( HGNC__58__27960 and HGNC__58__29437 ) or HGNC__58__18044 or HGNC__58__18070 or ( HGNC__58__26441 and HGNC__58__29437 ) or HGNC__58__19660
+R_Aspartate_DM_COOP		[]		Uptake_aspartate	True	['L-Aspartic acid']	False	HGNC__58__10939 or HGNC__58__10940 or HGNC__58__10941 or HGNC__58__10944 or HGNC__58__10945
+R_Asparagine_DM_COOP		[]		Uptake_asparagine	True	['L-Asparagine']	False	HGNC__58__11047 or HGNC__58__13447 or HGNC__58__13448 or ( HGNC__58__13557 and HGNC__58__27960 ) or HGNC__58__14679 or ( HGNC__58__27960 and HGNC__58__29437 ) or HGNC__58__18044 or HGNC__58__18070 or HGNC__58__9225 or ( HGNC__58__26441 and HGNC__58__29437 )
+R_Serine_DM_COOP		[]		Uptake_serine	True	['L-Serine']	False	HGNC__58__11047 or HGNC__58__13447 or HGNC__58__13448 or ( HGNC__58__13557 and HGNC__58__27960 ) or HGNC__58__14679 or ( HGNC__58__27960 and HGNC__58__29437 ) or HGNC__58__18070 or HGNC__58__18761 or HGNC__58__9225 or ( HGNC__58__26441 and HGNC__58__29437 )
+R_Glycine_DM_COOP		[]		Uptake_glycine	True	['Glycine']	False	HGNC__58__18761 or HGNC__58__18762 or HGNC__58__11047 or HGNC__58__13447 or HGNC__58__13448 or ( HGNC__58__13557 and HGNC__58__27960 ) or HGNC__58__14679 or ( HGNC__58__27960 and HGNC__58__29437 ) or HGNC__58__11056 or HGNC__58__11051 or HGNC__58__18070 or ( HGNC__58__26441 and HGNC__58__29437 )
+R_TranspCystineGlu		[]		ExCystineGlu	True	['L-Glutamic acid', 'L-Cystine']	False	HGNC__58__11026 and HGNC__58__11059
+R_TranspCystineSer		[]		ExCystineSer	True	['L-Cystine', 'L-Serine']	False	HGNC__58__11025 and HGNC__58__11067
+R_CystineReductaseNADPH		[]		CystineReductaseNADPH	False	[]	False	HGNC__58__12437 or HGNC__58__18155
+R_GCK_HKDC1_HK1_ADPGK_HK2_HK3		['EC:2.7.1.1', 'EC:2.7.1.2', 'EC:2.7.1.147']		GCK1	False	[]	False	HGNC__58__23302 or HGNC__58__4195 or HGNC__58__4922 or HGNC__58__4923 or HGNC__58__4925
+R_G6PPer		[]		*	False	[]	False	HGNC__58__24861 or HGNC__58__28906 or HGNC__58__4056
+R_GPI		['EC:5.3.1.9']		GPI	False	[]	False	HGNC__58__4458
+R_PFKP_PFKL_PFKM_1		['EC:2.7.1.11']		PFK1	False	[]	False	HGNC__58__8876 or HGNC__58__8877 or HGNC__58__8878
+R_FBP		[]		*	False	[]	False	HGNC__58__3606 or HGNC__58__3607
+R_ALDOC_ALDOB_ALDOA_2		['EC:4.1.2.13']		ALDO	False	[]	False	HGNC__58__418 or HGNC__58__417 or HGNC__58__414
+R_TPI1_TPI1P2		['EC:5.3.1.1']		TPI	False	[]	False	HGNC__58__12009
+R_GAPDHS_GAPDH_GAPDHP29		['EC:1.2.1.12']		GAPDH	False	[]	False	HGNC__58__4141 or HGNC__58__24864
+R_CRISP3_PGK1_MIA3_PGK2		['EC:2.7.2.3']		PGK	False	[]	False	HGNC__58__8896 or HGNC__58__8898
+R_PGAM2_PGAM1_BPGM_PGAM4_1		['EC:5.4.2.1', 'EC:5.4.2.4']		PGM	False	[]	False	HGNC__58__1093 or HGNC__58__8888 or HGNC__58__8889
+R_ENO1_ENO3_ENO2		['EC:4.2.1.11']		ENO	False	[]	False	HGNC__58__3350 or HGNC__58__3354 or HGNC__58__3353
+R_PKM_TMEM54_PKLR_HCN3		['EC:2.7.1.40']		PK	False	[]	False	HGNC__58__9021 or HGNC__58__9020 or HGNC__58__9021 or HGNC__58__9020 or HGNC__58__9021
+R_PC		['EC:6.4.1.1']		PC	False	[]	False	HGNC__58__8636
+R_PEPCK		[]		PEPCK	False	[]	False	HGNC__58__8724
+R_LDH		['EC:1.1.1.27']		LDH	False	[]	False	HGNC__58__21481 or HGNC__58__28335 or HGNC__58__30866 or HGNC__58__6535 or HGNC__58__6541 or HGNC__58__6544
+R_G6PD		['EC:1.1.1.49']		G6PD	False	[]	False	HGNC__58__4057
+R_H6PD_PGLS		['EC:3.1.1.31']		PGLS	False	[]	False	HGNC__58__8903 or HGNC__58__4795
+R_PGD		['EC:1.1.1.44']		6PGD	False	[]	False	HGNC__58__8891
+R_RPIA_LOC101060545		['EC:5.3.1.6']		RPI	False	[]	False	HGNC__58__10297
+R_PRPS2_PRPS1_PRPS1L1		['EC:2.7.6.1']		PRPS1	False	[]	False	HGNC__58__9462 or HGNC__58__9463 or HGNC__58__9465
+R_TKTL1_TKTL2_TKT_1		['EC:2.2.1.1']		TKT1	False	[]	False	HGNC__58__11834 or HGNC__58__25313 or HGNC__58__11835
+R_ALDOC_ALDOB_ALDOA_1		['EC:4.1.2.13']		ALDO1	False	[]	False	HGNC__58__418 or HGNC__58__417 or HGNC__58__414
+R_RPE_LOC729020		['EC:5.1.3.1']		RPE	False	[]	False	HGNC__58__10293 or HGNC__58__45241
+R_TKTL1_TKTL2_TKT_2		['EC:2.2.1.1']		TKT	False	[]	False	HGNC__58__11834 or HGNC__58__11835 or HGNC__58__25313
+R_TALDO1		['EC:2.2.1.2']		TALDO1	False	[]	False	HGNC__58__11559
+R_PFKP_PFKL_PFKM_3		['EC:2.7.1.11']		SBPase	False	[]	False	HGNC__58__8876 or HGNC__58__8877 or HGNC__58__8878
+R_DLD_PDHX_PDHA1_DLAT_PDHA2_PDHB		['EC:1.2.4.1', 'EC:2.3.1.12', 'EC:1.8.1.4', 'EC:1.2.1.51']		PDH	False	[]	False	HGNC__58__21350 and HGNC__58__2896 and HGNC__58__2898 and HGNC__58__8808 and ( HGNC__58__8806 or HGNC__58__8807 )
+R_CS		['EC:2.3.3.1']		CS	False	[]	False	HGNC__58__2422
+R_ACO2_ACO1_1		['EC:4.2.1.3']		mACO	False	[]	False	HGNC__58__118 or HGNC__58__117
+R_IDH3		['EC:1.1.1.41']		IDH3	False	[]	False	HGNC__58__5386 and HGNC__58__5385 and HGNC__58__5384
+R_IDH2		['EC:1.1.1.42']		IDH2	False	[]	False	HGNC__58__5383
+R_DLSTP1_DLD_OGDH_PDHX_DLST_DHTKD1_OGDHL		['EC:1.2.4.2']		AKGDH	False	[]	False	HGNC__58__21350 and HGNC__58__2898 and HGNC__58__2911 and HGNC__58__8124
+R_KANK1_SUCLA2_SUCLG1_SUCLG2_1		['EC:6.2.1.4']		SCS	False	[]	False	HGNC__58__11449 and HGNC__58__11450
+R_SDHA_SDHB_SDHC_SDHD		['EC:1.3.5.1']		SDH	False	[]	False	HGNC__58__10680 and HGNC__58__10683 and HGNC__58__10682 and HGNC__58__10681 and HGNC__58__3481 and HGNC__58__3482
+R_FH_1		['EC:4.2.1.2']		FH1	False	[]	False	HGNC__58__3700
+R_MDH2		['EC:1.1.1.37']		MDH2	False	[]	False	HGNC__58__6971
+R_ME2_ME3_1		['EC:1.1.1.38']		ME2	False	[]	False	HGNC__58__6984
+R_ME2_ME3_2		['EC:1.1.1.40']		ME3	False	[]	False	HGNC__58__6985
+R_ACLY		['EC:2.3.3.8']		ACLY	False	[]	False	HGNC__58__115
+R_FH_2		['EC:4.2.1.2']		FH2	False	[]	False	HGNC__58__3700
+R_MDH1_MDH1B		['EC:1.1.1.37']		MDH1	False	[]	False	HGNC__58__17836 or HGNC__58__6970
+R_ACO1_IREB2		['EC:4.2.1.3']		cACO	False	[]	False	HGNC__58__117
+R_IDH1		['EC:1.1.1.42']		IDH1	False	[]	False	HGNC__58__5382
+R_LHPP_PPA2_PRUNE_EIF4A2_NAV2_PPA1_1		['EC:3.6.1.1']		cPPA	False	[]	False	HGNC__58__9226 or HGNC__58__30042
+R_Complex1		['EC:1.6.5.3']		Complex1	True	['proton']	False	HGNC__58__17194 and HGNC__58__20371 and HGNC__58__23987 and HGNC__58__30242 and HGNC__58__7455 and HGNC__58__7456 and HGNC__58__7458 and HGNC__58__7459 and HGNC__58__7460 and HGNC__58__7461 and HGNC__58__7462 and HGNC__58__7683 and HGNC__58__7684 and HGNC__58__7685 and HGNC__58__7686 and HGNC__58__7687 and HGNC__58__7688 and HGNC__58__7690 and HGNC__58__7691 and HGNC__58__7692 and HGNC__58__7693 and HGNC__58__7694 and HGNC__58__7695 and HGNC__58__7696 and HGNC__58__7697 and HGNC__58__7698 and HGNC__58__7699 and HGNC__58__7700 and HGNC__58__7701 and HGNC__58__7702 and HGNC__58__7703 and HGNC__58__7704 and HGNC__58__7705 and HGNC__58__7706 and HGNC__58__7707 and HGNC__58__7708 and HGNC__58__7710 and HGNC__58__7711 and HGNC__58__7712 and HGNC__58__7713 and HGNC__58__7714 and HGNC__58__7715 and HGNC__58__7716 and HGNC__58__7717 and HGNC__58__7719
+R_Complex1ROS		[]		Complex1ROS	True	['proton']	False	HGNC__58__17194 and HGNC__58__20371 and HGNC__58__23987 and HGNC__58__30242 and HGNC__58__7455 and HGNC__58__7456 and HGNC__58__7458 and HGNC__58__7459 and HGNC__58__7460 and HGNC__58__7461 and HGNC__58__7462 and HGNC__58__7683 and HGNC__58__7684 and HGNC__58__7685 and HGNC__58__7686 and HGNC__58__7687 and HGNC__58__7688 and HGNC__58__7690 and HGNC__58__7691 and HGNC__58__7692 and HGNC__58__7693 and HGNC__58__7694 and HGNC__58__7695 and HGNC__58__7696 and HGNC__58__7697 and HGNC__58__7698 and HGNC__58__7699 and HGNC__58__7700 and HGNC__58__7701 and HGNC__58__7702 and HGNC__58__7703 and HGNC__58__7704 and HGNC__58__7705 and HGNC__58__7706 and HGNC__58__7707 and HGNC__58__7708 and HGNC__58__7710 and HGNC__58__7711 and HGNC__58__7712 and HGNC__58__7713 and HGNC__58__7714 and HGNC__58__7715 and HGNC__58__7716 and HGNC__58__7717 and HGNC__58__7719
+R_Complex2		['EC:1.5.5.1']		Complex2	False	[]	False	HGNC__58__10680 and HGNC__58__10683 and HGNC__58__10682 and HGNC__58__10681 and HGNC__58__3481 and HGNC__58__3482
+R_Complex3		['EC:1.10.2.2']		Complex3	True	['proton']	False	HGNC__58__12582 and HGNC__58__12585 and HGNC__58__12586 and HGNC__58__12587 and HGNC__58__12590 and HGNC__58__2579 and HGNC__58__29594 and HGNC__58__30862 and HGNC__58__30863 and HGNC__58__7427
+R_Complex4		['EC:1.9.3.1']		Complex4	True	['proton']	False	HGNC__58__16232 and HGNC__58__2265 and HGNC__58__2267 and HGNC__58__2269 and HGNC__58__2277 and HGNC__58__2279 and HGNC__58__2280 and HGNC__58__2285 and HGNC__58__2287 and HGNC__58__2288 and HGNC__58__2289 and HGNC__58__2291 and HGNC__58__2292 and HGNC__58__2294 and HGNC__58__24380 and HGNC__58__24381 and HGNC__58__24382 and HGNC__58__7419 and HGNC__58__7421 and HGNC__58__7422
+R_ATPsynthase		['EC:3.6.1.3', 'EC:3.6.1.5', 'EC:3.6.3.1', 'EC:3.6.3.10', 'EC:3.6.3.14', 'EC:3.6.3.8', 'EC:3.6.3.9', 'EC:3.6.4.3', 'EC:3.6.4.4', 'EC:3.6.4.6', 'EC:3.6.4.12', 'EC:3.6.4.13']		ATPsynthase	True	['proton']	False	( HGNC__58__13213 and HGNC__58__14247 and HGNC__58__18799 and HGNC__58__8016 and HGNC__58__823 and HGNC__58__830 and HGNC__58__833 and HGNC__58__837 and HGNC__58__838 and HGNC__58__840 and HGNC__58__842 and HGNC__58__845 and HGNC__58__846 and HGNC__58__847 and HGNC__58__848 and HGNC__58__850 ) or ( HGNC__58__14247 and HGNC__58__8016 and HGNC__58__823 and HGNC__58__830 and HGNC__58__833 and HGNC__58__837 and HGNC__58__838 and HGNC__58__840 and HGNC__58__841 and HGNC__58__845 and HGNC__58__846 and HGNC__58__847 and HGNC__58__848 ) or ( HGNC__58__14247 and HGNC__58__8016 and HGNC__58__823 and HGNC__58__830 and HGNC__58__833 and HGNC__58__837 and HGNC__58__838 and HGNC__58__840 and HGNC__58__842 and HGNC__58__845 and HGNC__58__846 and HGNC__58__847 and HGNC__58__848 ) or ( HGNC__58__14247 and HGNC__58__8016 and HGNC__58__823 and HGNC__58__830 and HGNC__58__833 and HGNC__58__837 and HGNC__58__838 and HGNC__58__840 and HGNC__58__843 and HGNC__58__845 and HGNC__58__846 and HGNC__58__847 and HGNC__58__848 )
+R_GCL		[]		GCL	False	[]	False	HGNC__58__4311 and HGNC__58__4312
+R_GSS		[]		GSS	False	[]	False	HGNC__58__4624
+R_SOD2		[]		SOD2	False	[]	False	HGNC__58__11180
+R_GPmit		[]		GPmit	False	[]	False	HGNC__58__4553 or HGNC__58__4556 or HGNC__58__9354
+R_mGSRnadh		[]		mGSRnadh	False	[]	False	HGNC__58__4623
+R_mGSRnadph		[]		mGSRnadph	False	[]	False	HGNC__58__4623
+R_TrasportGSH		[]		TrasportGSH	True	['Phosphate', 'Glutathione']	False	HGNC__58__10980
+R_MPC1_MPC2_MPC1L		[]		MPC	True	['Pyruvic acid', 'proton']	False	HGNC__58__10922 or HGNC__58__24515 or HGNC__58__21606
+R_SLC25A3		[]		SLC25A2	True	['proton', 'Phosphate']	False	HGNC__58__10989
+R_SLC25A5_SLC25A4_SLC25A6		[]		ANT	True	['Adenosine triphosphate', 'Adenosine diphosphate']	False	( HGNC__58__693 and HGNC__58__17146 and ( HGNC__58__10990 or HGNC__58__10992 ) ) or ( HGNC__58__24261 and HGNC__58__13824 and HGNC__58__3434 and HGNC__58__14280 and HGNC__58__10991 )
+R_Transport_CO2		[]		TransportCO2	True	['Carbon dioxide']	False	
+R_TransportOxygen		[]		TransportO2	True	['Oxygen']	False	
+R_ALDH3B1_ALDH3A1_ALDH3B2_ALDH1A3		[]		GNT	True	['GDP', 'GTP']	False	HGNC__58__10992
+R_NME2_NME3_NME4_NME5_NME2P1_NME7_NME6_NME1_NME2_1		['EC:2.7.4.6']		GTPsynth	False	[]	False	HGNC__58__20461 or HGNC__58__20567 or ( HGNC__58__7849 and HGNC__58__7850 ) or HGNC__58__7851
+R_NME2_NME3_NME4_NME5_NME2P1_NME7_NME6_NME1_NME2_2		['EC:2.7.4.6']		*	False	[]	False	HGNC__58__20567 or HGNC__58__7852
+R_AQP8		[]		AQP8	True	['Water']	False	
+R_HIBCH		[]		TransportNH3	True	['Ammonia']	False	
+R_SLC25A10_4		[]		SLC25A10	True	['Fumaric acid', 'Phosphate']	False	HGNC__58__10980
+R_CA12_CA2_CA9_CA14_CA1_CA3_CA4_CA7_CA13		['EC:4.2.1.1']		cCA	False	[]	False	HGNC__58__1368 or HGNC__58__1371 or HGNC__58__1372 or HGNC__58__1373 or HGNC__58__1374 or HGNC__58__1375 or HGNC__58__1380 or HGNC__58__1381 or HGNC__58__1383 or HGNC__58__14914
+R_CA5B_CA5A		['EC:4.2.1.1']		mCA	False	[]	False	HGNC__58__1377 or HGNC__58__1378
+R_TransportGln		[]		GlnCarrier	True	['proton', 'L-Glutamine']	False	
+R_GLS2		['EC:3.5.1.2']		cGLS	False	[]	False	HGNC__58__4331
+R_TransportGlu		[]		GluCarrier	True	['proton', 'L-Glutamic acid']	False	HGNC__58__10982 or HGNC__58__10983 or HGNC__58__10988 or HGNC__58__19954
+R_GLS		['EC:3.5.1.2', 'EC:3.5.1.38']		mGLS	False	[]	False	HGNC__58__4331 or HGNC__58__29570
+R_GS		[]		GS	False	[]	False	HGNC__58__21016 or HGNC__58__4341
+R_PPAT		['EC:2.4.2.14']		PPAT	False	[]	False	HGNC__58__9238
+R_ADSS_ADSSL1		['EC:6.3.4.4']		*	False	[]	False	HGNC__58__292 or HGNC__58__20093
+R_TNRC6B_ADSL_1		['EC:4.3.2.2']		*	False	[]	False	HGNC__58__291
+R_GART_1		['EC:6.3.4.13']		GART1	False	[]	False	HGNC__58__4163
+R_GART_2		['EC:2.1.2.2']		GART2	False	[]	False	HGNC__58__4163
+R_PFAS		['EC:6.3.5.3']		PFAS	False	[]	False	HGNC__58__8863
+R_OGDH_GART_OGDHL		['EC:6.3.3.1']		GART3	False	[]	False	HGNC__58__4163
+R_PAICS_1		['EC:4.1.1.21']		PAICS1	False	[]	False	HGNC__58__8587
+R_PAICS_2		['EC:6.3.2.6']		PAICS2	False	[]	False	HGNC__58__8587
+R_TNRC6B_ADSL_2		['EC:4.3.2.2']		PAICS3	False	[]	False	HGNC__58__291
+R_ATIC_1		['EC:2.1.2.3']		ATIC1	False	[]	False	HGNC__58__794
+R_ATIC_2		['EC:3.5.4.10']		ATIC2	False	[]	False	HGNC__58__794
+R_GMPR2_GMPR		['EC:1.7.1.7']		GMPR	False	[]	False	HGNC__58__4376 or HGNC__58__4377
+R_GUK1_1		['EC:2.7.4.8']		GUK1	False	[]	False	HGNC__58__4693
+R_RRM2B_TXN_RRM1_RRM2B_1		['EC:1.17.4.1']		RRM2B1	False	[]	False	HGNC__58__10451 and ( HGNC__58__10452 or HGNC__58__17296 )
+R_GUK1_2		['EC:2.7.4.8']		GUK2	False	[]	False	HGNC__58__4693
+R_AK2_TAF9_AK1_AK7_AK3_AK5_AKD1_AK4_AK8_1		['EC:2.7.4.3']		cAK	False	[]	False	HGNC__58__20091 or HGNC__58__361 or HGNC__58__362 or HGNC__58__365
+R_RRM2B_TXN_RRM1_RRM2B_2		['EC:1.17.4.1']		RRM2B2	False	[]	False	HGNC__58__10451 and ( HGNC__58__10452 or HGNC__58__17296 )
+R_AK		['EC:2.7.4.11', 'EC:2.7.4.3']		dAMPsynthesis	False	[]	False	HGNC__58__20091 or HGNC__58__361 or HGNC__58__362 or HGNC__58__363 or HGNC__58__365
+R_IMPDH2		['EC:1.1.1.205']		*	False	[]	False	HGNC__58__6052 or HGNC__58__6053
+R_GMPS		['EC:6.3.4.1']		*	False	[]	False	HGNC__58__4378
+R_CAD_1		['EC:6.3.5.5']		*	False	[]	False	HGNC__58__1424
+R_CAD_2		['EC:2.1.3.2']		CAD2	False	[]	False	HGNC__58__1424
+R_CAD_3		['EC:3.5.2.3']		CAD3	False	[]	False	HGNC__58__1424
+R_DHODH		['EC:1.3.5.2']		DHODH	False	[]	False	HGNC__58__2867
+R_UMPS_1		['EC:2.4.2.10']		UMPS1	False	[]	False	HGNC__58__12563
+R_UMPS_2		['EC:4.1.1.23']		UMPS2	False	[]	False	HGNC__58__12563
+R_CMPK2_CMPK1_1		['EC:2.7.4.14', 'EC:2.7.4.4']		CMPK1	False	[]	False	HGNC__58__18170
+R_RRM2B_TXN_RRM1_RRM2_1		['EC:1.17.4.1']		RRM2B3	False	[]	False	HGNC__58__10451 and ( HGNC__58__10452 or HGNC__58__17296 )
+R_TYMS		['EC:2.1.1.45']		TYMS	False	[]	False	HGNC__58__12441
+R_CMPK1_DTYMK		['EC:2.7.4.9']		CMPK2	False	[]	False	HGNC__58__3061
+R_NME2_NME3_NME4_NME5_NME2P1_NME7_NME6_NME1_NME2_3		['EC:2.7.4.6']		NME1	False	[]	False	HGNC__58__20461 or HGNC__58__20567 or ( HGNC__58__7849 and HGNC__58__7850 ) or HGNC__58__7851
+R_NME2_NME3_NME4_NME5_NME2P1_NME7_NME6_NME1_NME2_4		['EC:2.7.4.6']		NME2	False	[]	False	HGNC__58__20461 or HGNC__58__20567 or ( HGNC__58__7849 and HGNC__58__7850 ) or HGNC__58__7851
+R_CMPK2_CMPK1_2		['EC:2.7.4.14', 'EC:2.7.4.25']		CMPK3	False	[]	False	HGNC__58__18170
+R_CTPS2_GATM_CTPS1		['EC:6.3.4.2']		CTPS	False	[]	False	HGNC__58__2519 or HGNC__58__2520
+R_RRM2B_TXN_RRM1_RRM2_2		['EC:1.17.4.1']		RRM2B4	False	[]	False	HGNC__58__10451 and ( HGNC__58__10452 or HGNC__58__17296 )
+R_CMPK2_CMPK1_3		['EC:2.7.4.14']		CMPK4	False	[]	False	HGNC__58__18170
+R_GLUD1_GLUD2_1		['EC:1.4.1.3']		GLUDnadh	False	[]	False	HGNC__58__4336 or HGNC__58__4335
+R_GLUD1_GLUD2_2		['EC:1.4.1.3']		GLUDnadph	False	[]	False	HGNC__58__4336 or HGNC__58__4335
+R_GOT1_GOT2_GOT1L1_2		['EC:2.6.1.1']		cGOT	False	[]	False	HGNC__58__4432
+R_GOT2_GOT1L1_1		['EC:2.6.1.1']		mGOT	False	[]	False	HGNC__58__4433
+R_SLC25A13_SLC25A12		[]		GLAST	True	['proton', 'L-Glutamic acid', 'L-Aspartic acid']	False	HGNC__58__10982 or HGNC__58__10983
+R_FH_3		['EC:4.3.1.1']		FH3	False	[]	False	
+R_CPS1		['EC:6.3.4.16']		CPS1	False	[]	False	HGNC__58__2323
+R_OTC_LEFTY1		['EC:2.1.3.3']		OTC	False	[]	False	HGNC__58__8512
+R_SLC25A15_SLC25A2_1		[]		ORNT	True	['Citrulline', 'proton', 'Ornithine']	False	HGNC__58__10985 or HGNC__58__22921
+R_GCDH_SLC25A2_2		[]		ORNT	True	['Citrulline', 'proton', 'Ornithine']	False	HGNC__58__10985 or HGNC__58__22921
+R_ASS1		['EC:6.3.4.5']		ASS1	False	[]	False	HGNC__58__758
+R_ASL_CRCP		['EC:4.3.2.1']		ASL	False	[]	False	HGNC__58__746
+R_ARG2_ARG1		['EC:3.5.3.1']		ARG1	False	[]	False	HGNC__58__663
+R_OGDH_ODC1_OGDHL		['EC:4.1.1.17']		ODC1	False	[]	False	HGNC__58__8109
+R_AGAT		['EC:2.1.4.1']		AGAT	False	[]	False	HGNC__58__4175
+R_arginineAmidinohydrolase		['EC:3.5.3.6']		ARGAH	False	[]	False	
+R_OAT		['EC:2.6.1.13']		*	False	[]	False	HGNC__58__8091
+R_ALDH4A1_1		['EC:1.2.1.88']		ALDH18A1	False	[]	False	HGNC__58__406
+R_Transport_Lglu5semialdehyde		[]		TransportGLU5SA	True	['L-Glutamate 5-semialdehyde']	False	
+R_ALDH4A1_2		['EC:1.2.1.88']		ALDH4A1	False	[]	False	HGNC__58__406
+R_PYCRL_PYCR2_PYCR1_LEFTY1_2		['EC:1.5.1.2']		P5CR2nadph	False	[]	False	HGNC__58__30262
+R_PYCRL_PYCR2_PYCR1_LEFTY1_1		['EC:1.5.1.2']		P5CR2nadh	False	[]	False	HGNC__58__30262
+R_ASNS		['EC:6.3.5.4']		ASNS	False	[]	False	HGNC__58__753
+R_ASRGL1_ASPG		['EC:3.5.1.1', 'EC:3.5.1.38']		ASRGL1	False	[]	False	HGNC__58__16448 or HGNC__58__20123
+R_GOT1_GOT2		['EC:2.6.1.1']		GOT1	False	[]	False	HGNC__58__4432
+R_PHGDH_UBAC2		['EC:1.1.1.95']		PHGDH	False	[]	False	HGNC__58__8923
+R_PSAT1		['EC:2.6.1.52']		PSAT1	False	[]	False	HGNC__58__19129
+R_VPS29_PSPH_PSPHP1		['EC:3.1.3.3']		PSPH	False	[]	False	HGNC__58__9577
+R_SHMT1		['EC:2.1.2.1']		cSHMT	False	[]	False	HGNC__58__10850
+R_SDS_SDSL_SRR		['EC:4.3.1.17']		SDS	False	[]	False	HGNC__58__10691 or HGNC__58__30404
+R_CCBL1		['EC:2.6.1.15', 'EC:2.6.1.63']		*	False	[]	False	
+R_NIT2		['EC:3.5.1.3']		*	False	[]	False	HGNC__58__29878
+R_Transport_serine		[]		TransportSer	True	['L-Serine']	False	
+R_Transport_glycine		[]		TransportGly	True	['Glycine']	False	
+R_SHMT1_2		['EC:2.1.2.1']		mSHMT	False	[]	False	HGNC__58__10852
+R_TransportFolate		[]		Transport_folate	True	['Folic acid']	False	HGNC__58__29683
+R_SLC16A3_SLC16A1_SLC16A5_2		[]		TransportFormate	True	['Formic acid']	False	
+R_DHFRL1_DHFR_5		['EC:1.5.1.3']		DHFRL1_DHFR_5	False	[]	False	
+R_DHFRL1_DHFR_6		['EC:1.5.1.3']		DHFRL1_DHFR_6	False	[]	False	
+R_MTHFD1_AL445665_1_AQP7P4_LOC286297_2		['EC:3.5.4.9', 'EC:6.3.4.3']		mMTHFD1	False	[]	False	HGNC__58__21055 or HGNC__58__7432
+R_MTHFD1_2		['EC:3.5.4.9']		mMTHFD2	False	[]	False	HGNC__58__21055 or HGNC__58__7434
+R_MTHFD2_4		['EC:1.5.1.5']		mMTHFD3	False	[]	False	HGNC__58__21055 or HGNC__58__7432 or HGNC__58__7434
+R_DHFRL1_DHFR_2		['EC:1.5.1.3']		cDHFR1	False	[]	False	HGNC__58__2861
+R_DHFRL1_DHFR_4		['EC:1.5.1.3']		cDHFR2	False	[]	False	HGNC__58__2861
+R_MTHFD1_AL445665_1_AQP7P4_LOC286297		['EC:3.5.4.9', 'EC:6.3.4.3']		cMTHFD1	False	[]	False	HGNC__58__7432
+R_MTHFD1_3		['EC:1.5.1.6']		cMTHFD2	False	[]	False	HGNC__58__26777 or HGNC__58__3978
+R_MTHFD1_1		['EC:3.5.4.9']		cMTHFD3	False	[]	False	HGNC__58__7432
+R_MTHFD2_1		['EC:1.5.1.5']		cMTHFD4	False	[]	False	HGNC__58__7432 or HGNC__58__7436
+R_MTHFD2_2		['EC:1.5.1.5']		cMTHFD5	False	[]	False	HGNC__58__31865 or HGNC__58__7434
+R_ACAT1_ACAT2		['EC:2.3.1.9']		cACAT	False	[]	False	HGNC__58__94
+R_HMGCS1_HMGCS2		['EC:2.3.3.10']		cHMGCS	False	[]	False	HGNC__58__5007
+R_HMGCR		['EC:1.1.1.34']		*	False	[]	False	HGNC__58__5006
+R_MVK		['EC:2.7.1.36']		*	False	[]	False	HGNC__58__7530
+R_PMVK		['EC:2.7.4.2']		*	False	[]	False	HGNC__58__9141
+R_IDI1_IDI2		['EC:5.3.3.2']		*	False	[]	False	HGNC__58__5387 or HGNC__58__23487
+R_MVD		['EC:4.1.1.33']		*	False	[]	False	HGNC__58__7529
+R_ARID4B_GGPS1_FDPS_FDPSP7_1		['EC:2.5.1.1', 'EC:2.5.1.10', 'EC:2.5.1.29']		*	False	[]	False	HGNC__58__4249 or HGNC__58__3631
+R_ARID4B_GGPS1_FDPS_FDPSP7_2		['EC:2.5.1.1', 'EC:2.5.1.10', 'EC:2.5.1.29']		*	False	[]	False	HGNC__58__4249 or HGNC__58__3631
+R_FDFT1_1		['EC:2.5.1.21']		*	False	[]	False	HGNC__58__3629
+R_FDFT1_2		['EC:2.5.1.21']		*	False	[]	False	HGNC__58__3629
+R_SQLE		['EC:1.14.13.132']		*	False	[]	False	HGNC__58__11279
+R_LSS		['EC:5.4.99.7']		*	False	[]	False	HGNC__58__6708
+R_CYP51A1_HSD17B10_HADHA_EHHADH_HSD17B4_HADH_1		['EC:1.14.13.70']		*	False	[]	False	HGNC__58__2649
+R_CYP51A1_HSD17B10_HADHA_EHHADH_HSD17B4_HADH_2		['EC:1.14.13.70']		*	False	[]	False	HGNC__58__2649
+R_CYP51A1_HSD17B10_HADHA_EHHADH_HSD17B4_HADH_3		['EC:1.14.13.70']		*	False	[]	False	HGNC__58__2649
+R_ACAA1_HADHB_LBR_TM7SF2_MYO5B_ACAA2		['EC:1.3.1.70']		*	False	[]	False	HGNC__58__11863
+R_MSMO1_1		['EC:1.14.13.72']		*	False	[]	False	HGNC__58__1334 or HGNC__58__10545
+R_MSMO1_2		['EC:1.14.13.72']		*	False	[]	False	HGNC__58__1334 or HGNC__58__10545
+R_MSMO1_3		['EC:1.14.13.72']		*	False	[]	False	HGNC__58__1334 or HGNC__58__10545
+R_NSDHL_MAGEA2B		['EC:1.1.1.170']		*	False	[]	False	HGNC__58__13398
+R_NSDHL		['EC:1.1.1.170']		*	False	[]	False	HGNC__58__13398
+R_HSD17B7		['EC:1.1.1.270']		*	False	[]	False	HGNC__58__5215
+R_MSMO1_4		['EC:1.14.13.72']		*	False	[]	False	HGNC__58__1334 or HGNC__58__10545
+R_MSMO1_5		['EC:1.14.13.72']		*	False	[]	False	HGNC__58__1334 or HGNC__58__10545
+R_MSMO1_6		['EC:1.14.13.72']		*	False	[]	False	HGNC__58__1334 or HGNC__58__10545
+R_MSMO1_NSDHL		['EC:1.1.1.170']		*	False	[]	False	HGNC__58__13398
+R_HSD17B6_HSD17B2_HSD17B7_HSD17B12		['EC:1.1.1.270']		*	False	[]	False	HGNC__58__5215
+R_ALG13_EBP		['EC:5.3.3.5']		*	False	[]	False	HGNC__58__3133
+R_SC5DL_1		['EC:1.14.21.6']		*	False	[]	False	HGNC__58__10547
+R_DHCR7_1		['EC:1.3.1.21']		*	False	[]	False	HGNC__58__2860
+R_DHCR24_LEFTY1		['EC:1.3.1.72']		*	False	[]	False	HGNC__58__2859
+R_ACACB_PRKAG2_PRKAB2_ACACA_PRKAA2		['EC:6.3.4.14']		ACC	False	[]	False	HGNC__58__84 or HGNC__58__85
+R_FASN_1		['EC:2.3.1.85']		FASN	False	[]	False	HGNC__58__3594
+R_MCAT_FASN		['EC:2.3.1.85']		MCAT	False	[]	False	HGNC__58__3594
+R_AcAcACPSynthesis		['EC:2.3.1.85']		AcetoacetylACPsynthesis	False	[]	False	HGNC__58__3594
+R_ALDH3A2_ALDH2_ALDH1B1_ALDH9A1_ALDH7A1_FASN		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_FASN_2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_PECR_MECR_FASN_1		['EC:2.1.3.85']		*	False	[]	False	HGNC__58__3594
+R_ELOVL5_AGPAT4_UPB1_PNPLA3_TAZ_LPCAT3_LPGAT1_MBOAT7_ESCO1_MBOAT2_OXSM_AGPAT3_SLC33A1_FASN_ELOVL6_ESCO2_MBOAT1_LCLAT1_LPCAT4_DGAT2L6_HYAL3_ELOVL2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_FASN_3		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_OXSM_FASN		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_HSD17B10_HADHA_EHHADH_HSD17B4_HADH_FASN_1		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_ELOVL5_AGPAT4_HSD17B10_HADHA_PNPLA3_TAZ_LPCAT3_EHHADH_LPGAT1_MBOAT7_HSD17B4_HADH_MBOAT2_OXSM_AGPAT3_SLC33A1_FASN_ELOVL6_ESCO2_MBOAT1_LCLAT1_LPCAT4_DGAT2L6_HYAL3_ELOVL2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_FASN_4		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_GGT5_GGT1_GGTLC2_GGT7_GGT2_FASN_GGTLC3_1		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_HADHA_EHHADH_ECHS1_FASN_1		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_ELOVL5_AGPAT4_HADHA_PBPLA3_TAZ_LPCAT3_EHHADH_LPGAT1_MBOAT7_ECHS1_ESCO1_MBOAT2_OXSM_AGPAT3_SLC33A1_FASN_ELOVL6_ESCO2_MBOAT1_LCLAT1_LPCAT4_DGAT2L6_HYAL3_ELOVL2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_AOX1_FASN		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_FASN_5		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_HSD17B10_HADHA_EHHADH_HSD17B4_HADH_FASN_2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_ELOVL5_AGPAT4_HSD17B10_HADHA_PNPLA3_TAZ_LPCAT3_EHHADH_LPGAT1_MBOAT7_HSD17B4_HADH_ESCO1_MBOAT2_OXSM_AGPAT3_SLC33A1_FASN_ELOVL6_ESCO2_MBOAT1_LCLAT1_LPCAT4_DGAT2L6_HYAL3_ELOVL2_1		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_HADHA_EHHADH_ECHS1_FASN_2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_HADHA_EHHADH_ECHS1_FASN_3		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_CMAS_FASN		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_ELOVL5_AGPAT4_HADHA_PNPLA3_TAZ_LPCAT3_EHHADH_LPGAT1_MBOAT7_ECHS1_ESCO1_MBOAT2_OXSM_AGPAT3_SLC33A1_FASN_ELOVL6_ESCO2_MBOAT1_LCLAT1_LPCAT4_DGAT2L6_HYAL3_ELOVL2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_PECR_MECR_FASN_2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_ACAA1_HADHB_MYO5B_ACAA2_FASN_1		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_HSD17B10_HADHA_EHHADH_HAD17B4_HADH_FASN		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_ELOVL5_AGPAT4_HSD17B10_HADHA_PNPLA3_TAZ_LPCAT3_EHHADH_LPGAT1_MBOAT7_HSD17B4_HADH_ESCO1_MBOAT2_OXSM_AGPAT3_SLC33A1_FASN_ELOVL6_ESCO2_MBOAT1_LCLAT1_LPCAT4_DGAT2L6_HYAL3_ELOVL2_2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_GGT5_GGT1_GGTLC2_GGT7_GGT2_FASN_GGTLC3_2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_ACOT8_FASN		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_ACAA1_HADHB_MYO5B_ACAA2_FASN_2		['EC:2.3.1.85']		*	False	[]	False	HGNC__58__3594
+R_OLAH_FASN		['EC:3.1.2.14', 'EC:2.3.1.85']		*	False	[]	False	HGNC__58__25625 or HGNC__58__3594
+R_PrepDemPalmitate		[]		*	True	['Palmitic acid']	False	
+R_UniportOrnithine		[]		*	True	['proton', 'Ornithine']	False	HGNC__58__10985 or HGNC__58__22921
+R_CotraspArgOrnA		[]		*	True	['L-Arginine', 'proton', 'Ornithine']	False	HGNC__58__22921
+R_CotraspArgOrnB		[]		*	True	['L-Arginine', 'proton', 'Ornithine']	False	HGNC__58__22921
+R_CotraspArgCitrA		[]		*	True	['Citrulline', 'proton', 'L-Arginine']	False	HGNC__58__22921
+R_CotraspArgCitrB		[]		*	True	['Citrulline', 'proton', 'L-Arginine']	False	HGNC__58__22921
+R_UniportArginine		[]		*	True	['L-Arginine', 'proton']	False	HGNC__58__10985 or HGNC__58__22921
+R_UniportCitrulline		[]		*	True	['Citrulline', 'proton']	False	HGNC__58__22921 or HGNC__58__10985
+R_ATPmaintenance		[]		ATPmaintenance	False	[]	False	
+R_SLC25A1		[]		SLC25A1	True	['Citric acid', 'proton', 'L-Malic acid']	False	HGNC__58__10979
+R_SLC25A11		[]		SLC25A11	True	['Oxoglutaric acid', 'L-Malic acid']	False	HGNC__58__10980 or HGNC__58__10981
+R_SLC25A16		[]		SLC25A16	True	['Coenzyme A']	False	HGNC__58__10986
+R_palmitateActivation		[]		palmitateActivation	False	[]	False	HGNC__58__3571 or HGNC__58__3569 or HGNC__58__3570 or HGNC__58__16496
+R_carnitineAcylTransferaseI		[]		carnitineAcylTransferaseI	False	[]	False	HGNC__58__18540 or HGNC__58__2328 or HGNC__58__2329
+R_translocase		[]		translocase	True	['L-Carnitine', 'L-Palmitoylcarnitine']	False	HGNC__58__1421
+R_carnitineAcylTransferaseII		[]		carnitineAcylTransferaseII	False	[]	False	HGNC__58__2330
+R_betaOxidation		[]		betaOxidation	False	[]	False	HGNC__58__119 and HGNC__58__89 and HGNC__58__88 and HGNC__58__92 and HGNC__58__3151 and HGNC__58__4801 and HGNC__58__83 and HGNC__58__4803
+R_biomass_synthesis		[]		Biomass	False	[]	False	

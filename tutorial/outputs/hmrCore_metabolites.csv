@@ -1,0 +1,257 @@
+Id	Name	KeggId	ChebiId	PubchemId	boundaryCondition	chemicalFormula	Inchi
+M_biomass_s	biomasss				false		
+M_glucose_s	D-Glucose				false		
+M_lactateL_s	L-Lactic acid				false		
+M_O2_s	Oxygen				false		
+M_glutamine_s	L-Glutamine				false		
+M_palmitate_s	Palmitic acid				false		
+M_glutamate_s	L-Glutamic acid				false		
+M_arginine_s	L-Arginine				false		
+M_folate_s	Folic acid				false		
+M_urea_s	Urea				false		
+M_NH3_s	Ammonia				false		
+M_citrate_s	Citric acid				false		
+M_carnitine_s	L-Carnitine				false		
+M_AKG_s	Oxoglutaric acid				false		
+M_proline_s	L-Proline				false		
+M_alanine_s	L-Alanine				false		
+M_aspartate_s	L-Aspartic acid				false		
+M_asparagine_s	L-Asparagine				false		
+M_serine_s	L-Serine				false		
+M_glycine_s	Glycine				false		
+M_cystine_s	L-Cystine				false		
+M_mercaptopyruvate_c	3-Mercaptopyruvic acid				false		
+M_H2O_c	Water				false		
+M_Pi_c	Phosphate				false		
+M_H_c	proton				false		
+M_glucose_c	D-Glucose				false		
+M_lactateL_c	L-Lactic acid				false		
+M_glutamine_c	L-Glutamine				false		
+M_palmitateDem_c	Palmitic acid				false		
+M_carnitine_c	L-Carnitine				false		
+M_glutamate_c	L-Glutamic acid				false		
+M_arginine_c	L-Arginine				false		
+M_urea_c	Urea				false		
+M_NH3_c	Ammonia				false		
+M_citrate_c	Citric acid				false		
+M_folate_c	Folic acid				false		
+M_AKG_c	Oxoglutaric acid				false		
+M_proline_c	L-Proline				false		
+M_alanine_c	L-Alanine				false		
+M_aspartate_c	L-Aspartic acid				false		
+M_asparagine_c	L-Asparagine				false		
+M_serine_c	L-Serine				false		
+M_glycine_c	Glycine				false		
+M_putrescine_c	Putrescine				false		
+M_CO2_c	Carbon dioxide				false		
+M_10_formyl_THF_m	10-Formyltetrahydrofolate				false		
+M_10_formyl_THF_c	10-Formyltetrahydrofolate				false		
+M_GSSG_m	Oxidized glutathione				false		
+M_guanidinoacetate_c	Guanidoacetic acid				false		
+M_O2_c	Oxygen				false		
+M_palmitate_c	Palmitic acid				false		
+M_cystine_c	L-Cystine				false		
+M_NADPH_c	NADPH				false		
+M_cysteine_c	L-Cysteine				false		
+M_NADP_c	NADP(+)				false		
+M_ATP_c	Adenosine triphosphate				false		
+M_ADP_c	Adenosine diphosphate				false		
+M_glucose_6_phosphate_c	Glucose 6-phosphate				false		
+M_fructose_6_phosphate_c	Fructose 6-phosphate				false		
+M_fructose_1_6_bisphosphate_c	Fructose 1,6-bisphosphate				false		
+M_GAP_c	Glyceraldehyde 3-Phosphate				false		
+M_DHAP_c	Dihydroxyacetone phosphate				false		
+M_NAD_c	NAD				false		
+M_1_3_bisphospho_D_glycerate_c	Glyceric acid 1,3-biphosphate				false		
+M_NADH_c	NADH				false		
+M_3_phospho_D_glycerate_c	3-phospho-D-glycerate				false		
+M_2_phospho_D_glycerate_c	2-Phospho-D-glyceric acid				false		
+M_PEP_c	Phosphoenolpyruvic acid				false		
+M_pyruvate_c	Pyruvic acid				false		
+M_pyruvate_m	Pyruvic acid				false		
+M_H_m	proton				false		
+M_ATP_m	Adenosine triphosphate				false		
+M_HCO3_m	Hydrogen carbonate				false		
+M_OAA_m	Oxalacetic acid				false		
+M_ADP_m	Adenosine diphosphate				false		
+M_Pi_m	Phosphate				false		
+M_OAA_c	Oxalacetic acid				false		
+M_GTP_c	GTP				false		
+M_GDP_c	GDP				false		
+M_glucono_1_5_lactone_6_phosphate_c	6-Phosphonoglucono-D-lactone				false		
+M_6_phospho_D_gluconate_c	6-Phosphogluconic acid				false		
+M_ribulose_5_phosphate_c	D-Ribulose 5-phosphate				false		
+M_ribose_5_phosphate_c	D-Ribose 5-phosphate				false		
+M_AMP_c	Adenosine monophosphate				false		
+M_PRPP_c	Phosphoribosyl pyrophosphate				false		
+M_erythrose_4_phosphate_c	D-Erythrose 4-phosphate				false		
+M_xylulose_5_phosphate_c	Xylulose 5-phosphate				false		
+M_sedoheptulose_1_7_bisphosphate_c	Sedoheptulose 1,7-bisphosphate				false		
+M_sedoheptulose_7_phosphate_c	D-Sedoheptulose 7-phosphate				false		
+M_CoA_m	Coenzyme A				false		
+M_NAD_m	NAD				false		
+M_acetyl_CoA_m	Acetyl-CoA				false		
+M_NADH_m	NADH				false		
+M_CO2_m	Carbon dioxide				false		
+M_H2O_m	Water				false		
+M_citrate_m	Citric acid				false		
+M_isocitrate_m	Isocitric acid				false		
+M_AKG_m	Oxoglutaric acid				false		
+M_NADP_m	NADP(+)				false		
+M_NADPH_m	NADPH				false		
+M_succinyl_CoA_m	Succinyl-CoA				false		
+M_GDP_m	GDP				false		
+M_succinate_m	Succinic acid				false		
+M_GTP_m	GTP				false		
+M_FAD_m	Flavin Adenine Dinucleotide Oxidized				false		
+M_fumarate_m	Fumaric acid				false		
+M_FADH2_m	Flavin Adenine Dinucleotide Reduced				false		
+M_malate_m	L-Malic acid				false		
+M_CoA_c	Coenzyme A				false		
+M_acetyl_CoA_c	Acetyl-CoA				false		
+M_fumarate_c	Fumaric acid				false		
+M_malate_c	L-Malic acid				false		
+M_isocitrate_c	Isocitric acid				false		
+M_Ppi_c	Pyrophosphate				false		
+M_ubiquinone_m	Ubiquinone-1				false		
+M_ubiquinol_m	QH2				false		
+M_O2_m	Oxygen				false		
+M_superoxideAnion_m	Superoxide anion				false		
+M_ferricytochrome_C_m	Ferricytochrome C				false		
+M_ferrocytochrome_C_m	Ferrocytochrome C				false		
+M_gammaglutamylcysteine_c	gamma-Glutamylcysteine				false		
+M_GSH_c	Glutathione				false		
+M_H2O2_m	Hydrogen peroxide				false		
+M_GSH_m	Glutathione				false		
+M_NH3_m	Ammonia				false		
+M_HCO3_c	Hydrogen carbonate				false		
+M_glutamine_m	L-Glutamine				false		
+M_glutamate_m	L-Glutamic acid				false		
+M_5_phosphoribosylamine_c	5-Phosphoribosylamine				false		
+M_IMP_c	Inosinic acid				false		
+M_adenylosuccinate_c	Adenylsuccinic acid				false		
+M_GAR_c	Glycineamideribotide				false		
+M_THF_c	Tetrahydrofolic acid				false		
+M_N_formyl_GAR_c	5'-Phosphoribosyl-N-formylglycinamide				false		
+M_5_phosphoribosylformylglycinamidine_c	Phosphoribosylformylglycineamidine				false		
+M_AIR_c	5-Aminoimidazole ribonucleotide				false		
+M_5_phosphoribosyl_4_carboxy_5_aminoimidazole_c	5'-Phosphoribosyl-4-carboxy-5-aminoimidazole				false		
+M_SAICAR_c	SAICAR				false		
+M_AICAR_c	AICAR				false		
+M_FAICAR_c	Phosphoribosyl formamidocarboxamide				false		
+M_GMP_c	GMP				false		
+M_dGDP_c	dGDP				false		
+M_dGMP_c	2'-Deoxyguanosine 5'-monophosphate				false		
+M_dADP_c	dADP				false		
+M_dAMP_c	Deoxyadenosine monophosphate				false		
+M_xanthosine_5_phosphate_c	Xanthosine monophosphate				false		
+M_carbamoyl_phosphate_c	Carbamoyl phosphate				false		
+M_N_carbamoyl_L_aspartate_c	N-Carbamoyl-L-aspartate				false		
+M_S_dihydroorotate_c	(S)-Dihydroorotate				false		
+M_orotate_c	Orotic acid				false		
+M_orotidine_5_phosphate_c	Orotidylic acid				false		
+M_UMP_c	Uridine 5'-monophosphate				false		
+M_UDP_c	Uridine 5'-diphosphate				false		
+M_dUDP_c	dUDP				false		
+M_5_10_methylene_THF_c	5,10-Methylene-THF				false		
+M_dUMP_c	dUMP				false		
+M_dTMP_c	5'-Thymidylic acid				false		
+M_dihydrofolate_c	Dihydrofolic acid				false		
+M_UTP_c	Uridine triphosphate				false		
+M_CTP_c	Cytidine triphosphate				false		
+M_CDP_c	CDP				false		
+M_CMP_c	Cytidine monophosphate				false		
+M_dCDP_c	dCDP				false		
+M_dCMP_c	dCMP				false		
+M_aspartate_m	L-Aspartic acid				false		
+M_carbamoyl_phosphate_m	Carbamoyl phosphate				false		
+M_ornithine_m	Ornithine				false		
+M_citrulline_m	Citrulline				false		
+M_ornithine_c	Ornithine				false		
+M_citrulline_c	Citrulline				false		
+M_argininosuccinate_c	Argininosuccinic acid				false		
+M_Lglu5semialdehyde_m	L-Glutamate 5-semialdehyde				false		
+M_Lglu5semialdehyde_c	L-Glutamate 5-semialdehyde				false		
+M_1_Pyrroline5carboxylate_c	 1-Pyrroline-5-Carboxylate				false		
+M_3_phosphonooxypyruvate_c	Phosphohydroxypyruvic acid				false		
+M_3_phosphoserine_c	Phosphoserine				false		
+M_2_oxoglutaramate_c	2-Oxoglutaramate				false		
+M_serine_m	L-Serine				false		
+M_glycine_m	Glycine				false		
+M_THF_m	Tetrahydrofolic acid				false		
+M_5_10_methylene_THF_m	5,10-Methylene-THF				false		
+M_folate_m	Folic acid				false		
+M_formate_m	Formic acid				false		
+M_formate_c	Formic acid				false		
+M_dihydrofolate_m	Dihydrofolic acid				false		
+M_5_10_methenyl_THF_m	5,10-Methenyltetrahydrofolic acid				false		
+M_5_10_methenyl_THF_c	5,10-Methenyltetrahydrofolic acid				false		
+M_acetoacetyl_CoA_c	Acetoacetyl-CoA				false		
+M_HMG_CoA_c	3-Hydroxy-3-methylglutaryl-CoA				false		
+M_R_mevalonate_c	Mevalonic acid				false		
+M_R_5_phosphomevalonate_c	(R)-5-Phosphomevalonate				false		
+M_R_5_diphosphomevalonate_c	(R)-5-Diphosphomevalonate				false		
+M_isopentenyl_pPP_c	Isopentenyl pyrophosphate				false		
+M_dimethylallyl_PP_c	Dimethylallylpyrophosphate				false		
+M_geranyl_PP_c	Geranyl diphosphate				false		
+M_farnesyl_PP_c	Farnesyl pyrophosphate				false		
+M_presqualene_PP_c	Presqualene diphosphate				false		
+M_squalene_c	Squalene				false		
+M_squalene_2_3_oxide_c	(S)-2,3-Epoxysqualene				false		
+M_lanosterol_c	Lanosterol				false		
+M_4_4_dimethyl_14alpha_hydroxymethyl_5alpha_cholesta_8_24_dien_3beta_ol_c	4,4-Dimethyl-14Alpha-Hydroxymethyl-5Alpha-Cholesta-8,24-Dien-3Beta-Ol				false		
+M_4_4_dimethyl_14alpha_formyl_5alpha_cholesta_8_24_dien_3beta_ol_c	4,4-Dimethyl-14Alpha-Formyl-5Alpha-Cholesta-8,24-Dien-3Beta-Ol				false		
+M_4_4_dimethyl_5alpha_cholesta_8_14_24_trien_3beta_ol_c	4,4-Dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol				false		
+M_14_demethyllanosterol_c	14-Demethyllanosterol				false		
+M_4_alpha_hydroxymethyl_4beta_methyl_5alpha_cholesta_8_24_dien_3beta_ol_c	4'-Hydroxymethyl-4'-Methyl-5'-Cholesta-8,24-Dien-3'-Ol				false		
+M_4_alpha_formyl_4beta_methyl_5alpha_cholesta_8_24_dien_3beta_ol_c	4'-Formyl-4'-Methyl-5'-Cholesta-8,24-Dien-3'-Ol				false		
+M_4_alpha_carboxy_4beta_methyl_5alpha_cholesta_8_24_dien_3beta_ol_c	4alpha-Carboxy-4beta-methyl-5alpha-cholesta-8,24-dien-3beta-ol				false		
+M_3_keto_4_methylzymosterol_c	3-Keto-4-methylzymosterol				false		
+M_4_alpha_methylzymosterol_c	4alpha-Methylzymosterol				false		
+M_4_alpha_hydroxymethyl_5alpha_cholesta_8_24_dien_3beta_ol_c	4'-Hydroxymethyl-5'-Cholesta-8,24-Dien-3'-Ol				false		
+M_4_alpha_formyl_5alpha_cholesta_8_24_dien_3beta_ol_c	4'-Formyl-5'-Cholesta-8,24-Dien-3'-Ol				false		
+M_4_alpha_carboxy_5alpha_cholesta_8_24_dien_3beta_ol_c	4'-Carboxy-5'-Cholesta-8,24-Dien-3'-Ol				false		
+M_5_alpha_cholesta_8_24_dien_3_one_c	5Alpha-Cholesta-8,24-Dien-3-One				false		
+M_zymosterol_c	Zymosterol				false		
+M_5_alpha_cholesta_7_24_dien_3beta_ol_c	5alpha-Cholesta-7,24-dien-3beta-ol				false		
+M_7_dehydrodesmosterol_c	7-Dehydrodesmosterol				false		
+M_desmosterol_c	Desmosterol				false		
+M_cholesterol_c	Cholesterol				false		
+M_malonyl_CoA_c	Malonyl-CoA				false		
+M_ACP_c	 Acyl Carrier Protein				false		
+M_acetyl_ACP_c	Acetyl-[acyl-carrier protein]				false		
+M_malonyl_ACP_c	Malonyl-[Acyl-Carrier Protein]				false		
+M_acetoacetyl_ACP_c	Acetoacetyl-[acyl-carrier protein]				false		
+M_R_3_hydroxybutanoyl_ACP_c	(R)-3-Hydroxybutanoyl-[acyl-carrier protein]				false		
+M_but_2_enoyl_ACP_c	But-2-enoyl-[acyl-carrier protein]				false		
+M_butyryl_ACP_c	Butyryl-[acyl-carrier protein]				false		
+M_3_oxohexanoyl_ACP_c	3-Oxohexanoyl-[acyl-carrier protein]				false		
+M_D_3_hydroxyhexanoyl_ACP_c	D-3-Hydroxyhexanoyl-[acyl-carrier protein]				false		
+M_2E_hexenoyl_ACP_c	(2E)-Hexenoyl-[acp]				false		
+M_hexanoyl_ACP_c	Hexanoyl-[acyl-carrier protein]				false		
+M_3_oxooctanoyl_ACP_c	3-Oxooctanoyl-[acyl-carrier protein]				false		
+M_R_3_hydroxyoctanoyl_ACP_c	(R)-3-Hydroxyoctanoyl-[acyl-carrier protein]				false		
+M_2E_octenoyl_ACP_c	(2E)-Octenoyl-[acp]				false		
+M_octanoyl_ACP_c	Octanoyl-[acyl-carrier protein]				false		
+M_3_oxodecanoyl_ACP_c	3-Oxodecanoyl-[acyl-carrier protein]				false		
+M_R_3_hydroxydecanoyl_ACP_c	(R)-3-Hydroxydecanoyl-[acyl-carrier protein]				false		
+M_2E_decenoyl_ACP_c	(2E)-Decenoyl-[acp]				false		
+M_decanoyl_ACP_c	Decanoyl-[acyl-carrier protein]				false		
+M_3_oxododecanoyl_ACP_c	3-Oxododecanoyl-[acyl-carrier protein]				false		
+M_D_3_hydroxydodecanoyl_ACP_c	D-3-Hydroxydodecanoyl-[acyl-carrier protein]				false		
+M_2E_dodecenoyl_ACP_c	(2E)-Dodecenoyl-[acp]				false		
+M_dodecanoyl_ACP_c	Dodecanoyl-[acyl-carrier protein]				false		
+M_3_oxotetradecanoyl_ACP_c	3-Oxotetradecanoyl-[acyl-carrier protein]				false		
+M_HMA_c	HMA				false		
+M_2E_tetradecenoyl_ACP_c	(2E)-Tetradecenoyl-[acp]				false		
+M_tetradecanoyl_ACP_c	Tetradecanoyl-[acyl-carrier protein]				false		
+M_3_oxohexadecanoyl_ACP_c	3-Oxohexadecanoyl-[acyl-carrier protein]				false		
+M_R_3_hydroxypalmitoyl_ACP_c	(R)-3-Hydroxypalmitoyl-[acyl-carrier protein]				false		
+M_2E_hexadecenoyl_ACP_c	(2E)-Hexadecenoyl-[acp]				false		
+M_hexadecanoyl_ACP_c	Hexadecanoyl-[acyl-carrier protein]				false		
+M_arginine_m	L-Arginine				false		
+M_palmitoylCoA_c	Palmitoyl-CoA				false		
+M_palmitoyl_carnitine_c	L-Palmitoylcarnitine				false		
+M_carnitine_m	L-Carnitine				false		
+M_palmitoyl_carnitine_m	L-Palmitoylcarnitine				false		
+M_palmitoylCoA_m	Palmitoyl-CoA				false		
