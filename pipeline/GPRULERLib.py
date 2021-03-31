@@ -4,7 +4,7 @@ import sys
 import json
 import requests
 import xmltodict
-from sympy import *
+# from sympy import *
 import pandas as pd
 import re as reModule
 import genericLib as gL

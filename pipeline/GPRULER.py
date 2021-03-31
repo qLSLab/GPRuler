@@ -2,7 +2,7 @@
 # coding: utf-8
 import os
 import sys
-from sympy import *
+# from sympy import *
 import pandas as pd
 import itertools as it
 import GPRULERLib as gprL
