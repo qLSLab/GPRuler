@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import requests
 import json
+from lxml import etree as ET
 
 def getDefinitionFromGO(evidenceCode):
     requestURL = "https://www.ebi.ac.uk/QuickGO/services/ontology/eco/terms/ECO%3A" + evidenceCode.split(':')[1]
