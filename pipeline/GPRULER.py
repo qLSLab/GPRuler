@@ -137,7 +137,7 @@ dfData['otherSubunits'] = dfData['otherSubunits'].fillna('[]')
 dfData['otherSubunits'] = dfData['otherSubunits'].apply(literal_eval)
 
 print('Merge data: DOING')
-dfData = gprL.mergeData(dfData, dip)
+dfData = gprL.mergeData(dfData)
 print('Merge data: DONE\n')
 dfData.to_csv(os.path.join(OUTDIR, model + '_GenesRelationships.csv'), sep="\t", index = False)
 
