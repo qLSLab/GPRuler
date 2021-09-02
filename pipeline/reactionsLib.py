@@ -503,4 +503,4 @@ def getKeggInfo(rxnString):
         dizInfo = k.parse(info)
     except:
         dizInfo = {}
-    return dizInfo
+    return dizInfo, info
