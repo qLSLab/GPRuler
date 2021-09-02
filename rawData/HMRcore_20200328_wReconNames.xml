@@ -38,7 +38,9 @@
       <species metaid="M_glycine_s" id="M_glycine_s" name="Glycine" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_cystine_s" id="M_cystine_s" name="L-Cystine" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_mercaptopyruvate_c" id="M_mercaptopyruvate_c" name="3-Mercaptopyruvic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+	  <species metaid="M_mercaptopyruvate_s" id="M_mercaptopyruvate_s" name="3-Mercaptopyruvic acid" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_H2O_c" id="M_H2O_c" name="Water" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+	  <species metaid="M_H2O_s" id="M_H2O_s" name="Water" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_Pi_c" id="M_Pi_c" name="Phosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_H_c" id="M_H_c" name="proton" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_glucose_c" id="M_glucose_c" name="D-Glucose" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
@@ -60,11 +62,16 @@
       <species metaid="M_serine_c" id="M_serine_c" name="L-Serine" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_glycine_c" id="M_glycine_c" name="Glycine" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_putrescine_c" id="M_putrescine_c" name="Putrescine" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+	  <species metaid="M_putrescine_s" id="M_putrescine_s" name="Putrescine" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_CO2_c" id="M_CO2_c" name="Carbon dioxide" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+	  <species metaid="M_CO2_s" id="M_CO2_s" name="Carbon dioxide" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+	  <species metaid="M_10_formyl_THF_s" id="M_10_formyl_THF_s" name="10-Formyltetrahydrofolate" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_10_formyl_THF_m" id="M_10_formyl_THF_m" name="10-Formyltetrahydrofolate" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_10_formyl_THF_c" id="M_10_formyl_THF_c" name="10-Formyltetrahydrofolate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_GSSG_m" id="M_GSSG_m" name="Oxidized glutathione" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+	  <species metaid="M_GSSG_s" id="M_GSSG_s" name="Oxidized glutathione" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_guanidinoacetate_c" id="M_guanidinoacetate_c" name="Guanidoacetic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+	  <species metaid="M_guanidinoacetate_s" id="M_guanidinoacetate_s" name="Guanidoacetic acid" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_O2_c" id="M_O2_c" name="Oxygen" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_palmitate_c" id="M_palmitate_c" name="Palmitic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_cystine_c" id="M_cystine_c" name="L-Cystine" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
@@ -289,7 +296,6 @@
         <listOfReactants>
           <speciesReference species="M_biomass_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
       </reaction>
       <reaction metaid="R_Ex_glucose" id="R_Ex_glucose" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -476,7 +482,6 @@
         <listOfReactants>
           <speciesReference species="M_aspartate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
       </reaction>
       <reaction metaid="R_Ex_asparagine" id="R_Ex_asparagine" name="Ex_asparagine" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -488,7 +493,6 @@
         <listOfReactants>
           <speciesReference species="M_asparagine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
       </reaction>
       <reaction metaid="R_Ex_serine" id="R_Ex_serine" name="Ex_serine" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -500,7 +504,6 @@
         <listOfReactants>
           <speciesReference species="M_serine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
       </reaction>
       <reaction metaid="R_Ex_glycine" id="R_Ex_glycine" name="Ex_glycine" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -512,7 +515,6 @@
         <listOfReactants>
           <speciesReference species="M_glycine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
       </reaction>
       <reaction metaid="R_Ex_cystine" id="R_Ex_cystine" name="Ex_cystine" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -524,7 +526,6 @@
         <listOfReactants>
           <speciesReference species="M_cystine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
       </reaction>
       <reaction metaid="R_Ex_SC_mercaptopyruvatec" id="R_Ex_SC_mercaptopyruvatec" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -534,9 +535,22 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_mercaptopyruvate_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_mercaptopyruvate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
+      </reaction>
+	  <reaction metaid="R_Transport_mercaptopyruvate" id="R_Transport_mercaptopyruvate" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_mercaptopyruvate_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_mercaptopyruvate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
       </reaction>
       <reaction metaid="R_Ex_SC_H2O" id="R_Ex_SC_H2O" name="ExH2O" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -546,8 +560,21 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_H2O_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_H2O_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
+	  <reaction metaid="R_Transport_H2Os" id="R_Transport_H2Os" name="Transport H2O" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Transport-extracellular</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_H2O_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_H2O_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="HGNC__58__633"/>
@@ -566,9 +593,21 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_Pi_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_Pi_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
+		<reaction metaid="R_Transport_Pis" id="R_Transport_Pis" name="Transport Pi" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Transport-extracellular</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_Pi_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_Pi_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
       </reaction>
       <reaction metaid="R_Ex_SC_H" id="R_Ex_SC_H" name="ExH" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -578,9 +617,22 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_H_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_H_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
+      </reaction>
+	  <reaction metaid="R_Transport_Hs" id="R_Transport_Hs" name="Transport H" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Transport-extracellular</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_H_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_H_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
       </reaction>
       <reaction metaid="R_DM_Glucose" id="R_DM_Glucose" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -590,38 +642,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_glucose_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_glucose_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11005"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11006"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11007"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11009"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11010"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11011"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13445"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13812"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13446"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13444"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14239"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18067"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__15956"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18301"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11036"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11037"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11038"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11039"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11040"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11041"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14025"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__19119"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__22146"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__23155"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__23091"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__28750"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_LactateL" id="R_DM_LactateL" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -631,17 +653,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_lactateL_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_lactateL_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10924"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10922"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10928"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__16270"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__19119"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Glutamine" id="R_DM_Glutamine" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -651,39 +664,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_glutamine_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_glutamine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__9225"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18044"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18070"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11047"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13447"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13448"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__27960"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14679"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__26441"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__29437"/>
-            </fbc:and>
-          </fbc:or>
-        </fbc:geneProductAssociation>
-      </reaction>
-      <reaction metaid="R_DM_Palmitate" id="R_DM_Palmitate" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>SUBSYSTEM: </p>
-            <p>Confidence Level: 0</p>
-            <p>NOTES: Nel caso del palmitato ho dovuto divere le reazioni di exchange in due per uniformare alle coop reaction</p>
-          </body>
-        </notes>
-        <listOfReactants>
-          <speciesReference species="M_palmitateDem_c" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="HGNC__58__29"/>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Carnitine" id="R_DM_Carnitine" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -693,11 +675,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_carnitine_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_carnitine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="HGNC__58__10969"/>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Glutamate" id="R_DM_Glutamate" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -707,9 +686,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_glutamate_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_glutamate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
       </reaction>
       <reaction metaid="R_DM_Arginines" id="R_DM_Arginines" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -719,17 +697,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_arginine_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_arginine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11057"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11060"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11061"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14679"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11047"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Urea" id="R_DM_Urea" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -739,16 +708,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_urea_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_urea_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10918"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10919"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11036"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11040"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_NH3" id="R_DM_NH3" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -758,9 +719,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_NH3_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_NH3_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
       </reaction>
       <reaction metaid="R_DM_Citrate" id="R_DM_Citrate" name="DmCit" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -770,14 +730,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_citrate_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_citrate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__23089"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10917"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Folate" id="R_DM_Folate" name="ExFolate" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -787,15 +741,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_folate_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_folate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__3791"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__3793"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__3795"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_AKG" id="R_DM_AKG" name="Ex_AKG" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -805,15 +752,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_AKG_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_AKG_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14430"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14409"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14411"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Proline" id="R_DM_Proline" name="Ex_proline" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -823,14 +763,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_proline_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_proline_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18761"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18762"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Alanine" id="R_DM_Alanine" name="Ex_alanine" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -840,36 +774,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_alanine_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_alanine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18761"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18762"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11047"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11057"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11060"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11061"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13447"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13448"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__13557"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__27960"/>
-            </fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14679"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__27960"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__29437"/>
-            </fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18044"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18070"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__26441"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__29437"/>
-            </fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__19660"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Aspartate" id="R_DM_Aspartate" name="Ex_aspartate" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -879,17 +785,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_aspartate_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_aspartate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10939"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10940"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10941"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10944"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__10945"/>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Asparagine" id="R_DM_Asparagine" name="Ex_asparagine" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -899,31 +796,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_asparagine_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_asparagine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11047"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13447"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13448"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__13557"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__27960"/>
-            </fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14679"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__27960"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__29437"/>
-            </fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18044"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18070"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__9225"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__26441"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__29437"/>
-            </fbc:and>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Serine" id="R_DM_Serine" name="Ex_serine" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -933,31 +807,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_serine_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_serine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11047"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13447"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13448"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__13557"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__27960"/>
-            </fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14679"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__27960"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__29437"/>
-            </fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18070"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18761"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__9225"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__26441"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__29437"/>
-            </fbc:and>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_Glycine" id="R_DM_Glycine" name="Ex_glycine" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB2N0">
         <notes>
@@ -967,33 +818,8 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_glycine_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_glycine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-        <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18761"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18762"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11047"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13447"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__13448"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__13557"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__27960"/>
-            </fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__14679"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__27960"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__29437"/>
-            </fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11056"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__11051"/>
-            <fbc:geneProductRef fbc:geneProduct="HGNC__58__18070"/>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__26441"/>
-              <fbc:geneProductRef fbc:geneProduct="HGNC__58__29437"/>
-            </fbc:and>
-          </fbc:or>
-        </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_DM_putrescine" id="R_DM_putrescine" name="DmPutrescine" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -1003,9 +829,22 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_putrescine_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_putrescine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
+      </reaction>
+	  <reaction metaid="R_Transport_putrescine" id="R_Transport_putrescine" name="Transport putrescine" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_putrescine_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_putrescine_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
       </reaction>
       <reaction metaid="R_DM_CO2c" id="R_DM_CO2c" name="ExCO2" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -1015,9 +854,22 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_CO2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_CO2_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
+      </reaction>
+	  <reaction metaid="R_Transport_CO2" id="R_Transport_CO2" name="Transport CO2" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_CO2_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_CO2_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
       </reaction>
       <reaction metaid="R_DM_10formylTHFm" id="R_DM_10formylTHFm" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -1027,9 +879,22 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_10_formyl_THF_m" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_10_formyl_THF_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
+      </reaction>
+	  <reaction metaid="R_Transport_10formylTHFm" id="R_Transport_10formylTHFm" name="Transport 10formylTHFm" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_10_formyl_THF_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_10_formyl_THF_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
       </reaction>
       <reaction metaid="R_DM_10formylTHFc" id="R_DM_10formylTHFc" name="*" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -1039,9 +904,22 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_10_formyl_THF_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_10_formyl_THF_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
+      </reaction>
+	  <reaction metaid="R_Transport_10formylTHFc" id="R_Transport_10formylTHFc" name="Transport 10formylTHFc" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_10_formyl_THF_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_10_formyl_THF_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
       </reaction>
       <reaction metaid="R_DM_GSSG" id="R_DM_GSSG" name="Ex_GSSG" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -1051,9 +929,22 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_GSSG_m" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_GSSG_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
+      </reaction>
+	  <reaction metaid="R_Transport_GSSG" id="R_Transport_GSSG" name="Transport GSSG" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_GSSG_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_GSSG_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
       </reaction>
       <reaction metaid="R_DM_guanidinoacetatec" id="R_DM_guanidinoacetatec" name="ExGA" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
@@ -1063,9 +954,22 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_guanidinoacetate_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_guanidinoacetate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-
+      </reaction>
+	  <reaction metaid="R_Transport_guanidinoacetatec" id="R_Transport_guanidinoacetatec" name="Transport guanidinoacetatec" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_guanidinoacetate_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_guanidinoacetate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
       </reaction>
       <reaction metaid="R_Glucose_DM_COOP" id="R_Glucose_DM_COOP" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <listOfReactants>
