@@ -86,6 +86,8 @@ dOrthFromKegg = {}
 dfRxns2Genes = pd.read_csv(os.path.join(OUTDIR, dfRxns2GenesFile + '.csv'), sep = '\t', dtype=str)
 dfRxns2Genes['Genes'] = dfRxns2Genes['Genes'].apply(literal_eval)
 
+dfRxnId2Equation = pd.read_csv(os.path.join(OUTDIR, dfRxnId2EquationFile + '.csv'), sep = '\t', dtype=str)
+
 for rxn in dfRxns2Genes.itertuples():
     nadp = False
     nad = False
@@ -219,7 +221,7 @@ for rxn in dfRxns2Genes.itertuples():
 
 dfRxns2Genes['Genes_fromMacroDb'] = lMetaEnzOR_all
 dfRxns2Genes['lEC'] = lEc_all
-dfRxns2Genes = dfRxns2Genes.rename(columns={'Genes': 'Genes_fromKEGG'})
+dfRxns2Genes['Genes_fromKEGG'] = dfRxns2Genes.Genes.tolist()
 dfRxns2Genes['Genes'] = dfRxns2Genes['Genes_fromKEGG'] + dfRxns2Genes['Genes_fromMacroDb']
 dfRxns2Genes.to_csv(os.path.join(OUTDIR, modelName + '_Rxns2Genes.csv'), sep = '\t', index = False)
 

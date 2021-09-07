@@ -1,0 +1,1080 @@
+RxnId	Equation	Definition
+R00248	C00025 + C00006 + C00001 <=> C00026 + C00014 + C00005 + C00080	L-Glutamate + NADP+ + H2O <=> 2-Oxoglutarate + Ammonia + NADPH + H+
+R02855	C00810 + C00003 <=> C00741 + C00004 + C00080	(R)-Acetoin + NAD+ <=> Diacetyl + NADH + H+
+R02946	C03044 + C00003 <=> C00810 + C00004 + C00080	(R,R)-Butane-2,3-diol + NAD+ <=> (R)-Acetoin + NADH + H+
+R10504	C20657 + C00003 <=> C01769 + C00004 + C00080	meso-2,3-Butanediol + NAD+ <=> (S)-Acetoin + NADH + H+
+R00235	C00002 + C00033 + C00010 <=> C00020 + C00013 + C00024	ATP + Acetate + CoA <=> AMP + Diphosphate + Acetyl-CoA
+R00236	C05993 + C00010 <=> C00020 + C00024	Acetyl adenylate + CoA <=> AMP + Acetyl-CoA
+R00316	C00002 + C00033 <=> C00013 + C05993	ATP + Acetate <=> Diphosphate + Acetyl adenylate
+R00925	C00002 + C00163 + C00010 <=> C00020 + C00013 + C00100	ATP + Propanoate + CoA <=> AMP + Diphosphate + Propanoyl-CoA
+R00926	C05983 + C00010 <=> C00020 + C00100	Propionyladenylate + CoA <=> AMP + Propanoyl-CoA
+R01354	C00002 + C00163 <=> C00013 + C05983	ATP + Propanoate <=> Diphosphate + Propionyladenylate
+R01221	C00037 + C00101 + C00003 <=> C00143 + C00014 + C00011 + C00004 + C00080	Glycine + Tetrahydrofolate + NAD+ <=> 5,10-Methylenetetrahydrofolate + Ammonia + CO2 + NADH + H+
+R02480	C00524 <=> C02248 + C00032	Cytochrome c <=> Apocytochrome c + Heme
+R00200	C00002 + C00022 <=> C00008 + C00074	ATP + Pyruvate <=> ADP + Phosphoenolpyruvate
+R00430	C00044 + C00022 <=> C00035 + C00074	GTP + Pyruvate <=> GDP + Phosphoenolpyruvate
+R01138	C00131 + C00022 <=> C00206 + C00074	dATP + Pyruvate <=> dADP + Phosphoenolpyruvate
+R01858	C00286 + C00022 <=> C00361 + C00074	dGTP + Pyruvate <=> dGDP + Phosphoenolpyruvate
+R02320	C00201 + C00022 <=> C00454 + C00074	Nucleoside triphosphate + Pyruvate <=> NDP + Phosphoenolpyruvate
+R04072	C03862 + C02189 <=> C00110 + C02863	Dolichyl phosphate D-mannose + [Protein]-L-serine <=> Dolichyl phosphate + 3-O-(alpha-D-Mannosyl)-L-serinyl-[protein]
+R07620	G10617 + C02189 <=> G10622 + G13027	Dolichyl phosphate D-mannose + [Protein]-L-serine <=> Dolichyl phosphate + G13027
+R11399	C03862 + C19803 <=> C00110 + C20722	Dolichyl phosphate D-mannose + [Protein]-L-threonine <=> Dolichyl phosphate + 3-O-(alpha-D-Mannosyl)-L-threonyl-[protein]
+R00782	C00097 + C00001 <=> C00283 + C00022 + C00014	L-Cysteine + H2O <=> Hydrogen sulfide + Pyruvate + Ammonia
+R01001	C02291 + C00001 <=> C00097 + C00014 + C00109	L-Cystathionine + H2O <=> L-Cysteine + Ammonia + 2-Oxobutanoate
+R02408	C00491 + C00001 <=> C00022 + C00014 + C01962	L-Cystine + H2O <=> Pyruvate + Ammonia + Thiocysteine
+R04770	C05335 + C00001 <=> C05703 + C00014 + C00109	L-Selenomethionine + H2O <=> Methaneselenol + Ammonia + 2-Oxobutanoate
+R04930	C05699 + C00001 <=> C05688 + C00014 + C00109	L-Selenocystathionine + H2O <=> L-Selenocysteine + Ammonia + 2-Oxobutanoate
+R09366	C05689 + C00001 <=> C00022 + C00014 + C05703	Se-Methyl-L-selenocysteine + H2O <=> Pyruvate + Ammonia + Methaneselenol
+R04591	C00002 + C04751 + C00049 <=> C00008 + C00009 + C04823	ATP + 1-(5-Phospho-D-ribosyl)-5-amino-4-imidazolecarboxylate + L-Aspartate <=> ADP + Orthophosphate + 1-(5'-Phosphoribosyl)-5-amino-4-(N-succinocarboxamide)-imidazole
+R00548	C00061 + C00001 <=> C00255 + C00009	FMN + H2O <=> Riboflavin + Orthophosphate
+R02135	C01081 + C00001 <=> C00378 + C00009	Thiamin monophosphate + H2O <=> Thiamine + Orthophosphate
+R01960	C00328 + C00007 + C00005 + C00080 <=> C03227 + C00006 + C00001	L-Kynurenine + Oxygen + NADPH + H+ <=> 3-Hydroxy-L-kynurenine + NADP+ + H2O
+R06258	G10617 + G00006 <=> G10622 + G10595	Dolichyl phosphate D-mannose + G00006 <=> Dolichyl phosphate + G10595
+R01049	C00002 + C00117 <=> C00020 + C00119	ATP + D-Ribose 5-phosphate <=> AMP + 5-Phospho-alpha-D-ribose 1-diphosphate
+R12578	2 C00051 + C15498 <=> C00127 + C00001 + C01335	2 Glutathione + ROOH <=> Glutathione disulfide + H2O + ROH
+R00571	C00002 + C00075 + C00014 <=> C00008 + C00009 + C00063	ATP + UTP + Ammonia <=> ADP + Orthophosphate + CTP
+R00573	C00002 + C00075 + C00064 + C00001 <=> C00008 + C00009 + C00063 + C00025	ATP + UTP + L-Glutamine + H2O <=> ADP + Orthophosphate + CTP + L-Glutamate
+R00425	C00044 + 3 C00001 <=> C00058 + C01304 + C00013	GTP + 3 H2O <=> Formate + 2,5-Diamino-6-(5-phospho-D-ribosylamino)pyrimidin-4(3H)-one + Diphosphate
+R00227	C00024 + C00001 <=> C00010 + C00033	Acetyl-CoA + H2O <=> CoA + Acetate
+R03940	C02430 + C00234 <=> C00101 + C03294	L-Methionyl-tRNA + 10-Formyltetrahydrofolate <=> Tetrahydrofolate + N-Formylmethionyl-tRNA
+R00851	C00093 + C00040 <=> C00681 + C00010	sn-Glycerol 3-phosphate + Acyl-CoA <=> 1-Acyl-sn-glycerol 3-phosphate + CoA
+R09380	C00173 + C00093 <=> C00681 + C00229	Acyl-[acyl-carrier protein] + sn-Glycerol 3-phosphate <=> 1-Acyl-sn-glycerol 3-phosphate + Acyl-carrier protein
+R00010	C01083 + C00001 <=> 2 C00031	alpha,alpha-Trehalose + H2O <=> 2 D-Glucose
+R05556	C00448 + n C00129 <=> C05859 + n C00013	trans,trans-Farnesyl diphosphate + n Isopentenyl diphosphate <=> Dehydrodolichol diphosphate + n Diphosphate
+R09245	C00448 + 3 C00129 <=> C01230 + 3 C00013	trans,trans-Farnesyl diphosphate + 3 Isopentenyl diphosphate <=> all-trans-Hexaprenyl diphosphate + 3 Diphosphate
+R09246	C00353 + 2 C00129 <=> C01230 + 2 C00013	Geranylgeranyl diphosphate + 2 Isopentenyl diphosphate <=> all-trans-Hexaprenyl diphosphate + 2 Diphosphate
+R00713	C00232 + C00003 + C00001 <=> C00042 + C00004 + C00080	Succinate semialdehyde + NAD+ + H2O <=> Succinate + NADH + H+
+R00714	C00232 + C00006 + C00001 <=> C00042 + C00005 + C00080	Succinate semialdehyde + NADP+ + H2O <=> Succinate + NADPH + H+
+R02401	C03273 + C00003 + C00001 <=> C00489 + C00004 + C00080	5-Oxopentanoate + NAD+ + H2O <=> Glutarate + NADH + H+
+R00955	C00029 + C00446 <=> C00103 + C00052	UDP-glucose + alpha-D-Galactose 1-phosphate <=> D-Glucose 1-phosphate + UDP-alpha-D-galactose
+R00291	C00029 <=> C00052	UDP-glucose <=> UDP-alpha-D-galactose
+R02984	C00842 <=> C02097	dTDP-glucose <=> dTDP-galactose
+R01602	C00267 <=> C00221	alpha-D-Glucose <=> beta-D-Glucose
+R10619	C00124 <=> C00984	D-Galactose <=> alpha-D-Galactose
+R01092	C00002 + C00984 <=> C00008 + C00446	ATP + alpha-D-Galactose <=> ADP + alpha-D-Galactose 1-phosphate
+R02335	C00043 + C00461 <=> C00015 + C00461	UDP-N-acetyl-alpha-D-glucosamine + Chitin <=> UDP + Chitin
+R06028	G10483(n) + G10610 <=> G10483(n+1) + G10619	beta-1,4-Poly-N-acetyl-D-glucosamine(n) + UDP-N-acetyl-D-glucosamine <=> beta-1,4-Poly-N-acetyl-D-glucosamine(n+1) + UDP
+R01278	C00154 + C00006 <=> C05272 + C00005 + C00080	Palmitoyl-CoA + NADP+ <=> trans-Hexadec-2-enoyl-CoA + NADPH + H+
+R01404	C00173 + C00006 <=> C00693 + C00005 + C00080	Acyl-[acyl-carrier protein] + NADP+ <=> trans-2,3-Dehydroacyl-[acyl-carrier protein] + NADPH + H+
+R03776	C01944 + C00006 <=> C05276 + C00005 + C00080	Octanoyl-CoA + NADP+ <=> trans-Oct-2-enoyl-CoA + NADPH + H+
+R03856	C01832 + C00006 <=> C03221 + C00005 + C00080	Lauroyl-CoA + NADP+ <=> 2-trans-Dodecenoyl-CoA + NADPH + H+
+R03989	C02593 + C00006 <=> C05273 + C00005 + C00080	Tetradecanoyl-CoA + NADP+ <=> trans-Tetradec-2-enoyl-CoA + NADPH + H+
+R04430	C05745 + C00006 <=> C04246 + C00005 + C00080	Butyryl-[acp] + NADP+ <=> But-2-enoyl-[acyl-carrier protein] + NADPH + H+
+R04725	C05223 + C00006 <=> C05758 + C00005 + C00080	Dodecanoyl-[acyl-carrier protein] + NADP+ <=> trans-Dodec-2-enoyl-[acp] + NADPH + H+
+R04753	C05274 + C00006 <=> C05275 + C00005 + C00080	Decanoyl-CoA + NADP+ <=> trans-Dec-2-enoyl-CoA + NADPH + H+
+R04956	C05749 + C00006 <=> C05748 + C00005 + C00080	Hexanoyl-[acp] + NADP+ <=> trans-Hex-2-enoyl-[acp] + NADPH + H+
+R04959	C05752 + C00006 <=> C05751 + C00005 + C00080	Octanoyl-[acp] + NADP+ <=> trans-Oct-2-enoyl-[acp] + NADPH + H+
+R04962	C05755 + C00006 <=> C05754 + C00005 + C00080	Decanoyl-[acp] + NADP+ <=> trans-Dec-2-enoyl-[acp] + NADPH + H+
+R04967	C05761 + C00006 <=> C05760 + C00005 + C00080	Tetradecanoyl-[acp] + NADP+ <=> trans-Tetradec-2-enoyl-[acp] + NADPH + H+
+R04970	C05764 + C00006 <=> C05763 + C00005 + C00080	Hexadecanoyl-[acp] + NADP+ <=> trans-Hexadec-2-enoyl-[acp] + NADPH + H+
+R06985	C05271 + C00005 + C00080 <=> C05270 + C00006	trans-Hex-2-enoyl-CoA + NADPH + H+ <=> Hexanoyl-CoA + NADP+
+R07162	C00040 + C00006 <=> C00658 + C00005 + C00080	Acyl-CoA + NADP+ <=> trans-2,3-Dehydroacyl-CoA + NADPH + H+
+R01799	C00063 + C00416 <=> C00013 + C00269	CTP + Phosphatidate <=> Diphosphate + CDP-diacylglycerol
+R00277	C00647 + C00001 + C00007 <=> C00018 + C00014 + C00027	Pyridoxamine phosphate + H2O + Oxygen <=> Pyridoxal phosphate + Ammonia + Hydrogen peroxide
+R00278	C00627 + C00007 <=> C00027 + C00018	Pyridoxine phosphate + Oxygen <=> Hydrogen peroxide + Pyridoxal phosphate
+R01710	C00534 + C00001 + C00007 <=> C00250 + C00014 + C00027	Pyridoxamine + H2O + Oxygen <=> Pyridoxal + Ammonia + Hydrogen peroxide
+R01711	C00314 + C00007 <=> C00250 + C00027	Pyridoxine + Oxygen <=> Pyridoxal + Hydrogen peroxide
+R02964	C00828 + C00080 + C00004 <=> C05819 + C00003	Menaquinone + H+ + NADH <=> Menaquinol + NAD+
+R03643	C01628 + C00004 + C00080 <=> C05850 + C00003	Vitamin K + NADH + H+ <=> Reduced Vitamin K + NAD+
+R03816	C02059 + C00004 + C00080 <=> C03313 + C00003	Phylloquinone + NADH + H+ <=> Phylloquinol + NAD+
+R05970	G10610 + G00001 <=> G10619 + G00002	UDP-N-acetyl-D-glucosamine + N-Acetyl-D-glucosaminyldiphosphodolichol <=> UDP + N,N'-Chitobiosyldiphosphodolichol
+R00943	C00101 + C00058 + C00002 <=> C00008 + C00009 + C00234	Tetrahydrofolate + Formate + ATP <=> ADP + Orthophosphate + 10-Formyltetrahydrofolate
+R01220	C00143 + C00006 <=> C00445 + C00005	5,10-Methylenetetrahydrofolate + NADP+ <=> 5,10-Methenyltetrahydrofolate + NADPH
+R01655	C00445 + C00001 <=> C00234 + C00080	5,10-Methenyltetrahydrofolate + H2O <=> 10-Formyltetrahydrofolate + H+
+R05972	G10614 + G00002 <=> G10620 + G00003	GDP-D-mannose + N,N'-Chitobiosyldiphosphodolichol <=> GDP + G00003
+R01054	C00301 + C00001 <=> C00020 + C00117	ADP-ribose + H2O <=> AMP + D-Ribose 5-phosphate
+R03098	C00956 + C00002 <=> C05560 + C00013	L-2-Aminoadipate + ATP <=> L-2-Aminoadipate adenylate + Diphosphate
+R04390	C05535 + C00005 + C00080 <=> C04076 + C11482 + C00006	alpha-Aminoadipoyl-S-acyl enzyme + NADPH + H+ <=> L-2-Aminoadipate 6-semialdehyde + Holo-Lys2 + NADP+
+R04863	C05560 + C11482 <=> C05535 + C00020	L-2-Aminoadipate adenylate + Holo-Lys2 <=> alpha-Aminoadipoyl-S-acyl enzyme + AMP
+R11679	C04076 + C00006 + C00020 + C00013 <=> C00956 + C00005 + C00080 + C00002	L-2-Aminoadipate 6-semialdehyde + NADP+ + AMP + Diphosphate <=> L-2-Aminoadipate + NADPH + H+ + ATP
+R01067	C00085 + C00118 <=> C00279 + C00231	D-Fructose 6-phosphate + D-Glyceraldehyde 3-phosphate <=> D-Erythrose 4-phosphate + D-Xylulose 5-phosphate
+R01641	C05382 + C00118 <=> C00117 + C00231	Sedoheptulose 7-phosphate + D-Glyceraldehyde 3-phosphate <=> D-Ribose 5-phosphate + D-Xylulose 5-phosphate
+R01830	C05345 + C00118 <=> C00279 + C00231	beta-D-Fructose 6-phosphate + D-Glyceraldehyde 3-phosphate <=> D-Erythrose 4-phosphate + D-Xylulose 5-phosphate
+R06590	C12214 + C00117 <=> C12215 + C05382	Aminofructose 6-phosphate + D-Ribose 5-phosphate <=> Iminoerythrose 4-phosphate + Sedoheptulose 7-phosphate
+R02737	C00029 + C00668 <=> C00015 + C00689	UDP-glucose + alpha-D-Glucose 6-phosphate <=> UDP + alpha,alpha'-Trehalose 6-phosphate
+R11783	C00498 + C00092 <=> C00008 + C00689	ADP-glucose + D-Glucose 6-phosphate <=> ADP + alpha,alpha'-Trehalose 6-phosphate
+R00623	C00226 + C00003 <=> C00071 + C00004 + C00080	Primary alcohol + NAD+ <=> Aldehyde + NADH + H+
+R00754	C00469 + C00003 <=> C00084 + C00004 + C00080	Ethanol + NAD+ <=> Acetaldehyde + NADH + H+
+R02124	C00473 + C00003 <=> C00376 + C00004 + C00080	Retinol + NAD+ <=> Retinal + NADH + H+
+R04880	C05576 + C00003 <=> C05577 + C00004 + C00080	3,4-Dihydroxyphenylethyleneglycol + NAD+ <=> 3,4-Dihydroxymandelaldehyde + NADH + H+
+R05233	C06611 + C00003 <=> C06613 + C00004 + C00080	trans-3-Chloro-2-propene-1-ol + NAD+ <=> trans-3-Chloroallyl aldehyde + NADH + H+
+R05234	C06612 + C00003 <=> C16348 + C00004 + C00080	cis-3-Chloro-2-propene-1-ol + NAD+ <=> cis-3-Chloroallyl aldehyde + NADH + H+
+R06917	C14089 + C00003 <=> C14090 + C00004 + C00080	1-Hydroxymethylnaphthalene + NAD+ <=> 1-Naphthaldehyde + NADH + H+
+R06927	C02909 + C00003 <=> C14099 + C00004 + C00080	(2-Naphthyl)methanol + NAD+ <=> 2-Naphthaldehyde + NADH + H+
+R07105	C06899 + C00004 + C00080 <=> C07490 + C00003 + C00001	Chloral hydrate + NADH + H+ <=> Trichloroethanol + NAD+ + H2O
+R08281	C07645 + C00004 + C00080 <=> C16551 + C00003	Aldophosphamide + NADH + H+ <=> Alcophosphamide + NAD+
+R08306	C16586 + C00003 <=> C16587 + C00004 + C00080	2-Phenyl-1,3-propanediol monocarbamate + NAD+ <=> 3-Carbamoyl-2-phenylpropionaldehyde + NADH + H+
+R08310	C16595 + C00003 <=> C16596 + C00004 + C00080	4-Hydroxy-5-phenyltetrahydro-1,3-oxazin-2-one + NAD+ <=> 5-Phenyl-1,3-oxazinane-2,4-dione + NADH + H+
+R01574	C00216 + C00003 <=> C00652 + C00004 + C00080	D-Arabinose + NAD+ <=> D-Arabinono-1,4-lactone + NADH + H+
+R01575	C00216 + C00006 <=> C00652 + C00005 + C00080	D-Arabinose + NADP+ <=> D-Arabinono-1,4-lactone + NADPH + H+
+R09375	C01304 + C00004 + C00080 <=> C18910 + C00003	2,5-Diamino-6-(5-phospho-D-ribosylamino)pyrimidin-4(3H)-one + NADH + H+ <=> 2,5-Diamino-6-(5-phospho-D-ribitylamino)pyrimidin-4(3H)-one + NAD+
+R09376	C01304 + C00005 + C00080 <=> C18910 + C00006	2,5-Diamino-6-(5-phospho-D-ribosylamino)pyrimidin-4(3H)-one + NADPH + H+ <=> 2,5-Diamino-6-(5-phospho-D-ribitylamino)pyrimidin-4(3H)-one + NADP+
+R02352	C00951 + C00003 <=> C00468 + C00004 + C00080	Estradiol-17beta + NAD+ <=> Estrone + NADH + H+
+R02353	C00951 + C00006 <=> C00468 + C00005 + C00080	Estradiol-17beta + NADP+ <=> Estrone + NADPH + H+
+R04681	C05141 + C00003 <=> C05300 + C00004 + C00080	Estriol + NAD+ <=> 16alpha-Hydroxyestrone + NADH + H+
+R04682	C05141 + C00006 <=> C05300 + C00005 + C00080	Estriol + NADP+ <=> 16alpha-Hydroxyestrone + NADPH + H+
+R07759	C16216 + C00005 + C00080 <=> C16217 + C00006	3-Oxostearoyl-CoA + NADPH + H+ <=> 3-Hydroxyoctadecanoyl-CoA + NADP+
+R08945	C18075 + C00003 <=> C05284 + C00004 + C00080	11beta,17beta-Dihydroxy-4-androsten-3-one + NAD+ <=> 11beta-Hydroxyandrost-4-ene-3,17-dione + NADH + H+
+R08980	C18075 + C00006 <=> C05284 + C00005 + C00080	11beta,17beta-Dihydroxy-4-androsten-3-one + NADP+ <=> 11beta-Hydroxyandrost-4-ene-3,17-dione + NADPH + H+
+R10826	C20878 + C00006 <=> C20877 + C00005 + C00080	Very-long-chain (3R)-3-hydroxyacyl-CoA + NADP+ <=> Very-long-chain 3-oxoacyl-CoA + NADPH + H+
+R01730	C00254 + C00006 <=> C01179 + C00011 + C00005 + C00080	Prephenate + NADP+ <=> 3-(4-Hydroxyphenyl)pyruvate + CO2 + NADPH + H+
+R01226	C00143 + C00141 + C00001 <=> C00101 + C00966	5,10-Methylenetetrahydrofolate + 3-Methyl-2-oxobutanoic acid + H2O <=> Tetrahydrofolate + 2-Dehydropantoate
+R00771	C00092 <=> C00085	D-Glucose 6-phosphate <=> D-Fructose 6-phosphate
+R02739	C00668 <=> C01172	alpha-D-Glucose 6-phosphate <=> beta-D-Glucose 6-phosphate
+R02740	C00668 <=> C05345	alpha-D-Glucose 6-phosphate <=> beta-D-Fructose 6-phosphate
+R03321	C01172 <=> C05345	beta-D-Glucose 6-phosphate <=> beta-D-Fructose 6-phosphate
+R00005	C01010 + C00001 <=> 2 C00011 + 2 C00014	Urea-1-carboxylate + H2O <=> 2 CO2 + 2 Ammonia
+R00774	C00002 + C00086 + C00288 <=> C00008 + C00009 + C01010	ATP + Urea + HCO3- <=> ADP + Orthophosphate + Urea-1-carboxylate
+R02864	C00748 + 2 C00080 <=> C14818 + C05778	Siroheme + 2 H+ <=> Fe2+ + Sirohydrochlorin
+R03947	C02463 + C00003 <=> C05778 + C00004 + C00080	Precorrin 2 + NAD+ <=> Sirohydrochlorin + NADH + H+
+R00344	C00002 + C00022 + C00288 <=> C00008 + C00009 + C00036	ATP + Pyruvate + HCO3- <=> ADP + Orthophosphate + Oxaloacetate
+R00014	C00022 + C00068 <=> C05125 + C00011	Pyruvate + Thiamin diphosphate <=> 2-(alpha-Hydroxyethyl)thiamine diphosphate + CO2
+R00209	C00022 + C00010 + C00003 <=> C00024 + C00011 + C00004 + C00080	Pyruvate + CoA + NAD+ <=> Acetyl-CoA + CO2 + NADH + H+
+R01699	C00022 + C15972 <=> C16255 + C00011	Pyruvate + Enzyme N6-(lipoyl)lysine <=> [Dihydrolipoyllysine-residue acetyltransferase] S-acetyldihydrolipoyllysine + CO2
+R03270	C05125 + C15972 <=> C16255 + C00068	2-(alpha-Hydroxyethyl)thiamine diphosphate + Enzyme N6-(lipoyl)lysine <=> [Dihydrolipoyllysine-residue acetyltransferase] S-acetyldihydrolipoyllysine + Thiamin diphosphate
+R01558	C00002 + C00209 + C00010 <=> C00020 + C00013 + C00313	ATP + Oxalate + CoA <=> AMP + Diphosphate + Oxalyl-CoA
+R05980	C00001 + G00171 <=> C00031 + G00010	H2O + G00171 <=> D-Glucose + G00010
+R05981	C00001 + G00010 <=> C00031 + G00011	H2O + G00010 <=> D-Glucose + G00011
+R05969	C00043 + C00110 <=> C00105 + G00001	UDP-N-acetyl-alpha-D-glucosamine + Dolichyl phosphate <=> UMP + N-Acetyl-D-glucosaminyldiphosphodolichol
+R04558	C04916 + C00064 <=> C04666 + C04677 + C00025	N-(5'-Phospho-D-1'-ribulosylformimino)-5-amino-1-(5''-phospho-D-ribosyl)-4-imidazolecarboxamide + L-Glutamine <=> D-erythro-1-(Imidazol-4-yl)glycerol 3-phosphate + 1-(5'-Phosphoribosyl)-5-amino-4-imidazolecarboxamide + L-Glutamate
+R01826	C00074 + C00279 + C00001 <=> C04691 + C00009	Phosphoenolpyruvate + D-Erythrose 4-phosphate + H2O <=> 2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate + Orthophosphate
+R02100	C00460 + C00001 <=> C00365 + C00013	dUTP + H2O <=> dUMP + Diphosphate
+R11896	C21751 + C00001 <=> C04242 + C00013	5-Fluorodeoxyuridine triphosphate + H2O <=> 5-Fluorodeoxyuridine monophosphate + Diphosphate
+R00066	2 C04332 <=> C00255 + C04732	2 6,7-Dimethyl-8-(D-ribityl)lumazine <=> Riboflavin + 5-Amino-6-(1-D-ribitylamino)uracil
+R00945	C00143 + C00037 + C00001 <=> C00101 + C00065	5,10-Methylenetetrahydrofolate + Glycine + H2O <=> Tetrahydrofolate + L-Serine
+R09099	C00065 + C01217 <=> C04377 + C00037 + C00001	L-Serine + 5,6,7,8-Tetrahydromethanopterin <=> 5,10-Methylenetetrahydromethanopterin + Glycine + H2O
+R02978	C00836 + C00006 <=> C02934 + C00005 + C00080	Sphinganine + NADP+ <=> 3-Dehydrosphinganine + NADPH + H+
+R00801	C00089 + C00001 <=> C00095 + C00031	Sucrose + H2O <=> D-Fructose + D-Glucose
+R01718	C00252 + C00001 <=> C00267 + C00031	Isomaltose + H2O <=> alpha-D-Glucose + D-Glucose
+R01791	C00721 + C00001 <=> C00031 + C00721	Dextrin + H2O <=> D-Glucose + Dextrin
+R06199	G10545(n+1) + C00001 <=> C00267 + G10545(n)	Starch(n+1) + H2O <=> alpha-D-Glucose + Starch(n)
+R00220	C00065 <=> C00022 + C00014	L-Serine <=> Pyruvate + Ammonia
+R00590	C00065 <=> C02218 + C00001	L-Serine <=> Dehydroalanine + H2O
+R00996	C00188 <=> C00109 + C00014	L-Threonine <=> 2-Oxobutanoate + Ammonia
+R05919	G10617 + G00145 <=> G10622 + G00146	Dolichyl phosphate D-mannose + G00145 <=> Dolichyl phosphate + G00146
+R00126	C00008 + C00002 <=> C00009 + C01260	ADP + ATP <=> Orthophosphate + P1,P4-Bis(5'-adenosyl)tetraphosphate
+R00530	C00008 + C00059 <=> C00009 + C00224	ADP + Sulfate <=> Orthophosphate + Adenylyl sulfate
+R01618	C00224 + C00002 <=> C00059 + C01260	Adenylyl sulfate + ATP <=> Sulfate + P1,P4-Bis(5'-adenosyl)tetraphosphate
+R00137	C00002 + C00455 <=> C00013 + C00003	ATP + Nicotinamide D-ribonucleotide <=> Diphosphate + NAD+
+R03005	C00002 + C01185 <=> C00013 + C00857	ATP + Nicotinate D-ribonucleotide <=> Diphosphate + Deamino-NAD+
+R00299	C00002 + C00031 <=> C00008 + C00092	ATP + D-Glucose <=> ADP + D-Glucose 6-phosphate
+R00760	C00002 + C00095 <=> C00008 + C00085	ATP + D-Fructose <=> ADP + D-Fructose 6-phosphate
+R00867	C00002 + C00095 <=> C00008 + C05345	ATP + D-Fructose <=> ADP + beta-D-Fructose 6-phosphate
+R01326	C00002 + C00159 <=> C00008 + C00275	ATP + D-Mannose <=> ADP + D-Mannose 6-phosphate
+R01600	C00002 + C00221 <=> C00008 + C01172	ATP + beta-D-Glucose <=> ADP + beta-D-Glucose 6-phosphate
+R01786	C00002 + C00267 <=> C00008 + C00668	ATP + alpha-D-Glucose <=> ADP + alpha-D-Glucose 6-phosphate
+R01961	C00002 + C00329 <=> C00008 + C00352	ATP + D-Glucosamine <=> ADP + D-Glucosamine 6-phosphate
+R03920	C00002 + C02336 <=> C00008 + C05345	ATP + beta-D-Fructose <=> ADP + beta-D-Fructose 6-phosphate
+R01158	C00860 + 2 C00003 + C00001 <=> C00135 + 2 C00004 + 2 C00080	L-Histidinol + 2 NAD+ + H2O <=> L-Histidine + 2 NADH + 2 H+
+R01163	C01929 + C00001 + C00003 <=> C00135 + C00004 + C00080	L-Histidinal + H2O + NAD+ <=> L-Histidine + NADH + H+
+R03012	C00860 + C00003 <=> C01929 + C00004 + C00080	L-Histidinol + NAD+ <=> L-Histidinal + NADH + H+
+R04035	C02739 + C00001 <=> C02741 + C00013	1-(5-Phospho-D-ribosyl)-ATP + H2O <=> Phosphoribosyl-AMP + Diphosphate
+R04037	C02741 + C00001 <=> C04896	Phosphoribosyl-AMP + H2O <=> 5-(5-Phospho-D-ribosylaminoformimino)-1-(5-phosphoribosyl)-imidazole-4-carboxamide
+R00994	C00109 + C00011 + C00004 + C00080 <=> C06032 + C00003	2-Oxobutanoate + CO2 + NADH + H+ <=> D-erythro-3-Methylmalate + NAD+
+R04426	C04411 + C00003 <=> C04236 + C00004 + C00080	(2R,3S)-3-Isopropylmalate + NAD+ <=> (2S)-2-Isopropyl-3-oxosuccinate + NADH + H+
+R10052	C04411 + C00003 <=> C00233 + C00011 + C00004 + C00080	(2R,3S)-3-Isopropylmalate + NAD+ <=> 4-Methyl-2-oxopentanoate + CO2 + NADH + H+
+R07460	C15811 + C00097 <=> C15812 + C00041	[Enzyme]-cysteine + L-Cysteine <=> [Enzyme]-S-sulfanylcysteine + L-Alanine
+R11528	C00097 + C02743 <=> C00041 + C21440	L-Cysteine + [Protein]-L-cysteine <=> L-Alanine + [Protein]-S-sulfanyl-L-cysteine
+R11529	C15812 + C02743 <=> C15811 + C21440	[Enzyme]-S-sulfanylcysteine + [Protein]-L-cysteine <=> [Enzyme]-cysteine + [Protein]-S-sulfanyl-L-cysteine
+R00006	C00900 + C00011 <=> 2 C00022	2-Acetolactate + CO2 <=> 2 Pyruvate
+R00226	C06010 + C00011 <=> 2 C00022	(S)-2-Acetolactate + CO2 <=> 2 Pyruvate
+R03050	C00900 + C00068 <=> C05125 + C00022	2-Acetolactate + Thiamin diphosphate <=> 2-(alpha-Hydroxyethyl)thiamine diphosphate + Pyruvate
+R04672	C06010 + C00068 <=> C05125 + C00022	(S)-2-Acetolactate + Thiamin diphosphate <=> 2-(alpha-Hydroxyethyl)thiamine diphosphate + Pyruvate
+R04673	C00109 + C05125 <=> C06006 + C00068	2-Oxobutanoate + 2-(alpha-Hydroxyethyl)thiamine diphosphate <=> (S)-2-Aceto-2-hydroxybutanoate + Thiamin diphosphate
+R08648	C00022 + C00109 <=> C06006 + C00011	Pyruvate + 2-Oxobutanoate <=> (S)-2-Aceto-2-hydroxybutanoate + CO2
+R01801	C00269 + C00093 <=> C00055 + C03892	CDP-diacylglycerol + sn-Glycerol 3-phosphate <=> CMP + Phosphatidylglycerophosphate
+R00351	C00158 + C00010 <=> C00024 + C00001 + C00036	Citrate + CoA <=> Acetyl-CoA + H2O + Oxaloacetate
+R01512	C00002 + C00197 <=> C00008 + C00236	ATP + 3-Phospho-D-glycerate <=> ADP + 3-Phospho-D-glyceroyl phosphate
+R07758	C00083 + C00154 <=> C16216 + C00010 + C00011	Malonyl-CoA + Palmitoyl-CoA <=> 3-Oxostearoyl-CoA + CoA + CO2
+R07762	C05764 + C01209 <=> C16219 + C00229 + C00011	Hexadecanoyl-[acp] + Malonyl-[acyl-carrier protein] <=> 3-Oxostearoyl-[acp] + Acyl-carrier protein + CO2
+R09419	C00083 + C00040 <=> C00264 + C00010 + C00011	Malonyl-CoA + Acyl-CoA <=> 3-Oxoacyl-CoA + CoA + CO2
+R10825	C20876 + C00083 <=> C20877 + C00011 + C00010	Very-long-chain acyl-CoA + Malonyl-CoA <=> Very-long-chain 3-oxoacyl-CoA + CO2 + CoA
+R01051	C00002 + C00121 <=> C00008 + C00117	ATP + D-Ribose <=> ADP + D-Ribose 5-phosphate
+R02750	C00673 + C00008 <=> C01801 + C00002	2-Deoxy-D-ribose 5-phosphate + ADP <=> Deoxyribose + ATP
+R01461	C00040 + C00187 <=> C00010 + C02530	Acyl-CoA + Cholesterol <=> CoA + Cholesterol ester
+R01466	C01102 + C00001 <=> C00188 + C00009	O-Phospho-L-homoserine + H2O <=> L-Threonine + Orthophosphate
+R05086	C06055 + C00001 <=> C06056 + C00009	O-Phospho-4-hydroxy-L-threonine + H2O <=> 4-Hydroxy-L-threonine + Orthophosphate
+R02250	C00422 + C00001 <=> C00641 + C00162	Triacylglycerol + H2O <=> 1,2-Diacyl-sn-glycerol + Fatty acid
+R02687	C00641 + C00001 <=> C01885 + C00162	1,2-Diacyl-sn-glycerol + H2O <=> 1-Acylglycerol + Fatty acid
+R02035	C01236 + C00001 <=> C00345	D-Glucono-1,5-lactone 6-phosphate + H2O <=> 6-Phospho-D-gluconate
+R00746	C00469 + C00006 <=> C00084 + C00005 + C00080	Ethanol + NADP+ <=> Acetaldehyde + NADPH + H+
+R01041	C00116 + C00006 <=> C00577 + C00005 + C00080	Glycerol + NADP+ <=> D-Glyceraldehyde + NADPH + H+
+R01481	C00800 + C00006 <=> C00191 + C00005 + C00080	L-Gulonate + NADP+ <=> D-Glucuronate + NADPH + H+
+R05231	C06103 + C00006 <=> C06102 + C00005 + C00080	6-Hydroxyhexanoic acid + NADP+ <=> Adipate semialdehyde + NADPH + H+
+R00875	C00794 + C00003 <=> C00095 + C00004 + C00080	D-Sorbitol + NAD+ <=> D-Fructose + NADH + H+
+R01896	C00379 + C00003 <=> C00310 + C00004 + C00080	Xylitol + NAD+ <=> D-Xylulose + NADH + H+
+R10686	C00018 + C00135 <=> C04556	Pyridoxal phosphate + L-Histidine <=> 4-Amino-2-methyl-5-(phosphooxymethyl)pyrimidine
+R01676	C00242 + C00001 <=> C00385 + C00014	Guanine + H2O <=> Xanthine + Ammonia
+R05976	C03021 + G00008 <=> C00621 + G00009	Protein asparagine + G00008 <=> Dolichyl diphosphate + G00009
+R00243	C00025 + C00003 + C00001 <=> C00026 + C00014 + C00004 + C00080	L-Glutamate + NAD+ + H2O <=> 2-Oxoglutarate + Ammonia + NADH + H+
+R00084	4 C00931 + C00001 <=> C01024 + 4 C00014	4 Porphobilinogen + H2O <=> Hydroxymethylbilane + 4 Ammonia
+R00271	C00024 + C00001 + C00026 <=> C01251 + C00010	Acetyl-CoA + H2O + 2-Oxoglutarate <=> (R)-2-Hydroxybutane-1,2,4-tricarboxylate + CoA
+R11593	C00022 + C01087 <=> C00256 + C00026	Pyruvate + (R)-2-Hydroxyglutarate <=> (R)-Lactate + 2-Oxoglutarate
+R00197	C00256 + 2 C00125 <=> C00022 + 2 C00126 + 2 C00080	(R)-Lactate + 2 Ferricytochrome c <=> Pyruvate + 2 Ferrocytochrome c + 2 H+
+R00093	2 C00025 + C00003 <=> C00064 + C00026 + C00004 + C00080	2 L-Glutamate + NAD+ <=> L-Glutamine + 2-Oxoglutarate + NADH + H+
+R06983	C14180 + C00003 <=> C01031 + C00004 + C00080	S-(Hydroxymethyl)glutathione + NAD+ <=> S-Formylglutathione + NADH + H+
+R00127	C00002 + C00020 <=> 2 C00008	ATP + AMP <=> 2 ADP
+R01547	C00002 + C00360 <=> C00008 + C00206	ATP + dAMP <=> ADP + dADP
+R02030	C00344 + C00269 <=> C05980 + C00055	Phosphatidylglycerol + CDP-diacylglycerol <=> Cardiolipin + CMP
+R01074	C00002 + C00120 <=> C00013 + C05921	ATP + Biotin <=> Diphosphate + Biotinyl-5'-AMP
+R05145	C05921 + C06249 <=> C00020 + C06250	Biotinyl-5'-AMP + Apo-[carboxylase] <=> AMP + Holo-[carboxylase]
+R00078	C00007 + 4 C14818 + 4 C00080 <=> 4 C14819 + 2 C00001	Oxygen + 4 Fe2+ + 4 H+ <=> 4 Fe3+ + 2 H2O
+R00416	C00075 + C04501 <=> C00013 + C00043	UTP + N-Acetyl-alpha-D-glucosamine 1-phosphate <=> Diphosphate + UDP-N-acetyl-alpha-D-glucosamine
+R09844	C00448 + C20119 <=> C20120 + C00013	trans,trans-Farnesyl diphosphate + Protein-cysteine <=> S-Farnesyl protein + Diphosphate
+R00755	C00084 + C00068 <=> C05125	Acetaldehyde + Thiamin diphosphate <=> 2-(alpha-Hydroxyethyl)thiamine diphosphate
+R00342	C00149 + C00003 <=> C00036 + C00004 + C00080	(S)-Malate + NAD+ <=> Oxaloacetate + NADH + H+
+R07136	C11537 + C00003 <=> C05528 + C00004 + C00080	(2R)-3-Sulfolactate + NAD+ <=> 3-Sulfopyruvate + NADH + H+
+R00267	C00311 + C00006 <=> C00026 + C00011 + C00005 + C00080	Isocitrate + NADP+ <=> 2-Oxoglutarate + CO2 + NADPH + H+
+R00268	C05379 <=> C00026 + C00011	Oxalosuccinate <=> 2-Oxoglutarate + CO2
+R01899	C00311 + C00006 <=> C05379 + C00005 + C00080	Isocitrate + NADP+ <=> Oxalosuccinate + NADPH + H+
+R00885	C00044 + C00636 <=> C00013 + C00096	GTP + D-Mannose 1-phosphate <=> Diphosphate + GDP-mannose
+R02241	C00416 + C00010 <=> C00681 + C00040	Phosphatidate + CoA <=> 1-Acyl-sn-glycerol 3-phosphate + Acyl-CoA
+R09381	C00173 + C00681 <=> C00229 + C00416	Acyl-[acyl-carrier protein] + 1-Acyl-sn-glycerol 3-phosphate <=> Acyl-carrier protein + Phosphatidate
+R00161	C00002 + C00061 <=> C00013 + C00016	ATP + FMN <=> Diphosphate + FAD
+R10633	C00003 + C01997 + C00001 <=> C00153 + C02415 + C20658 + C00080	NAD+ + Histone N6-acetyl-L-lysine + H2O <=> Nicotinamide + Histone-L-lysine + O-Acetyl-ADP-ribose + H+
+R10634	C00003 + C20743 + C00001 <=> C00153 + C02188 + C20658 + C00080	NAD+ + Protein N6-acetyl-L-lysine + H2O <=> Nicotinamide + Protein lysine + O-Acetyl-ADP-ribose + H+
+R00842	C00093 + C00003 <=> C00111 + C00004 + C00080	sn-Glycerol 3-phosphate + NAD+ <=> Glycerone phosphate + NADH + H+
+R01518	C00631 <=> C00197	2-Phospho-D-glycerate <=> 3-Phospho-D-glycerate
+R07761	C16218 + C00005 + C00080 <=> C00412 + C00006	(2E)-Octadecenoyl-CoA + NADPH + H+ <=> Stearoyl-CoA + NADP+
+R09449	C00658 + C00005 + C00080 <=> C02843 + C00006	trans-2,3-Dehydroacyl-CoA + NADPH + H+ <=> Long-chain acyl-CoA + NADP+
+R10828	C20876 + C00006 <=> C20879 + C00005 + C00080	Very-long-chain acyl-CoA + NADP+ <=> Very-long-chain trans-2,3-dehydroacyl-CoA + NADPH + H+
+R03509	C04302 <=> C01302	N-(5-Phospho-D-ribosyl)anthranilate <=> 1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate
+R02300	C03479 <=> C00445 + C00001	Folinic acid <=> 5,10-Methenyltetrahydrofolate + H2O
+R04125	C01242 + C00101 <=> C02972 + C00143 + C00014	[Protein]-S8-aminomethyldihydrolipoyllysine + Tetrahydrofolate <=> Dihydrolipoylprotein + 5,10-Methylenetetrahydrofolate + Ammonia
+R00513	C00002 + C00475 <=> C00008 + C00055	ATP + Cytidine <=> ADP + CMP
+R00516	C00075 + C00475 <=> C00015 + C00055	UTP + Cytidine <=> UDP + CMP
+R00517	C00044 + C00475 <=> C00035 + C00055	GTP + Cytidine <=> GDP + CMP
+R00962	C00081 + C00475 <=> C00104 + C00055	ITP + Cytidine <=> IDP + CMP
+R00964	C00002 + C00299 <=> C00008 + C00105	ATP + Uridine <=> ADP + UMP
+R00967	C00075 + C00299 <=> C00015 + C00105	UTP + Uridine <=> UDP + UMP
+R00968	C00044 + C00299 <=> C00035 + C00105	GTP + Uridine <=> GDP + UMP
+R00970	C00081 + C00299 <=> C00104 + C00105	ITP + Uridine <=> IDP + UMP
+R01548	C00131 + C00475 <=> C00206 + C00055	dATP + Cytidine <=> dADP + CMP
+R01549	C00131 + C00299 <=> C00206 + C00105	dATP + Uridine <=> dADP + UMP
+R01880	C00286 + C00299 <=> C00361 + C00105	dGTP + Uridine <=> dGDP + UMP
+R02091	C00286 + C00475 <=> C00361 + C00055	dGTP + Cytidine <=> dGDP + CMP
+R02096	C00459 + C00475 <=> C00363 + C00055	dTTP + Cytidine <=> dTDP + CMP
+R02097	C00459 + C00299 <=> C00363 + C00105	dTTP + Uridine <=> dTDP + UMP
+R02327	C00458 + C00299 <=> C00705 + C00105	dCTP + Uridine <=> dCDP + UMP
+R02332	C00460 + C00299 <=> C01346 + C00105	dUTP + Uridine <=> dUDP + UMP
+R02371	C00458 + C00475 <=> C00705 + C00055	dCTP + Cytidine <=> dCDP + CMP
+R02372	C00460 + C00475 <=> C01346 + C00055	dUTP + Cytidine <=> dUDP + CMP
+R08232	C16633 + C00002 <=> C16634 + C00008	5-Fluorouridine + ATP <=> 5-Fluorouridine monophosphate + ADP
+R03158	C01013 + C00010 <=> C05668 + C00001	3-Hydroxypropanoate + CoA <=> 3-Hydroxypropionyl-CoA + H2O
+R05064	C06000 + C00001 <=> C00010 + C06001	(S)-3-Hydroxyisobutyryl-CoA + H2O <=> CoA + (S)-3-Hydroxyisobutyrate
+R03220	C03263 + C00007 <=> C01079 + 2 C00011 + 2 C00001	Coproporphyrinogen III + Oxygen <=> Protoporphyrinogen IX + 2 CO2 + 2 H2O
+R03197	C01051 <=> C03263 + 4 C00011	Uroporphyrinogen III <=> Coproporphyrinogen III + 4 CO2
+R04972	C05766 <=> C05768 + 4 C00011	Uroporphyrinogen I <=> Coproporphyrinogen I + 4 CO2
+R01015	C00118 <=> C00111	D-Glyceraldehyde 3-phosphate <=> Glycerone phosphate
+R01281	C00154 + C00065 <=> C02934 + C00010 + C00011	Palmitoyl-CoA + L-Serine <=> 3-Dehydrosphinganine + CoA + CO2
+R02778	C00689 + C00001 <=> C01083 + C00009	alpha,alpha'-Trehalose 6-phosphate + H2O <=> alpha,alpha-Trehalose + Orthophosphate
+R00258	C00041 + C00026 <=> C00022 + C00025	L-Alanine + 2-Oxoglutarate <=> Pyruvate + L-Glutamate
+R02412	C00002 + C00493 <=> C00008 + C03175	ATP + Shikimate <=> ADP + Shikimate 3-phosphate
+R02413	C00493 + C00006 <=> C02637 + C00005 + C00080	Shikimate + NADP+ <=> 3-Dehydroshikimate + NADPH + H+
+R03083	C04691 <=> C00944 + C00009	2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate <=> 3-Dehydroquinate + Orthophosphate
+R03084	C00944 <=> C02637 + C00001	3-Dehydroquinate <=> 3-Dehydroshikimate + H2O
+R03460	C00074 + C03175 <=> C00009 + C01269	Phosphoenolpyruvate + Shikimate 3-phosphate <=> Orthophosphate + 5-O-(1-Carboxyvinyl)-3-phosphoshikimate
+R01468	C00002 + C00189 <=> C00008 + C00346	ATP + Ethanolamine <=> ADP + Ethanolamine phosphate
+R01933	C00322 + C00010 + C00003 <=> C00527 + C00011 + C00004 + C00080	2-Oxoadipate + CoA + NAD+ <=> Glutaryl-CoA + CO2 + NADH + H+
+R02570	C00091 + C15973 <=> C00010 + C16254	Succinyl-CoA + Enzyme N6-(dihydrolipoyl)lysine <=> CoA + [Dihydrolipoyllysine-residue succinyltransferase] S-succinyldihydrolipoyllysine
+R02571	C00527 + C15973 <=> C00010 + C06157	Glutaryl-CoA + Enzyme N6-(dihydrolipoyl)lysine <=> CoA + [Dihydrolipoyllysine-residue succinyltransferase] S-glutaryldihydrolipoyllysine
+R08549	C00026 + C00010 + C00003 <=> C00091 + C00011 + C00004 + C00080	2-Oxoglutarate + CoA + NAD+ <=> Succinyl-CoA + CO2 + NADH + H+
+R02291	C00441 + C00009 + C00006 <=> C03082 + C00005 + C00080	L-Aspartate 4-semialdehyde + Orthophosphate + NADP+ <=> 4-Phospho-L-aspartate + NADPH + H+
+R03478	C00002 + C04477 <=> C00008 + C01284	ATP + 1D-myo-Inositol 1,3,4,6-tetrakisphosphate <=> ADP + 1D-myo-Inositol 1,3,4,5,6-pentakisphosphate
+R05800	C00002 + C01245 <=> C00008 + C11555	ATP + D-myo-Inositol 1,4,5-trisphosphate <=> ADP + 1D-myo-Inositol 1,4,5,6-tetrakisphosphate
+R05801	C00002 + C11555 <=> C00008 + C01284	ATP + 1D-myo-Inositol 1,4,5,6-tetrakisphosphate <=> ADP + 1D-myo-Inositol 1,3,4,5,6-pentakisphosphate
+R10065	2 C00002 + C01245 <=> 2 C00008 + C01284	2 ATP + D-myo-Inositol 1,4,5-trisphosphate <=> 2 ADP + 1D-myo-Inositol 1,3,4,5,6-pentakisphosphate
+R10953	C00002 + C01272 <=> C00008 + C01284	ATP + 1D-myo-Inositol 1,3,4,5-tetrakisphosphate <=> ADP + 1D-myo-Inositol 1,3,4,5,6-pentakisphosphate
+R02164	C15602 + C00042 <=> C15603 + C00122	Quinone + Succinate <=> Hydroquinone + Fumarate
+R00130	C00002 + C00882 <=> C00008 + C00010	ATP + Dephospho-CoA <=> ADP + CoA
+R03469	C00002 + C01277 <=> C00008 + C04637	ATP + 1-Phosphatidyl-1D-myo-inositol 4-phosphate <=> ADP + 1-Phosphatidyl-D-myo-inositol 4,5-bisphosphate
+R11319	C00068 + C00008 <=> C03028 + C00020	Thiamin diphosphate + ADP <=> Thiamin triphosphate + AMP
+R00830	C00091 + C00037 <=> C00430 + C00010 + C00011	Succinyl-CoA + Glycine <=> 5-Aminolevulinate + CoA + CO2
+R04371	C05662 <=> C04002 + C00001	Homoisocitrate <=> (Z)-But-1-ene-1,2,4-tricarboxylate + H2O
+R00549	C00002 + C00255 <=> C00008 + C00061	ATP + Riboflavin <=> ADP + FMN
+R02540	C02505 + C00001 <=> C07086 + C00014	2-Phenylacetamide + H2O <=> Phenylacetic acid + Ammonia
+R03096	C02693 + C00001 <=> C00954 + C00014	(Indol-3-yl)acetamide + H2O <=> Indole-3-acetate + Ammonia
+R03180	C03078 + C00001 <=> C01035 + C00014	4-Guanidinobutanamide + H2O <=> 4-Guanidinobutanoate + Ammonia
+R03909	C03620 + C00001 <=> C00060 + C00014	Monocarboxylic acid amide + H2O <=> Carboxylate + Ammonia
+R05551	C00511 + C00014 <=> C01659 + C00001	Acrylic acid + Ammonia <=> Acrylamide + H2O
+R05590	C09815 + C00001 <=> C00180 + C00014	Benzamide + H2O <=> Benzoate + Ammonia
+R01737	C00002 + C00257 <=> C00008 + C00345	ATP + D-Gluconic acid <=> ADP + 6-Phospho-D-gluconate
+R00009	2 C00027 <=> C00007 + 2 C00001	2 Hydrogen peroxide <=> Oxygen + 2 H2O
+R00602	C00132 + C00027 <=> C00067 + 2 C00001	Methanol + Hydrogen peroxide <=> Formaldehyde + 2 H2O
+R02670	2 C00632 + 4 C00007 <=> C05640 + 2 C00704 + 2 C00027 + 2 C00080	2 3-Hydroxyanthranilate + 4 Oxygen <=> Cinnavalininate + 2 Superoxide + 2 Hydrogen peroxide + 2 H+
+R00308	C00965 + C00001 <=> C00031 + C00965	1,3-beta-D-Glucan + H2O <=> D-Glucose + 1,3-beta-D-Glucan
+R03115	C00965 + C00001 <=> C00965 + C00267	1,3-beta-D-Glucan + H2O <=> 1,3-beta-D-Glucan + alpha-D-Glucose
+R01736	C03451 + C00001 <=> C00051 + C00256	(R)-S-Lactoylglutathione + H2O <=> Glutathione + (R)-Lactate
+R02239	C00416 + C00001 <=> C00641 + C00009	Phosphatidate + H2O <=> 1,2-Diacyl-sn-glycerol + Orthophosphate
+R01185	C01177 + C00001 <=> C00137 + C00009	Inositol 1-phosphate + H2O <=> myo-Inositol + Orthophosphate
+R01186	C03546 + C00001 <=> C00137 + C00009	myo-Inositol 4-phosphate + H2O <=> myo-Inositol + Orthophosphate
+R01187	C04006 + C00001 <=> C00137 + C00009	1D-myo-Inositol 3-phosphate + H2O <=> myo-Inositol + Orthophosphate
+R02464	C01120 <=> C00346 + C00517	Sphinganine 1-phosphate <=> Ethanolamine phosphate + Hexadecanal
+R06516	C06124 <=> C00346 + C06123	Sphingosine 1-phosphate <=> Ethanolamine phosphate + Hexadecenal
+R06525	C00836 + 2 C00999 + C00007 + 2 C00080 <=> C12144 + 2 C00996 + C00001	Sphinganine + 2 Ferrocytochrome b5 + Oxygen + 2 H+ <=> Phytosphingosine + 2 Ferricytochrome b5 + H2O
+R06526	C12126 + 2 C00999 + C00007 + 2 C00080 <=> C12145 + 2 C00996 + C00001	Dihydroceramide + 2 Ferrocytochrome b5 + Oxygen + 2 H+ <=> Phytoceramide + 2 Ferricytochrome b5 + H2O
+R00239	C00002 + C00025 <=> C00008 + C03287	ATP + L-Glutamate <=> ADP + L-Glutamyl 5-phosphate
+R05924	C00350 + G00141 <=> C00641 + G00151	Phosphatidylethanolamine + G00141 <=> 1,2-Diacyl-sn-glycerol + G00151
+R08107	C00350 + G00149 <=> C00641 + G13044	Phosphatidylethanolamine + G00149 <=> 1,2-Diacyl-sn-glycerol + G13044
+R12702	C00350 + G13044 <=> C00641 + G13152	Phosphatidylethanolamine + G13044 <=> 1,2-Diacyl-sn-glycerol + G13152
+R00187	C06197 + C00001 <=> C00008 + C00020	P1,P3-Bis(5'-adenosyl) triphosphate + H2O <=> ADP + AMP
+R05202	C01204 + C00008 <=> C01284 + C00002	Phytic acid + ADP <=> 1D-myo-Inositol 1,3,4,5,6-pentakisphosphate + ATP
+R00485	C00152 + C00001 <=> C00049 + C00014	L-Asparagine + H2O <=> L-Aspartate + Ammonia
+R02016	C00342 + C00006 <=> C00343 + C00005 + C00080	Thioredoxin + NADP+ <=> Thioredoxin disulfide + NADPH + H+
+R03596	C01528 + 3 C00006 + 3 C00001 <=> C05684 + 3 C00005 + 5 C00080	Hydrogen selenide + 3 NADP+ + 3 H2O <=> Selenite + 3 NADPH + 5 H+
+R09372	2 C00005 + 2 C00080 + C18902 <=> 2 C00006 + 2 C00001 + C05703	2 NADPH + 2 H+ + Methylselenic acid <=> 2 NADP+ + 2 H2O + Methaneselenol
+R01073	C04302 + C00013 <=> C00108 + C00119	N-(5-Phospho-D-ribosyl)anthranilate + Diphosphate <=> Anthranilate + 5-Phospho-alpha-D-ribose 1-diphosphate
+R01206	C00461 + C00001 <=> C00140 + C00461	Chitin + H2O <=> N-Acetyl-D-glucosamine + Chitin
+R02334	C00461 + C00001 <=> C01674 + C00461	Chitin + H2O <=> Chitobiose + Chitin
+R01132	C00130 + C00013 <=> C00262 + C00119	IMP + Diphosphate <=> Hypoxanthine + 5-Phospho-alpha-D-ribose 1-diphosphate
+R01229	C00144 + C00013 <=> C00242 + C00119	GMP + Diphosphate <=> Guanine + 5-Phospho-alpha-D-ribose 1-diphosphate
+R02142	C00655 + C00013 <=> C00385 + C00119	Xanthosine 5'-phosphate + Diphosphate <=> Xanthine + 5-Phospho-alpha-D-ribose 1-diphosphate
+R01080	C00299 + C00001 <=> C00106 + C00121	Uridine + H2O <=> Uracil + D-Ribose
+R01273	C03150 + C00001 <=> C00153 + C00121	Nicotinamide-beta-riboside + H2O <=> Nicotinamide + D-Ribose
+R10046	C05841 + C00001 <=> C00253 + C00121	Nicotinate D-ribonucleoside + H2O <=> Nicotinate + D-Ribose
+R04325	C00234 + C03838 <=> C00101 + C04376	10-Formyltetrahydrofolate + 5'-Phosphoribosylglycinamide <=> Tetrahydrofolate + 5'-Phosphoribosyl-N-formylglycinamide
+R04326	C03838 + C00445 + C00001 <=> C04376 + C00101	5'-Phosphoribosylglycinamide + 5,10-Methenyltetrahydrofolate + H2O <=> 5'-Phosphoribosyl-N-formylglycinamide + Tetrahydrofolate
+R04496	C00019 + C04506 <=> C00021 + C04748	S-Adenosyl-L-methionine + Protein C-terminal S-farnesyl-L-cysteine <=> S-Adenosyl-L-homocysteine + Protein C-terminal S-farnesyl-L-cysteine methyl ester
+R00988	C05653 + C00001 <=> C00058 + C00108	Formylanthranilate + H2O <=> Formate + Anthranilate
+R01959	C02700 + C00001 <=> C00058 + C00328	L-Formylkynurenine + H2O <=> Formate + L-Kynurenine
+R04911	C05648 + C00001 <=> C05651 + C00058	5-Hydroxy-N-formylkynurenine + H2O <=> 5-Hydroxykynurenine + Formate
+R05916	G10610 + C01194 <=> G10619 + G00143	UDP-N-acetyl-D-glucosamine + 1-Phosphatidyl-D-myo-inositol <=> UDP + G00143
+R03875	C02188 + C00019 <=> C05544 + C00021	Protein lysine + S-Adenosyl-L-methionine <=> Protein N6-methyl-L-lysine + S-Adenosyl-L-homocysteine
+R04866	C00019 + C05544 <=> C00021 + C05545	S-Adenosyl-L-methionine + Protein N6-methyl-L-lysine <=> S-Adenosyl-L-homocysteine + Protein N6,N6-dimethyl-L-lysine
+R04867	C00019 + C05545 <=> C00021 + C05546	S-Adenosyl-L-methionine + Protein N6,N6-dimethyl-L-lysine <=> S-Adenosyl-L-homocysteine + Protein N6,N6,N6-trimethyl-L-lysine
+R00190	C00020 + C00013 <=> C00147 + C00119	AMP + Diphosphate <=> Adenine + 5-Phospho-alpha-D-ribose 1-diphosphate
+R04378	C04677 + C00013 <=> C04051 + C00119	1-(5'-Phosphoribosyl)-5-amino-4-imidazolecarboxamide + Diphosphate <=> 5-Amino-4-imidazolecarboxyamide + 5-Phospho-alpha-D-ribose 1-diphosphate
+R00332	C00002 + C00144 <=> C00008 + C00035	ATP + GMP <=> ADP + GDP
+R02090	C00002 + C00362 <=> C00008 + C00361	ATP + dGMP <=> ADP + dGDP
+R04620	C04895 + 3 C00001 <=> C04874 + 3 C00009	7,8-Dihydroneopterin 3'-triphosphate + 3 H2O <=> 7,8-Dihydroneopterin + 3 Orthophosphate
+R07281	C00199 <=> C15556 + C00058	D-Ribulose 5-phosphate <=> L-3,4-Dihydroxybutan-2-one 4-phosphate + Formate
+R00177	C00009 + C00013 + C00019 <=> C00002 + C00073 + C00001	Orthophosphate + Diphosphate + S-Adenosyl-L-methionine <=> ATP + L-Methionine + H2O
+R04771	C00002 + C05335 + C00001 <=> C00009 + C00013 + C05691	ATP + L-Selenomethionine + H2O <=> Orthophosphate + Diphosphate + Se-Adenosylselenomethionine
+R02971	C00002 + C00831 <=> C00008 + C01134	ATP + Pantetheine <=> ADP + Pantetheine 4'-phosphate
+R03018	C00002 + C00864 <=> C00008 + C03492	ATP + Pantothenate <=> ADP + D-4'-Phosphopantothenate
+R04391	C00002 + C04079 <=> C00008 + C04352	ATP + N-((R)-Pantothenoyl)-L-cysteine <=> ADP + (R)-4'-Phosphopantothenoyl-L-cysteine
+R09796	C00256 <=> C00546 + C00001	(R)-Lactate <=> Methylglyoxal + H2O
+R01238	C00156 <=> C00146 + C00011	4-Hydroxybenzoate <=> Phenol + CO2
+R02952	C00811 <=> C05627 + C00011	4-Coumarate <=> 4-Hydroxystyrene + CO2
+R03367	C01197 <=> C06224 + C00011	Caffeate <=> 3,4-Dihydroxystyrene + CO2
+R04985	C05807 + C00011 <=> C05848	2-Polyprenylphenol + CO2 <=> 4-Hydroxy-3-polyprenylbenzoate
+R04986	C05809 <=> C05810 + C00011	3-Octaprenyl-4-hydroxybenzoate <=> 2-Octaprenylphenol + CO2
+R11225	C21214 + C01847 <=> C21215 + C00009	Dimethylallyl phosphate + Reduced FMN <=> Prenylated FMNH2 + Orthophosphate
+R00868	C00392 + C00003 <=> C00095 + C00004 + C00080	Mannitol + NAD+ <=> D-Fructose + NADH + H+
+R03903	C00024 + C02265 <=> C00010 + C05620	Acetyl-CoA + D-Phenylalanine <=> CoA + N-Acetyl-D-phenylalanine
+R08193	C00357 <=> C04501	N-Acetyl-D-glucosamine 6-phosphate <=> N-Acetyl-alpha-D-glucosamine 1-phosphate
+R00751	C00188 <=> C00037 + C00084	L-Threonine <=> Glycine + Acetaldehyde
+R06171	C05519 <=> C00037 + C00084	L-Allothreonine <=> Glycine + Acetaldehyde
+R07395	C15650 + C00001 <=> C15606 + C00009	2,3-Diketo-5-methylthiopentyl-1-phosphate + H2O <=> 1,2-Dihydroxy-5-(methylthio)pent-1-en-3-one + Orthophosphate
+R00174	C00002 + C00250 <=> C00008 + C00018	ATP + Pyridoxal <=> ADP + Pyridoxal phosphate
+R01909	C00002 + C00314 <=> C00008 + C00627	ATP + Pyridoxine <=> ADP + Pyridoxine phosphate
+R02493	C00002 + C00534 <=> C00008 + C00647	ATP + Pyridoxamine <=> ADP + Pyridoxamine phosphate
+R00965	C01103 <=> C00105 + C00011	Orotidine 5'-phosphate <=> UMP + CO2
+R02110	C00718 <=> C00369	Amylose <=> Starch
+R01819	C00275 <=> C05345	D-Mannose 6-phosphate <=> beta-D-Fructose 6-phosphate
+R00086	C00002 + C00001 <=> C00008 + C00009	ATP + H2O <=> ADP + Orthophosphate
+R00122	C00008 + C00001 <=> C00020 + C00009	ADP + H2O <=> AMP + Orthophosphate
+R00155	C00015 + C00001 <=> C00105 + C00009	UDP + H2O <=> UMP + Orthophosphate
+R00159	C00075 + C00001 <=> C00015 + C00009	UTP + H2O <=> UDP + Orthophosphate
+R00328	C00035 + C00001 <=> C00144 + C00009	GDP + H2O <=> GMP + Orthophosphate
+R00335	C00044 + C00001 <=> C00035 + C00009	GTP + H2O <=> GDP + Orthophosphate
+R00514	C00112 + C00001 <=> C00055 + C00009	CDP + H2O <=> CMP + Orthophosphate
+R00569	C00063 + C00001 <=> C00112 + C00009	CTP + H2O <=> CDP + Orthophosphate
+R00719	C00081 + C00001 <=> C00104 + C00009	ITP + H2O <=> IDP + Orthophosphate
+R00961	C00104 + C00001 <=> C00130 + C00009	IDP + H2O <=> IMP + Orthophosphate
+R02092	C00363 + C00001 <=> C00364 + C00009	dTDP + H2O <=> dTMP + Orthophosphate
+R02095	C00459 + C00001 <=> C00363 + C00009	dTTP + H2O <=> dTDP + Orthophosphate
+R03222	C01079 + 3 C00007 <=> C02191 + 3 C00027	Protoporphyrinogen IX + 3 Oxygen <=> Protoporphyrin + 3 Hydrogen peroxide
+R04178	C03263 + 3 C00007 <=> C05770 + 3 C00027	Coproporphyrinogen III + 3 Oxygen <=> Coproporphyrin III + 3 Hydrogen peroxide
+R00390	C00002 + C00638 + C00010 <=> C00020 + C00013 + C02843	ATP + Long-chain fatty acid + CoA <=> AMP + Diphosphate + Long-chain acyl-CoA
+R01280	C00002 + C00249 + C00010 <=> C00020 + C00154 + C00013	ATP + Hexadecanoic acid + CoA <=> AMP + Palmitoyl-CoA + Diphosphate
+R02541	C00550 + C00001 <=> C00195 + C00588	Sphingomyelin + H2O <=> N-Acylsphingosine + Choline phosphate
+R01248	C00148 + C00003 <=> C03912 + C00004 + C00080	L-Proline + NAD+ <=> (S)-1-Pyrroline-5-carboxylate + NADH + H+
+R01251	C00148 + C00006 <=> C03912 + C00005 + C00080	L-Proline + NADP+ <=> (S)-1-Pyrroline-5-carboxylate + NADPH + H+
+R03291	C01157 + C00003 <=> C04281 + C00004 + C00080	Hydroxyproline + NAD+ <=> L-1-Pyrroline-3-hydroxy-5-carboxylate + NADH + H+
+R03293	C01157 + C00006 <=> C04281 + C00005 + C00080	Hydroxyproline + NADP+ <=> L-1-Pyrroline-3-hydroxy-5-carboxylate + NADPH + H+
+R01800	C00269 + C00065 <=> C00055 + C02737	CDP-diacylglycerol + L-Serine <=> CMP + Phosphatidylserine
+R11527	C00681 + C00001 <=> C01885 + C00009	1-Acyl-sn-glycerol 3-phosphate + H2O <=> 1-Acylglycerol + Orthophosphate
+R00192	C00021 + C00001 <=> C00212 + C00155	S-Adenosyl-L-homocysteine + H2O <=> Adenosine + L-Homocysteine
+R04936	C05692 + C00001 <=> C00212 + C05698	Se-Adenosyl-L-selenohomocysteine + H2O <=> Adenosine + Selenohomocysteine
+R00480	C00002 + C00049 <=> C00008 + C03082	ATP + L-Aspartate <=> ADP + 4-Phospho-L-aspartate
+R01071	C02739 + C00013 <=> C00002 + C00119	1-(5-Phospho-D-ribosyl)-ATP + Diphosphate <=> ATP + 5-Phospho-alpha-D-ribose 1-diphosphate
+R02768	C00173 + C01209 <=> C00685 + C00011 + C00229	Acyl-[acyl-carrier protein] + Malonyl-[acyl-carrier protein] <=> 3-Oxoacyl-[acyl-carrier protein] + CO2 + Acyl-carrier protein
+R04355	C03939 + C01209 <=> C05744 + C00011 + C00229	Acetyl-[acyl-carrier protein] + Malonyl-[acyl-carrier protein] <=> Acetoacetyl-[acp] + CO2 + Acyl-carrier protein
+R04726	C05223 + C01209 <=> C05759 + C00011 + C00229	Dodecanoyl-[acyl-carrier protein] + Malonyl-[acyl-carrier protein] <=> 3-Oxotetradecanoyl-[acp] + CO2 + Acyl-carrier protein
+R04952	C05745 + C01209 <=> C05746 + C00011 + C00229	Butyryl-[acp] + Malonyl-[acyl-carrier protein] <=> 3-Oxohexanoyl-[acp] + CO2 + Acyl-carrier protein
+R04957	C05749 + C01209 <=> C05750 + C00011 + C00229	Hexanoyl-[acp] + Malonyl-[acyl-carrier protein] <=> 3-Oxooctanoyl-[acp] + CO2 + Acyl-carrier protein
+R04960	C05752 + C01209 <=> C05753 + C00011 + C00229	Octanoyl-[acp] + Malonyl-[acyl-carrier protein] <=> 3-Oxodecanoyl-[acp] + CO2 + Acyl-carrier protein
+R04963	C05755 + C01209 <=> C05756 + C00011 + C00229	Decanoyl-[acp] + Malonyl-[acyl-carrier protein] <=> 3-Oxododecanoyl-[acp] + CO2 + Acyl-carrier protein
+R04968	C05761 + C01209 <=> C05762 + C00011 + C00229	Tetradecanoyl-[acp] + Malonyl-[acyl-carrier protein] <=> 3-Oxohexadecanoyl-[acp] + CO2 + Acyl-carrier protein
+R10115	C19673 + C01209 <=> C20372 + C00011 + C00229	Malonyl-[acp] methyl ester + Malonyl-[acyl-carrier protein] <=> 3-Ketoglutaryl-[acp] methyl ester + CO2 + Acyl-carrier protein
+R10119	C20375 + C01209 <=> C20376 + C00011 + C00229	Glutaryl-[acp] methyl ester + Malonyl-[acyl-carrier protein] <=> 3-Ketopimeloyl-[acp] methyl ester + CO2 + Acyl-carrier protein
+R00841	C00093 + C00001 <=> C00116 + C00009	sn-Glycerol 3-phosphate + H2O <=> Glycerol + Orthophosphate
+R00479	C00311 <=> C00042 + C00048	Isocitrate <=> Succinate + Glyoxylate
+R02649	C00002 + C00624 <=> C00008 + C04133	ATP + N-Acetyl-L-glutamate <=> ADP + N-Acetyl-L-glutamate 5-phosphate
+R03443	C01250 + C00009 + C00006 <=> C04133 + C00005 + C00080	N-Acetyl-L-glutamate 5-semialdehyde + Orthophosphate + NADP+ <=> N-Acetyl-L-glutamate 5-phosphate + NADPH + H+
+R02017	C00206 + C00343 + C00001 <=> C00342 + C00008	dADP + Thioredoxin disulfide + H2O <=> Thioredoxin + ADP
+R02019	C00361 + C00343 + C00001 <=> C00035 + C00342	dGDP + Thioredoxin disulfide + H2O <=> GDP + Thioredoxin
+R02024	C00705 + C00343 + C00001 <=> C00342 + C00112	dCDP + Thioredoxin disulfide + H2O <=> Thioredoxin + CDP
+R08363	C04232 + C16664 + C00001 <=> C03723 + C16663	2'-Deoxyribonucleoside diphosphate + Tryparedoxin disulfide + H2O <=> Ribonucleoside diphosphate + Tryparedoxin
+R08364	C04232 + C03170 + C00001 <=> C03723 + C02090	2'-Deoxyribonucleoside diphosphate + Trypanothione disulfide + H2O <=> Ribonucleoside diphosphate + Trypanothione
+R11893	C21750 + C00343 + C00001 <=> C21748 + C00342	5-Fluorodeoxyuridine diphosphate + Thioredoxin disulfide + H2O <=> 5-Fluorouridine diphosphate + Thioredoxin
+R00264	C00433 + C00006 + C00001 <=> C00026 + C00005 + C00080	2,5-Dioxopentanoate + NADP+ + H2O <=> 2-Oxoglutarate + NADPH + H+
+R00631	C00071 + C00003 + C00001 <=> C00162 + C00004 + C00080	Aldehyde + NAD+ + H2O <=> Fatty acid + NADH + H+
+R00710	C00084 + C00003 + C00001 <=> C00033 + C00004 + C00080	Acetaldehyde + NAD+ + H2O <=> Acetate + NADH + H+
+R00904	C05665 + C00003 + C00001 <=> C00099 + C00004 + C00080	3-Aminopropanal + NAD+ + H2O <=> beta-Alanine + NADH + H+
+R01752	C00577 + C00003 + C00001 <=> C00258 + C00004 + C00080	D-Glyceraldehyde + NAD+ + H2O <=> D-Glycerate + NADH + H+
+R01986	C00555 + C00006 + C00001 <=> C00334 + C00005 + C00080	4-Aminobutyraldehyde + NADP+ + H2O <=> 4-Aminobutanoate + NADPH + H+
+R02549	C00555 + C00003 + C00001 <=> C00334 + C00004 + C00080	4-Aminobutyraldehyde + NAD+ + H2O <=> 4-Aminobutanoate + NADH + H+
+R02678	C00637 + C00003 + C00001 <=> C00954 + C00004 + C00080	Indole-3-acetaldehyde + NAD+ + H2O <=> Indole-3-acetate + NADH + H+
+R02940	C05985 + C00003 + C00001 <=> C00804 + C00004 + C00080	2-Propynal + NAD+ + H2O <=> Propynoate + NADH + H+
+R02957	C02670 + C00003 + 2 C00001 <=> C00818 + C00004 + C00080	D-Glucuronolactone + NAD+ + 2 H2O <=> D-Glucarate + NADH + H+
+R03283	C01149 + C00003 + C00001 <=> C01181 + C00004 + C00080	4-Trimethylammoniobutanal + NAD+ + H2O <=> 4-Trimethylammoniobutanoate + NADH + H+
+R03869	C06002 + C00003 + C00001 <=> C02170 + C00004 + C00080	(S)-Methylmalonate semialdehyde + NAD+ + H2O <=> Methylmalonate + NADH + H+
+R04065	C05130 + C00003 + C00001 <=> C02835 + C00004 + C00080	Imidazole-4-acetaldehyde + NAD+ + H2O <=> Imidazole-4-acetate + NADH + H+
+R04506	C05445 + C00003 + C00001 <=> C04554 + C00004 + C00080	3alpha,7alpha-Dihydroxy-5beta-cholestan-26-al + NAD+ + H2O <=> 3alpha,7alpha-Dihydroxy-5beta-cholestanate + NADH + H+
+R04903	C05634 + C00003 + C00001 <=> C05635 + C00080 + C00004	5-Hydroxyindoleacetaldehyde + NAD+ + H2O <=> 5-Hydroxyindoleacetate + H+ + NADH
+R05050	C05936 + C00003 + C00001 <=> C02946 + C00004 + C00080	N4-Acetylaminobutanal + NAD+ + H2O <=> 4-Acetamidobutanoate + NADH + H+
+R05237	C06613 + C00001 <=> C06614 + 2 C00080	trans-3-Chloroallyl aldehyde + H2O <=> trans-3-Chloroacrylic acid + 2 H+
+R05238	C16348 + C00001 <=> C06615 + 2 C00080	cis-3-Chloroallyl aldehyde + H2O <=> cis-3-Chloroacrylic acid + 2 H+
+R05286	C06754 + C00003 + C00001 <=> C06755 + C00004 + C00080	Chloroacetaldehyde + NAD+ + H2O <=> Chloroacetic acid + NADH + H+
+R06366	C02576 + C00001 + C00003 <=> C11924 + C00004 + C00080	Perillyl aldehyde + H2O + NAD+ <=> Perillic acid + NADH + H+
+R08146	C03461 + C00003 + C00001 <=> C16502 + C00004 + C00080	2-trans,6-trans-Farnesal + NAD+ + H2O <=> Farnesoic acid + NADH + H+
+R01513	C00197 + C00003 <=> C03232 + C00004 + C00080	3-Phospho-D-glycerate + NAD+ <=> 3-Phosphonooxypyruvate + NADH + H+
+R00985	C00251 + C00014 <=> C00108 + C00022 + C00001	Chorismate + Ammonia <=> Anthranilate + Pyruvate + H2O
+R00986	C00251 + C00064 <=> C00108 + C00022 + C00025	Chorismate + L-Glutamine <=> Anthranilate + Pyruvate + L-Glutamate
+R04405	C04489 + C00155 <=> C04144 + C00073	5-Methyltetrahydropteroyltri-L-glutamate + L-Homocysteine <=> Tetrahydropteroyltri-L-glutamate + L-Methionine
+R09365	C05698 + C04489 <=> C05335 + C04144	Selenohomocysteine + 5-Methyltetrahydropteroyltri-L-glutamate <=> L-Selenomethionine + Tetrahydropteroyltri-L-glutamate
+R07412	C15672 + C00001 + 2 C00028 <=> C15670 + 2 C00030	Heme O + H2O + 2 Acceptor <=> Heme A + 2 Reduced acceptor
+R11861	C00051 <=> C01419 + C01879	Glutathione <=> Cys-Gly + 5-Oxoproline
+R02301	C00002 + C03479 + C00080 <=> C00008 + C00009 + C00445	ATP + Folinic acid + H+ <=> ADP + Orthophosphate + 5,10-Methenyltetrahydrofolate
+R00778	C00086 <=> C01566 + C00001	Urea <=> Cyanamide + H2O
+R07456	C00118 + C00199 + C00064 <=> C00018 + C00025 + C00009 + 3 C00001	D-Glyceraldehyde 3-phosphate + D-Ribulose 5-phosphate + L-Glutamine <=> Pyridoxal phosphate + L-Glutamate + Orthophosphate + 3 H2O
+R10089	C00117 + C00118 + C00064 <=> C00018 + C00025 + 3 C00001 + C00009	D-Ribose 5-phosphate + D-Glyceraldehyde 3-phosphate + L-Glutamine <=> Pyridoxal phosphate + L-Glutamate + 3 H2O + Orthophosphate
+R01011	C00002 + C00184 <=> C00008 + C00111	ATP + Glycerone <=> ADP + Glycerone phosphate
+R01059	C00002 + C00577 <=> C00008 + C00118	ATP + D-Glyceraldehyde <=> ADP + D-Glyceraldehyde 3-phosphate
+R01818	C00275 <=> C00636	D-Mannose 6-phosphate <=> D-Mannose 1-phosphate
+R00369	C00041 + C00048 <=> C00022 + C00037	L-Alanine + Glyoxylate <=> Pyruvate + Glycine
+R00372	C00037 + C00026 <=> C00048 + C00025	Glycine + 2-Oxoglutarate <=> Glyoxylate + L-Glutamate
+R00585	C00065 + C00022 <=> C00168 + C00041	L-Serine + Pyruvate <=> Hydroxypyruvate + L-Alanine
+R00588	C00065 + C00048 <=> C00168 + C00037	L-Serine + Glyoxylate <=> Hydroxypyruvate + Glycine
+R01698	C00579 + C00003 <=> C00248 + C00004 + C00080	Dihydrolipoamide + NAD+ <=> Lipoamide + NADH + H+
+R03815	C02972 + C00003 <=> C02051 + C00004 + C00080	Dihydrolipoylprotein + NAD+ <=> Lipoylprotein + NADH + H+
+R07618	C15973 + C00003 <=> C15972 + C00004 + C00080	Enzyme N6-(dihydrolipoyl)lysine + NAD+ <=> Enzyme N6-(lipoyl)lysine + NADH + H+
+R02058	C00024 + C00352 <=> C00010 + C00357	Acetyl-CoA + D-Glucosamine 6-phosphate <=> CoA + N-Acetyl-D-glucosamine 6-phosphate
+R00292	C00029 + C00718 <=> C00015 + C00718	UDP-glucose + Amylose <=> UDP + Amylose
+R05802	C00002 + C04549 <=> C00008 + C11556	ATP + 1-Phosphatidyl-1D-myo-inositol 3-phosphate <=> ADP + 1-Phosphatidyl-1D-myo-inositol 3,5-bisphosphate
+R10951	C00002 + C01194 <=> C00008 + C11557	ATP + 1-Phosphatidyl-D-myo-inositol <=> ADP + 1-Phosphatidyl-1D-myo-inositol 5-phosphate
+R03013	C01100 + C00001 <=> C00860 + C00009	L-Histidinol phosphate + H2O <=> L-Histidinol + Orthophosphate
+R00858	C00283 + 3 C00006 + 3 C00001 <=> C00094 + 3 C00005 + 3 C00080	Hydrogen sulfide + 3 NADP+ + 3 H2O <=> Sulfite + 3 NADPH + 3 H+
+R03348	C01185 + C00013 + C00011 <=> C03722 + C00119	Nicotinate D-ribonucleotide + Diphosphate + CO2 <=> Quinolinate + 5-Phospho-alpha-D-ribose 1-diphosphate
+R01286	C02291 + C00001 <=> C00155 + C00014 + C00022	L-Cystathionine + H2O <=> L-Homocysteine + Ammonia + Pyruvate
+R04941	C05699 + C00001 <=> C05698 + C00014 + C00022	L-Selenocystathionine + H2O <=> Selenohomocysteine + Ammonia + Pyruvate
+R12188	C02882 + C00001 <=> C00145 + C00014 + C00022	L-Cysteine-S-conjugate + H2O <=> Thiol + Ammonia + Pyruvate
+R00191	C00575 + C00001 <=> C00020	3',5'-Cyclic AMP + H2O <=> AMP
+R01234	C00942 + C00001 <=> C00144	3',5'-Cyclic GMP + H2O <=> GMP
+R05578	C01641 + C00025 + C00002 <=> C02987 + C00013 + C00020	tRNA(Glu) + L-Glutamate + ATP <=> L-Glutamyl-tRNA(Glu) + Diphosphate + AMP
+R04144	C00002 + C03090 + C00037 <=> C00008 + C00009 + C03838	ATP + 5-Phosphoribosylamine + Glycine <=> ADP + Orthophosphate + 5'-Phosphoribosylglycinamide
+R04208	C00002 + C04640 <=> C00008 + C00009 + C03373	ATP + 2-(Formamido)-N1-(5'-phosphoribosyl)acetamidine <=> ADP + Orthophosphate + Aminoimidazole ribotide
+R01175	C00136 + C00016 <=> C01352 + C00877	Butanoyl-CoA + FAD <=> FADH2 + Crotonoyl-CoA
+R01279	C00154 + C00016 <=> C05272 + C01352	Palmitoyl-CoA + FAD <=> trans-Hexadec-2-enoyl-CoA + FADH2
+R03777	C01944 + C00016 <=> C05276 + C01352	Octanoyl-CoA + FAD <=> trans-Oct-2-enoyl-CoA + FADH2
+R03857	C01832 + C00016 <=> C03221 + C01352	Lauroyl-CoA + FAD <=> 2-trans-Dodecenoyl-CoA + FADH2
+R03990	C02593 + C00016 <=> C05273 + C01352	Tetradecanoyl-CoA + FAD <=> trans-Tetradec-2-enoyl-CoA + FADH2
+R04751	C05270 + C00016 <=> C05271 + C01352	Hexanoyl-CoA + FAD <=> trans-Hex-2-enoyl-CoA + FADH2
+R04754	C05274 + C00016 <=> C05275 + C01352	Decanoyl-CoA + FAD <=> trans-Dec-2-enoyl-CoA + FADH2
+R07888	C16327 + C00016 <=> C16328 + C01352	OPC8-CoA + FAD <=> trans-2-Enoyl-OPC8-CoA + FADH2
+R07892	C16331 + C00016 <=> C16332 + C01352	OPC6-CoA + FAD <=> trans-2-Enoyl-OPC6-CoA + FADH2
+R07896	C16335 + C00016 <=> C16336 + C01352	OPC4-CoA + FAD <=> trans-2-Enoyl-OPC4-CoA + FADH2
+R07934	C16168 + C00007 <=> C16374 + C00027	(6Z,9Z,12Z,15Z,18Z,21Z)-Tetracosahexaenoyl-CoA + Oxygen <=> (2E,6Z,9Z,12Z,15Z,18Z,21Z)-Tetracosaheptaenoyl-CoA + Hydrogen peroxide
+R07950	C16172 + C00007 <=> C16387 + C00027	(6Z,9Z,12Z,15Z,18Z)-Tetracosapentaenoyl-CoA + Oxygen <=> (2E,6Z,9Z,12Z,15Z,18Z)-Tetracosahexaenoyl-CoA + Hydrogen peroxide
+R12356	C00100 + C00007 <=> C00894 + C00027	Propanoyl-CoA + Oxygen <=> Propenoyl-CoA + Hydrogen peroxide
+R00694	C00079 + C00026 <=> C00166 + C00025	L-Phenylalanine + 2-Oxoglutarate <=> Phenylpyruvate + L-Glutamate
+R00734	C00082 + C00026 <=> C01179 + C00025	L-Tyrosine + 2-Oxoglutarate <=> 3-(4-Hydroxyphenyl)pyruvate + L-Glutamate
+R01939	C00956 + C00026 <=> C00322 + C00025	L-2-Aminoadipate + 2-Oxoglutarate <=> 2-Oxoadipate + L-Glutamate
+R00221	C00740 <=> C00022 + C00014	D-Serine <=> Pyruvate + Ammonia
+R01714	C01269 <=> C00251 + C00009	5-O-(1-Carboxyvinyl)-3-phosphoshikimate <=> Chorismate + Orthophosphate
+R01224	C00440 + C00006 <=> C00143 + C00005 + C00080	5-Methyltetrahydrofolate + NADP+ <=> 5,10-Methylenetetrahydrofolate + NADPH + H+
+R00103	C00003 + C00001 <=> C00020 + C00455	NAD+ + H2O <=> AMP + Nicotinamide D-ribonucleotide
+R03004	C00857 + C00001 <=> C00020 + C01185	Deamino-NAD+ + H2O <=> AMP + Nicotinate D-ribonucleotide
+R11104	C00004 + C00001 <=> C00020 + C21113	NADH + H2O <=> AMP + NMNH
+R05973	G10614 + G00003 <=> G10620 + G00004	GDP-D-mannose + G00003 <=> GDP + G00004
+R06238	G10614 + G00004 <=> G10620 + G00005	GDP-D-mannose + G00004 <=> GDP + G00005
+R02222	C00412 + 2 C00999 + C00007 + 2 C00080 <=> C00510 + 2 C00996 + 2 C00001	Stearoyl-CoA + 2 Ferrocytochrome b5 + Oxygen + 2 H+ <=> Oleoyl-CoA + 2 Ferricytochrome b5 + 2 H2O
+R12173	C00154 + 2 C00999 + C00007 + 2 C00080 <=> C21072 + 2 C00996 + 2 C00001	Palmitoyl-CoA + 2 Ferrocytochrome b5 + Oxygen + 2 H+ <=> Palmitoleoyl-CoA + 2 Ferricytochrome b5 + 2 H2O
+R00036	2 C00430 <=> C00931 + 2 C00001	2 5-Aminolevulinate <=> Porphobilinogen + 2 H2O
+R08599	G10614 + G10694 <=> G10620 + G01813	GDP-D-mannose + G10694 <=> GDP + G01813
+R01268	C00153 + C00001 <=> C00253 + C00014	Nicotinamide + H2O <=> Nicotinate + Ammonia
+R05979	C00001 + G00009 <=> C00221 + G00171	H2O + G00009 <=> beta-D-Glucose + G00171
+R02722	C00065 + C03506 <=> C00078 + C00118 + C00001	L-Serine + Indoleglycerol phosphate <=> L-Tryptophan + D-Glyceraldehyde 3-phosphate + H2O
+R04216	C04213 + C03021 <=> C00621 + C11572	Dolichyl diphosphooligosaccharide + Protein asparagine <=> Dolichyl diphosphate + Glycoprotein with the oligosaccharide chain attached by N-glycosyl linkage to protein L-asparagine
+R05641	C01694 + C00006 <=> C05440 + C00005 + C00080	Ergosterol + NADP+ <=> Ergosta-5,7,22,24(28)-tetraen-3beta-ol + NADPH + H+
+R03968	C02504 <=> C02631 + C00001	alpha-Isopropylmalate <=> 2-Isopropylmaleate + H2O
+R04001	C04411 <=> C02631 + C00001	(2R,3S)-3-Isopropylmalate <=> 2-Isopropylmaleate + H2O
+R10170	C04411 <=> C02504	(2R,3S)-3-Isopropylmalate <=> alpha-Isopropylmalate
+R07494	C15808 + C00006 <=> C15816 + C00005 + C00080 + C00011	4alpha-Methylzymosterol-4-carboxylate + NADP+ <=> 3-Keto-4-methylzymosterol + NADPH + H+ + CO2
+R12404	C22112 + C00006 <=> C22136 + C00005 + C00080 + C00011	4alpha-Carboxy-5alpha-cholesta-8,24-dien-3beta-ol + NADP+ <=> Zymosterone + NADPH + H+ + CO2
+R02038	C00063 + C00346 <=> C00013 + C00570	CTP + Ethanolamine phosphate <=> Diphosphate + CDP-ethanolamine
+R04247	C00063 + C03557 <=> C00013 + C05673	CTP + 2-Aminoethylphosphonate <=> Diphosphate + CMP-2-aminoethylphosphonate
+R00897	C00979 + C00283 <=> C00097 + C00033	O-Acetyl-L-serine + Hydrogen sulfide <=> L-Cysteine + Acetate
+R03601	C00979 + C01528 <=> C05688 + C00033	O-Acetyl-L-serine + Hydrogen selenide <=> L-Selenocysteine + Acetate
+R04859	C00979 + C00320 + C00342 + C00080 <=> C00097 + C00094 + C00343 + C00033	O-Acetyl-L-serine + Thiosulfate + Thioredoxin + H+ <=> L-Cysteine + Sulfite + Thioredoxin disulfide + Acetate
+R07274	C01005 + C00283 <=> C00097 + C00009	O-Phospho-L-serine + Hydrogen sulfide <=> L-Cysteine + Orthophosphate
+R00908	C00099 + C00026 <=> C00222 + C00025	beta-Alanine + 2-Oxoglutarate <=> 3-Oxopropanoate + L-Glutamate
+R01648	C00334 + C00026 <=> C00232 + C00025	4-Aminobutanoate + 2-Oxoglutarate <=> Succinate semialdehyde + L-Glutamate
+R04188	C03284 + C00026 <=> C06002 + C00025	L-3-Aminoisobutanoate + 2-Oxoglutarate <=> (S)-Methylmalonate semialdehyde + L-Glutamate
+R03118	C00029 + C00965 <=> C00015 + C00965	UDP-glucose + 1,3-beta-D-Glucan <=> UDP + 1,3-beta-D-Glucan
+R01004	C00621 + C00001 <=> C00110 + C00009	Dolichyl diphosphate + H2O <=> Dolichyl phosphate + Orthophosphate
+R01827	C05382 + C00118 <=> C00279 + C05345	Sedoheptulose 7-phosphate + D-Glyceraldehyde 3-phosphate <=> D-Erythrose 4-phosphate + beta-D-Fructose 6-phosphate
+R07509	C05108 + 6 C00999 + 3 C00007 + 6 C00080 <=> C15808 + 6 C00996 + 4 C00001	14-Demethyllanosterol + 6 Ferrocytochrome b5 + 3 Oxygen + 6 H+ <=> 4alpha-Methylzymosterol-4-carboxylate + 6 Ferricytochrome b5 + 4 H2O
+R10057	C04530 + 6 C00999 + 3 C00007 + 6 C00080 <=> C04840 + 6 C00996 + 4 C00001	4,4-Dimethyl-5alpha-cholest-7-en-3beta-ol + 6 Ferrocytochrome b5 + 3 Oxygen + 6 H+ <=> 3beta-Hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carboxylate + 6 Ferricytochrome b5 + 4 H2O
+R12403	C05103 + 6 C00999 + 3 C00007 + 6 C00080 <=> C22112 + 6 C00996 + 4 C00001	4alpha-Methylzymosterol + 6 Ferrocytochrome b5 + 3 Oxygen + 6 H+ <=> 4alpha-Carboxy-5alpha-cholesta-8,24-dien-3beta-ol + 6 Ferricytochrome b5 + 4 H2O
+R04463	C00002 + C04376 + C00064 + C00001 <=> C00008 + C00009 + C04640 + C00025	ATP + 5'-Phosphoribosyl-N-formylglycinamide + L-Glutamine + H2O <=> ADP + Orthophosphate + 2-(Formamido)-N1-(5'-phosphoribosyl)acetamidine + L-Glutamate
+R00578	C00002 + C00049 + C00064 + C00001 <=> C00020 + C00013 + C00152 + C00025	ATP + L-Aspartate + L-Glutamine + H2O <=> AMP + Diphosphate + L-Asparagine + L-Glutamate
+R10685	C00003 + C00037 + C02743 <=> C20784 + C00153 + C21861 + 3 C00001	NAD+ + Glycine + [Protein]-L-cysteine <=> ADP-5-ethyl-4-methylthiazole-2-carboxylate + Nicotinamide + [Protein]-dehydroalanine + 3 H2O
+R00891	C00065 + C00283 <=> C00097 + C00001	L-Serine + Hydrogen sulfide <=> L-Cysteine + H2O
+R01290	C00065 + C00155 <=> C02291 + C00001	L-Serine + L-Homocysteine <=> L-Cystathionine + H2O
+R04942	C00065 + C05698 <=> C05699 + C00001	L-Serine + Selenohomocysteine <=> L-Selenocystathionine + H2O
+R02056	C00019 + C00350 <=> C00021 + C01241	S-Adenosyl-L-methionine + Phosphatidylethanolamine <=> S-Adenosyl-L-homocysteine + Phosphatidyl-N-methylethanolamine
+R02055	C02737 <=> C00350 + C00011	Phosphatidylserine <=> Phosphatidylethanolamine + CO2
+R03659	C00002 + C00073 + C01647 <=> C00020 + C00013 + C02430	ATP + L-Methionine + tRNA(Met) <=> AMP + Diphosphate + L-Methionyl-tRNA
+R04773	C00002 + C05335 + C01647 <=> C00020 + C00013 + C05336	ATP + L-Selenomethionine + tRNA(Met) <=> AMP + Diphosphate + Selenomethionyl-tRNA(Met)
+R02874	C00751 + C00007 + C03024 <=> C01054 + C03161 + C00001	Squalene + Oxygen + [Reduced NADPH---hemoprotein reductase] <=> (S)-2,3-Epoxysqualene + [Oxidized NADPH---hemoprotein reductase] + H2O
+R01061	C00118 + C00009 + C00003 <=> C00236 + C00004 + C00080	D-Glyceraldehyde 3-phosphate + Orthophosphate + NAD+ <=> 3-Phospho-D-glyceroyl phosphate + NADH + H+
+R01639	C00002 + C00310 <=> C00008 + C00231	ATP + D-Xylulose <=> ADP + D-Xylulose 5-phosphate
+R01890	C00063 + C00588 <=> C00013 + C00307	CTP + Choline phosphate <=> Diphosphate + CDP-choline
+R02590	C00063 + C06459 <=> C00013 + C05674	CTP + N-Trimethyl-2-aminoethylphosphonate <=> Diphosphate + CMP-N-trimethyl-2-aminoethylphosphonate
+R01514	C00002 + C00258 <=> C00008 + C00197	ATP + D-Glycerate <=> ADP + 3-Phospho-D-glycerate
+R00582	C01005 + C00001 <=> C00065 + C00009	O-Phospho-L-serine + H2O <=> L-Serine + Orthophosphate
+R06264	G10618 + G10599 <=> G10622 + G00008	Dolichyl D-glucosyl phosphate + G10599 <=> Dolichyl phosphate + G00008
+R00756	C00002 + C00085 <=> C00008 + C00354	ATP + D-Fructose 6-phosphate <=> ADP + D-Fructose 1,6-bisphosphate
+R03236	C01097 + C00002 <=> C03785 + C00008	D-Tagatose 6-phosphate + ATP <=> D-Tagatose 1,6-bisphosphate + ADP
+R03237	C00063 + C01097 <=> C00112 + C03785	CTP + D-Tagatose 6-phosphate <=> CDP + D-Tagatose 1,6-bisphosphate
+R03238	C00075 + C01097 <=> C00015 + C03785	UTP + D-Tagatose 6-phosphate <=> UDP + D-Tagatose 1,6-bisphosphate
+R03239	C00081 + C01097 <=> C00104 + C03785	ITP + D-Tagatose 6-phosphate <=> IDP + D-Tagatose 1,6-bisphosphate
+R04779	C00002 + C05345 <=> C00008 + C05378	ATP + beta-D-Fructose 6-phosphate <=> ADP + beta-D-Fructose 1,6-bisphosphate
+R00432	C00044 + C00042 + C00010 <=> C00035 + C00009 + C00091	GTP + Succinate + CoA <=> GDP + Orthophosphate + Succinyl-CoA
+R00727	C00081 + C00042 + C00010 <=> C00104 + C00009 + C00091	ITP + Succinate + CoA <=> IDP + Orthophosphate + Succinyl-CoA
+R00658	C00631 <=> C00074 + C00001	2-Phospho-D-glycerate <=> Phosphoenolpyruvate + H2O
+R01528	C00345 + C00006 <=> C00199 + C00011 + C00005 + C00080	6-Phospho-D-gluconate + NADP+ <=> D-Ribulose 5-phosphate + CO2 + NADPH + H+
+R10221	C00345 + C00003 <=> C00199 + C00011 + C00004 + C00080	6-Phospho-D-gluconate + NAD+ <=> D-Ribulose 5-phosphate + CO2 + NADH + H+
+R00424	C00044 + C00001 <=> C04895 + C00058	GTP + H2O <=> 7,8-Dihydroneopterin 3'-triphosphate + Formate
+R00428	C00044 + C00001 <=> C05922	GTP + H2O <=> Formamidopyrimidine nucleoside triphosphate
+R04639	C04895 + C00001 <=> C06148	7,8-Dihydroneopterin 3'-triphosphate + H2O <=> 2,5-Diamino-6-(5'-triphosphoryl-3',4'-trihydroxy-2'-oxopentyl)-amino-4-oxopyrimidine
+R05046	C05922 + C00001 <=> C05923 + C00058	Formamidopyrimidine nucleoside triphosphate + H2O <=> 2,5-Diaminopyrimidine nucleoside triphosphate + Formate
+R05048	C05923 <=> C06148	2,5-Diaminopyrimidine nucleoside triphosphate <=> 2,5-Diamino-6-(5'-triphosphoryl-3',4'-trihydroxy-2'-oxopentyl)-amino-4-oxopyrimidine
+R03035	C00002 + C01134 <=> C00013 + C00882	ATP + Pantetheine 4'-phosphate <=> Diphosphate + Dephospho-CoA
+R01078	C01909 + C17023 + 2 C00019 + 2 C05359 + 2 C00080 <=> C00120 + 2 C00073 + 2 C05198	Dethiobiotin + Sulfur donor + 2 S-Adenosyl-L-methionine + 2 e- + 2 H+ <=> Biotin + 2 L-Methionine + 2 5'-Deoxyadenosine
+R00847	C00002 + C00116 <=> C00008 + C00093	ATP + Glycerol <=> ADP + sn-Glycerol 3-phosphate
+R04734	C15522 <=> C00268 + C00001	4a-Hydroxytetrahydrobiopterin <=> Dihydrobiopterin + H2O
+R00289	C00075 + C00103 <=> C00013 + C00029	UTP + D-Glucose 1-phosphate <=> Diphosphate + UDP-glucose
+R06517	C00040 + C00836 <=> C00010 + C12126	Acyl-CoA + Sphinganine <=> CoA + Dihydroceramide
+R06527	C12146 + C12144 <=> C00010 + C12145	C26-CoA + Phytosphingosine <=> CoA + Phytoceramide
+R05640	C01724 + 3 C03024 + 3 C00007 <=> C11455 + C00058 + 3 C03161 + 4 C00001	Lanosterol + 3 [Reduced NADPH---hemoprotein reductase] + 3 Oxygen <=> 4,4-Dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol + Formate + 3 [Oxidized NADPH---hemoprotein reductase] + 4 H2O
+R05731	C01943 + 3 C03024 + 3 C00007 <=> C11508 + C00058 + 3 C03161 + 4 C00001	Obtusifoliol + 3 [Reduced NADPH---hemoprotein reductase] + 3 Oxygen <=> 4alpha-Methyl-5alpha-ergosta-8,14,24(28)-trien-3beta-ol + Formate + 3 [Oxidized NADPH---hemoprotein reductase] + 4 H2O
+R12323	C01724 + 6 C00138 + 6 C00080 + 3 C00007 <=> C11455 + C00058 + 6 C00139 + 4 C00001	Lanosterol + 6 Reduced ferredoxin + 6 H+ + 3 Oxygen <=> 4,4-Dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol + Formate + 6 Oxidized ferredoxin + 4 H2O
+R01086	C03406 <=> C00122 + C00062	N-(L-Arginino)succinate <=> Fumarate + L-Arginine
+R01771	C00002 + C00263 <=> C00008 + C01102	ATP + L-Homoserine <=> ADP + O-Phospho-L-homoserine
+R00245	C01165 + C00003 + C00001 <=> C00025 + C00004 + C00080	L-Glutamate 5-semialdehyde + NAD+ + H2O <=> L-Glutamate + NADH + H+
+R00707	C03912 + C00003 + 2 C00001 <=> C00025 + C00004 + C00080	(S)-1-Pyrroline-5-carboxylate + NAD+ + 2 H2O <=> L-Glutamate + NADH + H+
+R00708	C03912 + C00006 + 2 C00001 <=> C00025 + C00005 + C00080	(S)-1-Pyrroline-5-carboxylate + NADP+ + 2 H2O <=> L-Glutamate + NADPH + H+
+R04444	C04281 + C00003 + 2 C00001 <=> C05947 + C00004 + C00080	L-1-Pyrroline-3-hydroxy-5-carboxylate + NAD+ + 2 H2O <=> L-erythro-4-Hydroxyglutamate + NADH + H+
+R04445	C04281 + C00006 + 2 C00001 <=> C05947 + C00005 + C00080	L-1-Pyrroline-3-hydroxy-5-carboxylate + NADP+ + 2 H2O <=> L-erythro-4-Hydroxyglutamate + NADPH + H+
+R05051	C05947 + C00004 + C00080 <=> C05938 + C00003 + C00001	L-erythro-4-Hydroxyglutamate + NADH + H+ <=> L-4-Hydroxyglutamate semialdehyde + NAD+ + H2O
+R02472	C00522 + C00006 <=> C00966 + C00005 + C00080	(R)-Pantoate + NADP+ <=> 2-Dehydropantoate + NADPH + H+
+R03199	C01054 <=> C01724	(S)-2,3-Epoxysqualene <=> Lanosterol
+R00257	C00002 + C00857 + C00064 + C00001 <=> C00020 + C00013 + C00003 + C00025	ATP + Deamino-NAD+ + L-Glutamine + H2O <=> AMP + Diphosphate + NAD+ + L-Glutamate
+R02029	C03892 + C00001 <=> C00344 + C00009	Phosphatidylglycerophosphate + H2O <=> Phosphatidylglycerol + Orthophosphate
+R01431	C00379 + C00006 <=> C00181 + C00005 + C00080	Xylitol + NADP+ <=> D-Xylose + NADPH + H+
+R09477	C00379 + C00003 <=> C00181 + C00004 + C00080	Xylitol + NAD+ <=> D-Xylose + NADH + H+
+R02057	C00570 + C00641 <=> C00055 + C00350	CDP-ethanolamine + 1,2-Diacyl-sn-glycerol <=> CMP + Phosphatidylethanolamine
+R04920	C05673 + C00641 <=> C00055 + C05675	CMP-2-aminoethylphosphonate + 1,2-Diacyl-sn-glycerol <=> CMP + Diacylglyceryl-2-aminoethylphosphonate
+R06364	C00570 + C03201 <=> C00055 + C04475	CDP-ethanolamine + 1-Alkyl-2-acylglycerol <=> CMP + 1-Alkyl-2-acylglycerophosphoethanolamine
+R07384	C04756 + C00055 <=> C03454 + C00570	O-1-Alk-1-enyl-2-acyl-sn-glycero-3-phosphoethanolamine + CMP <=> 1-Alkenyl-2-acylglycerol + CDP-ethanolamine
+R00966	C00105 + C00013 <=> C00106 + C00119	UMP + Diphosphate <=> Uracil + 5-Phospho-alpha-D-ribose 1-diphosphate
+R00692	C00079 + C00022 <=> C00166 + C00041	L-Phenylalanine + Pyruvate <=> Phenylpyruvate + L-Alanine
+R09254	C00082 + C00022 <=> C01179 + C00041	L-Tyrosine + Pyruvate <=> 3-(4-Hydroxyphenyl)pyruvate + L-Alanine
+R01663	C00239 + C00001 <=> C00365 + C00014	dCMP + H2O <=> dUMP + Ammonia
+R00702	2 C00448 <=> C00013 + C03428	2 trans,trans-Farnesyl diphosphate <=> Diphosphate + Presqualene diphosphate
+R02872	C03428 + C00005 + C00080 <=> C00013 + C00751 + C00006	Presqualene diphosphate + NADPH + H+ <=> Diphosphate + Squalene + NADP+
+R06223	2 C00448 + C00005 + C00080 <=> C00751 + 2 C00013 + C00006	2 trans,trans-Farnesyl diphosphate + NADPH + H+ <=> Squalene + 2 Diphosphate + NADP+
+R03409	C04494 + C00001 <=> C01228 + C00009	Guanosine 3'-diphosphate 5'-triphosphate + H2O <=> Guanosine 3',5'-bis(diphosphate) + Orthophosphate
+R01090	C00123 + C00026 <=> C00233 + C00025	L-Leucine + 2-Oxoglutarate <=> 4-Methyl-2-oxopentanoate + L-Glutamate
+R01214	C00183 + C00026 <=> C00141 + C00025	L-Valine + 2-Oxoglutarate <=> 3-Methyl-2-oxobutanoic acid + L-Glutamate
+R02199	C00407 + C00026 <=> C00671 + C00025	L-Isoleucine + 2-Oxoglutarate <=> (S)-3-Methyl-2-oxopentanoic acid + L-Glutamate
+R08622	C17211 + C00151 <=> C17213 + C00161	2-Oxo-5-methylthiopentanoic acid + L-Amino acid <=> Homomethionine + 2-Oxo acid
+R08626	C17216 + C00151 <=> C17217 + C00161	2-Oxo-6-methylthiohexanoic acid + L-Amino acid <=> Dihomomethionine + 2-Oxo acid
+R10991	C02356 + C00026 <=> C00109 + C00025	(S)-2-Aminobutanoate + 2-Oxoglutarate <=> 2-Oxobutanoate + L-Glutamate
+R01130	C00130 + C00003 + C00001 <=> C00655 + C00004 + C00080	IMP + NAD+ + H2O <=> Xanthosine 5'-phosphate + NADH + H+
+R08240	C04646 + C00003 + C00001 <=> C16618 + C00004 + C00080	6-Thioinosine-5'-monophosphate + NAD+ + H2O <=> 6-Thioxanthine 5'-monophosphate + NADH + H+
+R00540	C00726 + 2 C00001 <=> C00060 + C00014	Nitrile + 2 H2O <=> Carboxylate + Ammonia
+R01887	C05715 + 2 C00001 <=> C00302 + C00014	gamma-Amino-gamma-cyanobutanoate + 2 H2O <=> Glutamate + Ammonia
+R03093	C02938 + 2 C00001 <=> C00954 + C00014	3-Indoleacetonitrile + 2 H2O <=> Indole-3-acetate + Ammonia
+R03542	C05714 + 2 C00001 <=> C01401 + C00014	alpha-Aminopropiononitrile + 2 H2O <=> Alanine + Ammonia
+R05591	C09814 + 2 C00001 <=> C00180 + C00014	Benzonitrile + 2 H2O <=> Benzoate + Ammonia
+R07855	C16074 + 2 C00001 <=> C07086 + C00014	Phenylacetonitrile + 2 H2O <=> Phenylacetic acid + Ammonia
+R00802	C00089 + C00001 <=> C02336 + C00267	Sucrose + H2O <=> beta-D-Fructose + alpha-D-Glucose
+R02410	C00492 + C00001 <=> C05402 + C00095	Raffinose + H2O <=> Melibiose + D-Fructose
+R03635	C01613 + C00001 <=> C05404 + C00095	Stachyose + H2O <=> D-Gal alpha 1->6D-Gal alpha 1->6D-Glucose + D-Fructose
+R03921	C16688 + C00001 <=> C00095 + C00092	Sucrose 6-phosphate + H2O <=> D-Fructose + D-Glucose 6-phosphate
+R06088	G00370 + C00001 <=> C02336 + C00267	Sucrose + H2O <=> beta-D-Fructose + alpha-D-Glucose
+R00238	2 C00024 <=> C00010 + C00332	2 Acetyl-CoA <=> CoA + Acetoacetyl-CoA
+R00927	C00100 + C00024 <=> C00010 + C03344	Propanoyl-CoA + Acetyl-CoA <=> CoA + 2-Methylacetoacetyl-CoA
+R01177	C00024 + C00136 <=> C00010 + C05269	Acetyl-CoA + Butanoyl-CoA <=> CoA + 3-Oxohexanoyl-CoA
+R03778	C01944 + C00024 <=> C00010 + C05265	Octanoyl-CoA + Acetyl-CoA <=> CoA + 3-Oxodecanoyl-CoA
+R03858	C01832 + C00024 <=> C00010 + C05261	Lauroyl-CoA + Acetyl-CoA <=> CoA + 3-Oxotetradecanoyl-CoA
+R03991	C02593 + C00024 <=> C00010 + C05259	Tetradecanoyl-CoA + Acetyl-CoA <=> CoA + 3-Oxopalmitoyl-CoA
+R04546	C00100 + C05337 <=> C00010 + C04644	Propanoyl-CoA + Chenodeoxycholoyl-CoA <=> CoA + 3alpha,7alpha-Dihydroxy-5beta-cholestanoyl-CoA
+R04742	C05274 + C00024 <=> C00010 + C05263	Decanoyl-CoA + Acetyl-CoA <=> CoA + 3-Oxododecanoyl-CoA
+R04747	C05270 + C00024 <=> C00010 + C05267	Hexanoyl-CoA + Acetyl-CoA <=> CoA + 3-Oxooctanoyl-CoA
+R07891	C16331 + C00024 <=> C00010 + C16330	OPC6-CoA + Acetyl-CoA <=> CoA + 3-Oxo-OPC8-CoA
+R07895	C16335 + C00024 <=> C00010 + C16334	OPC4-CoA + Acetyl-CoA <=> CoA + 3-Oxo-OPC6-CoA
+R07899	C16339 + C00024 <=> C00010 + C16338	(+)-7-Isojasmonic acid CoA + Acetyl-CoA <=> CoA + 3-Oxo-OPC4-CoA
+R07937	C16169 + C00024 <=> C00010 + C16376	(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoyl-CoA + Acetyl-CoA <=> CoA + (6Z,9Z,12Z,15Z,18Z,21Z)-3-Oxotetracosahexaenoyl-CoA
+R07953	C16173 + C00024 <=> C00010 + C16389	(4Z,7Z,10Z,13Z,16Z)-Docosapentaenoyl-CoA + Acetyl-CoA <=> CoA + (6Z,9Z,12Z,15Z,18Z)-3-Oxotetracosapentaenoyl-CoA
+R00848	C00093 + C00016 <=> C00111 + C01352	sn-Glycerol 3-phosphate + FAD <=> Glycerone phosphate + FADH2
+R02473	C00002 + C00522 + C00099 <=> C00020 + C00013 + C00864	ATP + (R)-Pantoate + beta-Alanine <=> AMP + Diphosphate + Pantothenate
+R00621	C00026 + C00068 <=> C05381 + C00011	2-Oxoglutarate + Thiamin diphosphate <=> 3-Carboxy-1-hydroxypropyl-ThPP + CO2
+R01700	C00026 + C15972 <=> C16254 + C00011	2-Oxoglutarate + Enzyme N6-(lipoyl)lysine <=> [Dihydrolipoyllysine-residue succinyltransferase] S-succinyldihydrolipoyllysine + CO2
+R03316	C05381 + C15972 <=> C16254 + C00068	3-Carboxy-1-hydroxypropyl-ThPP + Enzyme N6-(lipoyl)lysine <=> [Dihydrolipoyllysine-residue succinyltransferase] S-succinyldihydrolipoyllysine + Thiamin diphosphate
+R02756	C00681 + C00006 <=> C03372 + C00005 + C00080	1-Acyl-sn-glycerol 3-phosphate + NADP+ <=> Acylglycerone phosphate + NADPH + H+
+R04360	C03968 + C00006 <=> C03715 + C00005 + C00080	1-Alkyl-sn-glycero-3-phosphate + NADP+ <=> O-Alkylglycerone phosphate + NADPH + H+
+R03243	C01100 + C00026 <=> C01267 + C00025	L-Histidinol phosphate + 2-Oxoglutarate <=> 3-(Imidazol-4-yl)-2-oxopropyl phosphate + L-Glutamate
+R02732	C00002 + C05345 <=> C00008 + C00665	ATP + beta-D-Fructose 6-phosphate <=> ADP + beta-D-Fructose 2,6-bisphosphate
+R01790	C00369 + C00001 <=> C00031 + C00369	Starch + H2O <=> D-Glucose + Starch
+R01934	C05662 + C00003 <=> C00322 + C00011 + C00004 + C00080	Homoisocitrate + NAD+ <=> 2-Oxoadipate + CO2 + NADH + H+
+R01936	C05533 <=> C00322 + C00011	Oxaloglutarate <=> 2-Oxoadipate + CO2
+R04862	C05662 + C00003 <=> C05533 + C00004 + C00080	Homoisocitrate + NAD+ <=> Oxaloglutarate + NADH + H+
+R04230	C00002 + C03492 + C00097 <=> C00020 + C00013 + C04352	ATP + D-4'-Phosphopantothenate + L-Cysteine <=> AMP + Diphosphate + (R)-4'-Phosphopantothenoyl-L-cysteine
+R02208	C03681 + C00006 <=> C00410 + C00005 + C00080	5alpha-Pregnane-3,20-dione + NADP+ <=> Progesterone + NADPH + H+
+R02497	C03917 + C00006 <=> C00535 + C00005 + C00080	Dihydrotestosterone + NADP+ <=> Testosterone + NADPH + H+
+R08954	C03205 + C00005 + C00080 <=> C18040 + C00006	11-Deoxycorticosterone + NADPH + H+ <=> 5alpha-Dihydrodeoxycorticosterone + NADP+
+R10242	C00674 + C00006 <=> C00280 + C00005 + C00080	5alpha-Androstane-3,17-dione + NADP+ <=> Androstenedione + NADPH + H+
+R12299	C00381 + C00006 <=> C06081 + C00005 + C00080	Dolichol + NADP+ <=> Polyprenol + NADPH + H+
+R00100	C00004 + 2 C00996 <=> C00003 + 2 C00999 + C00080	NADH + 2 Ferricytochrome b5 <=> NAD+ + 2 Ferrocytochrome b5 + H+
+R04640	C04896 <=> C04916	5-(5-Phospho-D-ribosylaminoformimino)-1-(5-phosphoribosyl)-imidazole-4-carboxamide <=> N-(5'-Phospho-D-1'-ribulosylformimino)-5-amino-1-(5''-phospho-D-ribosyl)-4-imidazolecarboxamide
+R04404	C04637 + C00001 <=> C01277 + C00009	1-Phosphatidyl-D-myo-inositol 4,5-bisphosphate + H2O <=> 1-Phosphatidyl-1D-myo-inositol 4-phosphate + Orthophosphate
+R09827	C05981 + C00001 <=> C11554 + C00009	Phosphatidylinositol-3,4,5-trisphosphate + H2O <=> 1-Phosphatidyl-1D-myo-inositol 3,4-bisphosphate + Orthophosphate
+R02425	C02350 + C00001 <=> C00499	(S)-Allantoin + H2O <=> Allantoate
+R02422	C00499 + C00001 <=> C00603 + C00086	Allantoate + H2O <=> (S)-Ureidoglycolate + Urea
+R00472	C00149 + C00010 <=> C00024 + C00001 + C00048	(S)-Malate + CoA <=> Acetyl-CoA + H2O + Glyoxylate
+R00776	C00603 <=> C00048 + C00086	(S)-Ureidoglycolate <=> Glyoxylate + Urea
+R00715	C00449 + C00003 + C00001 <=> C00047 + C00026 + C00004 + C00080	N6-(L-1,3-Dicarboxypropyl)-L-lysine + NAD+ + H2O <=> L-Lysine + 2-Oxoglutarate + NADH + H+
+R03522	C01322 + C00051 <=> C00462 + C02320	RX + Glutathione <=> Halide + R-S-Glutathione
+R07002	C14786 + C00051 <=> C14791	(1R,2S)-Naphthalene 1,2-oxide + Glutathione <=> (1R)-Hydroxy-(2R)-glutathionyl-1,2-dihydronaphthalene
+R07003	C14787 + C00051 <=> C14793	(1S,2R)-Naphthalene 1,2-oxide + Glutathione <=> (1R)-Glutathionyl-(2R)-hydroxy-1,2-dihydronaphthalene
+R07004	C14787 + C00051 <=> C14792	(1S,2R)-Naphthalene 1,2-oxide + Glutathione <=> (1S)-Hydroxy-(2S)-glutathionyl-1,2-dihydronaphthalene
+R07023	C14802 + C00051 <=> C14803	1-Nitronaphthalene-7,8-oxide + Glutathione <=> 1-Nitro-7-hydroxy-8-glutathionyl-7,8-dihydronaphthalene
+R07024	C14802 + C00051 <=> C14804	1-Nitronaphthalene-7,8-oxide + Glutathione <=> 1-Nitro-7-glutathionyl-8-hydroxy-7,8-dihydronaphthalene
+R07025	C14800 + C00051 <=> C14805	1-Nitronaphthalene-5,6-oxide + Glutathione <=> 1-Nitro-5-hydroxy-6-glutathionyl-5,6-dihydronaphthalene
+R07026	C14800 + C00051 <=> C14806	1-Nitronaphthalene-5,6-oxide + Glutathione <=> 1-Nitro-5-glutathionyl-6-hydroxy-5,6-dihydronaphthalene
+R07069	C14839 + C00051 <=> C14847	Bromobenzene-3,4-oxide + Glutathione <=> 3,4-Dihydro-3-hydroxy-4-S-glutathionyl bromobenzene
+R07070	C14840 + C00051 <=> C14848	Bromobenzene-2,3-oxide + Glutathione <=> 2,3-Dihydro-2-S-glutathionyl-3-hydroxy bromobenzene
+R07083	C14851 + C00051 <=> C14855	Benzo[a]pyrene-4,5-oxide + Glutathione <=> 4,5-Dihydro-4-hydroxy-5-S-glutathionyl-benzo[a]pyrene
+R07084	C14852 + C00051 <=> C14856 + C00001	Benzo[a]pyrene-7,8-dihydrodiol + Glutathione <=> 7,8-Dihydro-7-hydroxy-8-S-glutathionyl-benzo[a]pyrene + H2O
+R07091	C14858 + C00051 <=> C14861	2,2-Dichloroacetaldehyde + Glutathione <=> S-(2,2-Dichloro-1-hydroxy)ethyl glutathione
+R07092	C14857 + C00051 <=> C14865 + C01327	1,1-Dichloroethylene epoxide + Glutathione <=> 2-(S-Glutathionyl)acetyl chloride + Hydrochloric acid
+R07093	C14859 + C00051 <=> C14864 + C01327	Chloroacetyl chloride + Glutathione <=> S-(2-Chloroacetyl)glutathione + Hydrochloric acid
+R07094	C14865 + C00051 <=> C14863 + C01327	2-(S-Glutathionyl)acetyl chloride + Glutathione <=> 2-(S-Glutathionyl)acetyl glutathione + Hydrochloric acid
+R07100	C06790 + C00051 <=> C14868 + C01327	Trichloroethene + Glutathione <=> S-(1,2-Dichlorovinyl)glutathione + Hydrochloric acid
+R07113	C11088 + C00051 + C00080 <=> C14874 + 2 C13645	1,2-Dibromoethane + Glutathione + H+ <=> Glutathione episulfonium ion + 2 Hydrobromic acid
+R07116	C14870 + C00051 <=> C14871 + C13645	2-Bromoacetaldehyde + Glutathione <=> S-(Formylmethyl)glutathione + Hydrobromic acid
+R08280	C07645 + C00051 <=> C11583 + C00001	Aldophosphamide + Glutathione <=> 4-Glutathionyl cyclophosphamide + H2O
+R09409	C19586 + C00051 <=> C11278	Aflatoxin B1-exo-8,9-epoxide + Glutathione <=> Aflatoxin B1exo-8,9-epoxide-GSH
+R11905	C21758 + C00051 <=> C02320	Hepatotoxins + Glutathione <=> R-S-Glutathione
+R01658	C00235 + C00129 <=> C00013 + C00341	Dimethylallyl diphosphate + Isopentenyl diphosphate <=> Diphosphate + Geranyl diphosphate
+R02003	C00341 + C00129 <=> C00013 + C00448	Geranyl diphosphate + Isopentenyl diphosphate <=> Diphosphate + trans,trans-Farnesyl diphosphate
+R07324	C00092 <=> C04006	D-Glucose 6-phosphate <=> 1D-myo-Inositol 3-phosphate
+R03681	C00029 + C01702 <=> C00015 + C02687	UDP-glucose + Glycogenin <=> UDP + alpha-D-Glucosylglycogenin
+R06623	G00144 + C00001 <=> G12396 + C00416	G00144 + H2O <=> 6-(alpha-D-glucosaminyl)-1D-myo-inositol + Phosphatidate
+R00256	C00064 + C00001 <=> C00025 + C00014	L-Glutamine + H2O <=> L-Glutamate + Ammonia
+R00575	2 C00002 + C00064 + C00288 + C00001 <=> 2 C00008 + C00009 + C00025 + C00169	2 ATP + L-Glutamine + HCO3- + H2O <=> 2 ADP + Orthophosphate + L-Glutamate + Carbamoyl phosphate
+R01395	C00002 + C01563 <=> C00008 + C00169	ATP + Carbamate <=> ADP + Carbamoyl phosphate
+R01397	C00169 + C00049 <=> C00009 + C00438	Carbamoyl phosphate + L-Aspartate <=> Orthophosphate + N-Carbamoyl-L-aspartate
+R10948	C00002 + C00288 <=> C00008 + C20969	ATP + HCO3- <=> ADP + Carboxyphosphate
+R10949	C00014 + C20969 <=> C01563 + C00009	Ammonia + Carboxyphosphate <=> Carbamate + Orthophosphate
+R01529	C00199 <=> C00231	D-Ribulose 5-phosphate <=> D-Xylulose 5-phosphate
+R00894	C00002 + C00025 + C00097 <=> C00008 + C00009 + C00669	ATP + L-Glutamate + L-Cysteine <=> ADP + Orthophosphate + gamma-L-Glutamyl-L-cysteine
+R10993	C00002 + C00025 + C02356 <=> C00008 + C00009 + C21015	ATP + L-Glutamate + (S)-2-Aminobutanoate <=> ADP + Orthophosphate + gamma-L-Glutamyl-L-2-aminobutyrate
+R03361	C00002 + C01194 <=> C00008 + C01277	ATP + 1-Phosphatidyl-D-myo-inositol <=> ADP + 1-Phosphatidyl-1D-myo-inositol 4-phosphate
+R07760	C16217 <=> C16218 + C00001	3-Hydroxyoctadecanoyl-CoA <=> (2E)-Octadecenoyl-CoA + H2O
+R10827	C20878 <=> C20879 + C00001	Very-long-chain (3R)-3-hydroxyacyl-CoA <=> Very-long-chain trans-2,3-dehydroacyl-CoA + H2O
+R01398	C00169 + C00077 <=> C00009 + C00327	Carbamoyl phosphate + L-Ornithine <=> Orthophosphate + L-Citrulline
+R00259	C00024 + C00025 <=> C00010 + C00624	Acetyl-CoA + L-Glutamate <=> CoA + N-Acetyl-L-glutamate
+R00527	C01031 + C00001 <=> C00058 + C00051	S-Formylglutathione + H2O <=> Formate + Glutathione
+R01956	C00328 + C00026 <=> C01252 + C00025	L-Kynurenine + 2-Oxoglutarate <=> 4-(2-Aminophenyl)-2,4-dioxobutanoate + L-Glutamate
+R04171	C03227 + C00026 <=> C05645 + C00025	3-Hydroxy-L-kynurenine + 2-Oxoglutarate <=> 4-(2-Amino-3-hydroxyphenyl)-2,4-dioxobutanoate + L-Glutamate
+R00089	C00002 <=> C00575 + C00013	ATP <=> 3',5'-Cyclic AMP + Diphosphate
+R00434	C00044 <=> C00942 + C00013	GTP <=> 3',5'-Cyclic GMP + Diphosphate
+R00529	C00002 + C00059 <=> C00013 + C00224	ATP + Sulfate <=> Diphosphate + Adenylyl sulfate
+R04929	C00002 + C05697 <=> C00013 + C05686	ATP + Selenate <=> Diphosphate + Adenylylselenate
+R01209	C04039 <=> C00141 + C00001	2,3-Dihydroxy-3-methylbutanoate <=> 3-Methyl-2-oxobutanoic acid + H2O
+R04441	C04272 <=> C00141 + C00001	(R)-2,3-Dihydroxy-3-methylbutanoate <=> 3-Methyl-2-oxobutanoic acid + H2O
+R05070	C06007 <=> C00671 + C00001	(R)-2,3-Dihydroxy-3-methylpentanoate <=> (S)-3-Methyl-2-oxopentanoic acid + H2O
+R01274	C00154 + C00001 <=> C00010 + C00249	Palmitoyl-CoA + H2O <=> CoA + Hexadecanoic acid
+R08174	C00412 + C00001 <=> C00010 + C01530	Stearoyl-CoA + H2O <=> CoA + Octadecanoic acid
+R08175	C02041 + C00001 <=> C00010 + C06425	Eicosanoyl-CoA + H2O <=> CoA + Icosanoic acid
+R08176	C00510 + C00001 <=> C00010 + C00712	Oleoyl-CoA + H2O <=> CoA + (9Z)-Octadecenoic acid
+R08177	C02050 + C00001 <=> C00010 + C01595	Linoleoyl-CoA + H2O <=> CoA + Linoleate
+R08178	C16162 + C00001 <=> C00010 + C06427	(9Z,12Z,15Z)-Octadecatrienoyl-CoA + H2O <=> CoA + (9Z,12Z,15Z)-Octadecatrienoic acid
+R08179	C16165 + C00001 <=> C00010 + C06428	(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoyl-CoA + H2O <=> CoA + (5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid
+R08180	C16169 + C00001 <=> C00010 + C06429	(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoyl-CoA + H2O <=> CoA + (4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid
+R08181	C03035 + C00001 <=> C00010 + C06426	gamma-Linolenoyl-CoA + H2O <=> CoA + (6Z,9Z,12Z)-Octadecatrienoic acid
+R08182	C03595 + C00001 <=> C00010 + C03242	8,11,14-Eicosatrienoyl-CoA + H2O <=> CoA + Dihomo-gamma-linolenate
+R08183	C02249 + C00001 <=> C00010 + C00219	Arachidonyl-CoA + H2O <=> CoA + Arachidonate
+R09450	C02843 + C00001 <=> C00638 + C00010	Long-chain acyl-CoA + H2O <=> Long-chain fatty acid + CoA
+R07392	C04582 <=> C15650 + C00001	S-Methyl-5-thio-D-ribulose 1-phosphate <=> 2,3-Diketo-5-methylthiopentyl-1-phosphate + H2O
+R02665	C00632 + C00007 <=> C04409	3-Hydroxyanthranilate + Oxygen <=> 2-Amino-3-carboxymuconate semialdehyde
+R00104	C00002 + C00003 <=> C00008 + C00006	ATP + NAD+ <=> ADP + NADP+
+R02094	C00002 + C00364 <=> C00008 + C00363	ATP + dTMP <=> ADP + dTDP
+R02098	C00002 + C00365 <=> C00008 + C01346	ATP + dUMP <=> ADP + dUDP
+R01320	C00019 + C04308 <=> C00021 + C00157	S-Adenosyl-L-methionine + Phosphatidyl-N-dimethylethanolamine <=> S-Adenosyl-L-homocysteine + Phosphatidylcholine
+R03424	C00019 + C01241 <=> C00021 + C04308	S-Adenosyl-L-methionine + Phosphatidyl-N-methylethanolamine <=> S-Adenosyl-L-homocysteine + Phosphatidyl-N-dimethylethanolamine
+R00678	C00078 + C00007 <=> C02700	L-Tryptophan + Oxygen <=> L-Formylkynurenine
+R02702	C00643 + C00007 <=> C05648	5-Hydroxy-L-tryptophan + Oxygen <=> 5-Hydroxy-N-formylkynurenine
+R02909	C00780 + C00007 <=> C05647	Serotonin + Oxygen <=> Formyl-5-hydroxykynurenamine
+R03628	C01598 + C00007 <=> C05642	Melatonin + Oxygen <=> Formyl-N-acetyl-5-methoxykynurenamine
+R00185	C00002 + C00212 <=> C00008 + C00020	ATP + Adenosine <=> ADP + AMP
+R10928	C11556 + C00001 <=> C11557 + C00009	1-Phosphatidyl-1D-myo-inositol 3,5-bisphosphate + H2O <=> 1-Phosphatidyl-1D-myo-inositol 5-phosphate + Orthophosphate
+R09845	C20120 + C00001 <=> C04506 + C00012	S-Farnesyl protein + H2O <=> Protein C-terminal S-farnesyl-L-cysteine + Peptide
+R00999	C01118 + C00001 <=> C00109 + C00042 + C00014	O-Succinyl-L-homoserine + H2O <=> 2-Oxobutanoate + Succinate + Ammonia
+R01288	C01118 + C00283 <=> C00155 + C00042	O-Succinyl-L-homoserine + Hydrogen sulfide <=> L-Homocysteine + Succinate
+R02026	C01077 + C00320 + C00342 + C00080 <=> C00155 + C00094 + C00343 + C00033	O-Acetyl-L-homoserine + Thiosulfate + Thioredoxin + H+ <=> L-Homocysteine + Sulfite + Thioredoxin disulfide + Acetate
+R02508	C00542 + C00042 <=> C01118 + C00097	Cystathionine + Succinate <=> O-Succinyl-L-homoserine + L-Cysteine
+R03217	C01077 + C00097 <=> C02291 + C00033	O-Acetyl-L-homoserine + L-Cysteine <=> L-Cystathionine + Acetate
+R03260	C01118 + C00097 <=> C02291 + C00042	O-Succinyl-L-homoserine + L-Cysteine <=> L-Cystathionine + Succinate
+R04944	C05702 + C05688 <=> C05699 + C00009	O-Phosphorylhomoserine + L-Selenocysteine <=> L-Selenocystathionine + Orthophosphate
+R04945	C01077 + C05688 <=> C05699 + C00033	O-Acetyl-L-homoserine + L-Selenocysteine <=> L-Selenocystathionine + Acetate
+R04946	C01118 + C05688 <=> C05699 + C00042	O-Succinyl-L-homoserine + L-Selenocysteine <=> L-Selenocystathionine + Succinate
+R06722	C00001 + G00011 <=> C00159 + G10694	H2O + G00011 <=> D-Mannose + G10694
+R01773	C00263 + C00003 <=> C00441 + C00004 + C00080	L-Homoserine + NAD+ <=> L-Aspartate 4-semialdehyde + NADH + H+
+R01775	C00263 + C00006 <=> C00441 + C00005 + C00080	L-Homoserine + NADP+ <=> L-Aspartate 4-semialdehyde + NADPH + H+
+R00025	C18091 + C00007 + C01847 <=> C00084 + C00088 + C00061 + C00001	Ethylnitronate + Oxygen + Reduced FMN <=> Acetaldehyde + Nitrite + FMN + H2O
+R01982	C00470 + C00001 <=> C00333 + C00470	Pectate + H2O <=> D-Galacturonate + Pectate
+R02360	C00470 + C00001 <=> C02273 + C00470	Pectate + H2O <=> Digalacturonate + Pectate
+R01867	C00337 + C00122 <=> C00295 + C00042	(S)-Dihydroorotate + Fumarate <=> Orotate + Succinate
+R00251	C00002 + C01879 + 2 C00001 <=> C00008 + C00009 + C00025	ATP + 5-Oxoproline + 2 H2O <=> ADP + Orthophosphate + L-Glutamate
+R03508	C01302 <=> C03506 + C00011 + C00001	1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate <=> Indoleglycerol phosphate + CO2 + H2O
+R00670	C00077 <=> C00134 + C00011	L-Ornithine <=> Putrescine + CO2
+R01624	C00024 + C00229 <=> C00010 + C03939	Acetyl-CoA + Acyl-carrier protein <=> CoA + Acetyl-[acyl-carrier protein]
+R01626	C00083 + C00229 <=> C00010 + C01209	Malonyl-CoA + Acyl-carrier protein <=> CoA + Malonyl-[acyl-carrier protein]
+R04428	C04618 <=> C04246 + C00001	(3R)-3-Hydroxybutanoyl-[acyl-carrier protein] <=> But-2-enoyl-[acyl-carrier protein] + H2O
+R04535	C04619 <=> C05754 + C00001	(3R)-3-Hydroxydecanoyl-[acyl-carrier protein] <=> trans-Dec-2-enoyl-[acp] + H2O
+R04537	C04620 <=> C05751 + C00001	(3R)-3-Hydroxyoctanoyl-[acyl-carrier protein] <=> trans-Oct-2-enoyl-[acp] + H2O
+R04544	C04633 <=> C05763 + C00001	(3R)-3-Hydroxypalmitoyl-[acyl-carrier protein] <=> trans-Hexadec-2-enoyl-[acp] + H2O
+R04568	C04688 <=> C05760 + C00001	(3R)-3-Hydroxytetradecanoyl-[acyl-carrier protein] <=> trans-Tetradec-2-enoyl-[acp] + H2O
+R04954	C05747 <=> C05748 + C00001	(R)-3-Hydroxyhexanoyl-[acp] <=> trans-Hex-2-enoyl-[acp] + H2O
+R04965	C05757 <=> C05758 + C00001	(R)-3-Hydroxydodecanoyl-[acp] <=> trans-Dodec-2-enoyl-[acp] + H2O
+R05190	C00024 + n C00083 + 2n C00005 + 4n C00080 <=> C02843 + n C00010 + n C00011 + 2n C00006 + n C00001	Acetyl-CoA + n Malonyl-CoA + 2n NADPH + 4n H+ <=> Long-chain acyl-CoA + n CoA + n CO2 + 2n NADP+ + n H2O
+R10700	C05764 + C00010 <=> C00154 + C00229	Hexadecanoyl-[acp] + CoA <=> Palmitoyl-CoA + Acyl-carrier protein
+R01462	C02530 + C00001 <=> C00187 + C00162	Cholesterol ester + H2O <=> Cholesterol + Fatty acid
+R02237	C00002 + C00921 + C00025 <=> C00008 + C00009 + C00415	ATP + Dihydropteroate + L-Glutamate <=> ADP + Orthophosphate + Dihydrofolate
+R00959	C00103 <=> C00668	D-Glucose 1-phosphate <=> alpha-D-Glucose 6-phosphate
+R01057	C00620 <=> C00117	alpha-D-Ribose 1-phosphate <=> D-Ribose 5-phosphate
+R08639	C00103 <=> C00092	D-Glucose 1-phosphate <=> D-Glucose 6-phosphate
+R00355	C00049 + C00026 <=> C00036 + C00025	L-Aspartate + 2-Oxoglutarate <=> Oxaloacetate + L-Glutamate
+R00896	C00097 + C00026 <=> C00957 + C00302	L-Cysteine + 2-Oxoglutarate <=> Mercaptopyruvate + Glutamate
+R02433	C00506 + C00026 <=> C05528 + C00025	L-Cysteate + 2-Oxoglutarate <=> 3-Sulfopyruvate + L-Glutamate
+R02619	C00606 + C00026 <=> C05527 + C00025	3-Sulfino-L-alanine + 2-Oxoglutarate <=> 3-Sulfinylpyruvate + L-Glutamate
+R05052	C05947 + C00026 <=> C05946 + C00025	L-erythro-4-Hydroxyglutamate + 2-Oxoglutarate <=> (4R)-4-Hydroxy-2-oxoglutarate + L-Glutamate
+R00768	C00064 + C00085 <=> C00025 + C00352	L-Glutamine + D-Fructose 6-phosphate <=> L-Glutamate + D-Glucosamine 6-phosphate
+R01351	C01885 + C00001 <=> C00116 + C00162	1-Acylglycerol + H2O <=> Glycerol + Fatty acid
+R03269	C04352 <=> C01134 + C00011	(R)-4'-Phosphopantothenoyl-L-cysteine <=> Pantetheine 4'-phosphate + CO2
+R02025	C00073 + C00343 + C00001 <=> C02989 + C00342	L-Methionine + Thioredoxin disulfide + H2O <=> L-Methionine S-oxide + Thioredoxin
+R00124	C00002 + C00008 <=> C00008 + C00002	ATP + ADP <=> ADP + ATP
+R00139	C11038 + C00002 <=> C11039 + C00008	2'-Deoxy-5-hydroxymethylcytidine-5'-diphosphate + ATP <=> 2'-Deoxy-5-hydroxymethylcytidine-5'-triphosphate + ADP
+R00156	C00002 + C00015 <=> C00008 + C00075	ATP + UDP <=> ADP + UTP
+R00330	C00002 + C00035 <=> C00008 + C00044	ATP + GDP <=> ADP + GTP
+R00570	C00002 + C00112 <=> C00008 + C00063	ATP + CDP <=> ADP + CTP
+R00722	C00002 + C00104 <=> C00008 + C00081	ATP + IDP <=> ADP + ITP
+R01137	C00002 + C00206 <=> C00008 + C00131	ATP + dADP <=> ADP + dATP
+R01857	C00002 + C00361 <=> C00008 + C00286	ATP + dGDP <=> ADP + dGTP
+R02093	C00002 + C00363 <=> C00008 + C00459	ATP + dTDP <=> ADP + dTTP
+R02326	C00002 + C00705 <=> C00008 + C00458	ATP + dCDP <=> ADP + dCTP
+R02331	C00002 + C01346 <=> C00008 + C00460	ATP + dUDP <=> ADP + dUTP
+R03530	C00002 + C01344 <=> C00008 + C01345	ATP + dIDP <=> ADP + dITP
+R11894	C00002 + C21748 <=> C00008 + C21749	ATP + 5-Fluorouridine diphosphate <=> ADP + 5-Fluorouridine triphosphate
+R11895	C00002 + C21750 <=> C00008 + C21751	ATP + 5-Fluorodeoxyuridine diphosphate <=> ADP + 5-Fluorodeoxyuridine triphosphate
+R01068	C00354 <=> C00111 + C00118	D-Fructose 1,6-bisphosphate <=> Glycerone phosphate + D-Glyceraldehyde 3-phosphate
+R01070	C05378 <=> C00111 + C00118	beta-D-Fructose 1,6-bisphosphate <=> Glycerone phosphate + D-Glyceraldehyde 3-phosphate
+R01829	C00447 <=> C00111 + C00279	Sedoheptulose 1,7-bisphosphate <=> Glycerone phosphate + D-Erythrose 4-phosphate
+R02568	C01094 <=> C00111 + C00577	D-Fructose 1-phosphate <=> Glycerone phosphate + D-Glyceraldehyde
+R02767	C01271 + C00006 <=> C00685 + C00005 + C00080	(3R)-3-Hydroxyacyl-[acyl-carrier protein] + NADP+ <=> 3-Oxoacyl-[acyl-carrier protein] + NADPH + H+
+R04533	C04618 + C00006 <=> C05744 + C00005 + C00080	(3R)-3-Hydroxybutanoyl-[acyl-carrier protein] + NADP+ <=> Acetoacetyl-[acp] + NADPH + H+
+R04534	C04619 + C00006 <=> C05753 + C00005	(3R)-3-Hydroxydecanoyl-[acyl-carrier protein] + NADP+ <=> 3-Oxodecanoyl-[acp] + NADPH
+R04536	C04620 + C00006 <=> C05750 + C00005 + C00080	(3R)-3-Hydroxyoctanoyl-[acyl-carrier protein] + NADP+ <=> 3-Oxooctanoyl-[acp] + NADPH + H+
+R04543	C04633 + C00006 <=> C05762 + C00005 + C00080	(3R)-3-Hydroxypalmitoyl-[acyl-carrier protein] + NADP+ <=> 3-Oxohexadecanoyl-[acp] + NADPH + H+
+R04566	C04688 + C00006 <=> C05759 + C00005 + C00080	(3R)-3-Hydroxytetradecanoyl-[acyl-carrier protein] + NADP+ <=> 3-Oxotetradecanoyl-[acp] + NADPH + H+
+R04953	C05747 + C00006 <=> C05746 + C00005 + C00080	(R)-3-Hydroxyhexanoyl-[acp] + NADP+ <=> 3-Oxohexanoyl-[acp] + NADPH + H+
+R04964	C05757 + C00006 <=> C05756 + C00005 + C00080	(R)-3-Hydroxydodecanoyl-[acp] + NADP+ <=> 3-Oxododecanoyl-[acp] + NADPH + H+
+R07763	C16219 + C00005 + C00080 <=> C16220 + C00006	3-Oxostearoyl-[acp] + NADPH + H+ <=> (R)-3-Hydroxyoctadecanoyl-[acp] + NADP+
+R10116	C20372 + C00005 + C00080 <=> C20373 + C00006	3-Ketoglutaryl-[acp] methyl ester + NADPH + H+ <=> 3-Hydroxyglutaryl-[acp] methyl ester + NADP+
+R10120	C20376 + C00005 + C00080 <=> C20377 + C00006	3-Ketopimeloyl-[acp] methyl ester + NADPH + H+ <=> 3-Hydroxypimeloyl-[acp] methyl ester + NADP+
+R11671	C00083 + C00024 <=> C05223	Malonyl-CoA + Acetyl-CoA <=> Dodecanoyl-[acyl-carrier protein]
+R00214	C00149 + C00003 <=> C00022 + C00011 + C00004 + C00080	(S)-Malate + NAD+ <=> Pyruvate + CO2 + NADH + H+
+R00158	C00002 + C00105 <=> C00008 + C00015	ATP + UMP <=> ADP + UDP
+R00512	C00002 + C00055 <=> C00008 + C00112	ATP + CMP <=> ADP + CDP
+R01665	C00002 + C00239 <=> C00008 + C00705	ATP + dCMP <=> ADP + dCDP
+R11891	C00002 + C16634 <=> C00008 + C21748	ATP + 5-Fluorouridine monophosphate <=> ADP + 5-Fluorouridine diphosphate
+R11892	C00002 + C04242 <=> C00008 + C21750	ATP + 5-Fluorodeoxyuridine monophosphate <=> ADP + 5-Fluorodeoxyuridine diphosphate
+R00509	C00002 + C00224 <=> C00008 + C00053	ATP + Adenylyl sulfate <=> ADP + 3'-Phosphoadenylyl sulfate
+R04928	C00002 + C05686 <=> C00008 + C05696	ATP + Adenylylselenate <=> ADP + 3'-Phosphoadenylylselenate
+R01310	C00157 + C00001 <=> C00416 + C00114	Phosphatidylcholine + H2O <=> Phosphatidate + Choline
+R02051	C00350 + C00001 <=> C00189 + C00416	Phosphatidylethanolamine + H2O <=> Ethanolamine + Phosphatidate
+R07385	C04756 + C00001 <=> C15647 + C00189	O-1-Alk-1-enyl-2-acyl-sn-glycero-3-phosphoethanolamine + H2O <=> 2-Acyl-1-(1-alkenyl)-sn-glycero-3-phosphate + Ethanolamine
+R03194	2 C00019 + C01051 <=> 2 C00021 + C02463	2 S-Adenosyl-L-methionine + Uroporphyrinogen III <=> 2 S-Adenosyl-L-homocysteine + Precorrin 2
+R01218	C00143 + C00003 <=> C00445 + C00004	5,10-Methylenetetrahydrofolate + NAD+ <=> 5,10-Methenyltetrahydrofolate + NADH
+R01315	C00157 + C00001 <=> C04230 + C00162	Phosphatidylcholine + H2O <=> 1-Acyl-sn-glycero-3-phosphocholine + Fatty acid
+R01317	C00157 + C00001 <=> C04230 + C00219	Phosphatidylcholine + H2O <=> 1-Acyl-sn-glycero-3-phosphocholine + Arachidonate
+R02053	C00350 + C00001 <=> C04438 + C00162	Phosphatidylethanolamine + H2O <=> 1-Acyl-sn-glycero-3-phosphoethanolamine + Fatty acid
+R07064	C00157 + C00001 <=> C04230 + C01595	Phosphatidylcholine + H2O <=> 1-Acyl-sn-glycero-3-phosphocholine + Linoleate
+R07379	C04756 + C00001 <=> C04635 + C00060	O-1-Alk-1-enyl-2-acyl-sn-glycero-3-phosphoethanolamine + H2O <=> 1-(1-Alkenyl)-sn-glycero-3-phosphoethanolamine + Carboxylate
+R07387	C05212 + C00001 <=> C04317 + C00060	1-Radyl-2-acyl-sn-glycero-3-phosphocholine + H2O <=> 1-Organyl-2-lyso-sn-glycero-3-phosphocholine + Carboxylate
+R07859	C00157 + C00001 <=> C04230 + C06427	Phosphatidylcholine + H2O <=> 1-Acyl-sn-glycero-3-phosphocholine + (9Z,12Z,15Z)-Octadecatrienoic acid
+R00341	C00002 + C00036 <=> C00008 + C00074 + C00011	ATP + Oxaloacetate <=> ADP + Phosphoenolpyruvate + CO2
+R00650	C00019 + C00155 <=> C00021 + C00073	S-Adenosyl-L-methionine + L-Homocysteine <=> S-Adenosyl-L-homocysteine + L-Methionine
+R01402	C00170 + C00009 <=> C00147 + C04188	5'-Methylthioadenosine + Orthophosphate <=> Adenine + S-Methyl-5-thio-D-ribose 1-phosphate
+R01127	C00130 + C00001 <=> C04734	IMP + H2O <=> 1-(5'-Phosphoribosyl)-5-formamido-4-imidazolecarboxamide
+R04560	C00234 + C04677 <=> C00101 + C04734	10-Formyltetrahydrofolate + 1-(5'-Phosphoribosyl)-5-amino-4-imidazolecarboxamide <=> Tetrahydrofolate + 1-(5'-Phosphoribosyl)-5-formamido-4-imidazolecarboxamide
+R07215	C01189 + 2 C00999 + C00007 + 2 C00080 <=> C01164 + 2 C00996 + 2 C00001	Lathosterol + 2 Ferrocytochrome b5 + Oxygen + 2 H+ <=> 7-Dehydrocholesterol + 2 Ferricytochrome b5 + 2 H2O
+R07486	C15782 + 2 C00999 + C00007 + 2 C00080 <=> C15783 + 2 C00996 + 2 C00001	Delta7-Avenasterol + 2 Ferrocytochrome b5 + Oxygen + 2 H+ <=> 5-Dehydroavenasterol + 2 Ferricytochrome b5 + 2 H2O
+R07491	C15777 + 2 C00999 + C00007 + 2 C00080 <=> C15780 + 2 C00996 + 2 C00001	Episterol + 2 Ferrocytochrome b5 + Oxygen + 2 H+ <=> 5-Dehydroepisterol + 2 Ferricytochrome b5 + 2 H2O
+R07505	C15777 + 2 C00999 + C00007 + 2 C00080 <=> C15778 + 2 C00996 + 2 C00001	Episterol + 2 Ferrocytochrome b5 + Oxygen + 2 H+ <=> 5,7,24(28)-Ergostatrienol + 2 Ferricytochrome b5 + 2 H2O
+R12479	G10694 + 3 C00001 <=> G00012 + 3 C00159	G10694 + 3 H2O <=> G00012 + 3 D-Mannose
+R07495	C15816 + C00005 + C00080 <=> C05103 + C00006	3-Keto-4-methylzymosterol + NADPH + H+ <=> 4alpha-Methylzymosterol + NADP+
+R12405	C22136 + C00005 + C00080 <=> C05437 + C00006	Zymosterone + NADPH + H+ <=> Zymosterol + NADP+
+R01021	C00002 + C00114 <=> C00008 + C00588	ATP + Choline <=> ADP + Choline phosphate
+R10507	C00148 + C00016 <=> C03912 + C01352	L-Proline + FAD <=> (S)-1-Pyrroline-5-carboxylate + FADH2
+R02869	C01137 + C00315 <=> C00170 + C00750	S-Adenosylmethioninamine + Spermidine <=> 5'-Methylthioadenosine + Spermine
+R01561	C00212 + C00009 <=> C00147 + C00620	Adenosine + Orthophosphate <=> Adenine + alpha-D-Ribose 1-phosphate
+R01863	C00294 + C00009 <=> C00262 + C00620	Inosine + Orthophosphate <=> Hypoxanthine + alpha-D-Ribose 1-phosphate
+R01969	C00330 + C00009 <=> C00242 + C00672	Deoxyguanosine + Orthophosphate <=> Guanine + 2-Deoxy-D-ribose 1-phosphate
+R02147	C00387 + C00009 <=> C00242 + C00620	Guanosine + Orthophosphate <=> Guanine + alpha-D-Ribose 1-phosphate
+R02294	C03150 + C00009 <=> C00153 + C00620	Nicotinamide-beta-riboside + Orthophosphate <=> Nicotinamide + alpha-D-Ribose 1-phosphate
+R02295	C05841 + C00009 <=> C00253 + C00620 + C00080	Nicotinate D-ribonucleoside + Orthophosphate <=> Nicotinate + alpha-D-Ribose 1-phosphate + H+
+R02297	C01762 + C00009 <=> C00385 + C00620	Xanthosine + Orthophosphate <=> Xanthine + alpha-D-Ribose 1-phosphate
+R02484	C00526 + C00009 <=> C00106 + C00672	Deoxyuridine + Orthophosphate <=> Uracil + 2-Deoxy-D-ribose 1-phosphate
+R02557	C00559 + C00009 <=> C00147 + C00672	Deoxyadenosine + Orthophosphate <=> Adenine + 2-Deoxy-D-ribose 1-phosphate
+R02748	C05512 + C00009 <=> C00262 + C00672	Deoxyinosine + Orthophosphate <=> Hypoxanthine + 2-Deoxy-D-ribose 1-phosphate
+R08368	C15586 + C00009 <=> C15587 + C00620	N-D-Ribosylpurine + Orthophosphate <=> Purine + alpha-D-Ribose 1-phosphate
+R10244	C20463 + C00009 <=> C15587 + C00672	Purine deoxyribonucleoside + Orthophosphate <=> Purine + 2-Deoxy-D-ribose 1-phosphate
+R00987	C00328 + C00001 <=> C00108 + C00041	L-Kynurenine + H2O <=> Anthranilate + L-Alanine
+R02668	C03227 + C00001 <=> C00632 + C00041	3-Hydroxy-L-kynurenine + H2O <=> 3-Hydroxyanthranilate + L-Alanine
+R03936	C02700 + C00001 <=> C05653 + C00041	L-Formylkynurenine + H2O <=> Formylanthranilate + L-Alanine
+R12428	C05752 + C22157 <=> C22159 + C00229	Octanoyl-[acp] + Glycine cleavage system H <=> [Glycine cleavage system H]-N6-octanoyl-L-lysine + Acyl-carrier protein
+R03362	C00002 + C01194 <=> C00008 + C04549	ATP + 1-Phosphatidyl-D-myo-inositol <=> ADP + 1-Phosphatidyl-1D-myo-inositol 3-phosphate
+R01878	C00475 + C00001 <=> C00299 + C00014	Cytidine + H2O <=> Uridine + Ammonia
+R02485	C00881 + C00001 <=> C00526 + C00014	Deoxycytidine + H2O <=> Deoxyuridine + Ammonia
+R08221	C16635 + C00001 <=> C12739 + C00014	5'-Deoxy-5-fluorocytidine + H2O <=> 5'-Deoxy-5-fluorouridine + Ammonia
+R01926	C00319 + C00002 <=> C06124 + C00008	Sphingosine + ATP <=> Sphingosine 1-phosphate + ADP
+R02976	C00002 + C00836 <=> C00008 + C01120	ATP + Sphinganine <=> ADP + Sphinganine 1-phosphate
+R04756	C05280 <=> C05279	cis,cis-3,6-Dodecadienoyl-CoA <=> trans,cis-Lauro-2,6-dienoyl-CoA
+R00494	C00051 + C00001 <=> C01419 + C00025	Glutathione + H2O <=> Cys-Gly + L-Glutamate
+R01262	C00051 + C00151 <=> C01419 + C03740	Glutathione + L-Amino acid <=> Cys-Gly + (5-L-Glutamyl)-L-amino acid
+R01687	C03193 + C00245 <=> C00012 + C05844	(5-L-Glutamyl)-peptide + Taurine <=> Peptide + 5-L-Glutamyl-taurine
+R03867	C02166 + C00045 <=> C05951 + C03363	Leukotriene C4 + Amino acid <=> Leukotriene D4 + 5-L-Glutamyl amino acid
+R03916	C02320 + C00001 <=> C05729 + C00025	R-S-Glutathione + H2O <=> R-S-Cysteinylglycine + L-Glutamate
+R03970	C02512 + C00025 <=> C05711 + C00001	3-Cyano-L-alanine + L-Glutamate <=> gamma-Glutamyl-beta-cyanoalanine + H2O
+R03971	C05670 + C00025 <=> C06114 + C00001	3-Aminopropiononitrile + L-Glutamate <=> gamma-Glutamyl-beta-aminopropiononitrile + H2O
+R04935	C03193 + C05689 <=> C00012 + C05695	(5-L-Glutamyl)-peptide + Se-Methyl-L-selenocysteine <=> Peptide + gamma-Glutamyl-Se-methylselenocysteine
+R01324	C00158 <=> C00311	Citrate <=> Isocitrate
+R01325	C00158 <=> C00417 + C00001	Citrate <=> cis-Aconitate + H2O
+R01900	C00311 <=> C00417 + C00001	Isocitrate <=> cis-Aconitate + H2O
+R02333	C00461 + n C00001 <=> C00734 + n C00033	Chitin + n H2O <=> Chitosan + n Acetate
+R00269	C00940 + C00001 <=> C00026 + C00014	2-Oxoglutaramate + H2O <=> 2-Oxoglutarate + Ammonia
+R00348	C02362 + C00001 <=> C00036 + C00014	2-Oxosuccinamate + H2O <=> Oxaloacetate + Ammonia
+R03051	C00900 + C00005 + C00080 <=> C04039 + C00006	2-Acetolactate + NADPH + H+ <=> 2,3-Dihydroxy-3-methylbutanoate + NADP+
+R04439	C04272 + C00006 <=> C06010 + C00005 + C00080	(R)-2,3-Dihydroxy-3-methylbutanoate + NADP+ <=> (S)-2-Acetolactate + NADPH + H+
+R04440	C04272 + C00006 <=> C04181 + C00005 + C00080	(R)-2,3-Dihydroxy-3-methylbutanoate + NADP+ <=> 3-Hydroxy-3-methyl-2-oxobutanoic acid + NADPH + H+
+R05068	C06007 + C00006 <=> C14463 + C00005 + C00080	(R)-2,3-Dihydroxy-3-methylpentanoate + NADP+ <=> (R)-3-Hydroxy-3-methyl-2-oxopentanoate + NADPH + H+
+R05069	C06006 <=> C14463	(S)-2-Aceto-2-hydroxybutanoate <=> (R)-3-Hydroxy-3-methyl-2-oxopentanoate
+R05071	C06010 <=> C04181	(S)-2-Acetolactate <=> 3-Hydroxy-3-methyl-2-oxobutanoic acid
+R01083	C03794 <=> C00122 + C00020	N6-(1,2-Dicarboxyethyl)-AMP <=> Fumarate + AMP
+R04559	C04823 <=> C00122 + C04677	1-(5'-Phosphoribosyl)-5-amino-4-(N-succinocarboxamide)-imidazole <=> Fumarate + 1-(5'-Phosphoribosyl)-5-amino-4-imidazolecarboxamide
+R00762	C00354 + C00001 <=> C00085 + C00009	D-Fructose 1,6-bisphosphate + H2O <=> D-Fructose 6-phosphate + Orthophosphate
+R04780	C05378 + C00001 <=> C05345 + C00009	beta-D-Fructose 1,6-bisphosphate + H2O <=> beta-D-Fructose 6-phosphate + Orthophosphate
+R01993	C00337 + C00001 <=> C00438	(S)-Dihydroorotate + H2O <=> N-Carbamoyl-L-aspartate
+R00667	C00077 + C00026 <=> C01165 + C00025	L-Ornithine + 2-Oxoglutarate <=> L-Glutamate 5-semialdehyde + L-Glutamate
+R02082	C00418 + C00010 + 2 C00006 <=> C00356 + 2 C00005 + 2 C00080	(R)-Mevalonate + CoA + 2 NADP+ <=> (S)-3-Hydroxy-3-methylglutaryl-CoA + 2 NADPH + 2 H+
+R01978	C00356 + C00010 <=> C00024 + C00001 + C00332	(S)-3-Hydroxy-3-methylglutaryl-CoA + CoA <=> Acetyl-CoA + H2O + Acetoacetyl-CoA
+R09737	C00019 + C19858 <=> C00021 + C19859	S-Adenosyl-L-methionine + 2-Methoxy-6-all-trans-polyprenyl-1,4-benzoquinol <=> S-Adenosyl-L-homocysteine + 6-Methoxy-3-methyl-2-all-trans-polyprenyl-1,4-benzoquinol
+R01870	C01103 + C00013 <=> C00295 + C00119	Orotidine 5'-phosphate + Diphosphate <=> Orotate + 5-Phospho-alpha-D-ribose 1-diphosphate
+R02715	C00652 + C00007 <=> C06316 + C00027	D-Arabinono-1,4-lactone + Oxygen <=> Dehydro-D-arabinono-1,4-lactone + Hydrogen peroxide
+R02746	C04230 + C00001 <=> C00670 + C00162	1-Acyl-sn-glycero-3-phosphocholine + H2O <=> sn-Glycero-3-phosphocholine + Fatty acid
+R02747	C04233 + C00001 <=> C00670 + C00162	2-Acyl-sn-glycero-3-phosphocholine + H2O <=> sn-Glycero-3-phosphocholine + Fatty acid
+R03416	C04438 + C00001 <=> C00162 + C01233	1-Acyl-sn-glycero-3-phosphoethanolamine + H2O <=> Fatty acid + sn-Glycero-3-phosphoethanolamine
+R03417	C05973 + C00001 <=> C00162 + C01233	2-Acyl-sn-glycero-3-phosphoethanolamine + H2O <=> Fatty acid + sn-Glycero-3-phosphoethanolamine
+R00196	C00186 + 2 C00125 <=> C00022 + 2 C00126 + 2 C00080	(S)-Lactate + 2 Ferricytochrome c <=> Pyruvate + 2 Ferrocytochrome c + 2 H+
+R00181	C00020 + C00001 <=> C00130 + C00014	AMP + H2O <=> IMP + Ammonia
+R04427	C00019 + C05437 <=> C00021 + C04525	S-Adenosyl-L-methionine + Zymosterol <=> S-Adenosyl-L-homocysteine + Fecosterol
+R07481	C01902 + C00019 <=> C08830 + C00021	Cycloartenol + S-Adenosyl-L-methionine <=> 24-Methylidenecycloartanol + S-Adenosyl-L-homocysteine
+R02530	C03451 <=> C00051 + C00546	(R)-S-Lactoylglutathione <=> Glutathione + Methylglyoxal
+R07363	C15606 + C00007 <=> C08276 + C00058 + C00237	1,2-Dihydroxy-5-(methylthio)pent-1-en-3-one + Oxygen <=> 3-(Methylthio)propanoate + Formate + CO
+R07364	C15606 + C00007 <=> C01180 + C00058	1,2-Dihydroxy-5-(methylthio)pent-1-en-3-one + Oxygen <=> 4-Methylthio-2-oxobutanoic acid + Formate
+R01018	C00063 + C00381 <=> C00112 + C00110	CTP + Dolichol <=> CDP + Dolichyl phosphate
+R07506	C15778 + C00005 + C00080 + C00007 <=> C05440 + C00006 + 2 C00001	5,7,24(28)-Ergostatrienol + NADPH + H+ + Oxygen <=> Ergosta-5,7,22,24(28)-tetraen-3beta-ol + NADP+ + 2 H2O
+R03899	C02567 + C00007 + C00001 <=> C00315 + C18170 + C00027	N1-Acetylspermine + Oxygen + H2O <=> Spermidine + 3-Acetamidopropanal + Hydrogen peroxide
+R09074	C00612 + C00007 + C00001 <=> C00134 + C18170 + C00027	N1-Acetylspermidine + Oxygen + H2O <=> Putrescine + 3-Acetamidopropanal + Hydrogen peroxide
+R09076	C00750 + C00007 + C00001 <=> C00315 + C05665 + C00027	Spermine + Oxygen + H2O <=> Spermidine + 3-Aminopropanal + Hydrogen peroxide
+R09077	C00315 + C00007 + C00001 <=> C00134 + C05665 + C00027	Spermidine + Oxygen + H2O <=> Putrescine + 3-Aminopropanal + Hydrogen peroxide
+R02282	C00437 + C00025 <=> C00077 + C00624	N-Acetylornithine + L-Glutamate <=> L-Ornithine + N-Acetyl-L-glutamate
+R03425	C00037 + C02051 <=> C01242 + C00011	Glycine + Lipoylprotein <=> [Protein]-S8-aminomethyldihydrolipoyllysine + CO2
+R00742	C00002 + C00024 + C00288 <=> C00008 + C00009 + C00083	ATP + Acetyl-CoA + HCO3- <=> ADP + Orthophosphate + Malonyl-CoA
+R04385	C00002 + C06250 + C00288 <=> C00008 + C00009 + C04419	ATP + Holo-[carboxylase] + HCO3- <=> ADP + Orthophosphate + Carboxybiotin-carboxyl-carrier protein
+R04386	C00024 + C04419 <=> C00083 + C06250	Acetyl-CoA + Carboxybiotin-carboxyl-carrier protein <=> Malonyl-CoA + Holo-[carboxylase]
+R02245	C00002 + C00418 <=> C00008 + C01107	ATP + (R)-Mevalonate <=> ADP + (R)-5-Phosphomevalonate
+R01230	C00002 + C00655 + C00014 <=> C00020 + C00013 + C00144	ATP + Xanthosine 5'-phosphate + Ammonia <=> AMP + Diphosphate + GMP
+R01231	C00002 + C00655 + C00064 + C00001 <=> C00020 + C00013 + C00144 + C00025	ATP + Xanthosine 5'-phosphate + L-Glutamine + H2O <=> AMP + Diphosphate + GMP + L-Glutamate
+R08244	C16618 + C00002 + C00064 + C00001 <=> C16619 + C00020 + C00013 + C00025	6-Thioxanthine 5'-monophosphate + ATP + L-Glutamine + H2O <=> 6-Thioguanosine monophosphate + AMP + Diphosphate + L-Glutamate
+R03245	C00002 + C01107 <=> C00008 + C01143	ATP + (R)-5-Phosphomevalonate <=> ADP + (R)-5-Diphosphomevalonate
+R09289	C01013 + C00006 <=> C00222 + C00005 + C00080	3-Hydroxypropanoate + NADP+ <=> 3-Oxopropanoate + NADPH + H+
+R10851	C05519 + C00006 <=> C03508 + C00005 + C00080	L-Allothreonine + NADP+ <=> L-2-Amino-3-oxobutanoic acid + NADPH + H+
+R10852	C05519 + C00006 <=> C01888 + C00011 + C00005 + C00080	L-Allothreonine + NADP+ <=> Aminoacetone + CO2 + NADPH + H+
+R00261	C00025 <=> C00334 + C00011	L-Glutamate <=> 4-Aminobutanoate + CO2
+R00489	C00049 <=> C00099 + C00011	L-Aspartate <=> beta-Alanine + CO2
+R01682	C00506 <=> C00245 + C00011	L-Cysteate <=> Taurine + CO2
+R02466	C00606 <=> C00519 + C00011	3-Sulfino-L-alanine <=> Hypotaurine + CO2
+R05917	G00143 + C00001 <=> G00144 + C00033	G00143 + H2O <=> G00144 + Acetate
+R05553	C11355 <=> C00568 + C00022	4-Amino-4-deoxychorismate <=> 4-Aminobenzoate + Pyruvate
+R01072	C03090 + C00013 + C00025 <=> C00064 + C00119 + C00001	5-Phosphoribosylamine + Diphosphate + L-Glutamate <=> L-Glutamine + 5-Phospho-alpha-D-ribose 1-diphosphate + H2O
+R00691	C00826 <=> C00079 + C00001 + C00011	L-Arogenate <=> L-Phenylalanine + H2O + CO2
+R01373	C00254 <=> C00166 + C00001 + C00011	Prephenate <=> Phenylpyruvate + H2O + CO2
+R05639	C05108 + C00006 <=> C11455 + C00005 + C00080	14-Demethyllanosterol + NADP+ <=> 4,4-Dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol + NADPH + H+
+R07483	C11508 + C00005 + C00080 <=> C15776 + C00006	4alpha-Methyl-5alpha-ergosta-8,14,24(28)-trien-3beta-ol + NADPH + H+ <=> 4alpha-Methylfecosterol + NADP+
+R01776	C00024 + C00263 <=> C00010 + C01077	Acetyl-CoA + L-Homoserine <=> CoA + O-Acetyl-L-homoserine
+R01777	C00091 + C00263 <=> C00010 + C01118	Succinyl-CoA + L-Homoserine <=> CoA + O-Succinyl-L-homoserine
+R00717	C00160 + C00003 <=> C00048 + C00004 + C00080	Glycolate + NAD+ <=> Glyoxylate + NADH + H+
+R01388	C00258 + C00003 <=> C00168 + C00004 + C00080	D-Glycerate + NAD+ <=> Hydroxypyruvate + NADH + H+
+R03066	C01300 + C00568 <=> C00921 + C00001	6-(Hydroxymethyl)-7,8-dihydropterin + 4-Aminobenzoate <=> Dihydropteroate + H2O
+R03067	C04807 + C00568 <=> C00013 + C00921	6-Hydroxymethyl-7,8-dihydropterin diphosphate + 4-Aminobenzoate <=> Diphosphate + Dihydropteroate
+R03503	C00002 + C01300 <=> C00020 + C04807	ATP + 6-(Hydroxymethyl)-7,8-dihydropterin <=> AMP + 6-Hydroxymethyl-7,8-dihydropterin diphosphate
+R03504	C04874 <=> C00266 + C01300	7,8-Dihydroneopterin <=> Glycolaldehyde + 6-(Hydroxymethyl)-7,8-dihydropterin
+R00835	C00092 + C00006 <=> C01236 + C00005 + C00080	D-Glucose 6-phosphate + NADP+ <=> D-Glucono-1,5-lactone 6-phosphate + NADPH + H+
+R02736	C01172 + C00006 <=> C01236 + C00005 + C00080	beta-D-Glucose 6-phosphate + NADP+ <=> D-Glucono-1,5-lactone 6-phosphate + NADPH + H+
+R10907	C01172 + C00003 <=> C01236 + C00004 + C00080	beta-D-Glucose 6-phosphate + NAD+ <=> D-Glucono-1,5-lactone 6-phosphate + NADH + H+
+R01135	C00044 + C00130 + C00049 <=> C00035 + C00009 + C03794	GTP + IMP + L-Aspartate <=> GDP + Orthophosphate + N6-(1,2-Dicarboxyethyl)-AMP
+R06259	G10617 + G10595 <=> G10622 + G10596	Dolichyl phosphate D-mannose + G10595 <=> Dolichyl phosphate + G10596
+R06261	G10617 + G10597 <=> G10622 + G00007	Dolichyl phosphate D-mannose + G10597 <=> Dolichyl phosphate + G00007
+R01085	C02514 + C00001 <=> C00122 + C00022	3-Fumarylpyruvate + H2O <=> Fumarate + Pyruvate
+R01560	C00212 + C00001 <=> C00294 + C00014	Adenosine + H2O <=> Inosine + Ammonia
+R02556	C00559 + C00001 <=> C05512 + C00014	Deoxyadenosine + H2O <=> Deoxyinosine + Ammonia
+R01321	C00307 + C00641 <=> C00055 + C00157	CDP-choline + 1,2-Diacyl-sn-glycerol <=> CMP + Phosphatidylcholine
+R04321	C00307 + C03820 <=> C00055 + C04598	CDP-choline + 1-Alkyl-2-acetyl-sn-glycerol <=> CMP + 2-Acetyl-1-alkyl-sn-glycero-3-phosphocholine
+R04922	C05674 + C00641 <=> C00055 + C05676	CMP-N-trimethyl-2-aminoethylphosphonate + 1,2-Diacyl-sn-glycerol <=> CMP + Diacylglyceryl-N-trimethyl-2-aminoethylphosphonate
+R07389	C03201 + C00307 <=> C05212 + C00055	1-Alkyl-2-acylglycerol + CDP-choline <=> 1-Radyl-2-acyl-sn-glycero-3-phosphocholine + CMP
+R02324	C00002 + C03150 <=> C00008 + C00455	ATP + Nicotinamide-beta-riboside <=> ADP + Nicotinamide D-ribonucleotide
+R03347	C01185 + C00008 <=> C05841 + C00002	Nicotinate D-ribonucleotide + ADP <=> Nicotinate D-ribonucleoside + ATP
+R03363	C04549 + C00001 <=> C01194 + C00009	1-Phosphatidyl-1D-myo-inositol 3-phosphate + H2O <=> 1-Phosphatidyl-D-myo-inositol + Orthophosphate
+R04513	C05981 + C00001 <=> C04637 + C00009	Phosphatidylinositol-3,4,5-trisphosphate + H2O <=> 1-Phosphatidyl-D-myo-inositol 4,5-bisphosphate + Orthophosphate
+R01213	C02504 + C00010 <=> C00024 + C00141 + C00001	alpha-Isopropylmalate + CoA <=> Acetyl-CoA + 3-Methyl-2-oxobutanoic acid + H2O
+R02144	C00019 + C00386 <=> C00021 + C01262	S-Adenosyl-L-methionine + Carnosine <=> S-Adenosyl-L-homocysteine + beta-Alanyl-N(pi)-methyl-L-histidine
+R02569	C00024 + C15973 <=> C00010 + C16255	Acetyl-CoA + Enzyme N6-(dihydrolipoyl)lysine <=> CoA + [Dihydrolipoyllysine-residue acetyltransferase] S-acetyldihydrolipoyllysine
+R06127	G00005 + G10614 <=> G10526 + G10620	G00005 + GDP-D-mannose <=> G10526 + GDP
+R06128	G10526 + G10614 <=> G00006 + G10620	G10526 + GDP-D-mannose <=> G00006 + GDP
+R03057	C00909 + C00001 <=> C02165	Leukotriene A4 + H2O <=> Leukotriene B4
+R00709	C00311 + C00003 <=> C00026 + C00011 + C00004 + C00080	Isocitrate + NAD+ <=> 2-Oxoglutarate + CO2 + NADH + H+
+R00132	C01353 <=> C00011 + C00001	Carbonic acid <=> CO2 + H2O
+R10092	C00288 + C00080 <=> C00011 + C00001	HCO3- + H+ <=> CO2 + H2O
+R05333	C00865 + C00641 <=> C06254 + C00422	Phospholipid + 1,2-Diacyl-sn-glycerol <=> Lysophospholipid + Triacylglycerol
+R06260	G10617 + G10596 <=> G10622 + G10597	Dolichyl phosphate D-mannose + G10596 <=> Dolichyl phosphate + G10597
+R01716	C00251 + C00064 <=> C11355 + C00025	Chorismate + L-Glutamine <=> 4-Amino-4-deoxychorismate + L-Glutamate
+R05000	C05847 + C00156 <=> C05848 + C00013	all-trans-Polyprenyl diphosphate + 4-Hydroxybenzoate <=> 4-Hydroxy-3-polyprenylbenzoate + Diphosphate
+R05616	C01230 + C00156 <=> C13425 + C00013	all-trans-Hexaprenyl diphosphate + 4-Hydroxybenzoate <=> 3-Hexaprenyl-4-hydroxybenzoate + Diphosphate
+R07273	C04145 + C00156 <=> C00013 + C03885	all-trans-Nonaprenyl diphosphate + 4-Hydroxybenzoate <=> Diphosphate + 3-Nonaprenyl-4-hydroxybenzoate
+R01121	C00002 + C01143 <=> C00008 + C00009 + C00129 + C00011	ATP + (R)-5-Diphosphomevalonate <=> ADP + Orthophosphate + Isopentenyl diphosphate + CO2
+R02315	C00449 + C00006 + C00001 <=> C00025 + C04076 + C00005 + C00080	N6-(L-1,3-Dicarboxypropyl)-L-lysine + NADP+ + H2O <=> L-Glutamate + L-2-Aminoadipate 6-semialdehyde + NADPH + H+
+R03182	C00002 + C01037 + C00011 <=> C00008 + C00009 + C01909	ATP + 7,8-Diaminononanoate + CO2 <=> ADP + Orthophosphate + Dethiobiotin
+R03231	C00019 + C01092 <=> C04425 + C01037	S-Adenosyl-L-methionine + 8-Amino-7-oxononanoate <=> S-Adenosyl-4-methylthio-2-oxobutanoate + 7,8-Diaminononanoate
+R02260	C00424 + C00006 <=> C00546 + C00005 + C00080	(S)-Lactaldehyde + NADP+ <=> Methylglyoxal + NADPH + H+
+R04457	C04732 + C15556 <=> C04332 + 2 C00001 + C00009	5-Amino-6-(1-D-ribitylamino)uracil + L-3,4-Dihydroxybutan-2-one 4-phosphate <=> 6,7-Dimethyl-8-(D-ribityl)lumazine + 2 H2O + Orthophosphate
+R02283	C00437 + C00026 <=> C01250 + C00025	N-Acetylornithine + 2-Oxoglutarate <=> N-Acetyl-L-glutamate 5-semialdehyde + L-Glutamate
+R04711	C00019 + C05200 <=> C00021 + C05313 + C00080	S-Adenosyl-L-methionine + 3-Hexaprenyl-4,5-dihydroxybenzoate <=> S-Adenosyl-L-homocysteine + 3-Hexaprenyl-4-hydroxy-5-methoxybenzoate + H+
+R08771	C17554 + C00019 <=> C17559 + C00021	3,4-Dihydroxy-5-polyprenylbenzoate + S-Adenosyl-L-methionine <=> 3-Methoxy-4-hydroxy-5-polyprenylbenzoate + S-Adenosyl-L-homocysteine
+R12657	C00019 + C21860 <=> C00021 + C00390	S-Adenosyl-L-methionine + 3-Demethylubiquinol <=> S-Adenosyl-L-homocysteine + Ubiquinol
+R09377	C18910 + C00001 <=> C04454 + C00014	2,5-Diamino-6-(5-phospho-D-ribitylamino)pyrimidin-4(3H)-one + H2O <=> 5-Amino-6-(5'-phospho-D-ribitylamino)uracil + Ammonia
+R00188	C00054 + C00001 <=> C00020 + C00009	Adenosine 3',5'-bisphosphate + H2O <=> AMP + Orthophosphate
+R00508	C00053 + C00001 <=> C00224 + C00009	3'-Phosphoadenylyl sulfate + H2O <=> Adenylyl sulfate + Orthophosphate
+R01954	C00002 + C00327 + C00049 <=> C00020 + C00013 + C03406	ATP + L-Citrulline + L-Aspartate <=> AMP + Diphosphate + N-(L-Arginino)succinate
+R02133	C00378 + C00001 <=> C01279 + C04294 + C00080	Thiamine + H2O <=> 4-Amino-5-hydroxymethyl-2-methylpyrimidine + 5-(2-Hydroxyethyl)-4-methylthiazole + H+
+R03471	C00002 + C01279 <=> C00008 + C04556	ATP + 4-Amino-5-hydroxymethyl-2-methylpyrimidine <=> ADP + 4-Amino-2-methyl-5-(phosphooxymethyl)pyrimidine
+R04509	C00002 + C04556 <=> C00008 + C04752	ATP + 4-Amino-2-methyl-5-(phosphooxymethyl)pyrimidine <=> ADP + 4-Amino-5-hydroxymethyl-2-methylpyrimidine diphosphate
+R09993	C20267 + C00001 <=> C01279 + C00014	4-Amino-5-aminomethyl-2-methylpyrimidine + H2O <=> 4-Amino-5-hydroxymethyl-2-methylpyrimidine + Ammonia
+R00178	C00019 + C00080 <=> C01137 + C00011	S-Adenosyl-L-methionine + H+ <=> S-Adenosylmethioninamine + CO2
+R00497	C00002 + C00669 + C00037 <=> C00008 + C00009 + C00051	ATP + gamma-L-Glutamyl-L-cysteine + Glycine <=> ADP + Orthophosphate + Glutathione
+R10994	C00002 + C21015 + C00037 <=> C00008 + C00009 + C21016	ATP + gamma-L-Glutamyl-L-2-aminobutyrate + Glycine <=> ADP + Orthophosphate + Ophthalmate
+R06262	G10618 + G00007 <=> G10622 + G10598	Dolichyl D-glucosyl phosphate + G00007 <=> Dolichyl phosphate + G10598
+R06263	G10618 + G10598 <=> G10622 + G10599	Dolichyl D-glucosyl phosphate + G10598 <=> Dolichyl phosphate + G10599
+R02101	C00365 + C00143 <=> C00415 + C00364	dUMP + 5,10-Methylenetetrahydrofolate <=> Dihydrofolate + dTMP
+R01056	C00117 <=> C00199	D-Ribose 5-phosphate <=> D-Ribulose 5-phosphate
+R01039	C00116 + C00006 <=> C00184 + C00005 + C00080	Glycerol + NADP+ <=> Glycerone + NADPH + H+
+R12067	C19859 + C00030 + C00007 <=> C21860 + C00028 + C00001	6-Methoxy-3-methyl-2-all-trans-polyprenyl-1,4-benzoquinol + Reduced acceptor + Oxygen <=> 3-Demethylubiquinol + Acceptor + H2O
+R04209	C04751 <=> C03373 + C00011	1-(5-Phospho-D-ribosyl)-5-amino-4-imidazolecarboxylate <=> Aminoimidazole ribotide + CO2
+R00619	C00002 + C00378 <=> C00020 + C00068	ATP + Thiamine <=> AMP + Thiamin diphosphate
+R01126	C00130 + C00001 <=> C00294 + C00009	IMP + H2O <=> Inosine + Orthophosphate
+R02323	C00455 + C00001 <=> C03150 + C00009	Nicotinamide D-ribonucleotide + H2O <=> Nicotinamide-beta-riboside + Orthophosphate
+R03346	C01185 + C00001 <=> C05841 + C00009	Nicotinate D-ribonucleotide + H2O <=> Nicotinate D-ribonucleoside + Orthophosphate
+R01318	C00040 + C04230 <=> C00010 + C00157	Acyl-CoA + 1-Acyl-sn-glycero-3-phosphocholine <=> CoA + Phosphatidylcholine
+R03437	C00024 + C04317 <=> C00010 + C04598	Acetyl-CoA + 1-Organyl-2-lyso-sn-glycero-3-phosphocholine <=> CoA + 2-Acetyl-1-alkyl-sn-glycero-3-phosphocholine
+R04480	C00350 + C00010 <=> C04438 + C00040	Phosphatidylethanolamine + CoA <=> 1-Acyl-sn-glycero-3-phosphoethanolamine + Acyl-CoA
+R09034	C00040 + C03819 <=> C00010 + C01194	Acyl-CoA + 1-Acylglycerophosphoinositol <=> CoA + 1-Phosphatidyl-D-myo-inositol
+R09035	C00040 + C18125 <=> C00010 + C02737	Acyl-CoA + 1-Acyl-sn-glycero-3-phosphoserine <=> CoA + Phosphatidylserine
+R09036	C00040 + C18126 <=> C00010 + C00344	Acyl-CoA + 1-Acyl-sn-glycero-3-phosphoglycerol <=> CoA + Phosphatidylglycerol
+R00310	C02191 + C14818 <=> C00032 + 2 C00080	Protoporphyrin + Fe2+ <=> Heme + 2 H+
+R11329	C21284 + 2 C00080 <=> C05770 + C14818	Fe-coproporphyrin III + 2 H+ <=> Coproporphyrin III + Fe2+
+R04173	C01005 + C00026 <=> C03232 + C00025	O-Phospho-L-serine + 2-Oxoglutarate <=> 3-Phosphonooxypyruvate + L-Glutamate
+R05085	C06055 + C00026 <=> C06054 + C00025	O-Phospho-4-hydroxy-L-threonine + 2-Oxoglutarate <=> 2-Oxo-3-hydroxy-4-phosphobutanoate + L-Glutamate
+R07767	C16236 + C22154 + 2 C00019 + 2 C22150 + 8 C00080 <=> C16832 + C22155 + 2 C00283 + 4 C14818 + 2 C00073 + 2 C05198 + 2 C22151	[Protein]-N6-(octanoyl)-L-lysine + [Fe-S] cluster scaffold protein carrying a [4Fe-4S]2+ cluster + 2 S-Adenosyl-L-methionine + 2 Reduced [2Fe-2S] ferredoxin + 8 H+ <=> [Protein]-N6-[(R)-dihydrolipoyl]-L-lysine + [Fe-S] cluster scaffold protein + 2 Hydrogen sulfide + 4 Fe2+ + 2 L-Methionine + 2 5'-Deoxyadenosine + 2 Oxidized [2Fe-2S] ferredoxin
+R12423	C22160 + C22154 + 2 C00019 + 2 C22150 + 8 C00080 <=> C15973 + C22155 + 2 C00283 + 4 C14818 + 2 C00073 + 2 C05198 + 2 C22151	[Lipoyl-carrier protein E2]-N6-octanoyl-L-lysine + [Fe-S] cluster scaffold protein carrying a [4Fe-4S]2+ cluster + 2 S-Adenosyl-L-methionine + 2 Reduced [2Fe-2S] ferredoxin + 8 H+ <=> Enzyme N6-(dihydrolipoyl)lysine + [Fe-S] cluster scaffold protein + 2 Hydrogen sulfide + 4 Fe2+ + 2 L-Methionine + 2 5'-Deoxyadenosine + 2 Oxidized [2Fe-2S] ferredoxin
+R12424	C22159 + C22154 + 2 C00019 + 2 C22150 + 8 C00080 <=> C02972 + C22155 + 2 C00283 + 4 C14818 + 2 C00073 + 2 C05198 + 2 C22151	[Glycine cleavage system H]-N6-octanoyl-L-lysine + [Fe-S] cluster scaffold protein carrying a [4Fe-4S]2+ cluster + 2 S-Adenosyl-L-methionine + 2 Reduced [2Fe-2S] ferredoxin + 8 H+ <=> Dihydrolipoylprotein + [Fe-S] cluster scaffold protein + 2 Hydrogen sulfide + 4 Fe2+ + 2 L-Methionine + 2 5'-Deoxyadenosine + 2 Oxidized [2Fe-2S] ferredoxin
+R03457	C04666 <=> C01267 + C00001	D-erythro-1-(Imidazol-4-yl)glycerol 3-phosphate <=> 3-(Imidazol-4-yl)-2-oxopropyl phosphate + H2O
+R01724	C01185 + C00013 + C00008 + C00009 <=> C00253 + C00119 + C00002 + C00001 + C00080	Nicotinate D-ribonucleotide + Diphosphate + ADP + Orthophosphate <=> Nicotinate + 5-Phospho-alpha-D-ribose 1-diphosphate + ATP + H2O + H+
+R00936	C00101 + C00003 <=> C00415 + C00004 + C00080	Tetrahydrofolate + NAD+ <=> Dihydrofolate + NADH + H+
+R00937	C00101 + 2 C00003 <=> C00504 + 2 C00004 + 2 C00080	Tetrahydrofolate + 2 NAD+ <=> Folate + 2 NADH + 2 H+
+R00939	C00101 + C00006 <=> C00415 + C00005 + C00080	Tetrahydrofolate + NADP+ <=> Dihydrofolate + NADPH + H+
+R00940	C00101 + 2 C00006 <=> C00504 + 2 C00005 + 2 C00080	Tetrahydrofolate + 2 NADP+ <=> Folate + 2 NADPH + 2 H+
+R02235	C00415 + C00003 <=> C00504 + C00004 + C00080	Dihydrofolate + NAD+ <=> Folate + NADH + H+
+R02236	C00415 + C00006 <=> C00504 + C00005 + C00080	Dihydrofolate + NADP+ <=> Folate + NADPH + H+
+R11765	C00272 + C00006 <=> C02953 + C00005 + C00080	Tetrahydrobiopterin + NADP+ <=> 7,8-Dihydrobiopterin + NADPH + H+
+R00942	C00002 + C00101 + C00025 <=> C00008 + C00009 + C09332	ATP + Tetrahydrofolate + L-Glutamate <=> ADP + Orthophosphate + THF-L-glutamate
+R04241	C00002 + C03541(n) + C00025 <=> C00008 + C00009 + C03541(n+1)	ATP + THF-polyglutamate(n) + L-Glutamate <=> ADP + Orthophosphate + THF-polyglutamate(n+1)
+R03755	C00040 + C01885 <=> C00010 + C00641	Acyl-CoA + 1-Acylglycerol <=> CoA + 1,2-Diacyl-sn-glycerol
+R03756	C00605 + C01885 <=> C00010 + C00641	2,3-Dehydroacyl-CoA + 1-Acylglycerol <=> CoA + 1,2-Diacyl-sn-glycerol
+R01931	C00320 + C00177 <=> C00094 + C01755	Thiosulfate + Cyanide ion <=> Sulfite + Thiocyanate
+R03105	C00957 + C00342 <=> C00283 + C00022 + C00343	Mercaptopyruvate + Thioredoxin <=> Hydrogen sulfide + Pyruvate + Thioredoxin disulfide
+R04452	C04598 + C00001 <=> C04317 + C00033	2-Acetyl-1-alkyl-sn-glycero-3-phosphocholine + H2O <=> 1-Organyl-2-lyso-sn-glycero-3-phosphocholine + Acetate
+R03165	C01024 <=> C01051 + C00001	Hydroxymethylbilane <=> Uroporphyrinogen III + H2O
+R09944	C00063 + C00641 <=> C00112 + C00416	CTP + 1,2-Diacyl-sn-glycerol <=> CDP + Phosphatidate
+R03313	C01165 + C00009 + C00006 <=> C03287 + C00005 + C00080	L-Glutamate 5-semialdehyde + Orthophosphate + NADP+ <=> L-Glutamyl 5-phosphate + NADPH + H+
+R00519	C00058 + C00003 <=> C00080 + C00011 + C00004	Formate + NAD+ <=> H+ + CO2 + NADH
+R03332	C01194 + C00001 <=> C01177 + C00641	1-Phosphatidyl-D-myo-inositol + H2O <=> Inositol 1-phosphate + 1,2-Diacyl-sn-glycerol
+R03435	C04637 + C00001 <=> C01245 + C00641	1-Phosphatidyl-D-myo-inositol 4,5-bisphosphate + H2O <=> D-myo-Inositol 1,4,5-trisphosphate + 1,2-Diacyl-sn-glycerol
+R10952	C01277 + C00001 <=> C01220 + C00641	1-Phosphatidyl-1D-myo-inositol 4-phosphate + H2O <=> 1D-myo-Inositol 1,4-bisphosphate + 1,2-Diacyl-sn-glycerol
+R01082	C00149 <=> C00122 + C00001	(S)-Malate <=> Fumarate + H2O
+R01005	C00029 + C00110 <=> C00015 + C01246	UDP-glucose + Dolichyl phosphate <=> UDP + Dolichyl beta-D-glucosyl phosphate
+R03223	C04752 + C04327 <=> C00013 + C01081	4-Amino-5-hydroxymethyl-2-methylpyrimidine diphosphate + 4-Methyl-5-(2-phosphooxyethyl)thiazole <=> Diphosphate + Thiamin monophosphate
+R04448	C00002 + C04294 <=> C00008 + C04327	ATP + 5-(2-Hydroxyethyl)-4-methylthiazole <=> ADP + 4-Methyl-5-(2-phosphooxyethyl)thiazole
+R10712	C04752 + C20247 <=> C01081 + C00013 + C00011	4-Amino-5-hydroxymethyl-2-methylpyrimidine diphosphate + 2-(2-Carboxy-4-methylthiazol-5-yl)ethyl phosphate <=> Thiamin monophosphate + Diphosphate + CO2
+R07411	C00032 + C00001 + C00448 <=> C15672 + C00013	Heme + H2O + trans,trans-Farnesyl diphosphate <=> Heme O + Diphosphate
+R01625	C00010 + C03688 <=> C00054 + C00229	CoA + Apo-[acyl-carrier-protein] <=> Adenosine 3',5'-bisphosphate + Acyl-carrier protein
+R01123	C00129 <=> C00235	Isopentenyl diphosphate <=> Dimethylallyl diphosphate
+R00551	C00062 + C00001 <=> C00077 + C00086	L-Arginine + H2O <=> L-Ornithine + Urea
+R01030	C00670 + C00001 <=> C00114 + C00093	sn-Glycero-3-phosphocholine + H2O <=> Choline + sn-Glycerol 3-phosphate
+R01470	C01233 + C00001 <=> C00189 + C00093	sn-Glycero-3-phosphoethanolamine + H2O <=> Ethanolamine + sn-Glycerol 3-phosphate
+R00094	2 C00051 + C00003 <=> C00127 + C00004 + C00080	2 Glutathione + NAD+ <=> Glutathione disulfide + NADH + H+
+R00115	2 C00051 + C00006 <=> C00127 + C00005 + C00080	2 Glutathione + NADP+ <=> Glutathione disulfide + NADPH + H+
+R02061	C00448 + C00129 <=> C00013 + C00353	trans,trans-Farnesyl diphosphate + Isopentenyl diphosphate <=> Diphosphate + Geranylgeranyl diphosphate
+R04424	C02225 <=> C04225 + C00001	2-Methylcitrate <=> (Z)-But-2-ene-1,2,3-tricarboxylate + H2O
+R00253	C00002 + C00025 + C00014 <=> C00008 + C00009 + C00064	ATP + L-Glutamate + Ammonia <=> ADP + Orthophosphate + L-Glutamine
+R01715	C00251 <=> C00254	Chorismate <=> Prephenate
+R00974	C00380 + C00001 <=> C00106 + C00014	Cytosine + H2O <=> Uracil + Ammonia
+R01411	C02376 + C00001 <=> C00178 + C00014	5-Methylcytosine + H2O <=> Thymine + Ammonia
+R02922	C00791 + C00001 <=> C02565 + C00014	Creatinine + H2O <=> N-Methylhydantoin + Ammonia
+R01920	C01137 + C00134 <=> C00170 + C00315	S-Adenosylmethioninamine + Putrescine <=> 5'-Methylthioadenosine + Spermidine
+R08359	C01137 + C01672 <=> C00170 + C16565	S-Adenosylmethioninamine + Cadaverine <=> 5'-Methylthioadenosine + Aminopropylcadaverine
+R01802	C00269 + C00137 <=> C00055 + C01194	CDP-diacylglycerol + myo-Inositol <=> CMP + 1-Phosphatidyl-D-myo-inositol
+R04420	C04188 <=> C04582	S-Methyl-5-thio-D-ribose 1-phosphate <=> S-Methyl-5-thio-D-ribulose 1-phosphate
+R01708	C00314 + C00006 <=> C00250 + C00005 + C00080	Pyridoxine + NADP+ <=> Pyridoxal + NADPH + H+
+R02111	C00369 + C00009 <=> C00718 + C00103	Starch + Orthophosphate <=> Amylose + D-Glucose 1-phosphate
+R02021	C00342 + C00053 <=> C00343 + C00094 + C00054	Thioredoxin + 3'-Phosphoadenylyl sulfate <=> Thioredoxin disulfide + Sulfite + Adenosine 3',5'-bisphosphate
+R01009	C00096 + C00110 <=> C00035 + C03862	GDP-mannose + Dolichyl phosphate <=> GDP + Dolichyl phosphate D-mannose
+R02109	C00369 + C00001 <=> C00718 + C00267	Starch + H2O <=> Amylose + alpha-D-Glucose

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import requests
 import json
+import genericLib as gL
+from Bio.KEGG.REST import *
 from lxml import etree as ET
 
 def getDefinitionFromGO(evidenceCode):
@@ -94,9 +96,9 @@ def kegg2UniprotGenesId(organismCode, model, dirPath):
             dOrgKegg2Uniprot[elSplt[0].split(':')[1]] += [elSplt[1].split(':')[1]]
 
     outFile = open(os.path.join(dirPath, model + '_Kegg2UniprotGenes.csv'), mode='w')
-    writeLineByLineToFile(outFile, ['keggId', 'uniprotId'])
+    gL.writeLineByLineToFile(outFile, ['keggId', 'uniprotId'], '\t')
 
     for k, v in dOrgKegg2Uniprot.items():
         for vv in v:
-            writeLineByLineToFile(outFile, [k, vv])
+            gL.writeLineByLineToFile(outFile, [k, vv], '\t')
     outFile.close()

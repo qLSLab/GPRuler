@@ -497,6 +497,8 @@ def checkNadNadpDependencies_or(nadp, nad, id2Search, id2Search_complete, lMetaE
     return lMetaEnzOR, dGenesFromKegg
 
 def getKeggInfo(rxnString):
+    dizInfo = {}
+    info = ''
     try:
         k = kegg.KEGG()
         info = k.get(rxnString)
