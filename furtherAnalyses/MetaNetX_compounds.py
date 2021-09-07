@@ -39,9 +39,6 @@ elif testModel == 'y8':
     ## Yeast7
     modelName = 'yeast8'
     inputFuzzy = 'yeast8_mappingFuzzyAndClassic_20210113162740.tsv'
-elif testModel == 'ownData':
-    modelName = ''
-    inputFuzzy = ''
 
 ## STEP 1. Get metabolites identifiers
 dfchem_prop = pd.read_csv('chem_prop.tsv', sep = '\t', dtype=str, skiprows = 348, names = ['ID', 'name', 'reference', 'formula', 'charge', 'mass', 'InChI', 'InChIKey', 'SMILES'])
