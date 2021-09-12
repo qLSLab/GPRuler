@@ -124,7 +124,7 @@ df1 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_metacyc1 + '.tsv'), sep='\
 df1['Matches'] = df1['Matches'].apply(ast.literal_eval)
 df2 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_metacyc2 + '.tsv'), sep='\t', index_col=0)
 df2['Matches'] = df2['Matches'].apply(ast.literal_eval)
-df3 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_metacyc3 + '.tsv'), sep='\t', index_col=0)
+df3 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_metacyc3 + '.tsv'), sep='\t')
 df3['Matches'] = df3['Matches'].apply(ast.literal_eval)
 
 dfAll = pd.concat([df1,df2,df3])
@@ -154,7 +154,7 @@ df1 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_KC1 + '.tsv'), sep='\t', i
 df1['Matches'] = df1['Matches'].apply(ast.literal_eval)
 df2 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_KC2 + '.tsv'), sep='\t', index_col=0)
 df2['Matches'] = df2['Matches'].apply(ast.literal_eval)
-df3 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_KC3 + '.tsv'), sep='\t', index_col=0)
+df3 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_KC3 + '.tsv'), sep='\t')
 df3['Matches'] = df3['Matches'].apply(ast.literal_eval)
 
 dfAll = pd.concat([df1,df2,df3])
@@ -178,7 +178,7 @@ df1 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_KG1 + '.tsv'), sep='\t', i
 df1['Matches'] = df1['Matches'].apply(ast.literal_eval)
 df2 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_KG2 + '.tsv'), sep='\t', index_col=0)
 df2['Matches'] = df2['Matches'].apply(ast.literal_eval)
-df3 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_KG3 + '.tsv'), sep='\t', index_col=0)
+df3 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_KG3 + '.tsv'), sep='\t')
 df3['Matches'] = df3['Matches'].apply(ast.literal_eval)
 
 dfAll = pd.concat([df1,df2,df3])
@@ -207,7 +207,7 @@ df1 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_C1 + '.tsv'), sep='\t', in
 df1['Matches'] = df1['Matches'].apply(ast.literal_eval)
 df2 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_C2 + '.tsv'), sep='\t', index_col=0)
 df2['Matches'] = df2['Matches'].apply(ast.literal_eval)
-df3 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_C3 + '.tsv'), sep='\t', index_col=0)
+df3 = pd.read_csv(os.path.join(OUTDIR, dfMetsInfer_fw_C3 + '.tsv'), sep='\t')
 df3['Matches'] = df3['Matches'].apply(ast.literal_eval)
 
 dfAll = pd.concat([df1,df2,df3])
