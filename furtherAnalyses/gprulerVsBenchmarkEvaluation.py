@@ -180,7 +180,6 @@ for row in dfComparison.itertuples():
             distHamming = np.nan
     lDistances.append(distHamming)
 
-dfComparison = dfComparison[['Rxn', 'rule_original', 'rule_GPRuler', 'Evaluation', 'JaccardScore']]
 dfComparison['HammingDistance'] = lDistances
 dfComparison.to_csv(os.path.join(OUTDIR, inputFileName + '.csv'), sep="\t", index = False)
 
