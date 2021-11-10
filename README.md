@@ -11,7 +11,7 @@ The documentation to install and use GPRuler is included in the [Wiki](https://g
 
 ## Cite Us
 If you use GPRuler in your scientific work, please cite:  
-**Di Filippo, M., Damiani, C., & Pescini, D. (2021). GPRuler: metabolic Gene-Protein-Reaction rules automatic reconstruction. bioRxiv. doi: [https://doi.org/10.1101/2021.02.28.433152](https://doi.org/10.1101/2021.02.28.433152)**
+**Di Filippo, M., Damiani, C., & Pescini, D. (2021). GPRuler: metabolic Gene-Protein-Reaction rules automatic reconstruction. PLOS Computational Biology. doi: [https://doi.org/10.1371/journal.pcbi.1009550](https://doi.org/10.1371/journal.pcbi.1009550)**
 
 ## Getting Help
 For support, please contact [Marzia Di Filippo](marzia.difilippo@unimib.it).
