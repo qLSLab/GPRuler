@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" level="3" version="1" fbc:required="false">
+  <model metaid="COBRAModel" id="COBRAModel" fbc:strict="true">
+    <listOfUnitDefinitions>
+      <unitDefinition id="mmol_per_gDW_per_hr">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment metaid="c" sboTerm="SBO:0000240" id="c" name="cytosol" spatialDimensions="3" size="1" constant="true"/>
+      <compartment metaid="m" sboTerm="SBO:0000240" id="m" name="mitochondrion" spatialDimensions="3" size="1" constant="true"/>
+      <compartment metaid="s" sboTerm="SBO:0000240" id="s" name="extracellular" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="M_glucose_s" id="M_glucose_s" name="D-Glucose" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_H2O_c" id="M_H2O_c" name="Water" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+	    <species metaid="M_Pi_c" id="M_Pi_c" name="Phosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_Pi_s" id="M_Pi_s" name="Phosphate" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_H_c" id="M_H_c" name="proton" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_glucose_c" id="M_glucose_c" name="D-Glucose" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_CO2_c" id="M_CO2_c" name="Carbon dioxide" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+	    <species metaid="M_ATP_c" id="M_ATP_c" name="Adenosine triphosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_ADP_c" id="M_ADP_c" name="Adenosine diphosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_glucose_6_phosphate_c" id="M_glucose_6_phosphate_c" name="Glucose 6-phosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_fructose_6_phosphate_c" id="M_fructose_6_phosphate_c" name="Fructose 6-phosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_fructose_1_6_bisphosphate_c" id="M_fructose_1_6_bisphosphate_c" name="Fructose 1,6-bisphosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_GAP_c" id="M_GAP_c" name="Glyceraldehyde 3-Phosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_DHAP_c" id="M_DHAP_c" name="Dihydroxyacetone phosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_NAD_c" id="M_NAD_c" name="NAD" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_1_3_bisphospho_D_glycerate_c" id="M_1_3_bisphospho_D_glycerate_c" name="Glyceric acid 1,3-biphosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_NADH_c" id="M_NADH_c" name="NADH" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_3_phospho_D_glycerate_c" id="M_3_phospho_D_glycerate_c" name="3-phospho-D-glycerate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_2_phospho_D_glycerate_c" id="M_2_phospho_D_glycerate_c" name="2-Phospho-D-glyceric acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_PEP_c" id="M_PEP_c" name="Phosphoenolpyruvic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_pyruvate_c" id="M_pyruvate_c" name="Pyruvic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_pyruvate_m" id="M_pyruvate_m" name="Pyruvic acid" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_H_m" id="M_H_m" name="proton" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_NAD_m" id="M_NAD_m" name="NAD" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_NADH_m" id="M_NADH_m" name="NADH" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_CO2_m" id="M_CO2_m" name="Carbon dioxide" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_malate_m" id="M_malate_m" name="L-Malic acid" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="FB1N10000" value="-10000" constant="true"/>
+      <parameter id="FB2N0" value="0" constant="true"/>
+      <parameter id="FB3N10000" value="10000" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction metaid="R_Ex_ATP" id="R_Ex_ATP" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ATP_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_Ex_ADP" id="R_Ex_ADP" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ADP_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_Ex_NADHc" id="R_Ex_NADHc" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_NADH_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_Ex_glucose" id="R_Ex_glucose" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB2N0">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_glucose_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_Glucose_DM_COOP" id="R_Glucose_DM_COOP" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <listOfReactants>
+          <speciesReference species="M_glucose_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_glucose_s" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_Ex_SC_Pi" id="R_Ex_SC_Pi" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_Pi_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        </reaction>
+		  <reaction metaid="R_Transport_Pis" id="R_Transport_Pis" name="Transport Pi" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Transport-extracellular</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_Pi_s" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+		<listOfProducts>
+          <speciesReference species="M_Pi_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_Ex_NAD" id="R_Ex_NAD" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_NAD_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_Ex_NADH" id="R_Ex_NADH" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_NADH_m" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_Ex_CO2" id="R_Ex_CO2" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_CO2_m" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_DM_NADm" id="R_DM_NADm" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_NAD_m" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_DM_Malate" id="R_DM_Malate" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_malate_m" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_DM_H2O" id="R_DM_H2O" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: </p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_H2O_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction metaid="R_GCK_HKDC1_HK1_ADPGK_HK2_HK3" id="R_GCK_HKDC1_HK1_ADPGK_HK2_HK3" name="GCK1" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_GCK_HKDC1_HK1_ADPGK_HK2_HK3">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:2.7.1.1"/>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:2.7.1.2"/>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:2.7.1.147"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_glucose_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_ATP_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ADP_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_glucose_6_phosphate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_GPI" id="R_GPI" name="GPI" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_GPI">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:5.3.1.9"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_glucose_6_phosphate_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_fructose_6_phosphate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_PFKP_PFKL_PFKM_1" id="R_PFKP_PFKL_PFKM_1" name="PFK1" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_PFKP_PFKL_PFKM_1">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:2.7.1.11"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_ATP_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_fructose_6_phosphate_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ADP_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_fructose_1_6_bisphosphate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_ALDOC_ALDOB_ALDOA_2" id="R_ALDOC_ALDOB_ALDOA_2" name="ALDO" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_ALDOC_ALDOB_ALDOA_2">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:4.1.2.13"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_fructose_1_6_bisphosphate_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_GAP_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_DHAP_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_TPI1_TPI1P2" id="R_TPI1_TPI1P2" name="TPI" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_TPI1_TPI1P2">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:5.3.1.1"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_DHAP_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_GAP_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_GAPDHS_GAPDH_GAPDHP29" id="R_GAPDHS_GAPDH_GAPDHP29" name="GAPDH" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_GAPDHS_GAPDH_GAPDHP29">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:1.2.1.12"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_Pi_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_GAP_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_NAD_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_H_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_1_3_bisphospho_D_glycerate_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_NADH_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_CRISP3_PGK1_MIA3_PGK2" id="R_CRISP3_PGK1_MIA3_PGK2" name="PGK" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_CRISP3_PGK1_MIA3_PGK2">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:2.7.2.3"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_ADP_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_1_3_bisphospho_D_glycerate_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ATP_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_3_phospho_D_glycerate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_PGAM2_PGAM1_BPGM_PGAM4_1" id="R_PGAM2_PGAM1_BPGM_PGAM4_1" name="PGM" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_PGAM2_PGAM1_BPGM_PGAM4_1">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:5.4.2.1"/>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:5.4.2.4"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_3_phospho_D_glycerate_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_2_phospho_D_glycerate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_ENO1_ENO3_ENO2" id="R_ENO1_ENO3_ENO2" name="ENO" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_ENO1_ENO3_ENO2">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:4.2.1.11"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_2_phospho_D_glycerate_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_H2O_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_PEP_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_PKM_TMEM54_PKLR_HCN3" id="R_PKM_TMEM54_PKLR_HCN3" name="PK" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Glycolysis/gluconeogenesis</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_PKM_TMEM54_PKLR_HCN3">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:2.7.1.40"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_ADP_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_PEP_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ATP_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyruvate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_MPC1_MPC2_MPC1L" id="R_MPC1_MPC2_MPC1L" name="MPC" reversible="false" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Transport-mitochondrial</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_H_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyruvate_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_pyruvate_m" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_H_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="R_ME2_ME3_1" id="R_ME2_ME3_1" name="ME2" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Pyruvate metabolism</p>
+            <p>Confidence Level: 0</p>
+          </body>
+        </notes>
+        <annotation xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#R_ME2_ME3_1">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/EC:1.1.1.38"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_pyruvate_m" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_H_m" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_NADH_m" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_CO2_m" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_NAD_m" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_malate_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+    </listOfReactions>
+    <fbc:listOfObjectives fbc:activeObjective="obj">
+      <fbc:objective fbc:id="obj" fbc:type="maximize">
+        <fbc:listOfFluxObjectives>
+          <fbc:fluxObjective fbc:reaction="R_ME2_ME3_1" fbc:coefficient="1"/>
+        </fbc:listOfFluxObjectives>
+      </fbc:objective>
+    </fbc:listOfObjectives>
+  </model>
+</sbml>
