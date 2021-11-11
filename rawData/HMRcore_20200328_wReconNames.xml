@@ -38,9 +38,9 @@
       <species metaid="M_glycine_s" id="M_glycine_s" name="Glycine" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_cystine_s" id="M_cystine_s" name="L-Cystine" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_mercaptopyruvate_c" id="M_mercaptopyruvate_c" name="3-Mercaptopyruvic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
-	  <species metaid="M_mercaptopyruvate_s" id="M_mercaptopyruvate_s" name="3-Mercaptopyruvic acid" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_mercaptopyruvate_s" id="M_mercaptopyruvate_s" name="3-Mercaptopyruvic acid" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_H2O_c" id="M_H2O_c" name="Water" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
-	  <species metaid="M_H2O_s" id="M_H2O_s" name="Water" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_H2O_s" id="M_H2O_s" name="Water" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_Pi_c" id="M_Pi_c" name="Phosphate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_H_c" id="M_H_c" name="proton" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_glucose_c" id="M_glucose_c" name="D-Glucose" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
@@ -62,16 +62,16 @@
       <species metaid="M_serine_c" id="M_serine_c" name="L-Serine" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_glycine_c" id="M_glycine_c" name="Glycine" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_putrescine_c" id="M_putrescine_c" name="Putrescine" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
-	  <species metaid="M_putrescine_s" id="M_putrescine_s" name="Putrescine" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_putrescine_s" id="M_putrescine_s" name="Putrescine" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_CO2_c" id="M_CO2_c" name="Carbon dioxide" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
-	  <species metaid="M_CO2_s" id="M_CO2_s" name="Carbon dioxide" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
-	  <species metaid="M_10_formyl_THF_s" id="M_10_formyl_THF_s" name="10-Formyltetrahydrofolate" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_CO2_s" id="M_CO2_s" name="Carbon dioxide" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_10_formyl_THF_s" id="M_10_formyl_THF_s" name="10-Formyltetrahydrofolate" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_10_formyl_THF_m" id="M_10_formyl_THF_m" name="10-Formyltetrahydrofolate" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_10_formyl_THF_c" id="M_10_formyl_THF_c" name="10-Formyltetrahydrofolate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_GSSG_m" id="M_GSSG_m" name="Oxidized glutathione" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
-	  <species metaid="M_GSSG_s" id="M_GSSG_s" name="Oxidized glutathione" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_GSSG_s" id="M_GSSG_s" name="Oxidized glutathione" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_guanidinoacetate_c" id="M_guanidinoacetate_c" name="Guanidoacetic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
-	  <species metaid="M_guanidinoacetate_s" id="M_guanidinoacetate_s" name="Guanidoacetic acid" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_guanidinoacetate_s" id="M_guanidinoacetate_s" name="Guanidoacetic acid" compartment="s" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_O2_c" id="M_O2_c" name="Oxygen" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_palmitate_c" id="M_palmitate_c" name="Palmitic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_cystine_c" id="M_cystine_c" name="L-Cystine" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
@@ -196,7 +196,7 @@
       <species metaid="M_argininosuccinate_c" id="M_argininosuccinate_c" name="Argininosuccinic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_Lglu5semialdehyde_m" id="M_Lglu5semialdehyde_m" name="L-Glutamate 5-semialdehyde" compartment="m" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_Lglu5semialdehyde_c" id="M_Lglu5semialdehyde_c" name="L-Glutamate 5-semialdehyde" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
-      <species metaid="M_1_Pyrroline5carboxylate_c" id="M_1_Pyrroline5carboxylate_c" name="	1-Pyrroline-5-Carboxylate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_1_Pyrroline5carboxylate_c" id="M_1_Pyrroline5carboxylate_c" name="    1-Pyrroline-5-Carboxylate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_3_phosphonooxypyruvate_c" id="M_3_phosphonooxypyruvate_c" name="Phosphohydroxypyruvic acid" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_3_phosphoserine_c" id="M_3_phosphoserine_c" name="Phosphoserine" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_2_oxoglutaramate_c" id="M_2_oxoglutaramate_c" name="2-Oxoglutaramate" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
@@ -242,7 +242,7 @@
       <species metaid="M_desmosterol_c" id="M_desmosterol_c" name="Desmosterol" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_cholesterol_c" id="M_cholesterol_c" name="Cholesterol" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_malonyl_CoA_c" id="M_malonyl_CoA_c" name="Malonyl-CoA" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
-      <species metaid="M_ACP_c" id="M_ACP_c" name="	Acyl Carrier Protein" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
+      <species metaid="M_ACP_c" id="M_ACP_c" name="    Acyl Carrier Protein" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_acetyl_ACP_c" id="M_acetyl_ACP_c" name="Acetyl-[acyl-carrier protein]" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_malonyl_ACP_c" id="M_malonyl_ACP_c" name="Malonyl-[Acyl-Carrier Protein]" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
       <species metaid="M_acetoacetyl_ACP_c" id="M_acetoacetyl_ACP_c" name="Acetoacetyl-[acyl-carrier protein]" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0"/>
@@ -538,7 +538,7 @@
           <speciesReference species="M_mercaptopyruvate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-	  <reaction metaid="R_Transport_mercaptopyruvate" id="R_Transport_mercaptopyruvate" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
+      <reaction metaid="R_Transport_mercaptopyruvate" id="R_Transport_mercaptopyruvate" name="*" reversible="true" fast="false" fbc:lowerFluxBound="FB2N0" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: </p>
@@ -548,7 +548,7 @@
         <listOfReactants>
           <speciesReference species="M_mercaptopyruvate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_mercaptopyruvate_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
@@ -562,7 +562,8 @@
         <listOfReactants>
           <speciesReference species="M_H2O_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-	  <reaction metaid="R_Transport_H2Os" id="R_Transport_H2Os" name="Transport H2O" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+      </reaction>
+      <reaction metaid="R_Transport_H2Os" id="R_Transport_H2Os" name="Transport H2O" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: Transport-extracellular</p>
@@ -572,7 +573,7 @@
         <listOfReactants>
           <speciesReference species="M_H2O_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_H2O_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
@@ -595,7 +596,8 @@
         <listOfReactants>
           <speciesReference species="M_Pi_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<reaction metaid="R_Transport_Pis" id="R_Transport_Pis" name="Transport Pi" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+      </reaction>
+        <reaction metaid="R_Transport_Pis" id="R_Transport_Pis" name="Transport Pi" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: Transport-extracellular</p>
@@ -605,7 +607,7 @@
         <listOfReactants>
           <speciesReference species="M_Pi_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_Pi_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
@@ -620,7 +622,7 @@
           <speciesReference species="M_H_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-	  <reaction metaid="R_Transport_Hs" id="R_Transport_Hs" name="Transport H" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+      <reaction metaid="R_Transport_Hs" id="R_Transport_Hs" name="Transport H" reversible="true" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: Transport-extracellular</p>
@@ -630,7 +632,7 @@
         <listOfReactants>
           <speciesReference species="M_H_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_H_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
@@ -832,7 +834,7 @@
           <speciesReference species="M_putrescine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-	  <reaction metaid="R_Transport_putrescine" id="R_Transport_putrescine" name="Transport putrescine" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+      <reaction metaid="R_Transport_putrescine" id="R_Transport_putrescine" name="Transport putrescine" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: </p>
@@ -842,7 +844,7 @@
         <listOfReactants>
           <speciesReference species="M_putrescine_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_putrescine_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
@@ -857,7 +859,7 @@
           <speciesReference species="M_CO2_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-	  <reaction metaid="R_Transport_CO2" id="R_Transport_CO2" name="Transport CO2" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+      <reaction metaid="R_Transport_CO2" id="R_Transport_CO2" name="Transport CO2" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: </p>
@@ -867,7 +869,7 @@
         <listOfReactants>
           <speciesReference species="M_CO2_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_CO2_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
@@ -882,7 +884,7 @@
           <speciesReference species="M_10_formyl_THF_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-	  <reaction metaid="R_Transport_10formylTHFm" id="R_Transport_10formylTHFm" name="Transport 10formylTHFm" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+      <reaction metaid="R_Transport_10formylTHFm" id="R_Transport_10formylTHFm" name="Transport 10formylTHFm" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: </p>
@@ -892,7 +894,7 @@
         <listOfReactants>
           <speciesReference species="M_10_formyl_THF_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_10_formyl_THF_m" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
@@ -907,7 +909,7 @@
           <speciesReference species="M_10_formyl_THF_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-	  <reaction metaid="R_Transport_10formylTHFc" id="R_Transport_10formylTHFc" name="Transport 10formylTHFc" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+      <reaction metaid="R_Transport_10formylTHFc" id="R_Transport_10formylTHFc" name="Transport 10formylTHFc" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: </p>
@@ -917,7 +919,7 @@
         <listOfReactants>
           <speciesReference species="M_10_formyl_THF_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_10_formyl_THF_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
@@ -932,7 +934,7 @@
           <speciesReference species="M_GSSG_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-	  <reaction metaid="R_Transport_GSSG" id="R_Transport_GSSG" name="Transport GSSG" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+      <reaction metaid="R_Transport_GSSG" id="R_Transport_GSSG" name="Transport GSSG" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: </p>
@@ -942,7 +944,7 @@
         <listOfReactants>
           <speciesReference species="M_GSSG_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_GSSG_m" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
@@ -957,7 +959,7 @@
           <speciesReference species="M_guanidinoacetate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-	  <reaction metaid="R_Transport_guanidinoacetatec" id="R_Transport_guanidinoacetatec" name="Transport guanidinoacetatec" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
+      <reaction metaid="R_Transport_guanidinoacetatec" id="R_Transport_guanidinoacetatec" name="Transport guanidinoacetatec" reversible="false" fast="false" fbc:lowerFluxBound="FB1N10000" fbc:upperFluxBound="FB3N10000">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: </p>
@@ -967,7 +969,7 @@
         <listOfReactants>
           <speciesReference species="M_guanidinoacetate_s" stoichiometry="1" constant="true"/>
         </listOfReactants>
-		<listOfProducts>
+        <listOfProducts>
           <speciesReference species="M_guanidinoacetate_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
