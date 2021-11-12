@@ -2,8 +2,38 @@
 import re
 import os
 import sys
+import time
 import pandas as pd
 import numpy as np
+
+
+dTestModelsParams = {
+    'recon': {
+        'filename': 'Recon3D_301_20200923.xml',
+        'basenameStr': 'Recon3D_301_20200923',
+        'prefix': 'recon3D',
+        'incComp': False},
+    'y7': {
+        'filename': 'yeast_7.6_cobra.xml',
+        'basenameStr': 'yeast_7.6_cobra',
+        'prefix': 'y7',
+        'incComp': True},
+    'y8': {
+        'filename': 'yeast8.xml',
+        'basenameStr': 'yeast8',
+        'prefix': 'y8',
+        'incComp': True},
+    'hmrcore': {
+        'filename': 'HMRcore_20200328_wReconName.xml',
+        'basenameStr': 'HMRcore_20200328_wReconName',
+        'prefix': 'hmrCore',
+        'incComp': False},
+    'toy': {
+        'filename': 'toymodel.xml',
+        'basenameStr': 'toymodel',
+        'prefix': 'toy',
+        'incComp': False},
+}
 
 
 def getBaseName(path):
@@ -36,35 +66,81 @@ def pathJoinCheck(dir2add, rootPath='.'):
     return path
 
 
-def setWorkingDirs(dataDir='rawData', outDir=None):
-    """Set the working directories dataDir, outDir, mapsDir, reportDir.
+def setWorkingDirs(wrkDir=None, dizDirNames=None):
+    """Set the working directories as recived from input dictionary.
 
-    If arguments are omitted current working directory replace them.
+    If arguments are omitted, current working directory is set as
+    workingDirectory and no directory is nested.
+    If wrkDir does not exists, the script create it.
+    wrkDir/dir1
+          /dir2
+          /dir3
 
     Keyword arguments:
-     dataDir: The directory to look for the input files.
-     outDir:  The directory to write the output files.
+     wrkDir: The working directory path. if None it is set to cwd
+     dizDirNames: The dictionary containing the names of the nested
+                  directories, in the form: {'dirName', 'dirPath'}
 
     Return:
-    dataDir, outDir, reportDir, modelDir, logDir, figureDir, scriptsDir, mapDir
+    (wrkDirPath, dizDirPaths) where:
+    wrkDirPath: The working dir path
+    dizDirPaths: The dictionary containing the paths of the nested directories,
+     in the form: {'dirName', 'dirPath'}
     """
     cwDir = os.getcwd()
-    if dataDir is None:
-        dataDir = cwDir + os.sep
+    dizDirPaths = {}
+    if wrkDir is None:
+        wrkDirPath = cwDir + os.sep
     else:
-        if not os.path.exists(dataDir):
-            print('the input directory', dataDir, 'does not exists. Fix it.')
+        if not os.path.exists(wrkDir):
+            print('the working directory', wrkDir, 'does not exist. Fix it.')
             sys.exit()
         else:
-            dataDir = os.path.abspath(dataDir)
-            if dataDir[-1] != os.sep:
-                dataDir += os.sep
-    if outDir is None:
-        outDir = cwDir
+            wrkDirPath = os.path.abspath(wrkDir)
+            if wrkDirPath[-1] != os.sep:
+                wrkDirPath += os.sep
+    if dizDirNames is not None:
+        for el in dizDirNames:
+            dizDirPaths[el] = pathJoinCheck(dizDirNames[el], wrkDirPath)
+    return (wrkDirPath, dizDirPaths)
+
+
+def getTimeStamp():
+    return time.strftime('%Y%m%d%H%M%S', time.localtime())
+
+
+def logFileOpen(logDIR=None, timeStamp=None, aim=None, basename=None):
+    if logDIR is None:
+        logDIR = os.getcwd() + os.sep
+    if timeStamp is None:
+        timeStamp = getTimeStamp()
+    if aim is None:
+        aimStr = ''
     else:
-        outDir = os.path.abspath(outDir) + os.sep
-    reportDir = pathJoinCheck('outputs', outDir)
-    return dataDir, outDir, reportDir
+        aimStr = '_' + aim
+    if basename is None:
+        basenameStr = ''
+    else:
+        basenameStr = basename + '_'
+    logFileName = os.path.join(logDIR,
+                               basenameStr + timeStamp + aimStr + '.log')
+    logStream = open(logFileName, mode='w')
+    return logStream
+
+
+def toLog(logStream, string):
+    logStream.write(string + '\n')
+
+
+def loadModelParams(sInputLine=None):
+    print(sInputLine)
+    sys.exit()
+    #  if testModel in gL.dTestModelsParams.keys():
+    #      modelXmlFile = gL.dTestModelsParams[testModel]['basenameStr']
+    #      prefix_modelName = gL.dTestModelsParams[testModel]['prefix']
+    #      includeCompartment = gL.dTestModelsParams[testModel]['incComp']
+
+
 
 
 def unique(a):

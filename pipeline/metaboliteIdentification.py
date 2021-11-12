@@ -5,37 +5,36 @@ import genericLib as gL
 import metabolitesLib as metL
 
 # setting working dirs
-workingDirs = gL.setWorkingDirs()
-RAWDIR = workingDirs[0]
-OUTDIR = workingDirs[2]
+dDirNames = {'raw': 'rawData', 'log': 'logs', 'out': 'outputs'}
+
+(wrkDir, dDirs) = gL.setWorkingDirs(wrkDir=None, dizDirNames=dDirNames)
+#  workingDirs = gL.setWorkingDirs()
+#  RAWDIR = workingDirs[0]
+#  OUTDIR = workingDirs[2]
+RAWDIR = dDirs['raw']
+OUTDIR = dDirs['out']
+LOGDIR = dDirs['log']
+
+timeStamp = gL.getTimeStamp()
 
 # setting input data
 testModel = sys.argv[1]
-if testModel == 'recon':
-    ## Recon 3
-    modelXmlFile = 'Recon3D_301_20200923'
-    prefix_modelName = 'recon3D'
-    includeCompartment = False
-elif testModel == 'y7':
-    ## Yeast 7
-    modelXmlFile = 'yeast_7.6_cobra'
-    prefix_modelName = 'y7'
-    includeCompartment = True
-elif testModel == 'y8':
-    ## Yeast 8
-    modelXmlFile = 'yeast8'
-    prefix_modelName = 'y8'
-    includeCompartment = True
-elif testModel == 'hmr':
-    ## HMRcore
-    modelXmlFile = 'HMRcore_20200328_wReconNames'
-    prefix_modelName = 'hmrCore'
-    includeCompartment = False
-elif testModel == 'ownData':
-    ## specify your input data
-    modelXmlFile = 'toymodel'
-    prefix_modelName = 'toy_metabolites'
-    includeCompartment = False
+
+if testModel in gL.dTestModelsParams.keys():
+    modelXmlFile = gL.dTestModelsParams[testModel]['basenameStr']
+    prefix_modelName = gL.dTestModelsParams[testModel]['prefix']
+    includeCompartment = gL.dTestModelsParams[testModel]['incComp']
+#  elif len(sys.argv) >= 2:
+#      modelXmlFile = sys.argv[1]
+#      try:
+
+gL.loadModelParams(sys.argv)
+logStream = gL.logFileOpen(logDIR=LOGDIR, timeStamp=timeStamp, basename=modelXmlFile)
+sToLog = 'Input params\nmodel filename: ' + modelXmlFile + '\n'
+sToLog += 'model prefix: ' + prefix_modelName + '\n'
+sToLog += 'include Compartement: ' + str(includeCompartment) + '\n'
+gL.toLog(logStream, sToLog)
+
 
 # Extract metabolites info from the input model
 fileName = gL.pathFilename(RAWDIR, modelXmlFile + ".xml")
@@ -130,3 +129,5 @@ for met in lMets2Search:
 dfMet2Ids = pd.DataFrame(dizMet2Ids.items(), columns=['Name', 'Identifiers'])
 fileName = gL.pathFilename(OUTDIR, '_metabolites_wInferredIds.csv')
 dfMet2Ids.to_csv(fileName, sep='\t', index=False)
+
+logStream.close()
