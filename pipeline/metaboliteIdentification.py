@@ -14,34 +14,34 @@ OUTDIR = workingDirs[2]
 testModel = sys.argv[1]
 if testModel == 'recon':
     ## Recon 3
-    modelXml = 'Recon3D_301_20200923'
-    dfmetsInfo = 'recon3D_metabolites'
+    modelXmlFile = 'Recon3D_301_20200923'
+    prefix_modelName = 'recon3D'
     includeCompartment = False
 elif testModel == 'y7':
     ## Yeast 7
-    modelXml = 'yeast_7.6_cobra'
-    dfmetsInfo = 'y7_metabolites'
+    modelXmlFile = 'yeast_7.6_cobra'
+    prefix_modelName = 'y7'
     includeCompartment = True
 elif testModel == 'y8':
     ## Yeast 8
-    modelXml = 'yeast8'
-    dfmetsInfo = 'y8_metabolites'
+    modelXmlFile = 'yeast8'
+    prefix_modelName = 'y8'
     includeCompartment = True
 elif testModel == 'hmr':
     ## HMRcore
-    modelXml = 'HMRcore_20200328_wReconNames'
-    dfmetsInfo = 'hmrCore_metabolites'
+    modelXmlFile = 'HMRcore_20200328_wReconNames'
+    prefix_modelName = 'hmrCore'
     includeCompartment = False
 elif testModel == 'ownData':
     ## specify your input data
-    modelXml = ''
-    dfmetsInfo = ''
-    includeCompartment = True
+    modelXmlFile = ''
+    prefix_modelName = ''
+    includeCompartment = False
 
 # Extract metabolites info from the input model
-cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = metL.getMetsInfoGEM(os.path.join(RAWDIR, modelXml + ".xml"))
+cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = metL.getMetsInfoGEM(os.path.join(RAWDIR, modelXmlFile + ".xml"))
 df = pd.DataFrame({'Id': cId, 'Name': cName, 'KeggId': cKegg, 'ChebiId': cChebi, 'PubchemId': cPubchem, 'boundaryCondition': cBoundaryCondition, 'chemicalFormula': cChemicalFormula, 'Inchi': cInchi})
-df.to_csv(os.path.join(OUTDIR, dfmetsInfo + '.csv'), sep = '\t', index = False)
+df.to_csv(os.path.join(OUTDIR, prefix_modelName + '_metabolites.csv'), sep = '\t', index = False)
 
 # Infer metabolites identifiers
 dfChebiNames = pd.read_csv(os.path.join(RAWDIR, 'chebi_names_20201216.tsv.bz2'), sep = '\t', compression='bz2', dtype=str)
@@ -83,4 +83,4 @@ for met in lMets2Search:
     dizMet2Ids[met] = keggId
 
 dfMet2Ids = pd.DataFrame(dizMet2Ids.items(), columns=['Name', 'Identifiers'])
-dfMet2Ids.to_csv(os.path.join(OUTDIR, dfmetsInfo + '_wInferredIds.csv'), sep = '\t', index = False)
+dfMet2Ids.to_csv(os.path.join(OUTDIR, prefix_modelName + '_metabolites_wInferredIds.csv'), sep = '\t', index = False)
