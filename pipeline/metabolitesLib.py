@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+import os
 import ast
 import pandas as pd
 import genericLib as gL
@@ -531,7 +532,9 @@ def getMetsInfoGEM(model):
             cKegg.append(keggCompound)
             cChebi.append(chebiCompound)
             cPubchem.append(pubchemCompound)
-    return cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi
+    df = pd.DataFrame({'Id': cId, 'Name': cName, 'KeggId': cKegg, 'ChebiId': cChebi, 'PubchemId': cPubchem, 'boundaryCondition': cBoundaryCondition, 'chemicalFormula': cChemicalFormula, 'Inchi': cInchi})
+    return df
+
 
 def applyFW2Db(lMets2Search, lPutativeTargets):
     '''
