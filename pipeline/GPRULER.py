@@ -6,7 +6,7 @@ import sys
 import pandas as pd
 import itertools as it
 import GPRULERLib as gprL
-import genesLib as gL
+import genesLib as genesL
 import genericLib as gL
 from ast import literal_eval
 
