@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+import ast
 import pandas as pd
 import genericLib as gL
 from Bio.KEGG.REST import *
@@ -563,10 +564,9 @@ def filterFWoutputs(dfMappingInput):
                 threshold = tMatch[1]
             except:
                 tMatch = row[col]
-                lMatch = row[col].split(',')
+                lMatch = row[col].rsplit(",", 1)
                 match = lMatch[0].strip()[lMatch[0].find('(')+1:]
                 threshold = int(lMatch[1].strip()[:lMatch[1].find(')')-1])
-
             if threshold == 100:
                 if index not in dMapping_100:
                     dMapping_100[index] = [match]

@@ -62,7 +62,7 @@ dfMatches91_99['Matches'] = dfMatches91_99['Matches'].apply(ast.literal_eval)
 curatedFWFile = open(os.path.join(OUTDIR, outputFileName + '_mappingMetaCyc_91_99.tsv'), mode='w')
 gL.writeLineByLineToFile(curatedFWFile, ['Name', 'Matches'], '\t')
 
-for row in dfComparison.iloc.itertuples():
+for row in dfMatches91_99.itertuples():
     lMatches = []
     for mat in row.Matches:
         print('Target metabolite:\t', row.Name)
@@ -91,7 +91,7 @@ dfMatches91_99['Matches'] = dfMatches91_99['Matches'].apply(ast.literal_eval)
 curatedFWFile = open(os.path.join(OUTDIR, outputFileName + '_mappingKeggC_91_99.tsv'), mode='w')
 gL.writeLineByLineToFile(curatedFWFile, ['Name', 'Matches'], '\t')
 
-for row in dfComparison.iloc.itertuples():
+for row in dfMatches91_99.itertuples():
     lMatches = []
     for mat in row.Matches:
         print('Target metabolite:\t', row.Name)
@@ -116,7 +116,7 @@ dfMatches91_99['Matches'] = dfMatches91_99['Matches'].apply(ast.literal_eval)
 curatedFWFile = open(os.path.join(OUTDIR, outputFileName + '_mappingKeggG_91_99.tsv'), mode='w')
 gL.writeLineByLineToFile(curatedFWFile, ['Name', 'Matches'], '\t')
 
-for row in dfComparison.iloc.itertuples():
+for row in dfMatches91_99.itertuples():
     lMatches = []
     for mat in row.Matches:
         print('Target metabolite:\t', row.Name)
@@ -143,7 +143,7 @@ dfMatches91_99['Matches'] = dfMatches91_99['Matches'].apply(ast.literal_eval)
 curatedFWFile = open(os.path.join(OUTDIR, outputFileName + '_mappingChebi_91_99.tsv'), mode='w')
 gL.writeLineByLineToFile(curatedFWFile, ['Name', 'Matches'], '\t')
 
-for row in dfComparison.iloc.itertuples():
+for row in dfMatches91_99.itertuples():
     lMatches = []
     for mat in row.Matches:
         print('Target metabolite:\t', row.Name)
