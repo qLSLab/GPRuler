@@ -56,7 +56,7 @@ dfChebiInchi['InChI_splitted'] = dfChebiInchi.InChI.str.split('/')
 dfChebiInchi['InChI_formula'] = dfChebiInchi.InChI.str.split('/').str[1]
 
 if includeCompartment is True:
-    df['toMatch'] = df.Name.str.replace("\[(\w*\s*)+\]$", "")
+    df['toMatch'] = df.Name.str.replace("\[(\w*\s*)+\]$", "", regex = True)
     df['toMatch'] = df.toMatch.str.strip()
     lMets2Search = list(df['toMatch'])
 else:
@@ -75,7 +75,10 @@ for met in lMets2Search:
     else:
         dfMet = df[df['Name'] == met]
     dfMet = dfMet.reset_index(drop = True)
-    inchiOriginal = dfMet.iloc[0]['Inchi']
+    if dfMet.empty == False:
+        inchiOriginal = dfMet.iloc[0]['Inchi']
+    else:
+        inchiOriginal = ''
     keggId = metL.extractKeggIdComp(met.lower(), dfChebiNames, dfChebiDb, dfChebiRelations, dfChebiUniprot, dfChebiCompounds, dfChebiInchi, inchiOriginal)
     dizMet2Ids[met] = keggId
 

@@ -203,25 +203,25 @@ def name2ChebiIds_subsSymbolsInChebiOutput(met, lSymbols, dfChebiNames, dfChebiU
         met_substSingle = re.sub(lSymbols[s], '', met)
         met_substAll = re.sub(lSymbols[s], '', met_substAll)
         dfChebiCompounds_copy = dfChebiCompounds.copy()
-        dfChebiCompounds_copy['NAME'] = dfChebiCompounds_copy.NAME.str.replace(lSymbols[s], '')
+        dfChebiCompounds_copy['NAME'] = dfChebiCompounds_copy.NAME.str.replace(lSymbols[s], '', regex = True)
         dfChebiCompounds_copy['NAME'] = dfChebiCompounds_copy.NAME.str.strip()
-        dfChebiCompounds_copy_all['NAME'] = dfChebiCompounds_copy_all.NAME.str.replace(lSymbols[s], '')
+        dfChebiCompounds_copy_all['NAME'] = dfChebiCompounds_copy_all.NAME.str.replace(lSymbols[s], '', regex = True)
         dfChebiCompounds_copy_all['NAME'] = dfChebiCompounds_copy_all.NAME.str.strip()
         dfSearch_comps = dfChebiCompounds_copy[dfChebiCompounds_copy['NAME'] == met_substSingle.strip()]
         if dfSearch_comps.empty is False:
             lchebiId += list(dfSearch_comps['ID'])
         dfChebiNames_copy = dfChebiNames.copy()
-        dfChebiNames_copy['NAME'] = dfChebiNames_copy.NAME.str.replace(lSymbols[s], '')
+        dfChebiNames_copy['NAME'] = dfChebiNames_copy.NAME.str.replace(lSymbols[s], '', regex = True)
         dfChebiNames_copy['NAME'] = dfChebiNames_copy.NAME.str.strip()
-        dfChebiNames_copy_all['NAME'] = dfChebiNames_copy_all.NAME.str.replace(lSymbols[s], '')
+        dfChebiNames_copy_all['NAME'] = dfChebiNames_copy_all.NAME.str.replace(lSymbols[s], '', regex = True)
         dfChebiNames_copy_all['NAME'] = dfChebiNames_copy_all.NAME.str.strip()
         dfSearch_names = dfChebiNames_copy[dfChebiNames_copy['NAME'] == met_substSingle.strip()]
         if dfSearch_names.empty is False:
             lchebiId += list(dfSearch_names['COMPOUND_ID'])
         dfChebiUniprot_copy = dfChebiUniprot.copy()
-        dfChebiUniprot_copy['NAME'] = dfChebiUniprot_copy.NAME.str.replace(lSymbols[s], '')
+        dfChebiUniprot_copy['NAME'] = dfChebiUniprot_copy.NAME.str.replace(lSymbols[s], '', regex = True)
         dfChebiUniprot_copy['NAME'] = dfChebiUniprot_copy.NAME.str.strip()
-        dfChebiUniprot_copy_all['NAME'] = dfChebiUniprot_copy_all.NAME.str.replace(lSymbols[s], '')
+        dfChebiUniprot_copy_all['NAME'] = dfChebiUniprot_copy_all.NAME.str.replace(lSymbols[s], '', regex = True)
         dfChebiUniprot_copy_all['NAME'] = dfChebiUniprot_copy_all.NAME.str.strip()
         dfSearch_unip = dfChebiUniprot_copy[dfChebiUniprot_copy['NAME'] == met_substSingle.strip()]
         if dfSearch_unip.empty is False:
