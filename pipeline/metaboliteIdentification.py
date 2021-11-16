@@ -8,9 +8,6 @@ import metabolitesLib as metL
 dDirNames = {'raw': 'rawData', 'log': 'logs', 'out': 'outputs'}
 
 (wrkDir, dDirs) = gL.setWorkingDirs(wrkDir=None, dizDirNames=dDirNames)
-#  workingDirs = gL.setWorkingDirs()
-#  RAWDIR = workingDirs[0]
-#  OUTDIR = workingDirs[2]
 RAWDIR = dDirs['raw']
 OUTDIR = dDirs['out']
 LOGDIR = dDirs['log']
@@ -18,25 +15,22 @@ LOGDIR = dDirs['log']
 timeStamp = gL.getTimeStamp()
 
 # setting input data
-testModel = sys.argv[1]
 
-if testModel in gL.dTestModelsParams.keys():
-    modelXmlFile = gL.dTestModelsParams[testModel]['basenameStr']
-    prefix_modelName = gL.dTestModelsParams[testModel]['prefix']
-    includeCompartment = gL.dTestModelsParams[testModel]['incComp']
-
-gL.loadModelParams(sys.argv, timeStamp, dDirs)
-logStream = gL.logFileOpen(logDIR=LOGDIR, timeStamp=timeStamp, basename=modelXmlFile)
-sToLog = 'Input params\nmodel filename: ' + modelXmlFile + '\n'
-sToLog += 'model prefix: ' + prefix_modelName + '\n'
-sToLog += 'include Compartement: ' + str(includeCompartment) + '\n'
+dModelPrms = gL.loadModelParams(sys.argv, timeStamp, dDirs)
+print(dModelPrms)
+logStream = gL.logFileOpen(logDIR=LOGDIR, timeStamp=timeStamp, basename=dModelPrms['path'])
+sToLog = 'Input params\nmodel filename: ' + dModelPrms['filename'] + '\n'
+sToLog += 'model prefix: ' + dModelPrms['prefix'] + '\n'
+sToLog += 'include Compartement: ' + str(dModelPrms['incComp']) + '\n'
 gL.toLog(logStream, sToLog)
 
 
 # Extract metabolites info from the input model
-fileName = gL.pathFilename(RAWDIR, modelXmlFile + ".xml")
+#  fileName = gL.pathFilename(RAWDIR, modelXmlFile + ".xml")
+#  cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = metL.getMetsInfoGEM(
+#      fileName)
 cId, cName, cKegg, cChebi, cPubchem, cBoundaryCondition, cChemicalFormula, cInchi = metL.getMetsInfoGEM(
-    fileName)
+    dModelPrms['path'])
 df = pd.DataFrame({
     'Id': cId,
     'Name': cName,
@@ -47,11 +41,13 @@ df = pd.DataFrame({
     'chemicalFormula': cChemicalFormula,
     'Inchi': cInchi
 })
-fileName = gL.pathFilename(OUTDIR, prefix_modelName + '_metabolites.csv')
+#  fileName = gL.pathFilename(OUTDIR, prefix_modelName + '_metabolites.csv')
+fileName = gL.pathFilename(OUTDIR, dModelPrms['prefix'] + '_metabolites.csv')
 df.to_csv(fileName, sep='\t', index=False)
 
 # Infer metabolites identifiers
-fileName = gL.pathFilename(RAWDIR, 'chebi_names_20201216.tsv.bz2')
+#  fileName = gL.pathFilename(RAWDIR, 'chebi_names_20201216.tsv.bz2')
+fileName = gL.pathJoinOrExit(RAWDIR, 'chebi_names_20201216.tsv.bz2')
 dfChebiNames = pd.read_csv(fileName, sep='\t', compression='bz2', dtype=str)
 
 fileName = gL.pathFilename(RAWDIR, 'chebi_uniprot_20201216.tsv.bz2')
@@ -93,7 +89,8 @@ dfChebiInchi = pd.read_csv(fileName, sep='\t', compression='bz2', dtype=str)
 dfChebiInchi['InChI_splitted'] = dfChebiInchi.InChI.str.split('/')
 dfChebiInchi['InChI_formula'] = dfChebiInchi.InChI.str.split('/').str[1]
 
-if includeCompartment is True:
+#  if includeCompartment is True:
+if dModelPrms['incComp'] is True:
     df['toMatch'] = df.Name.str.replace("\[(\w*\s*)+\]$", "", regex=True)
     df['toMatch'] = df.toMatch.str.strip()
     lMets2Search = list(df['toMatch'])
@@ -108,7 +105,8 @@ dfChebiUniprot['NAME'] = dfChebiUniprot['NAME'].str.lower()
 dizMet2Ids = {}
 for met in lMets2Search:
     keggId = ''
-    if includeCompartment is True:
+    #  if includeCompartment is True:
+    if dModelPrms['incComp'] is True:
         dfMet = df[df['Name'].str.startswith(met + ' ' + '[')]
     else:
         dfMet = df[df['Name'] == met]
@@ -124,7 +122,8 @@ for met in lMets2Search:
     dizMet2Ids[met] = keggId
 
 dfMet2Ids = pd.DataFrame(dizMet2Ids.items(), columns=['Name', 'Identifiers'])
-fileName = gL.pathFilename(OUTDIR, '_metabolites_wInferredIds.csv')
+#  fileName = gL.pathFilename(OUTDIR, '_metabolites_wInferredIds.csv')
+fileName = gL.pathFilename(OUTDIR, dModelPrms['prefix'] + '_metabolites_wInferredIds.csv')
 dfMet2Ids.to_csv(fileName, sep='\t', index=False)
 
 logStream.close()

@@ -39,6 +39,14 @@ dTestModelsParams = {
     },
 }
 
+dChebiFiles = {
+    'names': 'chebi_names_20201216.tsv.bz2',
+    'uniprot': 'chebi_uniprot_20201216.tsv.bz2',
+    'compounds': 'chebi_compounds_20201216.tsv.bz2',
+    'accession': 'chebi_database_accession_20201216.tsv.bz2',
+    'relation': 'chebi_relation_20201216.tsv.bz2',
+    'inchi': 'chebiId_inchi_20201216.tsv.bz2'
+}
 
 def getBaseName(path):
     """The program filename without extension"""
@@ -70,9 +78,9 @@ def pathJoinCheck(dir2add, rootPath='.'):
     return path
 
 
-def pathJoinOrExit(dir2add, rootPath='.'):
+def pathJoinOrExit(rootPath='.', filename=None):
     """Check the existence of a path and build it if necessary."""
-    path = os.path.join(rootPath, dir2add)
+    path = os.path.join(rootPath, filename)
     beingOrExit(path)
     return path
 
@@ -184,6 +192,7 @@ def loadModelParams(sInputLine=['', 'toy'], timeStamp=None, dDirs=None):
         print(param, dModelParams[param])
     if wrongParams:
         sys.exit()
+    dModelParams['path'] = pathJoinOrExit(dDirs['raw'], dModelParams['filename'])
     return dModelParams
 
 
