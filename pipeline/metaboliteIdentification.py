@@ -24,11 +24,8 @@ if testModel in gL.dTestModelsParams.keys():
     modelXmlFile = gL.dTestModelsParams[testModel]['basenameStr']
     prefix_modelName = gL.dTestModelsParams[testModel]['prefix']
     includeCompartment = gL.dTestModelsParams[testModel]['incComp']
-#  elif len(sys.argv) >= 2:
-#      modelXmlFile = sys.argv[1]
-#      try:
 
-gL.loadModelParams(sys.argv)
+gL.loadModelParams(sys.argv, timeStamp, dDirs)
 logStream = gL.logFileOpen(logDIR=LOGDIR, timeStamp=timeStamp, basename=modelXmlFile)
 sToLog = 'Input params\nmodel filename: ' + modelXmlFile + '\n'
 sToLog += 'model prefix: ' + prefix_modelName + '\n'

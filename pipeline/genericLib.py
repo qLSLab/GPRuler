@@ -6,33 +6,37 @@ import time
 import pandas as pd
 import numpy as np
 
-
 dTestModelsParams = {
     'recon': {
         'filename': 'Recon3D_301_20200923.xml',
         'basenameStr': 'Recon3D_301_20200923',
         'prefix': 'recon3D',
-        'incComp': False},
+        'incComp': False
+    },
     'y7': {
         'filename': 'yeast_7.6_cobra.xml',
         'basenameStr': 'yeast_7.6_cobra',
         'prefix': 'y7',
-        'incComp': True},
+        'incComp': True
+    },
     'y8': {
         'filename': 'yeast8.xml',
         'basenameStr': 'yeast8',
         'prefix': 'y8',
-        'incComp': True},
+        'incComp': True
+    },
     'hmrcore': {
         'filename': 'HMRcore_20200328_wReconName.xml',
         'basenameStr': 'HMRcore_20200328_wReconName',
         'prefix': 'hmrCore',
-        'incComp': False},
+        'incComp': False
+    },
     'toy': {
         'filename': 'toymodel.xml',
         'basenameStr': 'toymodel',
         'prefix': 'toy',
-        'incComp': False},
+        'incComp': False
+    },
 }
 
 
@@ -63,6 +67,13 @@ def pathJoinCheck(dir2add, rootPath='.'):
     path = os.path.join(rootPath, dir2add)
     if not os.path.exists(path):
         os.makedirs(path)
+    return path
+
+
+def pathJoinOrExit(dir2add, rootPath='.'):
+    """Check the existence of a path and build it if necessary."""
+    path = os.path.join(rootPath, dir2add)
+    beingOrExit(path)
     return path
 
 
@@ -132,15 +143,48 @@ def toLog(logStream, string):
     logStream.write(string + '\n')
 
 
-def loadModelParams(sInputLine=None):
-    print(sInputLine)
-    sys.exit()
-    #  if testModel in gL.dTestModelsParams.keys():
-    #      modelXmlFile = gL.dTestModelsParams[testModel]['basenameStr']
-    #      prefix_modelName = gL.dTestModelsParams[testModel]['prefix']
-    #      includeCompartment = gL.dTestModelsParams[testModel]['incComp']
-
-
+def loadModelParams(sInputLine=['', 'toy'], timeStamp=None, dDirs=None):
+    print(sInputLine, timeStamp)
+    wrongParams = False
+    modelName = sInputLine[1]
+    dModelParams = {}
+    if modelName in dTestModelsParams.keys():
+        dModelParams['filename'] = dTestModelsParams[modelName]['filename']
+        dModelParams['basenameStr'] = dTestModelsParams[modelName][
+            'basenameStr']
+        dModelParams['prefix'] = dTestModelsParams[modelName]['prefix']
+        dModelParams['incComp'] = dTestModelsParams[modelName]['incComp']
+    else:
+        modelXmlFile = modelName  # add checks for existence, xml extension ...
+        nParams = len(sInputLine)
+        print(nParams)
+        dModelParams['filename'] = modelName
+        dModelParams['basenameStr'] = getBaseName(modelName)
+        if nParams == 2:
+            dModelParams[
+                'prefix'] = dModelParams['basenameStr'] + '_' + timeStamp
+            dModelParams['incComp'] = True
+        elif nParams == 3:
+            try:
+                isinstance(eval(sInputLine[2]), bool)
+            except NameError:
+                dModelParams['prefix'] = sInputLine[2]
+                dModelParams['incComp'] = True
+            else:
+                dModelParams[
+                    'prefix'] = dModelParams['basenameStr'] + '_' + timeStamp
+                dModelParams['incComp'] = eval(sInputLine[2])
+        elif nParams == 4:
+            dModelParams['prefix'] = sInputLine[2]
+            dModelParams['incComp'] = sInputLine[3]
+        else:
+            print('Please check the compliance of your input parameters')
+            wrongParams = True
+    for param in dModelParams:
+        print(param, dModelParams[param])
+    if wrongParams:
+        sys.exit()
+    return dModelParams
 
 
 def unique(a):
