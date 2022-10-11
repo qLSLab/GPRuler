@@ -83,7 +83,7 @@ for gene in lOrganismGenes:
 
                                 dCompleteRxns_equation[rxnName] = rxnEquation
                                 dCompleteRxns_definition[rxnName] = rxnDefinition
-                                gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition], sep = '\t')
+                                gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition], '\t')
 
                             if rxnName not in lAssociatedRxns:
                                 lAssociatedRxns.append(rxnName)
@@ -160,7 +160,7 @@ for gene in lOrganismGenes:
 
                             if rxnEquation not in dCompleteRxns_equation.values():
                                 dCompleteRxns[rxnName] = rxnEquation_kegg
-                                gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation_kegg, rxnEquation], sep = '\t')
+                                gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation_kegg, rxnEquation], '\t')
                                 cont += 1
                                 lAssociatedRxns.append(rxnName)
                             else:
@@ -187,7 +187,7 @@ for gene in lOrganismGenes:
 
                                         dCompleteRxns_equation[rxnName] = rxnEquation
                                         dCompleteRxns_definition[rxnName] = rxnDefinition
-                                        gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition], sep = '\t')
+                                        gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition], '\t')
 
                                     if rxnName not in lAssociatedRxns:
                                         lAssociatedRxns.append(rxnName)
@@ -213,7 +213,7 @@ for gene in lOrganismGenes:
 
                                         dCompleteRxns_equation[rxnName] = rxnEquation
                                         dCompleteRxns_definition[rxnName] = rxnDefinition
-                                        gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition], sep = '\t')
+                                        gL.writeLineByLineToFile(rxnFile, [rxnName, rxnEquation, rxnDefinition], '\t')
 
                                     if rxnName not in lAssociatedRxns:
                                         lAssociatedRxns.append(rxnName)
@@ -231,12 +231,12 @@ rxn2EcFile.close()
 flatdGene2RxnsList_values = [rxn for associatedRxns in dGene2RxnsList.values() for rxn in associatedRxns]
 flatdGene2RxnsList_values = gL.unique(flatdGene2RxnsList_values)
 outFile = open(os.path.join(OUTDIR, model + '_Rxns2Genes.csv'), mode='w')
-gL.writeLineByLineToFile(outFile, ['Rxn', 'Genes'], sep = '\t')
+gL.writeLineByLineToFile(outFile, ['Rxn', 'Genes'], '\t')
 for r in flatdGene2RxnsList_values:
     lAssociatedGenes = []
     for k,v in dGene2RxnsList.items():
         if r in v and [k] not in lAssociatedGenes:
             lAssociatedGenes.append([k])
     lAssociatedGenes = gL.unique(lAssociatedGenes)
-    gL.writeLineByLineToFile(outFile, [r, lAssociatedGenes], sep = '\t')
+    gL.writeLineByLineToFile(outFile, [r, lAssociatedGenes], '\t')
 outFile.close()
